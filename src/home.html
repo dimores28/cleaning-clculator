@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"HomePage"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<section class="offer">
+					<img src="@img/main_bg.jpg" class="offer__bg" alt="background image" width="1500" height="700" >
+					<div class="offer__container">
+						<h1 class="offer__heading">Quote Calculator</h1>
+						<div class="offer__calculator calculator">
+							<div class="calculator__steps"><span>1</span>/3</div>
+
+							<div class="calculator__square">
+								<h2 class="calculator__title">COST OF CLEANING</h2>
+								<div class="calculator__rooms">
+									<div class="room" data-room-price="110">35 square feet</div>
+									<div class="room" data-room-price="210">60 - 74 square feet</div>
+									<div class="room" data-room-price="310">106 - 127  square feet</div>
+									<div class="room" data-room-price="410">128 - 150 square feet</div>
+									<div class="room" data-room-price="510">176 - 200 square feet</div>
+								</div>
+							</div>
+
+							<div class="calculator__services" style="display: none;">
+								<div class="service" data-service-price="30">
+									Exterior Window Cleaning
+								</div>
+								<div class="service" data-service-price="10">
+									Interior Window Cleaning
+								</div>
+								<div class="service" data-service-price="55">
+									Track Deep Cleaning
+								</div>
+								<div class="service" data-service-price="25">
+									Deep Screen Cleaning
+								</div>
+								<div class="service" data-service-price="72">
+									Gutter Cleaning
+								</div>
+								<div class="service" data-service-price="15">
+									Siding Cleaning
+								</div>
+								<div class="service" data-service-price="64">
+									High Interior Windows
+								</div>
+								<div class="service" data-service-price="47">
+									Skylights
+								</div>
+							</div>
+
+							<div class="calculator__form" style="display: none;">
+								<form>
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+										  <span class="input-group-text" id="basic-addon1">@</span>
+										</div>
+										<input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+									 </div>
+									<div class="form-group">
+									  <label for="exampleInputEmail1">Email address</label>
+									  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+									  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+									</div>
+									<div class="form-group form-check">
+									  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+									  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+									</div>
+									<button type="submit" class="btn btn-primary">Submit</button>
+								 </form>
+							</div>
+
+							<button type="button" class="btn btn-primary calculator__btn-next">Next</button>
+							<div class="calculator__total-price"><span>0</span>$</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>

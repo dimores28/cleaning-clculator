@@ -1,0 +1,146 @@
+// Заголовки, загальні БЕМ блоки та інше...
+
+.offer {
+   position: relative;
+   padding-top: 150px;
+   min-height: 100vh;
+
+   // .offer__bg
+   &__bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+
+   // .offer__container
+   &__container {
+      position: relative;
+      z-index: 1;
+   }
+
+   // .offer__heading
+   &__heading {
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.3em;
+      margin-bottom: 20px;
+      text-align: center;
+      text-transform: uppercase;
+   }
+
+   // .offer__calculator
+   &__calculator {
+   }
+}
+
+
+.calculator {
+   background: $sky;
+   width: 100%;
+   max-width: 800px;
+   margin: 0 auto;
+   border-radius: 20px;
+   padding: 24px 16px 20px;
+   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+   &__steps {
+      font-size: 28px;
+      line-height: 108%;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+   }
+
+   &__title {
+      font-size: 26px;
+      line-height: 108%;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+   }
+
+   // .calculator__square
+   &__square {
+   }
+
+   // .calculator__title
+   &__title {
+   }
+
+   // .calculator__rooms
+   &__rooms {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 30px;
+   }
+
+   &__services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-bottom: 30px;
+   }
+
+   &__btn-next {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px;
+      display: block;
+   }
+
+   &__total-price {
+      font-size: 28px;
+      line-height: 108%;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+   }
+}
+
+.room {
+   width: calc(33.333% - 30px);
+   border: 2px solid $darkBlue;
+   border-radius: 6px;
+   padding: 20px;
+   cursor: pointer;
+   font-size: 18px;
+   line-height: 110%;
+   font-weight: 700;
+   text-align: center;
+   transition: all 0.4s ease-in;
+
+   &._select {
+      background: #03045e;
+   }
+
+   &:hover {
+      background: $blue;
+   }
+}
+
+.service {
+   width: calc(33.333% - 30px);
+   border: 2px solid $darkBlue;
+   border-radius: 6px;
+   padding: 20px;
+   cursor: pointer;
+   font-size: 18px;
+   line-height: 110%;
+   font-weight: 700;
+   text-align: center;
+   transition: all 0.4s ease-in;
+
+   &._select {
+      background: #03045e;
+   }
+
+   &:hover {
+      background: $blue;
+   }
+}
