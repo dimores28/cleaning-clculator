@@ -1,150 +1,110 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Верстка «NEW_PROJECT_NAME»</title>
-	</head>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"HomePage"
+	})
 	<body>
-		<div class="rootpage">
-			<h1>Верстка «NEW_PROJECT_NAME»</h1>
-			<div class="rootpage__info">
-				Опис проєкту
-			</div>
-			<h2>Готові сторінки:</h2>
-			<ol class="rootpage__list">
-				<li><a target="_blank" href="home.html">Головна</a></li>
-			</ol>
-			<h2>Попапи:</h2>
-			<ol class="rootpage__list">
-				<li><a target="_blank" href="home.html#"></a></li>
-			</ol>
-			<div class="rootpage__tnx">
-				<h2>Дякую за замовлення!</h2>
-				<p>Буду радий (да) гарному відгуку.</p>
-				<p>Звертайтесь ще!</p>
-			</div>
-			<div class="rootpage__contacts">
-				<h2>Мої контакти:</h2>
-				<p>Пошта: <a href="mailto:email@gmail.com">email@gmail.com</a></p>
-				<p>Телефон: <a href="tel:8800800800">8 800 800 800</a></p>
-				<p>Соц. мережі: <a href="">посилання</a></p>
-			</div>
-		</div>
-	</body>
-	<style>
-		@charset "UTF-8";
-		@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap");
-		* ,*::before, *::after {
-			padding: 0px;
-			margin: 0px;
-			border: 0px;
-			box-sizing: border-box; 
-		}
-		html, body {
-			height: 100%;
-			margin: 0;
-			padding: 0;
-			min-width: 320px;
-			width: 100%;
-			color: #fff;
-			background-color: #5e5373;
-		}
-		body {
-			font-family: Montserrat;
-			font-size: 100%;
-			line-height: 1;
-			font-size: 1rem;
-		}
-		a {
-			text-decoration: underline;
-			color: #ebe691
-		}
-		a:visited {
-			text-decoration: underline;
-			color: #aaa768;
-		}
-			a:hover {
-			text-decoration: none;
-		}
-		ul li {
-			list-style: none;
-		}
-		img {
-			vertical-align: top;
-		}
-		.wrapper {
-			width: 100%;
-			min-height: 100%;
-			overflow: hidden;
-		}
-		.rootpage{
-			padding: 30px;
-			display: flex;
-			flex-direction: column;
-			align-items: flex-start;
-		}
-		@media (max-width: 767px) {
-			.rootpage{
-				padding:30px 15px;
-			}
-		}
-		h1 {
-			color: #ebe691;
-			font-size: 2.5rem;
-			margin: 0px 0px 1.25rem 0px;
-		}
-		@media (max-width: 767px) {
-			h1 {
-				font-size: 1.85rem;
-				margin: 0px 0px 1.25rem 0px;
-			}
-		}
-		h2 {
-			color: #ebe691;
-			font-size: 1.25rem;
-			margin: 0px 0px 1rem 0px;
-		}
-		@media (max-width: 767px) {
-			 h2 {
-				font-size: 1.125rem;
-				margin: 0px 0px 1rem 0px;
-			}
-		}
-		.rootpage__info{
-			line-height: 140%;
-			margin: 0px 0px 1.5rem 0px;
-		}
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<section class="offer">
+					<img src="@img/main_bg.jpg" class="offer__bg" alt="background image" width="1500" height="700" >
+					<div class="offer__container">
+						<h1 class="offer__heading">Quote Calculator</h1>
+						<div class="offer__calculator calculator">
+							<div class="calculator__steps"><span>1</span>/3</div>
 
-		.rootpage__list{
-			margin: 0px 0px 2.25rem 1.25rem;
-		}
-		.rootpage__list li:not(:last-child){
-			margin: 0px 0px 15px 0px;
-		}
-		.rootpage__contacts,
-		.rootpage__tnx{
-			border-radius: 200px;
-			padding: 20px 65px;
-			line-height: 140%;
-		}
-		@media (max-width: 767px){
-		.rootpage__contacts,
-		.rootpage__tnx{
-			border-radius:40px;
-			padding: 20px;
-		}
-		}
-		.rootpage__contacts{
-			background: #32b5a4;
-			
-		}
-		.rootpage__contacts a{
-			color: #ebe691;
-		}
-		.rootpage__tnx{
-			background: #c22d63;
-			margin: 0px 0px 1rem 0px;
-		}
-	</style>
+							<div class="calculator__square">
+								<h2 class="calculator__title">COST OF CLEANING</h2>
+								<div class="calculator__rooms">
+									<div class="room" data-room-price="110">35 square feet</div>
+									<div class="room" data-room-price="210">60 - 74 square feet</div>
+									<div class="room" data-room-price="310">106 - 127  square feet</div>
+									<div class="room" data-room-price="410">128 - 150 square feet</div>
+									<div class="room" data-room-price="510">176 - 200 square feet</div>
+								</div>
+							</div>
+
+							<div class="calculator__services" style="display: none;">
+								<div class="service" data-service-price="30">
+									Exterior Window Cleaning
+								</div>
+								<div class="service" data-service-price="10">
+									Interior Window Cleaning
+								</div>
+								<div class="service" data-service-price="55">
+									Track Deep Cleaning
+								</div>
+								<div class="service" data-service-price="25">
+									Deep Screen Cleaning
+								</div>
+								<div class="service" data-service-price="72">
+									Gutter Cleaning
+								</div>
+								<div class="service" data-service-price="15">
+									Siding Cleaning
+								</div>
+								<div class="service" data-service-price="64">
+									High Interior Windows
+								</div>
+								<div class="service" data-service-price="47">
+									Skylights
+								</div>
+							</div>
+
+							<div class="calculator__form" style="display: none;">
+								<form>
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+										  <span class="input-group-text" id="basic-addon1">@</span>
+										</div>
+										<input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+									 </div>
+									<div class="form-group">
+									  <label for="exampleInputEmail1">Email address</label>
+									  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+									  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+									</div>
+									<div class="form-group form-check">
+									  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+									  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+									</div>
+									<button type="submit" class="btn btn-primary">Submit</button>
+								 </form>
+							</div>
+
+							<button type="button" class="btn btn-primary calculator__btn-next">Next</button>
+							<div class="calculator__total-price"><span>0</span>$</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="about">
+					<div class="about__container">
+						<h2 class="about__heading section-heading">about</h2>
+					</div>
+				</section>
+
+				<section class="advantages">
+					<div class="advantages__container">
+						<h2 class="advantages__heading section-heading">advantages</h2>
+					</div>
+				</section>
+
+				<section class="reviews">
+					<div class="reviews__container">
+						<h2 class="reviews__heading section-heading">reviews</h2>
+					</div>
+				</section>
+
+				<section class="faq">
+					<div class="faq__container">
+						<h2 class="faq__heading section-heading">faq</h2>
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
 </html>
