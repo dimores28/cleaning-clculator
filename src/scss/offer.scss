@@ -143,8 +143,23 @@
    text-align: center;
    transition: all 0.4s ease-in;
 
+   &__img {
+      img {
+         width: 100%;
+         height: auto;
+         transition: all 0.3s ease-in;
+      }
+
+      margin-bottom: 16px;
+   }
+
    &._select {
       background: #03045e;
+
+      img {
+         filter: contrast(40%);
+         // transform: rotate(360deg);
+      }
    }
 
    &:hover {
@@ -164,6 +179,15 @@
    font-weight: 700;
    text-align: center;
    transition: all 0.4s ease-in;
+
+   &__img {
+      img {
+         width: 100%;
+         height: auto;
+      }
+
+      margin-bottom: 16px;
+   }
 
    &._select {
       background: #03045e;
