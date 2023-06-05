@@ -1,110 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-	@@include('html/_head.htm',{
-	"title":"HomePage"
-	})
-	<body>
-		<div class="wrapper">
-			@@include('html/_header.htm',{})
-			<main class="page">
-				<section class="offer">
-					<img src="@img/main_bg.jpg" class="offer__bg" alt="background image" width="1500" height="700" >
-					<div class="offer__container">
-						<h1 class="offer__heading">Quote Calculator</h1>
-						<div class="offer__calculator calculator">
-							<div class="calculator__steps"><span>1</span>/3</div>
+   @@include('html/_head.htm',{ "title":"HomePage" })
+   <body>
+      <div class="wrapper">
+         @@include('html/_header.htm',{})
+         <main class="page">
+            <section class="offer">
+               <img
+                  src="@img/main_bg.jpg"
+                  class="offer__bg"
+                  alt="background image"
+                  width="1500"
+                  height="700" />
+               <div class="offer__container">
+                  <h1 class="offer__heading">Quote Calculator</h1>
+                  <div class="offer__calculator calculator">
+                     <div class="calculator__steps"><span>1</span>/3</div>
 
-							<div class="calculator__square">
-								<h2 class="calculator__title">COST OF CLEANING</h2>
-								<div class="calculator__rooms">
-									<div class="room" data-room-price="110">35 square feet</div>
-									<div class="room" data-room-price="210">60 - 74 square feet</div>
-									<div class="room" data-room-price="310">106 - 127  square feet</div>
-									<div class="room" data-room-price="410">128 - 150 square feet</div>
-									<div class="room" data-room-price="510">176 - 200 square feet</div>
-								</div>
-							</div>
+                     <div class="calculator__square">
+                        <h2 class="calculator__title">COST OF CLEANING</h2>
+                        <div class="calculator__rooms">
+                           <div class="room" data-room-price="110">
+                              <div class="room__img">
+                                 <img
+                                    src="@img/calculator/house1.png"
+                                    alt="house image" />
+                              </div>
+                              <p>35 square feet</p>
+                           </div>
+                           <div class="room" data-room-price="210">
+                              <div class="room__img">
+                                 <img
+                                    src="@img/calculator/house2.png"
+                                    alt="house image" />
+                              </div>
+                              <p>60 - 74 square feet</p>
+                           </div>
+                           <div class="room" data-room-price="310">
+                              <div class="room__img">
+                                 <img
+                                    src="@img/calculator/house3.png"
+                                    alt="house image" />
+                              </div>
+                              <p>106 - 127 square feet</p>
+                           </div>
+                           <div class="room" data-room-price="410">
+                              <div class="room__img">
+                                 <img
+                                    src="@img/calculator/house4.png"
+                                    alt="house image" />
+                              </div>
+                              <p>128 - 150 square feet</p>
+                           </div>
+                           <div class="room" data-room-price="510">
+                              <div class="room__img">
+                                 <img
+                                    src="@img/calculator/house5.png"
+                                    alt="house image" />
+                              </div>
+                              <p>176 - 200 square feet</p>
+                           </div>
+                        </div>
+                     </div>
 
-							<div class="calculator__services" style="display: none;">
-								<div class="service" data-service-price="30">
-									Exterior Window Cleaning
-								</div>
-								<div class="service" data-service-price="10">
-									Interior Window Cleaning
-								</div>
-								<div class="service" data-service-price="55">
-									Track Deep Cleaning
-								</div>
-								<div class="service" data-service-price="25">
-									Deep Screen Cleaning
-								</div>
-								<div class="service" data-service-price="72">
-									Gutter Cleaning
-								</div>
-								<div class="service" data-service-price="15">
-									Siding Cleaning
-								</div>
-								<div class="service" data-service-price="64">
-									High Interior Windows
-								</div>
-								<div class="service" data-service-price="47">
-									Skylights
-								</div>
-							</div>
+                     <div class="calculator__services" style="display: none">
+                        <div class="service" data-service-price="30">
+                           <div class="service__img">
+                              <img
+                                 src="@img/calculator/service1.png"
+                                 alt="service icon" />
+                           </div>
+                           <p>Exterior Window Cleaning</p>
+                        </div>
+                        <div class="service" data-service-price="10">
+                           <div class="service__img">
+                              <img
+                                 src="@img/calculator/service2.png"
+                                 alt="service icon" />
+                           </div>
+                           <p>Interior Window Cleaning</p>
+                        </div>
+                        <div class="service" data-service-price="55">
+                           <div class="service__img">
+                              <img
+                                 src="@img/calculator/service3.png"
+                                 alt="service icon" />
+                           </div>
+                           <p>Track Deep Cleaning</p>
+                        </div>
+                        <div class="service" data-service-price="25">
+                           <div class="service__img">
+                              <img
+                                 src="@img/calculator/service4.png"
+                                 alt="service icon" />
+                           </div>
+                           <p>Deep Screen Cleaning</p>
+                        </div>
+                        <div class="service" data-service-price="72">
+                           <div class="service__img">
+                              <img
+                                 src="@img/calculator/service5.png"
+                                 alt="service icon" />
+                           </div>
+                           <p>Gutter Cleaning</p>
+                        </div>
+                        <div class="service" data-service-price="15">
+                           <div class="service__img">
+                              <img
+                                 src="@img/calculator/service6.png"
+                                 alt="service icon" />
+                           </div>
+                           <p>Siding Cleaning</p>
+                        </div>
+                        <div class="service" data-service-price="64">
+                           <div class="service__img">
+                              <img
+                                 src="@img/calculator/service7.png"
+                                 alt="service icon" />
+                           </div>
+                           <p>High Interior Windows</p>
+                        </div>
+                        <div class="service" data-service-price="47">
+                           <div class="service__img">
+                              <img
+                                 src="@img/calculator/service8.png"
+                                 alt="service icon" />
+                           </div>
+                           <p>Skylights</p>
+                        </div>
+                     </div>
 
-							<div class="calculator__form" style="display: none;">
-								<form>
-									<div class="input-group mb-3">
-										<div class="input-group-prepend">
-										  <span class="input-group-text" id="basic-addon1">@</span>
-										</div>
-										<input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-									 </div>
-									<div class="form-group">
-									  <label for="exampleInputEmail1">Email address</label>
-									  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-									  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-									</div>
-									<div class="form-group form-check">
-									  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-									  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-									</div>
-									<button type="submit" class="btn btn-primary">Submit</button>
-								 </form>
-							</div>
+                     <div class="calculator__form" style="display: none">
+                        <form>
+                           <div class="input-group">
+                              <label for="userName">Your Name</label>
+                              <input
+                                 type="text"
+                                 class="form-control"
+                                 id="userName"
+                                 placeholder="User name"
+                                 aria-label="User name" />
+                           </div>
 
-							<button type="button" class="btn btn-primary calculator__btn-next">Next</button>
-							<div class="calculator__total-price"><span>0</span>$</div>
-						</div>
-					</div>
-				</section>
+                           <div class="input-group">
+                              <label for="userPhone">Telephone</label>
+                              <input
+                                 type="tel"
+                                 class="form-control"
+                                 id="userPhone"
+                                 placeholder="+3730xxxxx"
+                                 required="required"
+                                 aria-required="true"
+                                 pattern="[0-9()#&+*-=.]+"
+                                 aria-describedby="userPhone" />
+                           </div>
 
-				<section class="about">
-					<div class="about__container">
-						<h2 class="about__heading section-heading">about</h2>
-					</div>
-				</section>
+                           <div class="input-group">
+                              <label for="userEmail">Email address</label>
+                              <input
+                                 type="email"
+                                 class="form-control"
+                                 placeholder="example@mail.com"
+                                 required="required"
+                                 aria-required="true"
+                                 id="userEmail"
+                                 aria-describedby="emailHelp" />
+                           </div>
 
-				<section class="advantages">
-					<div class="advantages__container">
-						<h2 class="advantages__heading section-heading">advantages</h2>
-					</div>
-				</section>
+                           <div class="input-group">
+                              <label for="streetAddress">Street Address</label>
+                              <input
+                                 type="text"
+                                 class="form-control"
+                                 id="streetAddress"
+                                 required="required"
+                                 aria-required="true"
+                                 aria-describedby="streetAddress" />
+                           </div>
 
-				<section class="reviews">
-					<div class="reviews__container">
-						<h2 class="reviews__heading section-heading">reviews</h2>
-					</div>
-				</section>
+                           <div class="input-group">
+                              <label for="city">City</label>
+                              <input
+                                 type="text"
+                                 class="form-control"
+                                 id="city"
+                                 required="required"
+                                 aria-required="true"
+                                 aria-describedby="city" />
+                           </div>
 
-				<section class="faq">
-					<div class="faq__container">
-						<h2 class="faq__heading section-heading">faq</h2>
-					</div>
-				</section>
-			</main>
-			@@include('html/_footer.htm',{})
-		</div>
-		@@include('html/_js.htm',{})
-	</body>
+                           <div class="input-group">
+                              <label for="postalCode">Postal Code</label>
+                              <input
+                                 type="text"
+                                 class="form-control"
+                                 id="postalCode"
+                                 required="required"
+                                 aria-required="true"
+                                 aria-describedby="postalCode" />
+                           </div>
+
+                           <button type="submit" class="btn btn-primary">
+                              Submit
+                           </button>
+                        </form>
+                     </div>
+                     <div class="calculator__total-price"><span>0</span>$</div>
+
+                     <p class="calculator__alerts">
+                        Please make a selection to continue
+                     </p>
+
+                     <button
+                        type="button"
+                        class="btn btn-primary calculator__btn-next">
+                        Next step
+                     </button>
+                     <button
+                        type="button"
+                        class="btn btn-primary calculator__btn-prev"
+                        style="display: none">
+                        PREVIOUS STEP
+                     </button>
+                  </div>
+               </div>
+            </section>
+
+            <section class="about">
+               <div class="about__container">
+                  <h2 class="about__heading section-heading">about</h2>
+               </div>
+            </section>
+
+            <section class="advantages">
+               <div class="advantages__container">
+                  <h2 class="advantages__heading section-heading">
+                     advantages
+                  </h2>
+               </div>
+            </section>
+
+            <section class="reviews">
+               <div class="reviews__container">
+                  <h2 class="reviews__heading section-heading">reviews</h2>
+               </div>
+            </section>
+
+            <section class="faq">
+               <div class="faq__container">
+                  <h2 class="faq__heading section-heading">faq</h2>
+               </div>
+            </section>
+         </main>
+         @@include('html/_footer.htm',{})
+      </div>
+      @@include('html/_js.htm',{})
+   </body>
 </html>

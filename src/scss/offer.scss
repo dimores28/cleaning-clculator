@@ -71,6 +71,18 @@
    &__title {
    }
 
+   &__alerts {
+      max-width: 480px;
+      text-align: center;
+      color: #842029;
+      background-color: #f8d7da;
+      padding: 1rem 1rem;
+      border: 1px solid #f5c2c7;
+      border-radius: 0.25rem;
+      margin: 0 auto 16px auto;
+      display: none;
+   }
+
    // .calculator__rooms
    &__rooms {
       display: flex;
@@ -86,11 +98,26 @@
       margin-bottom: 30px;
    }
 
-   &__btn-next {
+   &__btn-next,
+   &__btn-prev {
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 20px;
       display: block;
+      text-transform: uppercase;
+   }
+
+   &__btn-prev {
+      background: transparent;
+      color: #0d6efd;
+      opacity: 0.7;
+
+      @media (any-hover: hover) {
+         &:hover {
+            background: transparent;
+            opacity: 1;
+         }
+      }
    }
 
    &__total-price {
@@ -99,6 +126,19 @@
       font-weight: 700;
       text-align: center;
       margin-bottom: 20px;
+   }
+
+   &__form {
+
+      form {
+         display: flex;
+         flex-wrap: wrap;
+         column-gap: 20px;
+      }
+
+      .input-group {
+         width: calc(50% - 10px);
+      }
    }
 }
 
@@ -114,9 +154,47 @@
    font-weight: 700;
    text-align: center;
    transition: all 0.4s ease-in;
+   position: relative;
+
+   &::after {
+      content: '';
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      background: url(../img/icons/check.png) center center no-repeat;
+      background-size: cover;
+      top: 4px;
+      right: 4px;
+      transition: all 0.3s ease-in;
+      opacity: 0;
+      transform: scale(0.4);
+   }
+
+   &__img {
+      width: 80%;
+      margin: 0 auto;
+
+      img {
+         width: 100%;
+         height: auto;
+         transition: all 0.3s ease-in;
+      }
+
+      margin-bottom: 16px;
+   }
 
    &._select {
-      background: #03045e;
+      background: $blue;
+
+      img {
+         filter: contrast(40%);
+         transform: rotateX(360deg);
+      }
+
+      &::after {
+         opacity: 1;
+         transform: scale(1);
+      }
    }
 
    &:hover {
@@ -136,6 +214,15 @@
    font-weight: 700;
    text-align: center;
    transition: all 0.4s ease-in;
+
+   &__img {
+      img {
+         width: 100%;
+         height: auto;
+      }
+
+      margin-bottom: 16px;
+   }
 
    &._select {
       background: #03045e;
