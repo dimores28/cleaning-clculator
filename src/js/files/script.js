@@ -31,6 +31,14 @@ $('.service').on('click', function() {
 });
 
 $('.calculator__btn-next').on('click', function() {
+
+   if(!checkSelectedApartmentSize()) {
+      $('.calculator__alerts').fadeIn("slow");
+      return;
+   }
+
+   $('.calculator__alerts').fadeOut();
+
    if(step < 3) {
       step++;
    }
@@ -51,23 +59,46 @@ function stepControl() {
    $('.calculator__steps span').text(step);
 
    if( step ===1 ) {
-      $('.calculator__square').show();
-      $('.calculator__form').hide();
-      $('.calculator__services').hide();
+      $('.calculator__square').slideDown("slow");
+      $('.calculator__form').slideUp("slow")
+      $('.calculator__services').slideUp("slow");
+      
       $('.calculator__btn-prev').hide();
+      scrollTopOffer();
    }
 
    if(step === 2) {
-      $('.calculator__square').hide();
-      $('.calculator__form').hide();
+      $('.calculator__square').slideUp("slow")
+      $('.calculator__form').slideUp("slow")
+      $('.calculator__services').slideDown("slow");
+
       $('.calculator__btn-prev').show();
       $('.calculator__btn-next').show();
-      $('.calculator__services').show();
    }
 
    if(step === 3) {
-      $('.calculator__services').hide();
+      $('.calculator__services').slideUp("slow");
+      $('.calculator__form').slideDown("slow");
+
       $('.calculator__btn-next').hide();
-      $('.calculator__form').show();
+
+      scrollTopOffer();
+   }
+}
+
+function scrollTopOffer() {
+   $('html, body').animate({
+      scrollTop: $(".offer").offset().top
+   }, 1000);
+}
+
+
+function checkSelectedApartmentSize() {
+   let room = document.querySelectorAll('.room._select')
+
+   if(room.length) {
+      return true;
+   } else {
+      return false;
    }
 }
