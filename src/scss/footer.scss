@@ -1,7 +1,7 @@
 //====================================================================================================
 
 .footer {
-  background: $blue;
+  background: $darkBlue;
   color: #fff;
   padding: 70px 0px 0px 0px;
 
@@ -141,10 +141,10 @@
 
     @media (any-hover: hover) {
       &:hover {
-        color: #0d6efd;
+        color: #28263c;
 
         svg {
-          fill: #0d6efd;
+          fill: #28263c;
         }
       }
     }
@@ -186,10 +186,10 @@
 
     @media (any-hover: hover) {
       &:hover {
-        color: #0d6efd;
+        color: #28263c;
 
         svg {
-          fill: #0d6efd;
+          fill: #28263c;
         }
       }
     }
