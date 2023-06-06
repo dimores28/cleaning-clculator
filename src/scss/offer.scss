@@ -1,8 +1,12 @@
 //====================================================================================================
 .offer {
    position: relative;
-   padding-top: 150px;
+   padding-top: 130px;
    min-height: 100vh;
+
+   @media (max-width: 640px){
+      padding-top: 100px;  
+   }
 
    // .offer__bg
    &__bg {
@@ -24,8 +28,7 @@
 
    // .offer__heading
    &__heading {
-      font-size: 42px;
-      @include adaptiveValue("font-size", 42, 32);
+      @include adaptiveValue("font-size", 42, 28);
       font-weight: 700;
       line-height: 1.3em;
       margin-bottom: 20px;
@@ -196,10 +199,9 @@
       // font-size: 16px;  
    }
 
-   @media (max-width: em(640)){
+   @media (max-width: 640px){
       width: calc(33.333% - 14px);  
       padding: 10px;
-      // font-size: 14px;
    }
 
    &::after {
@@ -211,6 +213,7 @@
       background-size: cover;
       top: 4px;
       right: 4px;
+      overflow: hidden;
       transition: all 0.3s ease-in;
       opacity: 0;
       transform: scale(0.4);
