@@ -204,6 +204,11 @@
       padding: 10px;
    }
 
+   @media (max-width:$mobileSmall){
+      width: calc(100% / 3 - 14px); 
+      font-size: 12px; 
+   }
+
    &::after {
       content: '';
       position: absolute;
