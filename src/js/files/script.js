@@ -51,7 +51,9 @@ $(".calculator__btn-prev").on("click", function () {
 });
 
 function stepControl() {
-  $(".calculator__steps span").text(step);
+//   $(".calculator__steps span").text(step);
+      $('.calculator__steps div').removeClass('_active');
+      $(`[data-step=${step}]`).addClass('_active');
 
   if (step === 1) {
     $(".calculator__square").slideDown("slow");
@@ -59,7 +61,7 @@ function stepControl() {
     $(".calculator__services").slideUp("slow");
 
     $(".calculator__btn-prev").hide();
-    scrollTopOffer();
+   //  scrollTopOffer();
   }
 
   if (step === 2) {
@@ -77,14 +79,14 @@ function stepControl() {
 
     $(".calculator__btn-next").hide();
 
-    scrollTopOffer();
+   //  scrollTopOffer();
   }
 }
 
 function scrollTopOffer() {
   $("html, body").animate(
     {
-      scrollTop: $(".offer").offset().top,
+      scrollTop: $(".calculator").offset().top + 60,
     },
     1000
   );
