@@ -206,7 +206,7 @@
 
    @media (max-width:$mobileSmall){
       width: calc(100% / 3 - 14px); 
-      font-size: 12px; 
+      padding: 10px;
    }
 
    &::after {
@@ -245,9 +245,11 @@
          transform: rotateX(360deg);
       }
 
-      &::after {
-         opacity: 1;
-         transform: scale(1);
+      @media (min-width:$mobileSmall){
+         &::after {
+            opacity: 1;
+            transform: scale(1);
+         }    
       }
    }
 
@@ -338,9 +340,11 @@
          transform: rotateY(360deg);
       }
 
-      &::after {
-         opacity: 1;
-         transform: scale(1);
+      @media (min-width:$mobileSmall){
+         &::after {
+            opacity: 1;
+            transform: scale(1);
+         } 
       }
    }
 
