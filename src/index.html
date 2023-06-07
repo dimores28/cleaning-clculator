@@ -15,9 +15,55 @@
                <div class="offer__container">
                   <h1 class="offer__heading">Quote Calculator</h1>
                   <div class="offer__calculator calculator">
-                     <div class="calculator__square">
-                        <!-- <h2 class="calculator__title">COST OF CLEANING</h2> -->
-                        <div class="calculator__rooms">
+                     <div class="calculator__services">
+                        <div
+                           class="service"
+                           data-service-price="30"
+                           data-service="1">
+                           <div class="service__img">
+                              <img
+                                 src="@img/calculator/service1.png"
+                                 alt="service icon" />
+                           </div>
+                           <p>Cleaning of apartments / houses</p>
+                        </div>
+                        <div
+                           class="service"
+                           data-service-price="55"
+                           data-service="2">
+                           <div class="service__img">
+                              <img
+                                 src="@img/calculator/service3.png"
+                                 alt="service icon" />
+                           </div>
+                           <p>Window cleaning</p>
+                        </div>
+                        <div
+                           class="service"
+                           data-service-price="25"
+                           data-service="3">
+                           <div class="service__img">
+                              <img
+                                 src="@img/calculator/service4.png"
+                                 alt="service icon" />
+                           </div>
+                           <p>Lawn mowing</p>
+                        </div>
+                        <div
+                           class="service"
+                           data-service-price="30"
+                           data-service="4">
+                           <div class="service__img">
+                              <img
+                                 src="@img/calculator/service5.png"
+                                 alt="service icon" />
+                           </div>
+                           <p>Drain pipe cleaning</p>
+                        </div>
+                     </div>
+
+                     <div class="calculator__square" style="display: none">
+                        <!-- <div class="calculator__rooms">
                            <div class="room" data-room-price="110">
                               <div class="room__img">
                                  <img
@@ -58,182 +104,187 @@
                               </div>
                               <p>176 - 200 square feet</p>
                            </div>
-                        </div>
-                     </div>
+                        </div> -->
 
-                     <div class="calculator__services" style="display: none">
-                        <div class="service" data-service-price="30">
-                           <div class="service__img">
-                              <img
-                                 src="@img/calculator/service1.png"
-                                 alt="service icon" />
-                           </div>
-                           <p>Apartment cleaning</p>
-                        </div>
-                        <div class="service" data-service-price="10">
-                           <div class="service__img">
-                              <img
-                                 src="@img/calculator/service2.png"
-                                 alt="service icon" />
-                           </div>
-                           <p>House cleaning</p>
-                        </div>
-                        <div class="service" data-service-price="55">
-                           <div class="service__img">
-                              <img
-                                 src="@img/calculator/service3.png"
-                                 alt="service icon" />
-                           </div>
-                           <p>Window cleaning</p>
-                        </div>
-                        <div class="service" data-service-price="25">
-                           <div class="service__img">
-                              <img
-                                 src="@img/calculator/service4.png"
-                                 alt="service icon" />
-                           </div>
-                           <p>Lawn mowing</p>
-                        </div>
+                        <div
+                           data-spollers
+                           class="spollers calculator__spollers">
+                           <div class="spollers__item" data-service-filters="1">
+                              <button
+                                 type="button"
+                                 data-spoller
+                                 class="spollers__title _spoller-active">
+                                 Cleaning of apartments / houses
+                              </button>
+                              <div class="spollers__body">
+                                 <div>
+                                    Total area to be cleaned in square feet: -
+                                    Площадь
+                                 </div>
 
-                        <div class="service" data-service-price="30">
-                           <div class="service__img">
-                              <img
-                                 src="@img/calculator/service1.png"
-                                 alt="service icon" />
-                           </div>
-                           <p>Apartment cleaning</p>
-                        </div>
-                        <div class="service" data-service-price="10">
-                           <div class="service__img">
-                              <img
-                                 src="@img/calculator/service2.png"
-                                 alt="service icon" />
-                           </div>
-                           <p>House cleaning</p>
-                        </div>
-                        <div class="service" data-service-price="55">
-                           <div class="service__img">
-                              <img
-                                 src="@img/calculator/service3.png"
-                                 alt="service icon" />
-                           </div>
-                           <p>Window cleaning</p>
-                        </div>
-                        <div class="service" data-service-price="25">
-                           <div class="service__img">
-                              <img
-                                 src="@img/calculator/service4.png"
-                                 alt="service icon" />
-                           </div>
-                           <p>Lawn mowing</p>
-                        </div>
+                                 <div class="bedrooms">
+                                    1 bedroom - 169$ 2 bedroom - 195$ 3 bedroom
+                                    - 235$ 4 bedroom - 289$ 5 bedroom - 349$ 6
+                                    bedroom - 369$
+                                 </div>
 
-                        <div class="service" data-service-price="30">
-                           <div class="service__img">
-                              <img
-                                 src="@img/calculator/service1.png"
-                                 alt="service icon" />
+                                 <div>- Уровень уборки (standard/deep) -</div>
+
+                                 <div class="select-extras">
+                                    <div class="select-extras__item">
+                                       <img
+                                          src=""
+                                          alt=""
+                                          class="select-extras__img" />
+                                       <div class="select-extras__desc">
+                                          Clean inside the oven +25$
+                                       </div>
+                                    </div>
+                                    <div class="select-extras__item">
+                                       <img
+                                          src=""
+                                          alt=""
+                                          class="select-extras__img" />
+                                       <div class="select-extras__desc">
+                                          Clean inside fridge +15$
+                                       </div>
+                                    </div>
+                                    <div class="select-extras__item">
+                                       <img
+                                          src=""
+                                          alt=""
+                                          class="select-extras__img" />
+                                       <div class="select-extras__desc">
+                                          Pets in home +10$
+                                       </div>
+                                    </div>
+                                    <div class="select-extras__item">
+                                       <img
+                                          src=""
+                                          alt=""
+                                          class="select-extras__img" />
+                                       <div class="select-extras__desc">
+                                          Dishes +10$
+                                       </div>
+                                    </div>
+                                    <div class="select-extras__item">
+                                       <img
+                                          src=""
+                                          alt=""
+                                          class="select-extras__img" />
+                                       <div class="select-extras__desc">
+                                          Finished Basement +25$
+                                       </div>
+                                    </div>
+                                    <div class="select-extras__item">
+                                       <img
+                                          src=""
+                                          alt=""
+                                          class="select-extras__img" />
+                                       <div class="select-extras__desc">
+                                          Stains on the carpet +5$/ per stain
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
                            </div>
-                           <p>Apartment cleaning</p>
-                        </div>
-                        <div class="service" data-service-price="10">
-                           <div class="service__img">
-                              <img
-                                 src="@img/calculator/service2.png"
-                                 alt="service icon" />
+                           <div class="spollers__item" data-service-filters="2">
+                              <button
+                                 type="button"
+                                 data-spoller
+                                 class="spollers__title _spoller-active">
+                                 Window cleaning
+                              </button>
+                              <div class="spollers__body">
+                                 - количество окон 3-5 / 5-8 / 8-11/ 11-15 / 15+
+                                 Каждое окно - 7$
+                              </div>
                            </div>
-                           <p>House cleaning</p>
-                        </div>
-                        <div class="service" data-service-price="55">
-                           <div class="service__img">
-                              <img
-                                 src="@img/calculator/service3.png"
-                                 alt="service icon" />
+                           <div class="spollers__item" data-service-filters="3">
+                              <button
+                                 type="button"
+                                 data-spoller
+                                 class="spollers__title _spoller-active">
+                                 Lawn mowing
+                              </button>
+                              <div class="spollers__body">
+                                 возможность выбрать диапазон площади х-300 /
+                                 300-500 / 500-700 / 700-900 / 1000+ sq.feet
+                              </div>
                            </div>
-                           <p>Window cleaning</p>
-                        </div>
-                        <div class="service" data-service-price="25">
-                           <div class="service__img">
-                              <img
-                                 src="@img/calculator/service4.png"
-                                 alt="service icon" />
+                           <div class="spollers__item" data-service-filters="4">
+                              <button
+                                 type="button"
+                                 data-spoller
+                                 class="spollers__title _spoller-active">
+                                 Drain pipe cleaning
+                              </button>
+                              <div class="spollers__body">Контент спойлера</div>
                            </div>
-                           <p>Lawn mowing</p>
                         </div>
                      </div>
 
                      <div class="calculator__form" style="display: none">
                         <form>
-                           <div class="input-group">
-                              <label for="userName">Your Name</label>
-                              <input
-                                 type="text"
-                                 class="form-control"
-                                 id="userName"
-                                 placeholder="User name"
-                                 aria-label="User name" />
-                           </div>
+                           <div class="calculator__form-group">
+                              <div class="input-group">
+                                 <label for="firstName">First name</label>
+                                 <input
+                                    type="text"
+                                    class="form-control"
+                                    id="firstName"
+                                    required="required"
+                                    aria-required="true"
+                                    placeholder="First name*"
+                                    aria-label="First name" />
+                              </div>
 
-                           <div class="input-group">
-                              <label for="userPhone">Telephone</label>
-                              <input
-                                 type="tel"
-                                 class="form-control"
-                                 id="userPhone"
-                                 placeholder="+3730xxxxx"
-                                 required="required"
-                                 aria-required="true"
-                                 pattern="[0-9()#&+*-=.]+"
-                                 aria-describedby="userPhone" />
-                           </div>
+                              <div class="input-group">
+                                 <label for="lastName">Last name</label>
+                                 <input
+                                    type="text"
+                                    class="form-control"
+                                    id="lastName"
+                                    placeholder="Last name"
+                                    aria-label="Last name" />
+                              </div>
 
-                           <div class="input-group">
-                              <label for="userEmail">Email address</label>
-                              <input
-                                 type="email"
-                                 class="form-control"
-                                 placeholder="example@mail.com"
-                                 required="required"
-                                 aria-required="true"
-                                 id="userEmail"
-                                 aria-describedby="emailHelp" />
-                           </div>
+                              <div class="input-group">
+                                 <label for="userPhone">Telephone</label>
+                                 <input
+                                    type="tel"
+                                    class="form-control"
+                                    id="userPhone"
+                                    placeholder="+182xxxxx"
+                                    required="required"
+                                    aria-required="true"
+                                    pattern="[0-9()#&+*-=.]+"
+                                    aria-describedby="userPhone" />
+                              </div>
 
-                           <div class="input-group">
-                              <label for="streetAddress">Street Address</label>
-                              <input
-                                 type="text"
-                                 class="form-control"
-                                 id="streetAddress"
-                                 required="required"
-                                 aria-required="true"
-                                 aria-describedby="streetAddress" />
-                           </div>
+                              <div class="input-group">
+                                 <label for="userEmail">Email address</label>
+                                 <input
+                                    type="email"
+                                    class="form-control"
+                                    placeholder="example@mail.com"
+                                    required="required"
+                                    aria-required="true"
+                                    id="userEmail"
+                                    aria-describedby="emailHelp" />
+                              </div>
 
-                           <div class="input-group">
-                              <label for="city">City</label>
-                              <input
-                                 type="text"
-                                 class="form-control"
-                                 id="city"
-                                 required="required"
-                                 aria-required="true"
-                                 aria-describedby="city" />
-                           </div>
-
-                           <div class="input-group">
-                              <label for="postalCode">Postal Code</label>
-                              <input
-                                 type="text"
-                                 class="form-control"
-                                 id="postalCode"
-                                 required="required"
-                                 aria-required="true"
-                                 aria-describedby="postalCode" />
+                              <div class="input-group">
+                                 <label for="streetAddress">Message</label>
+                                 <textarea
+                                    id="message"
+                                    class="form-control form-textarea"
+                                    placeholder="Message"></textarea>
+                              </div>
                            </div>
 
                            <button type="submit" class="btn btn-primary">
-                              Submit
+                              Book now
                            </button>
                         </form>
                      </div>
