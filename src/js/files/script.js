@@ -108,6 +108,20 @@ function showedSpollers() {
   });
 }
 
+$('.select-extras__item').on('click', function() {
+  $(this).toggleClass('_setected');
+});
+
+$('.bedrooms__item').on('click', function() {
+  $('.bedrooms__item').removeClass('_select');
+  $(this).toggleClass('_select');
+});
+
+$('.cleaning-level__item').on('click', function() {
+  $('.cleaning-level__item').removeClass('_select');
+  $(this).toggleClass('_select');
+})
+
 const header = document.querySelector(".header");
 window.addEventListener("scroll", function () {
   if (window.scrollY >= 80) {
