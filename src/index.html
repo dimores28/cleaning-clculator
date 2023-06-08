@@ -112,48 +112,372 @@
                       <div>
                         Total area to be cleaned in square feet: - Площадь
                       </div>
+                      <div class="calculator__square" style="display: none">
+                        <div
+                          data-spollers
+                          class="spollers calculator__spollers"
+                        >
+                          <div class="spollers__item" data-service-filters="1">
+                            <button
+                              type="button"
+                              data-spoller
+                              class="spollers__title _spoller-active"
+                            >
+                              Cleaning of apartments / houses
+                            </button>
+                            <div class="spollers__body">
+                              <div class="block-row">
+                                <h3 class="block-row__title">
+                                  1. HOW BIG IS YOUR HOME?*
+                                </h3>
+                                <div class="block-row__desc">
+                                  <p>
+                                    Choose your home size or select hourly for
+                                    partial cleanings, large, builders and extra
+                                    dirty homes. For move in/out please make
+                                    sure to select the option in the extras
+                                    section. If square footage exceeds
+                                    parameters, you may be subject to additional
+                                    charges.
+                                  </p>
+                                </div>
 
-                      <div class="bedrooms">
-                        1 bedroom - 169$ 2 bedroom - 195$ 3 bedroom - 235$ 4
-                        bedroom - 289$ 5 bedroom - 349$ 6 bedroom - 369$
+                                <div class="calculator__rooms">
+                                  <div class="room" data-room-price="110">
+                                    <div class="room__img">
+                                      <img
+                                        src="@img/calculator/house1.png"
+                                        alt="house image"
+                                      />
+                                    </div>
+                                    <p>0-2000 square feet</p>
+                                  </div>
+                                  <div class="room" data-room-price="210">
+                                    <div class="room__img">
+                                      <img
+                                        src="@img/calculator/house2.png"
+                                        alt="house image"
+                                      />
+                                    </div>
+                                    <p>2001 - 3000 square feet</p>
+                                  </div>
+                                  <div class="room" data-room-price="310">
+                                    <div class="room__img">
+                                      <img
+                                        src="@img/calculator/house3.png"
+                                        alt="house image"
+                                      />
+                                    </div>
+                                    <p>3001-4000 square feet</p>
+                                  </div>
+                                  <div class="room" data-room-price="410">
+                                    <div class="room__img">
+                                      <img
+                                        src="@img/calculator/house4.png"
+                                        alt="house image"
+                                      />
+                                    </div>
+                                    <p>4001-5000 square feet</p>
+                                  </div>
+                                  <div class="room" data-room-price="510">
+                                    <div class="room__img">
+                                      <img
+                                        src="@img/calculator/house5.png"
+                                        alt="house image"
+                                      />
+                                    </div>
+                                    <p>5000+ square feet</p>
+                                  </div>
+                                </div>
+
+                                <div class="bedrooms">
+                                  1 bedroom - 169$ 2 bedroom - 195$ 3 bedroom -
+                                  235$ 4 bedroom - 289$ 5 bedroom - 349$ 6
+                                  bedroom - 369$
+                                </div>
+                                <div class="bedrooms">
+                                  <h4 class="bedrooms__title">
+                                    Number of bathrooms:
+                                  </h4>
+                                  <div class="bedrooms__block">
+                                    <div
+                                      class="bedrooms__item"
+                                      data-bedroom-price="169"
+                                    >
+                                      <div class="bedrooms__img">
+                                        <img
+                                          src="@img/calculator/bathroom.png"
+                                          alt="bathroom icon"
+                                        />
+                                      </div>
+                                      1
+                                    </div>
+                                    <div
+                                      class="bedrooms__item"
+                                      data-bedroom-price="195"
+                                    >
+                                      <div class="bedrooms__img">
+                                        <img
+                                          src="@img/calculator/bathroom.png"
+                                          alt="bathroom icon"
+                                        />
+                                      </div>
+                                      2
+                                    </div>
+                                    <div
+                                      class="bedrooms__item"
+                                      data-bedroom-price="235"
+                                    >
+                                      <div class="bedrooms__img">
+                                        <img
+                                          src="@img/calculator/bathroom.png"
+                                          alt="bathroom icon"
+                                        />
+                                      </div>
+                                      3
+                                    </div>
+                                    <div
+                                      class="bedrooms__item"
+                                      data-bedroom-price="349"
+                                    >
+                                      <div class="bedrooms__img">
+                                        <img
+                                          src="@img/calculator/bathroom.png"
+                                          alt="bathroom icon"
+                                        />
+                                      </div>
+                                      4
+                                    </div>
+                                    <div
+                                      class="bedrooms__item"
+                                      data-bedroom-price="369"
+                                    >
+                                      <div class="bedrooms__img">
+                                        <img
+                                          src="@img/calculator/bathroom.png"
+                                          alt="bathroom icon"
+                                        />
+                                      </div>
+                                      5
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div>- Уровень уборки (standard/deep) -</div>
+
+                              <div class="select-extras">
+                                <div class="select-extras__item">
+                                  <img
+                                    src=""
+                                    alt=""
+                                    class="select-extras__img"
+                                  />
+                                  <div class="select-extras__desc">
+                                    Clean inside the oven +25$
+                                  </div>
+                                </div>
+                                <div class="select-extras__item">
+                                  <img
+                                    src=""
+                                    alt=""
+                                    class="select-extras__img"
+                                  />
+                                  <div class="select-extras__desc">
+                                    Clean inside fridge +15$
+                                  </div>
+                                </div>
+                                <div class="select-extras__item">
+                                  <img
+                                    src=""
+                                    alt=""
+                                    class="select-extras__img"
+                                  />
+                                  <div class="select-extras__desc">
+                                    Pets in home +10$
+                                  </div>
+                                </div>
+                                <div class="select-extras__item">
+                                  <img
+                                    src=""
+                                    alt=""
+                                    class="select-extras__img"
+                                  />
+                                  <div class="select-extras__desc">
+                                    Dishes +10$
+                                  </div>
+                                </div>
+                                <div class="select-extras__item">
+                                  <img
+                                    src=""
+                                    alt=""
+                                    class="select-extras__img"
+                                  />
+                                  <div class="select-extras__desc">
+                                    Finished Basement +25$
+                                  </div>
+                                </div>
+                                <div class="select-extras__item">
+                                  <img
+                                    src=""
+                                    alt=""
+                                    class="select-extras__img"
+                                  />
+                                  <div class="select-extras__desc">
+                                    Stains on the carpet +5$/ per stain
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="spollers__item" data-service-filters="2">
+                            <button
+                              type="button"
+                              data-spoller
+                              class="spollers__title _spoller-active"
+                            >
+                              Window cleaning
+                            </button>
+                            <div class="spollers__body">
+                              - количество окон 3-5 / 5-8 / 8-11/ 11-15 / 15+
+                              Каждое окно - 7$
+                            </div>
+                          </div>
+                          <div class="spollers__item" data-service-filters="3">
+                            <button
+                              type="button"
+                              data-spoller
+                              class="spollers__title _spoller-active"
+                            >
+                              Lawn mowing
+                            </button>
+                            <div class="spollers__body">
+                              возможность выбрать диапазон площади х-300 /
+                              300-500 / 500-700 / 700-900 / 1000+ sq.feet
+                            </div>
+                          </div>
+                          <div class="spollers__item" data-service-filters="4">
+                            <button
+                              type="button"
+                              data-spoller
+                              class="spollers__title _spoller-active"
+                            >
+                              Drain pipe cleaning
+                            </button>
+                            <div class="spollers__body">Контент спойлера</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="block-row">
+                        <h3 class="block-row__title">2. SELECT EXTRAS</h3>
+                        <div class="block-row__desc">
+                          <p>
+                            Select the options you wish to add to your booking.
+                            We HIGHLY recommend a deep cleaning for homes not
+                            cleaned for 30 days and for first visits to get your
+                            home prepared for ongoing maintenance service. For
+                            all move out/in jobs, homes must be empty prior to
+                            teams arrival.
+                          </p>
+                        </div>
+                        <div class="select-extras">
+                          <div
+                            class="select-extras__item"
+                            data-extras-price="25"
+                          >
+                            <div class="select-extras__img">
+                              <svg>
+                                <use
+                                  xlink:href="@img/icons/icons.svg#oven"
+                                ></use>
+                              </svg>
+                            </div>
+                            <div class="select-extras__desc">
+                              Clean inside the oven
+                            </div>
+                          </div>
+                          <div
+                            class="select-extras__item"
+                            data-extras-price="15"
+                          >
+                            <div class="select-extras__img">
+                              <svg>
+                                <use
+                                  xlink:href="@img/icons/icons.svg#fridge"
+                                ></use>
+                              </svg>
+                            </div>
+                            <div class="select-extras__desc">
+                              Clean inside fridge
+                            </div>
+                          </div>
+                          <div
+                            class="select-extras__item"
+                            data-extras-price="10"
+                          >
+                            <div class="select-extras__img">
+                              <svg>
+                                <use
+                                  xlink:href="@img/icons/icons.svg#pets"
+                                ></use>
+                              </svg>
+                            </div>
+                            <div class="select-extras__desc">Pets in home</div>
+                          </div>
+                          <div
+                            class="select-extras__item"
+                            data-extras-price="10"
+                          >
+                            <div class="select-extras__img">
+                              <svg>
+                                <use
+                                  xlink:href="@img/icons/icons.svg#Dishes"
+                                ></use>
+                              </svg>
+                            </div>
+                            <div class="select-extras__desc">Dishes</div>
+                          </div>
+                          <div
+                            class="select-extras__item"
+                            data-extras-price="25"
+                          >
+                            <div class="select-extras__img">
+                              <svg>
+                                <use
+                                  xlink:href="@img/icons/icons.svg#Basement"
+                                ></use>
+                              </svg>
+                            </div>
+                            <div class="select-extras__desc">
+                              Finished Basement
+                            </div>
+                          </div>
+                          <div
+                            class="select-extras__item"
+                            data-extras-price="5"
+                          >
+                            <div class="select-extras__img">
+                              <svg>
+                                <use
+                                  xlink:href="@img/icons/icons.svg#Stains"
+                                ></use>
+                              </svg>
+                            </div>
+                            <div class="select-extras__desc">
+                              Stains on the carpet
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
-                      <div>- Уровень уборки (standard/deep) -</div>
-
-                      <div class="select-extras">
-                        <div class="select-extras__item">
-                          <img src="" alt="" class="select-extras__img" />
-                          <div class="select-extras__desc">
-                            Clean inside the oven +25$
-                          </div>
+                      <div class="block-row">
+                        <h3 class="block-row__title">3. Cleaning level</h3>
+                        <div class="block-row__desc">
+                          <p></p>
                         </div>
-                        <div class="select-extras__item">
-                          <img src="" alt="" class="select-extras__img" />
-                          <div class="select-extras__desc">
-                            Clean inside fridge +15$
-                          </div>
-                        </div>
-                        <div class="select-extras__item">
-                          <img src="" alt="" class="select-extras__img" />
-                          <div class="select-extras__desc">
-                            Pets in home +10$
-                          </div>
-                        </div>
-                        <div class="select-extras__item">
-                          <img src="" alt="" class="select-extras__img" />
-                          <div class="select-extras__desc">Dishes +10$</div>
-                        </div>
-                        <div class="select-extras__item">
-                          <img src="" alt="" class="select-extras__img" />
-                          <div class="select-extras__desc">
-                            Finished Basement +25$
-                          </div>
-                        </div>
-                        <div class="select-extras__item">
-                          <img src="" alt="" class="select-extras__img" />
-                          <div class="select-extras__desc">
-                            Stains on the carpet +5$/ per stain
-                          </div>
+                        <div class="cleaning-level">
+                          <div class="cleaning-level__item">Standard</div>
+                          <div class="cleaning-level__item">Deep</div>
                         </div>
                       </div>
                     </div>
@@ -167,8 +491,20 @@
                       Window cleaning
                     </button>
                     <div class="spollers__body">
-                      - количество окон 3-5 / 5-8 / 8-11/ 11-15 / 15+ Каждое
-                      окно - 7$
+                      <div class="number-windows">
+                        <h3 class="filter-title number-windows__title">
+                          Number of windows
+                        </h3>
+                        <div class="number-windows__renge">
+                          <div
+                            id="rangeWindows"
+                            data-from="1"
+                            data-to="15"
+                            data-price-window="7"
+                            class="range"
+                          ></div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div class="spollers__item" data-service-filters="3">
@@ -180,8 +516,66 @@
                       Lawn mowing
                     </button>
                     <div class="spollers__body">
-                      возможность выбрать диапазон площади х-300 / 300-500 /
-                      500-700 / 700-900 / 1000+ sq.feet
+                      <h3 class="filter-title number-windows__title">
+                        Lawn area*
+                      </h3>
+                      <div class="lawn-area">
+                        <div class="lawn-area__item">
+                          <div class="lawn-area__img">
+                            <img
+                              src="@img/calculator/lawn.png"
+                              alt="lawn icon"
+                              width="48"
+                              height="48"
+                            />
+                          </div>
+                          х-300 sq.feet
+                        </div>
+                        <div class="lawn-area__item">
+                          <div class="lawn-area__img">
+                            <img
+                              src="@img/calculator/lawn.png"
+                              alt="lawn icon"
+                              width="48"
+                              height="48"
+                            />
+                          </div>
+                          300-500 sq.feet
+                        </div>
+                        <div class="lawn-area__item">
+                          <div class="lawn-area__img">
+                            <img
+                              src="@img/calculator/lawn.png"
+                              alt="lawn icon"
+                              width="48"
+                              height="48"
+                            />
+                          </div>
+                          500-700 sq.feet
+                        </div>
+                        <div class="lawn-area__item">
+                          <div class="lawn-area__img">
+                            <img
+                              src="@img/calculator/lawn.png"
+                              alt="lawn icon"
+                              width="48"
+                              height="48"
+                            />
+                          </div>
+                          700-900 sq.feet
+                        </div>
+                        <div class="lawn-area__item">
+                          <div class="lawn-area__img">
+                            <img
+                              src="@img/calculator/lawn.png"
+                              alt="lawn icon"
+                              width="48"
+                              height="48"
+                            />
+                          </div>
+                          1000+ sq.feet
+                        </div>
+                      </div>
                     </div>
                   </div>
                   <div class="spollers__item" data-service-filters="4">
@@ -192,7 +586,22 @@
                     >
                       Drain pipe cleaning
                     </button>
-                    <div class="spollers__body">Контент спойлера</div>
+                    <div class="spollers__body">
+                      <div class="number-pipe">
+                        <h3 class="filter-title number-pipe__title">
+                          Number of pipe
+                        </h3>
+                        <div class="number-pipe__renge">
+                          <div
+                            id="rangePipe"
+                            data-from="1"
+                            data-to="16"
+                            data-price-window="7"
+                            class="range"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
