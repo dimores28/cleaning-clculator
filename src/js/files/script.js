@@ -21,8 +21,25 @@ $(".service").on("click", function () {
 });
 
 $(".calculator__btn-next").on("click", function () {
-  if (!checkSelectedApartmentSize()) {
+  if (!checkSelectedService()) {
     $(".calculator__alerts").fadeIn("slow");
+    $(".calculator__alerts").text('Please make a selection to continue.');
+    return;
+  }
+
+  const hasSelect = $('[data-service="1"]').hasClass('_select');
+  if(hasSelect && step === 2 && !checkSelectedRoomSize() ) {
+    $(".calculator__alerts").fadeIn("slow");
+    $(".calculator__alerts").text('Please select your home size to continue.');
+      //Please select your home size to continue.
+    return;
+  }
+
+  const hasLawnSelect = $('[data-service="3"]').hasClass('_select');
+  if(hasLawnSelect && step === 2 && !checkSelectedLawnSize()) {
+    $(".calculator__alerts").fadeIn("slow");
+    $(".calculator__alerts").text('Please make a lawn area selection to continue.');
+    //Please make a lawn area selection to continue.
     return;
   }
 
@@ -56,7 +73,7 @@ function stepControl() {
     $(".calculator__square").slideUp("slow");
 
     $(".calculator__btn-prev").hide();
-   //  scrollTopOffer();
+    scrollTopOffer();
   }
 
   if (step === 2) {
@@ -74,23 +91,41 @@ function stepControl() {
 
     $(".calculator__btn-next").hide();
 
-   //  scrollTopOffer();
+    scrollTopOffer();
   }
 }
 
 function scrollTopOffer() {
   $("html, body").animate(
     {
-      scrollTop: $(".calculator").offset().top + 60,
+      scrollTop: $(".offer").offset().top + 60,
     },
     1000
   );
 }
 
-function checkSelectedApartmentSize() {
-  let room = document.querySelectorAll(".service._select");
+function checkSelectedService() {
+  let service = document.querySelectorAll(".service._select");
 
+  if (service.length) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkSelectedRoomSize() {
+  const room = document.querySelectorAll(".room._select");
   if (room.length) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkSelectedLawnSize() {
+  const lawn = document.querySelectorAll(".lawn-area__item._select");
+  if (lawn.length) {
     return true;
   } else {
     return false;
