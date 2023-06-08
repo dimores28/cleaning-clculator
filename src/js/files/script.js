@@ -169,6 +169,24 @@ $('.lawn-area__item').on('click', function() {
   $(this).toggleClass('_select');
 });
 
+$('.payment-options__option').on('click', function() {
+  $('.payment-options__option').removeClass('_setected');
+  $(this).toggleClass('_setected');
+});
+
+let windowsPrice = 0;
+
+flsModules.rangeWindows?.noUiSlider.on('update', function (values, handle) {
+  const price = $('#rangeWindows').attr('data-price-window');
+  windowsPrice = values[handle] * price;
+});
+
+let pipePrice = 0;
+flsModules.rangePipe?.noUiSlider.on('update', function (values, handle) {
+  const price = $('#rangePipe').attr('data-price-pipe');
+  pipePrice = values[handle] * price;
+});
+
 const header = document.querySelector(".header");
 window.addEventListener("scroll", function () {
   if (window.scrollY >= 80) {
