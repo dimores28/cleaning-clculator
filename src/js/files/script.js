@@ -115,12 +115,24 @@ $('.select-extras__item').on('click', function() {
 $('.bedrooms__item').on('click', function() {
   $('.bedrooms__item').removeClass('_select');
   $(this).toggleClass('_select');
+
+  //калькуляция цены
+  const price = parseInt($(this).attr("data-bedroom-price"));
+  let newPrice = parseInt(roomPrice)  + parseInt(price);
+
+  $(".calculator__total-price span").text(newPrice);
+
 });
 
 $('.cleaning-level__item').on('click', function() {
   $('.cleaning-level__item').removeClass('_select');
   $(this).toggleClass('_select');
-})
+});
+
+$('.lawn-area__item').on('click', function() {
+  $('.lawn-area__item').removeClass('_select');
+  $(this).toggleClass('_select');
+});
 
 const header = document.querySelector(".header");
 window.addEventListener("scroll", function () {
