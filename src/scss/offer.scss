@@ -651,4 +651,50 @@
       }
    }
 }
+
+//====================================================================================================
+.filter-title {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.1;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+}
+
+.number-windows {
+   padding-top: 20px;
+   margin-bottom: 20px;
+
+   // .number-windows__titlee
+   &__title {
+   }
+
+   // .number-windows__renge
+   &__renge {
+      padding: 20px;
+
+      @media (max-width:$mobileSmall){
+         padding: 20px 10px;  
+      }
+   }
+}
+
+//====================================================================================================
+
+.number-pipe {
+
+   // .number-pipe__title
+   &__title {
+   }
+
+   // .number-pipe__renge
+   &__renge {
+      padding: 20px;
+
+      @media (max-width:$mobileSmall){
+         padding: 20px 10px;  
+      }
+   }
+}
+
 //====================================================================================================

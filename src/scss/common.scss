@@ -92,3 +92,68 @@
 .form-textarea {
   resize: none;
 }
+
+//====================================================================================================
+.offer .range {
+  height: 5px;
+  border: none;
+
+  .noUi-marker {
+      display: none;
+  }
+
+  .noUi-target {
+      border: none;
+  }
+
+  .noUi-connect {
+      background: $darkBlue;
+  }
+
+  .noUi-handle {
+      width: 20px;
+      height: 20px;
+      top: -8px;
+      right: -10px; /* half the width */
+      border-radius: 50%;
+      background: $blue;
+      border: 4px solid $darkBlue;
+  
+      &::before,
+      &::after {
+          display: none;
+      }
+  }
+
+  .noUi-tooltip {
+      color:$darkBlue;
+      background: transparent;
+      border: none;
+      font-family: $controlFonts, sans-serif;
+      font-weight: 400;
+  }
+
+  .noUi-pips {
+      color: rgba(33, 0, 82, 0.23);
+  }
+  
+
+  .noUi-pips-horizontal {
+      padding: 0;
+      top: -32px;
+  }
+
+  .noUi-touch-area {
+      height: 100%;
+      width: 100%;
+      background: #fff;
+      border-radius: 50%;
+  }
+
+  .noUi-value {
+    top: -9px;
+    color:#fff;
+    font-family: $controlFonts, sans-serif;
+    font-weight: 400;
+  }
+}
