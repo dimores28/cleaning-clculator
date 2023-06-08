@@ -1,69 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-   @@include('html/_head.htm',{ "title":"TIVA Cleaning" })
-   <body>
-      <div class="wrapper">
-         @@include('html/_header.htm',{})
-         <main class="page">
-            <section class="offer">
-               <img
-                  src="@img/main_bg.jpg"
-                  class="offer__bg"
-                  alt="background image"
-                  width="1500"
-                  height="700" />
-               <div class="offer__container">
-                  <h1 class="offer__heading">Quote Calculator</h1>
-                  <div class="offer__calculator calculator">
-                     <div class="calculator__services">
-                        <div
-                           class="service"
-                           data-service-price="30"
-                           data-service="1">
-                           <div class="service__img">
-                              <img
-                                 src="@img/calculator/service1.png"
-                                 alt="service icon" />
-                           </div>
-                           <p>Cleaning of apartments / houses</p>
-                        </div>
-                        <div
-                           class="service"
-                           data-service-price="55"
-                           data-service="2">
-                           <div class="service__img">
-                              <img
-                                 src="@img/calculator/service3.png"
-                                 alt="service icon" />
-                           </div>
-                           <p>Window cleaning</p>
-                        </div>
-                        <div
-                           class="service"
-                           data-service-price="25"
-                           data-service="3">
-                           <div class="service__img">
-                              <img
-                                 src="@img/calculator/service4.png"
-                                 alt="service icon" />
-                           </div>
-                           <p>Lawn mowing</p>
-                        </div>
-                        <div
-                           class="service"
-                           data-service-price="30"
-                           data-service="4">
-                           <div class="service__img">
-                              <img
-                                 src="@img/calculator/service5.png"
-                                 alt="service icon" />
-                           </div>
-                           <p>Drain pipe cleaning</p>
-                        </div>
-                     </div>
+  @@include('html/_head.htm',{ "title":"TIVA Cleaning" })
+  <body>
+    <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main class="page">
+        <section class="offer">
+          <img
+            src="@img/main_bg.jpg"
+            class="offer__bg"
+            alt="background image"
+            width="1500"
+            height="700"
+          />
+          <div class="offer__container">
+            <h1 class="offer__heading">Quote Calculator</h1>
+            <div class="offer__calculator calculator">
+              <div class="calculator__services">
+                <div class="service" data-service-price="30" data-service="1">
+                  <div class="service__img">
+                    <img
+                      src="@img/calculator/service1.png"
+                      alt="service icon"
+                    />
+                  </div>
+                  <p>Cleaning of apartments / houses</p>
+                </div>
+                <div class="service" data-service-price="55" data-service="2">
+                  <div class="service__img">
+                    <img
+                      src="@img/calculator/service3.png"
+                      alt="service icon"
+                    />
+                  </div>
+                  <p>Window cleaning</p>
+                </div>
+                <div class="service" data-service-price="25" data-service="3">
+                  <div class="service__img">
+                    <img
+                      src="@img/calculator/service4.png"
+                      alt="service icon"
+                    />
+                  </div>
+                  <p>Lawn mowing</p>
+                </div>
+                <div class="service" data-service-price="30" data-service="4">
+                  <div class="service__img">
+                    <img
+                      src="@img/calculator/service5.png"
+                      alt="service icon"
+                    />
+                  </div>
+                  <p>Drain pipe cleaning</p>
+                </div>
+              </div>
 
-                     <div class="calculator__square" style="display: none">
-                        <!-- <div class="calculator__rooms">
+              <div class="calculator__square" style="display: none">
+                <!-- <div class="calculator__rooms">
                            <div class="room" data-room-price="110">
                               <div class="room__img">
                                  <img
@@ -106,246 +99,251 @@
                            </div>
                         </div> -->
 
-                        <div
-                           data-spollers
-                           class="spollers calculator__spollers">
-                           <div class="spollers__item" data-service-filters="1">
-                              <button
-                                 type="button"
-                                 data-spoller
-                                 class="spollers__title _spoller-active">
-                                 Cleaning of apartments / houses
-                              </button>
-                              <div class="spollers__body">
-                                 <div>
-                                    Total area to be cleaned in square feet: -
-                                    Площадь
-                                 </div>
+                <div data-spollers class="spollers calculator__spollers">
+                  <div class="spollers__item" data-service-filters="1">
+                    <button
+                      type="button"
+                      data-spoller
+                      class="spollers__title _spoller-active"
+                    >
+                      Cleaning of apartments / houses
+                    </button>
+                    <div class="spollers__body">
+                      <div>
+                        Total area to be cleaned in square feet: - Площадь
+                      </div>
 
-                                 <div class="bedrooms">
-                                    1 bedroom - 169$ 2 bedroom - 195$ 3 bedroom
-                                    - 235$ 4 bedroom - 289$ 5 bedroom - 349$ 6
-                                    bedroom - 369$
-                                 </div>
+                      <div class="bedrooms">
+                        1 bedroom - 169$ 2 bedroom - 195$ 3 bedroom - 235$ 4
+                        bedroom - 289$ 5 bedroom - 349$ 6 bedroom - 369$
+                      </div>
 
-                                 <div>- Уровень уборки (standard/deep) -</div>
+                      <div>- Уровень уборки (standard/deep) -</div>
 
-                                 <div class="select-extras">
-                                    <div class="select-extras__item">
-                                       <img
-                                          src=""
-                                          alt=""
-                                          class="select-extras__img" />
-                                       <div class="select-extras__desc">
-                                          Clean inside the oven +25$
-                                       </div>
-                                    </div>
-                                    <div class="select-extras__item">
-                                       <img
-                                          src=""
-                                          alt=""
-                                          class="select-extras__img" />
-                                       <div class="select-extras__desc">
-                                          Clean inside fridge +15$
-                                       </div>
-                                    </div>
-                                    <div class="select-extras__item">
-                                       <img
-                                          src=""
-                                          alt=""
-                                          class="select-extras__img" />
-                                       <div class="select-extras__desc">
-                                          Pets in home +10$
-                                       </div>
-                                    </div>
-                                    <div class="select-extras__item">
-                                       <img
-                                          src=""
-                                          alt=""
-                                          class="select-extras__img" />
-                                       <div class="select-extras__desc">
-                                          Dishes +10$
-                                       </div>
-                                    </div>
-                                    <div class="select-extras__item">
-                                       <img
-                                          src=""
-                                          alt=""
-                                          class="select-extras__img" />
-                                       <div class="select-extras__desc">
-                                          Finished Basement +25$
-                                       </div>
-                                    </div>
-                                    <div class="select-extras__item">
-                                       <img
-                                          src=""
-                                          alt=""
-                                          class="select-extras__img" />
-                                       <div class="select-extras__desc">
-                                          Stains on the carpet +5$/ per stain
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="spollers__item" data-service-filters="2">
-                              <button
-                                 type="button"
-                                 data-spoller
-                                 class="spollers__title _spoller-active">
-                                 Window cleaning
-                              </button>
-                              <div class="spollers__body">
-                                 - количество окон 3-5 / 5-8 / 8-11/ 11-15 / 15+
-                                 Каждое окно - 7$
-                              </div>
-                           </div>
-                           <div class="spollers__item" data-service-filters="3">
-                              <button
-                                 type="button"
-                                 data-spoller
-                                 class="spollers__title _spoller-active">
-                                 Lawn mowing
-                              </button>
-                              <div class="spollers__body">
-                                 возможность выбрать диапазон площади х-300 /
-                                 300-500 / 500-700 / 700-900 / 1000+ sq.feet
-                              </div>
-                           </div>
-                           <div class="spollers__item" data-service-filters="4">
-                              <button
-                                 type="button"
-                                 data-spoller
-                                 class="spollers__title _spoller-active">
-                                 Drain pipe cleaning
-                              </button>
-                              <div class="spollers__body">Контент спойлера</div>
-                           </div>
+                      <div class="select-extras">
+                        <div class="select-extras__item">
+                          <img src="" alt="" class="select-extras__img" />
+                          <div class="select-extras__desc">
+                            Clean inside the oven +25$
+                          </div>
                         </div>
-                     </div>
-
-                     <div class="calculator__form" style="display: none">
-                        <form>
-                           <div class="calculator__form-group">
-                              <div class="input-group">
-                                 <label for="firstName">First name</label>
-                                 <input
-                                    type="text"
-                                    class="form-control"
-                                    id="firstName"
-                                    required="required"
-                                    aria-required="true"
-                                    placeholder="First name*"
-                                    aria-label="First name" />
-                              </div>
-
-                              <div class="input-group">
-                                 <label for="lastName">Last name</label>
-                                 <input
-                                    type="text"
-                                    class="form-control"
-                                    id="lastName"
-                                    placeholder="Last name"
-                                    aria-label="Last name" />
-                              </div>
-
-                              <div class="input-group">
-                                 <label for="userPhone">Telephone</label>
-                                 <input
-                                    type="tel"
-                                    class="form-control"
-                                    id="userPhone"
-                                    placeholder="+182xxxxx"
-                                    required="required"
-                                    aria-required="true"
-                                    pattern="[0-9()#&+*-=.]+"
-                                    aria-describedby="userPhone" />
-                              </div>
-
-                              <div class="input-group">
-                                 <label for="userEmail">Email address</label>
-                                 <input
-                                    type="email"
-                                    class="form-control"
-                                    placeholder="example@mail.com"
-                                    required="required"
-                                    aria-required="true"
-                                    id="userEmail"
-                                    aria-describedby="emailHelp" />
-                              </div>
-
-                              <div class="input-group">
-                                 <label for="streetAddress">Message</label>
-                                 <textarea
-                                    id="message"
-                                    class="form-control form-textarea"
-                                    placeholder="Message"></textarea>
-                              </div>
-                           </div>
-
-                           <button type="submit" class="btn btn-primary">
-                              Book now
-                           </button>
-                        </form>
-                     </div>
-
-                     <div class="calculator__total-price"><span>0</span>$</div>
-
-                     <p class="calculator__alerts">
-                        Please make a selection to continue
-                     </p>
-
-                     <div class="calculator__steps">
-                        <div class="_active" data-step="1"></div>
-                        <div data-step="2"></div>
-                        <div data-step="3"></div>
-                     </div>
-
-                     <div class="calculator__btn-group">
-                        <button
-                           type="button"
-                           class="btn btn-primary calculator__btn-prev"
-                           style="display: none">
-                           PREVIOUS STEP
-                        </button>
-                        <button
-                           type="button"
-                           class="btn btn-primary calculator__btn-next">
-                           Next step
-                        </button>
-                     </div>
+                        <div class="select-extras__item">
+                          <img src="" alt="" class="select-extras__img" />
+                          <div class="select-extras__desc">
+                            Clean inside fridge +15$
+                          </div>
+                        </div>
+                        <div class="select-extras__item">
+                          <img src="" alt="" class="select-extras__img" />
+                          <div class="select-extras__desc">
+                            Pets in home +10$
+                          </div>
+                        </div>
+                        <div class="select-extras__item">
+                          <img src="" alt="" class="select-extras__img" />
+                          <div class="select-extras__desc">Dishes +10$</div>
+                        </div>
+                        <div class="select-extras__item">
+                          <img src="" alt="" class="select-extras__img" />
+                          <div class="select-extras__desc">
+                            Finished Basement +25$
+                          </div>
+                        </div>
+                        <div class="select-extras__item">
+                          <img src="" alt="" class="select-extras__img" />
+                          <div class="select-extras__desc">
+                            Stains on the carpet +5$/ per stain
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-               </div>
-            </section>
+                  <div class="spollers__item" data-service-filters="2">
+                    <button
+                      type="button"
+                      data-spoller
+                      class="spollers__title _spoller-active"
+                    >
+                      Window cleaning
+                    </button>
+                    <div class="spollers__body">
+                      - количество окон 3-5 / 5-8 / 8-11/ 11-15 / 15+ Каждое
+                      окно - 7$
+                    </div>
+                  </div>
+                  <div class="spollers__item" data-service-filters="3">
+                    <button
+                      type="button"
+                      data-spoller
+                      class="spollers__title _spoller-active"
+                    >
+                      Lawn mowing
+                    </button>
+                    <div class="spollers__body">
+                      возможность выбрать диапазон площади х-300 / 300-500 /
+                      500-700 / 700-900 / 1000+ sq.feet
+                    </div>
+                  </div>
+                  <div class="spollers__item" data-service-filters="4">
+                    <button
+                      type="button"
+                      data-spoller
+                      class="spollers__title _spoller-active"
+                    >
+                      Drain pipe cleaning
+                    </button>
+                    <div class="spollers__body">Контент спойлера</div>
+                  </div>
+                </div>
+              </div>
 
-            <section class="about">
-               <div class="about__container">
-                  <h2 class="about__heading section-heading">about</h2>
-               </div>
-            </section>
+              <div class="calculator__form" style="display: none">
+                <form>
+                  <div class="calculator__form-group">
+                    <div class="input-group">
+                      <label for="firstName">First name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="firstName"
+                        required="required"
+                        aria-required="true"
+                        placeholder="First name*"
+                        aria-label="First name"
+                      />
+                    </div>
 
-            <section class="advantages">
-               <div class="advantages__container">
-                  <h2 class="advantages__heading section-heading">
-                     advantages
-                  </h2>
-               </div>
-            </section>
+                    <div class="input-group">
+                      <label for="lastName">Last name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="lastName"
+                        placeholder="Last name"
+                        aria-label="Last name"
+                      />
+                    </div>
 
-            <section class="reviews">
-               <div class="reviews__container">
-                  <h2 class="reviews__heading section-heading">reviews</h2>
-               </div>
-            </section>
+                    <div class="input-group">
+                      <label for="userPhone">Telephone</label>
+                      <input
+                        type="tel"
+                        class="form-control"
+                        id="userPhone"
+                        placeholder="+182xxxxx"
+                        required="required"
+                        aria-required="true"
+                        pattern="[0-9()#&+*-=.]+"
+                        aria-describedby="userPhone"
+                      />
+                    </div>
 
-            <section class="faq">
-               <div class="faq__container">
-                  <h2 class="faq__heading section-heading">faq</h2>
-               </div>
-            </section>
-         </main>
-         @@include('html/_footer.htm',{})
-      </div>
-      @@include('html/_js.htm',{})
-   </body>
+                    <div class="input-group">
+                      <label for="userEmail">Email address</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder="example@mail.com"
+                        required="required"
+                        aria-required="true"
+                        id="userEmail"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+
+                    <div class="input-group">
+                      <label for="streetAddress">Message</label>
+                      <textarea
+                        id="message"
+                        class="form-control form-textarea"
+                        placeholder="Message"
+                      ></textarea>
+                    </div>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary">
+                    Book now
+                  </button>
+                </form>
+              </div>
+
+              <div class="calculator__total-price"><span>0</span>$</div>
+
+              <p class="calculator__alerts">
+                Please make a selection to continue
+              </p>
+
+              <div class="calculator__steps">
+                <div class="_active" data-step="1"></div>
+                <div data-step="2"></div>
+                <div data-step="3"></div>
+              </div>
+
+              <div class="calculator__btn-group">
+                <button
+                  type="button"
+                  class="btn btn-primary calculator__btn-prev"
+                  style="display: none"
+                >
+                  PREVIOUS STEP
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary calculator__btn-next"
+                >
+                  Next step
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="about">
+          <div class="about__container">
+            <!-- <h2 class="about__heading section-heading">about</h2> -->
+            <div class="about-content">
+              <div class="about-content__body">
+                <h3 class="about-content__heading">
+                  Eliminate Cleaning From Your To-Do List
+                </h3>
+                <p class="about-content__text">
+                  House cleaning chores can seem like a never-ending list of
+                  tasks. Whether you need daily, weekly, bi-weekly or even a
+                  monthly house cleaning schedule, TIVA Cleaning is here to
+                  lessen the stress of day-to-day cleaning demands. With
+                  cleaning off your plate, you can focus on those things that
+                  matter the most to you. We take pride in our professional home
+                  cleaning services, including our attention to detail, advanced
+                  techniques and keen eye for areas often overlooked.
+                </p>
+              </div>
+              <div class="about-content__img">
+                <img class="about-img" src="img/about.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="advantages">
+          <div class="advantages__container">
+            <h2 class="advantages__heading section-heading">advantages</h2>
+          </div>
+        </section>
+
+        <section class="reviews">
+          <div class="reviews__container">
+            <h2 class="reviews__heading section-heading">reviews</h2>
+          </div>
+        </section>
+
+        <section class="faq">
+          <div class="faq__container">
+            <h2 class="faq__heading section-heading">faq</h2>
+          </div>
+        </section>
+      </main>
+      @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+  </body>
 </html>
