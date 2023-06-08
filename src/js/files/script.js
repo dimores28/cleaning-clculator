@@ -18,13 +18,6 @@ $(".room").on("click", function () {
 
 $(".service").on("click", function () {
   $(this).toggleClass("_select");
-  let sum = 0;
-
-  $(".service._select").each(function () {
-    sum += parseInt($(this).attr("data-service-price"));
-  });
-
-  $(".calculator__total-price span").text(parseInt(roomPrice) + parseInt(sum));
 });
 
 $(".calculator__btn-next").on("click", function () {
@@ -34,6 +27,8 @@ $(".calculator__btn-next").on("click", function () {
   }
 
   $(".calculator__alerts").fadeOut();
+
+  showedSpollers();
 
   if (step < 3) {
     step++;
@@ -56,25 +51,25 @@ function stepControl() {
       $(`[data-step=${step}]`).addClass('_active');
 
   if (step === 1) {
-    $(".calculator__square").slideDown("slow");
+    $(".calculator__services").slideDown("slow");  
     $(".calculator__form").slideUp("slow");
-    $(".calculator__services").slideUp("slow");
+    $(".calculator__square").slideUp("slow");
 
     $(".calculator__btn-prev").hide();
    //  scrollTopOffer();
   }
 
   if (step === 2) {
-    $(".calculator__square").slideUp("slow");
+    $(".calculator__services").slideUp("slow");
     $(".calculator__form").slideUp("slow");
-    $(".calculator__services").slideDown("slow");
+    $(".calculator__square").slideDown("slow");
 
     $(".calculator__btn-prev").show();
     $(".calculator__btn-next").show();
   }
 
   if (step === 3) {
-    $(".calculator__services").slideUp("slow");
+    $(".calculator__square").slideUp("slow");
     $(".calculator__form").slideDown("slow");
 
     $(".calculator__btn-next").hide();
@@ -93,7 +88,7 @@ function scrollTopOffer() {
 }
 
 function checkSelectedApartmentSize() {
-  let room = document.querySelectorAll(".room._select");
+  let room = document.querySelectorAll(".service._select");
 
   if (room.length) {
     return true;
@@ -101,6 +96,43 @@ function checkSelectedApartmentSize() {
     return false;
   }
 }
+
+function showedSpollers() {
+  //Скрываем все спойлеры
+  $(".spollers__item ").hide();
+
+  //Открываем необходимые спойлеры под выбранные услуги
+  $(".service._select").each(function () {
+      let serviceId = $(this).attr("data-service");
+      $(`[data-service-filters=${serviceId}]`).show();
+  });
+}
+
+$('.select-extras__item').on('click', function() {
+  $(this).toggleClass('_setected');
+});
+
+$('.bedrooms__item').on('click', function() {
+  $('.bedrooms__item').removeClass('_select');
+  $(this).toggleClass('_select');
+
+  //калькуляция цены
+  const price = parseInt($(this).attr("data-bedroom-price"));
+  let newPrice = parseInt(roomPrice)  + parseInt(price);
+
+  $(".calculator__total-price span").text(newPrice);
+
+});
+
+$('.cleaning-level__item').on('click', function() {
+  $('.cleaning-level__item').removeClass('_select');
+  $(this).toggleClass('_select');
+});
+
+$('.lawn-area__item').on('click', function() {
+  $('.lawn-area__item').removeClass('_select');
+  $(this).toggleClass('_select');
+});
 
 const header = document.querySelector(".header");
 window.addEventListener("scroll", function () {

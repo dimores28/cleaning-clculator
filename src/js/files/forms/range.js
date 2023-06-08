@@ -1,42 +1,69 @@
 // Підключення з node_modules
 import * as noUiSlider from 'nouislider';
+import  '../../libs/wNumb.min.js';
 
 // Підключення стилів з scss/base/forms/range.scss 
 // у файлі scss/forms/forms.scss
 
 // Підключення стилів з node_modules
-// import 'nouislider/dist/nouislider.css';
+import 'nouislider/dist/nouislider.css';
 
 export function rangeInit() {
-	const priceSlider = document.querySelector('#range');
-	if (priceSlider) {
-		let textFrom = priceSlider.getAttribute('data-from');
-		let textTo = priceSlider.getAttribute('data-to');
-		noUiSlider.create(priceSlider, {
-			start: 0, // [0,200000]
+	const rangeWindows = document.querySelector('#rangeWindows');
+	const rangePipe = document.querySelector('#rangePipe');
+	
+	if (rangeWindows) {
+		let textFrom = rangeWindows.getAttribute('data-from');
+		let textTo = rangeWindows.getAttribute('data-to');
+		const range = [];
+
+		range.push(parseInt(textFrom));
+		range.push(parseInt(textTo));
+
+
+		noUiSlider.create(rangeWindows, {
+			start: 1, 
 			connect: [true, false],
+			step: 1,
+			tooltips: [wNumb({
+				decimals: 0})
+			],
 			range: {
-				'min': [0],
-				'max': [200000]
-			}
+				'min': range[0],
+				'max': range[1]
+			},
+			pips: {
+				mode: 'values',
+				values: range,
+		  }
 		});
-		/*
-		const priceStart = document.getElementById('price-start');
-		const priceEnd = document.getElementById('price-end');
-		priceStart.addEventListener('change', setPriceValues);
-		priceEnd.addEventListener('change', setPriceValues);
-		*/
-		function setPriceValues() {
-			let priceStartValue;
-			let priceEndValue;
-			if (priceStart.value != '') {
-				priceStartValue = priceStart.value;
-			}
-			if (priceEnd.value != '') {
-				priceEndValue = priceEnd.value;
-			}
-			priceSlider.noUiSlider.set([priceStartValue, priceEndValue]);
-		}
+
+	}
+
+	if(rangePipe) {
+		let textFrom = rangePipe.getAttribute('data-from');
+		let textTo = rangePipe.getAttribute('data-to');
+		const range = [];
+
+		range.push(parseInt(textFrom));
+		range.push(parseInt(textTo));
+
+		noUiSlider.create(rangePipe, {
+			start: 1, 
+			connect: [true, false],
+			step: 1,
+			tooltips: [wNumb({
+				decimals: 0})
+			],
+			range: {
+				'min': range[0],
+				'max': range[1]
+			},
+			pips: {
+				mode: 'values',
+				values: range,
+		  }
+		});
 	}
 }
 rangeInit();
