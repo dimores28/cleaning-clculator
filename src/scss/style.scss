@@ -71,7 +71,12 @@ $responsiveType: 1;
 
 body {
   font-family: $fontFamily, sans-serif;
-  background: $sky;
+  background-image: url(img/pxfuel.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  // background: $sky;
   // Скролл заблоковано
   .lock & {
     overflow: hidden;
@@ -174,3 +179,4 @@ body {
 @import "home";
 @import "offer";
 @import "about";
+@import "advantages";

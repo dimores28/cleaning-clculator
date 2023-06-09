@@ -1,7 +1,7 @@
 //====================================================================================================
 
 .footer {
-  background: $darkBlue;
+  background: #0096c7;
   color: #fff;
   padding: 70px 0px 0px 0px;
 
@@ -25,7 +25,7 @@
   // .footer__content
   &__content {
     display: flex;
-    align-items: start;
+    flex-direction: row;
     gap: 30px;
     margin: 0 0 60px;
 
@@ -55,6 +55,8 @@
     flex: 1 1 33.333%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
 
     @media (max-width: em(1200)) {
       flex: 1 1 calc(50% - 30px);
@@ -72,6 +74,8 @@
     flex: 1 1 33.333%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+    margin: 0 0 50px 0;
 
     @media (max-width: em(1200)) {
       flex: 1 1 calc(50% - 30px);
@@ -89,17 +93,16 @@
 
   // .footer__logo
   &__logo {
-    margin: 0 0 30px;
-
     img {
       display: block;
       margin: 0 auto;
+      max-height: 121px;
     }
   }
 
   // .footer__policy
   &__policy {
-    background: $darkBlue;
+    background: #0077b6;
     padding: 20px;
     text-align: center;
     color: #fff;
@@ -111,14 +114,11 @@
   }
 }
 .nav {
+  margin: 50px 0 50px 20px;
   @media (max-width: em(1200)) {
     padding-top: 20px;
   }
-  //   &__list {
-  //     display: flex;
-  //     flex-direction: column;
-  //     align-items: center;
-  //   }
+
   &__item {
     display: flex;
     align-items: center;
@@ -161,7 +161,6 @@
 }
 
 .contacts {
-  margin: 46px 0 0;
   @media (max-width: em(1200)) {
     padding-top: 20px;
   }

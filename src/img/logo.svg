@@ -25,7 +25,7 @@ viewBox="0 0 4783.04 4878.46"
   <style type="text/css">
    <![CDATA[
     @font-face { font-family:"Arno Pro SmText";font-variant:normal;font-style:normal;font-weight:normal;src:url("#FontID0") format(svg)}
-    .fil1 {fill:#2B2A29}
+    .fil1 {fill:#fff}
     .fil0 {fill:url(#id0)}
     .fnt0 {font-weight:normal;font-size:545.38px;font-family:'Arno Pro SmText'}
    ]]>
