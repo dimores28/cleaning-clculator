@@ -236,3 +236,16 @@ function updetePrice() {
 
   $(".calculator__total-price span").text(finalPrice);
 }
+
+
+//Module calendar
+if(document.querySelector('#cleaningDate')) {
+    const start = flsModules.datepicker('#cleaningDate', {
+      id: 1,
+      formatter: (input, date, instance) => {
+        const options = { year: '2-digit', month: '2-digit', day: '2-digit' };
+        const value = date.toLocaleDateString('en-US', options)
+        input.value = value
+    }
+  });
+}
