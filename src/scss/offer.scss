@@ -761,3 +761,30 @@
 }
 
 //====================================================================================================
+
+.qs-controls {
+   background: $darkBlue;
+   color: #fff;
+}
+
+.qs-arrow.qs-right:after {
+   border-left-color:#fff;
+}
+
+.qs-arrow.qs-left:after {
+   border-right-color: #fff;
+}
+
+.qs-square:not(.qs-empty):not(.qs-disabled):not(.qs-day):not(.qs-active):hover {
+   background: $blue;
+}
+
+.qs-active, .qs-range-start, .qs-range-end {
+   background: $darkBlue;
+   color: #fff;
+}
+
+.qs-day {
+   color: #000;
+}
+//====================================================================================================

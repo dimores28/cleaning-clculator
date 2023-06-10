@@ -14,6 +14,7 @@
   flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
+
   @media (max-width: $mobile) {
     display: flex;
     flex-direction: column;
@@ -26,6 +27,7 @@
     align-items: center;
     justify-content: center;
     padding: 0 0 0 40px;
+
     @media (max-width: $mobile) {
       flex: 1 1 100%;
       padding: 0;
@@ -50,9 +52,20 @@
     flex: 1 1 50%;
     height: 585px;
     position: relative;
+
     @media (max-width: $tablet) {
+      width: 100%;
       height: 385px;
+      min-height: 385px;
+      margin-top: 30px;
     }
+
+    @media (max-width:$mobileSmall){
+      height: 300px;
+      min-height: 300px; 
+    }
+
+
   }
 }
 

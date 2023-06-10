@@ -423,7 +423,7 @@
                    <form>
                       <div class="calculator__form-group">
                          <div class="input-group">
-                            <label for="firstName">First name</label>
+                            <label for="firstName">First name*</label>
                             <input
                                type="text"
                                class="form-control"
@@ -445,12 +445,12 @@
                          </div>
 
                          <div class="input-group">
-                            <label for="userPhone">Telephone</label>
+                            <label for="userPhone">Telephone*</label>
                             <input
                                type="tel"
                                class="form-control"
                                id="userPhone"
-                               placeholder="+182xxxxx"
+                               placeholder="+182xxxxx*"
                                required="required"
                                aria-required="true"
                                pattern="[0-9()#&+*-=.]+"
@@ -458,11 +458,11 @@
                          </div>
 
                          <div class="input-group">
-                            <label for="userEmail">Email address</label>
+                            <label for="userEmail">Email address*</label>
                             <input
                                type="email"
                                class="form-control"
-                               placeholder="example@mail.com"
+                               placeholder="example@mail.com*"
                                required="required"
                                aria-required="true"
                                id="userEmail"
@@ -470,12 +470,79 @@
                          </div>
 
                          <div class="input-group">
-                            <label for="streetAddress">Message</label>
-                            <textarea
-                               id="message"
-                               class="form-control form-textarea"
-                               placeholder="Message"></textarea>
-                         </div>
+                           <label for="userAddres">Addres*</label>
+                           <input
+                              type="text"
+                              class="form-control"
+                              placeholder="Addres*"
+                              required="required"
+                              aria-required="true"
+                              id="userAddres"
+                              aria-describedby="Addres Help" />
+                        </div>
+
+                        <div class="input-group">
+                           <label for="aptSuite">Apt/Suite</label>
+                           <input
+                              type="text"
+                              class="form-control"
+                              placeholder="Apt/Suite #"
+                              id="aptSuite"
+                              aria-describedby="Apt/Suite Help" />
+                        </div>
+
+                        <div class="input-group">
+                           <label for="userCity">City*</label>
+                           <input
+                              type="text"
+                              class="form-control"
+                              placeholder="City*"
+                              required="required"
+                              aria-required="true"
+                              id="userCity"
+                              aria-describedby="City Help" />
+                        </div>
+
+                        <div class="input-group">
+                           <label for="zipCode">Zip Code*</label>
+                           <input
+                              type="number"
+                              class="form-control"
+                              placeholder="Zip Code*"
+                              required="required"
+                              aria-required="true"
+                              id="zipCode"
+                              aria-describedby="Zip Code Help" />
+                        </div>
+
+                        <div class="input-group">
+                           <label for="time">Start time:</label>
+                           <input 
+                              type="time"
+                              class="form-control" 
+                              id="time" 
+                              placeholder="Time"
+                              aria-describedby="time Help"/>
+                        </div>
+
+                        <div class="input-group">
+                           <label for="cleaningDate">Date</label>
+                           <input
+                              type="text"
+                              class="form-control datapicker"
+                              id="cleaningDate"
+                              placeholder="Date"
+                              aria-label="cleaning date" />
+                        </div>
+
+                        
+                        <div class="input-group">
+                           <label for="streetAddress">Message</label>
+                           <textarea
+                              id="message"
+                              class="form-control form-textarea"
+                              placeholder="Message"></textarea>
+                        </div>
 
                          <div class="input-group">
                             <fieldset>
