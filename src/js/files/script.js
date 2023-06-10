@@ -5,15 +5,19 @@ import { flsModules } from "./modules.js";
 
 let step = 1;
 let roomPrice = 0;
+let bedroomsPrice = 0;
+let extrasPrice = 0;
+let pipePrice = 0;
+let windowsPrice = 0;
+let lawnPrice = 0;
 
 $(".room").on("click", function () {
   $(".room").removeClass("_select");
   $(this).addClass("_select");
 
   const price = $(this).attr("data-room-price");
-
-  $(".calculator__total-price span").text(price);
   roomPrice = price;
+  updetePrice();
 });
 
 $(".service").on("click", function () {
@@ -145,6 +149,15 @@ function showedSpollers() {
 
 $('.select-extras__item').on('click', function() {
   $(this).toggleClass('_setected');
+  let sum = 0; 
+  $('.select-extras__item._setected').each(function(){
+    let price = $(this).attr('data-extras-price');
+    sum += parseInt(price);
+  });
+
+
+  extrasPrice = sum;
+  updetePrice();
 });
 
 $('.bedrooms__item').on('click', function() {
@@ -153,10 +166,8 @@ $('.bedrooms__item').on('click', function() {
 
   //калькуляция цены
   const price = parseInt($(this).attr("data-bedroom-price"));
-  let newPrice = parseInt(roomPrice)  + parseInt(price);
-
-  $(".calculator__total-price span").text(newPrice);
-
+  bedroomsPrice = parseInt(price);
+  updetePrice();
 });
 
 $('.cleaning-level__item').on('click', function() {
@@ -167,6 +178,43 @@ $('.cleaning-level__item').on('click', function() {
 $('.lawn-area__item').on('click', function() {
   $('.lawn-area__item').removeClass('_select');
   $(this).toggleClass('_select');
+
+  lawnPrice = $(this).attr('data-lawn-area');
+  updetePrice();
+});
+
+$('.payment-options__option').on('click', function() {
+  $('.payment-options__option').removeClass('_setected');
+  $(this).toggleClass('_setected');
+});
+
+
+flsModules.rangeWindows?.noUiSlider.on('update', function (values, handle) {
+  const price = $('#rangeWindows').attr('data-price-window');
+
+  if($('[data-service="2"]').hasClass('_select')){
+    windowsPrice = values[handle] * price;
+  }
+  else {
+    windowsPrice = 0;
+  }
+  
+  updetePrice();
+});
+
+
+flsModules.rangePipe?.noUiSlider.on('update', function (values, handle) {
+  const price = $('#rangePipe').attr('data-price-pipe');
+
+  if($('[data-service="4"]').hasClass('_select')) {
+    pipePrice = values[handle] * price;
+  }
+  else {
+    pipePrice = 0;
+  }
+
+ 
+  updetePrice();
 });
 
 const header = document.querySelector(".header");
@@ -177,3 +225,27 @@ window.addEventListener("scroll", function () {
     header.classList.remove("header-scrolling");
   }
 });
+
+function updetePrice() {
+  let finalPrice = parseInt(roomPrice) 
+  + parseInt(windowsPrice) 
+  + parseInt(pipePrice) 
+  + parseInt(lawnPrice)
+  + parseInt(bedroomsPrice) 
+  + parseInt(extrasPrice);
+
+  $(".calculator__total-price span").text(finalPrice);
+}
+
+
+//Module calendar
+if(document.querySelector('#cleaningDate')) {
+    const start = flsModules.datepicker('#cleaningDate', {
+      id: 1,
+      formatter: (input, date, instance) => {
+        const options = { year: '2-digit', month: '2-digit', day: '2-digit' };
+        const value = date.toLocaleDateString('en-US', options)
+        input.value = value
+    }
+  });
+}

@@ -1,6 +1,7 @@
 // Підключення з node_modules
 import * as noUiSlider from 'nouislider';
 import  '../../libs/wNumb.min.js';
+import { flsModules } from "../modules.js";
 
 // Підключення стилів з scss/base/forms/range.scss 
 // у файлі scss/forms/forms.scss
@@ -40,6 +41,8 @@ export function rangeInit() {
 
 	}
 
+	flsModules.rangeWindows = rangeWindows;
+
 	if(rangePipe) {
 		let textFrom = rangePipe.getAttribute('data-from');
 		let textTo = rangePipe.getAttribute('data-to');
@@ -65,5 +68,7 @@ export function rangeInit() {
 		  }
 		});
 	}
+
+	flsModules.rangePipe = rangePipe;
 }
 rangeInit();
