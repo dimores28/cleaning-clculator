@@ -42,10 +42,12 @@
     @media (max-width: em(1200)) {
       flex: 1 1 100%;
     }
+    @media (max-width: $mobileSmall) {
+      display: none;
+    }
 
     iframe {
       width: 100%;
-
       border-radius: 4px;
     }
   }

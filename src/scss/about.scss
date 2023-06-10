@@ -12,6 +12,8 @@
 .about-content {
   display: flex;
   flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
   @media (max-width: $mobile) {
     display: flex;
     flex-direction: column;
