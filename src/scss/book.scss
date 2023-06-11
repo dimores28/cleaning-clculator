@@ -48,6 +48,7 @@
     flex: 1 1 60%;
     @media (max-width: $mobile) {
       border-radius: 0 0 10px 10px;
+      padding: 25px 15px;
     }
   }
 
@@ -60,6 +61,9 @@
       flex-direction: column;
       width: 100%;
     }
+    @media (max-width: 600px) {
+      margin: 0 0 30px 0;
+    }
   }
   &__form-group {
     display: flex;
@@ -69,9 +73,12 @@
   }
 
   &__form-labele {
-    font-size: 40px;
+    @include adaptiveValue("font-size", 40, 32);
     color: #000;
     margin: 0 0 50px;
+    @media (max-width: 600px) {
+      margin: 0 0 30px;
+    }
   }
 
   &__input-phone,
@@ -101,33 +108,7 @@
 .lower-group {
   width: 100%;
   margin: 0 0 50px;
+  @media (max-width: 600px) {
+    margin: 0 0 30px;
+  }
 }
-
-// @media (max-width: $mobile) {
-//   .book {
-//     &__container {
-//       flex-direction: column;
-//       justify-content: center;
-//       flex: 1 1 100%;
-//     }
-
-//     &__content {
-//       border-radius: 10px 10px 0 0;
-//     }
-
-//     &__form {
-//       border-radius: 0 0 10px 10px;
-//     }
-
-//     &__form-labele {
-//       margin: 30px 0 0;
-//     }
-
-//     &__submit {
-//       margin: 0 0 40px;
-//     }
-//   }
-//   .form-group__labele {
-//     display: none;
-//   }
-// }

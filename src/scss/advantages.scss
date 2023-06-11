@@ -1,8 +1,9 @@
 .advantages {
   background-color: #b5e1ee;
-  color: $darkBlue;
+  // color: $darkBlue;
 
   &__heading {
+    color: $darkBlue;
     font-weight: bold;
     padding: 50px 0 0;
     margin: 0 0 50px;
@@ -19,11 +20,13 @@
     display: flex;
     align-items: center;
     flex-direction: row;
-    border: solid 2px #00579c;
+    border: solid 2px #0077b6;
+    background-color: #0077b6;
     padding: 20px;
     border-radius: 10px;
     @media (max-width: 600px) {
       flex-direction: column-reverse;
+      padding: 10px;
     }
   }
 
@@ -33,9 +36,9 @@
     align-items: center;
     flex: 1 1 40%;
     & > img {
-      max-width: 350px;
+      max-width: 250px;
       @media (max-width: $mobile) {
-        max-width: 250px;
+        max-width: 150px;
       }
 
       border-radius: 5px;
@@ -52,6 +55,9 @@
     font-size: 18px;
     line-height: 26px;
     padding: 20px;
+    @media (max-width: 600px) {
+      padding: 0 0 10px;
+    }
   }
   &__item-title {
     text-transform: uppercase;
@@ -60,6 +66,9 @@
     line-height: 30px;
     font-weight: 700;
     margin: 0 0 30px;
+    @media (max-width: 600px) {
+      margin: 0 0 10px;
+    }
   }
 }
 

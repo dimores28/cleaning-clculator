@@ -1,9 +1,15 @@
 .reviews {
   margin: 0 0 90px;
+  @media (max-width: $mobile) {
+    margin: 0 0 60px;
+  }
   &__heading {
     padding: 80px 0 40px;
     color: $darkBlue;
     font-weight: 700;
+    @media (min-width: $mobile) {
+      padding: 60px 0 20px;
+    }
   }
   &__content {
     display: grid;
