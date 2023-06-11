@@ -1,6 +1,12 @@
 .about {
   color: $darkBlue;
-  margin: 90px 0;
+  padding: 90px 0;
+  @media (max-width: $mobile) {
+    background-color: #0096c7;
+    padding: 60px 0;
+    color: #fff;
+  }
+
   &__heading {
     font-weight: bold;
   }
@@ -60,12 +66,10 @@
       margin-top: 30px;
     }
 
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       height: 300px;
-      min-height: 300px; 
+      min-height: 300px;
     }
-
-
   }
 }
 

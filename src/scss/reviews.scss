@@ -1,12 +1,19 @@
 .reviews {
+  margin: 0 0 90px;
+  @media (max-width: $mobile) {
+    margin: 0 0 60px;
+  }
   &__heading {
     padding: 80px 0 40px;
     color: $darkBlue;
     font-weight: 700;
+    @media (min-width: $mobile) {
+      padding: 60px 0 20px;
+    }
   }
   &__content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 30px;
   }
   &__item {
@@ -34,11 +41,14 @@
   &__item-title {
     color: #000;
     margin: 0 20px 20px 20px;
+    font-size: 24px;
   }
 
   &__item-body {
     color: #000;
     margin: 0 20px 20px 20px;
+    font-size: 16px;
+    line-height: 20px;
   }
 
   &__item-grade {

@@ -7,18 +7,20 @@
 
   // .footer__container
   &__container {
+    display: flex;
+    flex-direction: column;
   }
 
-  &__heading {
-    font-family: PTSansNarrow, sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: rem(32);
-    line-height: 108%;
-    margin-bottom: 34px;
-
-    @media (max-width: em(1200)) {
-      text-align: center;
+  &__logo-mobile {
+    display: none;
+    @media (max-width: $mobile) {
+      display: flex;
+      margin: 0 0 40px;
+      img {
+        display: block;
+        margin: 0 auto;
+        max-height: 121px;
+      }
     }
   }
 
@@ -29,8 +31,11 @@
     gap: 30px;
     margin: 0 0 60px;
 
-    @media (max-width: em(1200)) {
+    @media (max-width: $tablet) {
       flex-wrap: wrap;
+    }
+    @media (max-width: 450px) {
+      flex-direction: column;
     }
   }
 
@@ -38,8 +43,7 @@
     flex: 1 1 33.333%;
     min-width: 450px;
     max-height: 450px;
-
-    @media (max-width: em(1200)) {
+    @media (max-width: $tablet) {
       flex: 1 1 100%;
     }
     @media (max-width: $mobileSmall) {
@@ -59,15 +63,20 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-
-    @media (max-width: em(1200)) {
+    @media (max-width: $tablet) {
       flex: 1 1 calc(50% - 30px);
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    @media (max-width: $mobile) {
+      flex: 1 1 calc(50% - 30px);
+      justify-content: flex-start;
       align-items: center;
     }
-
-    @media (max-width: 576px) {
-      flex: 1 1 100%;
-      align-items: center;
+    @media (max-width: $mobileSmall) {
+      flex: 1 1 calc(40% - 30px);
+      justify-content: center;
     }
   }
 
@@ -79,22 +88,32 @@
     justify-content: flex-end;
     margin: 0 0 50px 0;
 
-    @media (max-width: em(1200)) {
+    @media (max-width: $tablet) {
       flex: 1 1 calc(50% - 30px);
       align-items: center;
+      justify-content: flex-start;
     }
 
-    @media (max-width: 576px) {
-      flex: 1 1 100%;
+    @media (max-width: $mobile) {
+      flex: 1 1 calc(50% - 30px);
+      align-items: flex-start;
+    }
+
+    @media (max-width: $mobileSmall) {
+      flex: 1 1 calc(60% - 30px);
+      margin: 0;
+    }
+
+    @media (max-width: 450px) {
       align-items: center;
-    }
-
-    &_list {
     }
   }
 
   // .footer__logo
   &__logo {
+    @media (max-width: $mobile) {
+      display: none;
+    }
     img {
       display: block;
       margin: 0 auto;
@@ -117,8 +136,19 @@
 }
 .nav {
   margin: 50px 0 50px 20px;
-  @media (max-width: em(1200)) {
-    padding-top: 20px;
+  @media (max-width: $tablet) {
+    margin: 0 60px 50px 20px;
+  }
+  @media (max-width: $mobile) {
+    margin: 0 0 50px 0;
+  }
+
+  &__list {
+    @media (max-width: 450px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__item {
@@ -131,7 +161,6 @@
     font-style: normal;
     font-size: 18px;
     line-height: 108%;
-
     margin-bottom: 20px;
   }
 
@@ -163,12 +192,18 @@
 }
 
 .contacts {
-  @media (max-width: em(1200)) {
-    padding-top: 20px;
+  @media (max-width: $tablet) {
+    padding: 0;
   }
 
-  @media (max-width: 576px) {
+  @media (max-width: $mobile) {
     margin: 0;
+  }
+
+  @media (max-width: 450px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   // .contacts__item
