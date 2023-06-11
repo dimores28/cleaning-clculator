@@ -1,0 +1,133 @@
+.book {
+  padding: 100px 0 50px 0;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 150, 199, 1) 50%,
+    rgba(0, 0, 0, 0) 50%
+  );
+  &__container {
+    display: flex;
+    flex-direction: row-reverse;
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    position: relative;
+    flex: 1 1 40%;
+
+    @media (max-width: $mobile) {
+      min-height: 400px;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 0 10px 10px 0;
+      @media (max-width: $mobile) {
+        border-radius: 10px 10px 0 0;
+      }
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px 0 0 10px;
+    flex: 1 1 60%;
+    @media (max-width: $mobile) {
+      border-radius: 0 0 10px 10px;
+    }
+  }
+
+  &__form-upper {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin: 0 0 60px 0;
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+  &__form-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: PTSansNarrow, sans-serif;
+  }
+
+  &__form-labele {
+    font-size: 40px;
+    color: #000;
+    margin: 0 0 50px;
+  }
+
+  &__input-phone,
+  &__input-email,
+  &__input-name {
+    border-bottom: #757575 solid 1px;
+  }
+  &__input-ms {
+    background-color: #f7f7f7;
+    resize: none;
+    font-size: 20px;
+    padding: 8px 14px;
+    height: 80px;
+    border-radius: 5px;
+  }
+}
+.form-group__labele {
+  display: none;
+}
+
+.upper-group {
+  flex: 1 1 33%;
+  @media (max-width: $tablet) {
+    flex: 1 1 100%;
+  }
+}
+.lower-group {
+  width: 100%;
+  margin: 0 0 50px;
+}
+
+// @media (max-width: $mobile) {
+//   .book {
+//     &__container {
+//       flex-direction: column;
+//       justify-content: center;
+//       flex: 1 1 100%;
+//     }
+
+//     &__content {
+//       border-radius: 10px 10px 0 0;
+//     }
+
+//     &__form {
+//       border-radius: 0 0 10px 10px;
+//     }
+
+//     &__form-labele {
+//       margin: 30px 0 0;
+//     }
+
+//     &__submit {
+//       margin: 0 0 40px;
+//     }
+//   }
+//   .form-group__labele {
+//     display: none;
+//   }
+// }
