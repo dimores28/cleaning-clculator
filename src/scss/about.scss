@@ -2,8 +2,9 @@
   color: $darkBlue;
   padding: 90px 0;
   @media (max-width: $mobile) {
-    background-color: #b5e1ee;
+    background-color: #0096c7;
     padding: 60px 0;
+    color: #fff;
   }
 
   &__heading {
