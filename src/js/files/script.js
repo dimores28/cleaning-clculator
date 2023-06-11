@@ -188,12 +188,50 @@ $('.payment-options__option').on('click', function() {
   $(this).toggleClass('_setected');
 });
 
+$('.is-furniture').on('click', function() {
+  $(this).toggleClass('_select');
+  $('.renovation-extras__wrap').fadeToggle("slow")
+
+  // updetePrice();
+});
+
+$('.is-window').on('click', function() {
+  $(this).toggleClass('_select');
+  $('.window-wash__wrap').fadeToggle("slow");
+
+  // updetePrice();
+});
+
+//калькуляция стомости мытья окон ==========================
+let exteriorWindow = false;
+$('.exterior-window').on('click', function(){
+  $(this).toggleClass('_select');
+  exteriorWindow = !exteriorWindow;
+});
+
+$('[data-service="2"]').on('click', function(){
+  if($(this).hasClass('_select')) {
+    const price = $('#rangeWindows').attr('data-price-one-window');
+    windowsPrice = parseInt(price);
+  }
+  else {
+    windowsPrice = 0;
+  }
+
+  updetePrice();
+});
 
 flsModules.rangeWindows?.noUiSlider.on('update', function (values, handle) {
   const price = $('#rangeWindows').attr('data-price-window');
+  const price2 = $('#rangeWindows').attr('data-price-exterior-window');
 
   if($('[data-service="2"]').hasClass('_select')){
-    windowsPrice = values[handle] * price;
+    
+    if(!exteriorWindow){
+      windowsPrice = values[handle] * price;
+    }else {
+      windowsPrice = values[handle] * price2;
+    }
   }
   else {
     windowsPrice = 0;
@@ -201,7 +239,7 @@ flsModules.rangeWindows?.noUiSlider.on('update', function (values, handle) {
   
   updetePrice();
 });
-
+//конец калькуляции стомости мытья окон ==========================
 
 flsModules.rangePipe?.noUiSlider.on('update', function (values, handle) {
   const price = $('#rangePipe').attr('data-price-pipe');
@@ -249,3 +287,20 @@ if(document.querySelector('#cleaningDate')) {
     }
   });
 }
+
+//input Time
+function getTime() {
+  var timeInput = document.getElementById('timeInput').value;
+  // Перевірка на правильний формат часу
+  var timeRegex = /^([01]\d|2[0-3]):([0-5]\d)$/;
+  if (timeRegex.test(timeInput)) {
+    console.log(timeInput);
+    // Виконати потрібні дії з отриманим часом
+  } else {
+    console.log("Неправильний формат часу!");
+  }
+}
+
+$('#timeInput').on('input', function(){
+  getTime();
+});

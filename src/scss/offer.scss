@@ -468,7 +468,7 @@
 
    // .cleaning-level__item
    &__item {
-      width: calc(100% / 4 - 20px);
+      width: calc(100% / 4 - 15px);
       border: 2px solid $darkBlue;
       border-radius: 6px;
       padding: 23px 10px;
@@ -787,4 +787,31 @@
 .qs-day {
    color: #000;
 }
+//====================================================================================================
+
+
+//====================================================================================================
+
+.switsh-btn {
+   border: 2px solid $darkBlue;
+   border-radius: 6px;
+   padding: 10px 25px;
+   font-size: 14px;
+   display: inline-block;
+   transition: all 0.3s ease-in;
+   margin-bottom: 30px;
+
+   &._select {
+      background: $blue;
+      color: #ffffff98;
+      transform: rotateY(360deg);
+   }
+
+   @media (any-hover: hover) {
+      &:hover {
+         background: $blue;
+      }
+   }
+}
+
 //====================================================================================================
