@@ -12,6 +12,7 @@ import 'nouislider/dist/nouislider.css';
 export function rangeInit() {
 	const rangeWindows = document.querySelector('#rangeWindows');
 	const rangePipe = document.querySelector('#rangePipe');
+	const numberWindows = document.querySelector('#numberWindows');
 	
 	if (rangeWindows) {
 		let textFrom = rangeWindows.getAttribute('data-from');
@@ -70,5 +71,34 @@ export function rangeInit() {
 	}
 
 	flsModules.rangePipe = rangePipe;
+
+	if(numberWindows) {
+		let textFrom = numberWindows.getAttribute('data-from');
+		let textTo = numberWindows.getAttribute('data-to');
+		const range = [];
+
+		range.push(parseInt(textFrom));
+		range.push(parseInt(textTo));
+
+		noUiSlider.create(numberWindows, {
+			start: 1, 
+			connect: [true, false],
+			step: 1,
+			tooltips: [wNumb({
+				decimals: 0})
+			],
+			range: {
+				'min': range[0],
+				'max': range[1]
+			},
+			pips: {
+				mode: 'values',
+				values: range,
+		  }
+		});
+	}
+
+	flsModules.numberWindows = numberWindows;
+
 }
 rangeInit();
