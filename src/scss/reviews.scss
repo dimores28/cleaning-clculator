@@ -1,4 +1,5 @@
 .reviews {
+  margin: 0 0 90px;
   &__heading {
     padding: 80px 0 40px;
     color: $darkBlue;
@@ -34,11 +35,14 @@
   &__item-title {
     color: #000;
     margin: 0 20px 20px 20px;
+    font-size: 24px;
   }
 
   &__item-body {
     color: #000;
     margin: 0 20px 20px 20px;
+    font-size: 16px;
+    line-height: 20px;
   }
 
   &__item-grade {
