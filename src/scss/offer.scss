@@ -3,9 +3,11 @@
    position: relative;
    padding-top: 130px;
    min-height: 100vh;
+   padding-bottom: 80px;
 
    @media (max-width: 640px){
       padding-top: 100px;  
+      padding-bottom: 60px;
    }
 
    // .offer__bg
@@ -34,6 +36,18 @@
       margin-bottom: 20px;
       text-align: center;
       text-transform: uppercase;
+   }
+
+   &__sub-title {
+      @include adaptiveValue("font-size", 28, 18);
+      font-weight: 700;
+      line-height: 1.3em;
+      margin-bottom: 30px;
+      text-align: center;
+
+      @media (max-width:$mobileSmall){
+         margin-bottom: 24px; 
+      }
    }
 
    // .offer__calculator
@@ -156,6 +170,11 @@
    &__btn-next,
    &__btn-prev {
       text-transform: uppercase;
+
+      @media (max-width: em(396)){
+         padding: 7px 14px;  
+         font-size: 12px;
+      }
    }
 
    &__btn-prev {
