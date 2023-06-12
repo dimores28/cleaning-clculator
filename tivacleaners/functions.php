@@ -1,18 +1,56 @@
 <?php
 
+	add_action( 'wp_enqueue_scripts', function() {
+		wp_enqueue_style( 'style', get_template_directory_uri() . '/assets/css/style.min.css');
+
+		// отменяем зарегистрированный jQuery
+		wp_deregister_script('jquery-core');
+		wp_deregister_script('jquery');
+
+		// регистрируем
+		wp_register_script( 'jquery-core', 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js?_v=20230612142449', false, null, true );
+		wp_register_script( 'jquery', false, array('jquery-core'), null, true );
+
+		// подключаем
+		wp_enqueue_script( 'jquery' );
+
+		wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/app.min.js', array('jquery'), 'null', true );
+	});
 
    add_theme_support('post-thumbnails');
    add_theme_support( 'title-tag' );
    add_theme_support('custom-logo');
 
-   function my_jpeg_quality($arg)
-   {
-      return (int)100;
-   }
-   add_filter('jpeg_quality', 'my_jpeg_quality');
- 
 
-   add_filter( 'upload_mimes', 'svg_upload_allow' );
+	// add_action( 'init', function () {
+
+	// 	register_post_type( 'faq', [
+	// 		'label'  => 'faq',
+	// 		'labels' => [
+	// 			'name'               => 'Вопрос ответ', // основное название для типа записи
+	// 			'singular_name'      => 'Вопрос', // название для одной записи этого типа
+	// 			'add_new'            => 'Добавить ответ', // для добавления новой записи
+	// 			'add_new_item'       => 'Добавление ответа', // заголовка у вновь создаваемой записи в админ-панели.
+	// 			'edit_item'          => 'Редактирование ответа', // для редактирования типа записи
+	// 			'new_item'           => 'Новое ответ', // текст новой записи
+	// 			'view_item'          => 'Смотреть ответ', // для просмотра записи этого типа.
+	// 			'search_items'       => 'Искать ответ', // для поиска по этим типам записи
+	// 			'not_found'          => 'Не найдено', // если в результате поиска ничего не было найдено
+	// 			'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
+	// 			'menu_name'          => 'ЧАВО', // название меню
+	// 		],
+	// 		'public'              => false,
+	// 		'show_ui'             => true, // зависит от public
+	// 		'menu_icon'           => 'dashicons-format-quote',
+	// 		'supports'            => [ 'title', 'editor' ], 
+
+	// 	] );
+
+	// });
+
+
+//======================SVG===========================================//
+add_filter( 'upload_mimes', 'svg_upload_allow' );
 
 # Добавляет SVG в список разрешенных для загрузки файлов.
 function svg_upload_allow( $mimes ) {
