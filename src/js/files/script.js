@@ -4,122 +4,178 @@ import { isMobile } from "./functions.js";
 import { flsModules } from "./modules.js";
 
 let step = 1;
-
+//===============
 let roomPrice = 0;
 let bedroomsPrice = 0;
 let extrasPrice = 0;
 let homeCleaningPrice = 0;
+//===============
 
 let pipePrice = 0;
 let windowsPrice = 0;
 let lawnPrice = 0;
+//===============
+let squerePrice = 0;
+let repairExtras = 0;
+let repairWindowPrice = 0;
+let repairCleanPrice = 0;
 
 
-$(".service").on("click", function () {
-  $(this).toggleClass("_select");
-});
-
-// Cleaning of apartments / houses ==============================================================
-$(".living-quarters").on("click", function () {
-  $(".living-quarters").removeClass("_select");
-  $(this).addClass("_select");
-
-  const price = $(this).attr("data-room-price");
-  roomPrice = price;
-  updeteHomeCleaningPrice();
-  updetePrice();
-});
-
-$('.bedrooms__item').on('click', function() {
-  $('.bedrooms__item').removeClass('_select');
-  $(this).toggleClass('_select');
-
-  //калькуляция цены
-  const price = parseInt($(this).attr("data-bedroom-price"));
-  bedroomsPrice = parseInt(price);
-  updeteHomeCleaningPrice();
-  updetePrice();
-});
-
-$('.living-extras').on('click', function() {
-  $(this).toggleClass('_setected');
-  let sum = 0; 
-  $('.living-extras._setected').each(function(){
-    let price = $(this).attr('data-extras-price');
-    sum += parseInt(price);
+  $(".service").on("click", function () {
+    $(this).toggleClass("_select");
   });
 
+// Cleaning of apartments / houses ==============================================================
+  $(".living-quarters").on("click", function () {
+    $(".living-quarters").removeClass("_select");
+    $(this).addClass("_select");
 
-  extrasPrice = sum;
-  updeteHomeCleaningPrice();
-  updetePrice();
-});
+    const price = $(this).attr("data-room-price");
+    roomPrice = price;
+    updeteHomeCleaningPrice();
+    updetePrice();
+  });
 
-let isDeep = false;
-$('.is-deep').on('click', function() {
-  $(this).toggleClass('_select');
-  isDeep = !isDeep;
+  $('.bedrooms__item').on('click', function() {
+    $('.bedrooms__item').removeClass('_select');
+    $(this).toggleClass('_select');
 
-  updetePrice();
-});
+    //калькуляция цены
+    const price = parseInt($(this).attr("data-bedroom-price"));
+    bedroomsPrice = parseInt(price);
+    updeteHomeCleaningPrice();
+    updetePrice();
+  });
 
-$('[data-service="1"]').on('click', function(){
-  if(!$(this).hasClass('_select')) {
-     roomPrice = 0;
-     bedroomsPrice = 0;
-     extrasPrice = 0;
-     updeteHomeCleaningPrice();
-     console.log('unselect');
-  }
+  $('.living-extras').on('click', function() {
+    $(this).toggleClass('_setected');
+    let sum = 0; 
+    $('.living-extras._setected').each(function(){
+      let price = $(this).attr('data-extras-price');
+      sum += parseInt(price);
+    });
 
-  updetePrice();
-});
+
+    extrasPrice = sum;
+    updeteHomeCleaningPrice();
+    updetePrice();
+  });
+
+  let isDeep = false;
+  $('.is-deep').on('click', function() {
+    $(this).toggleClass('_select');
+    isDeep = !isDeep;
+
+    updetePrice();
+  });
+
+  $('[data-service="1"]').on('click', function(){
+    if(!$(this).hasClass('_select')) {
+      roomPrice = 0;
+      bedroomsPrice = 0;
+      extrasPrice = 0;
+      updeteHomeCleaningPrice();
+      console.log('unselect');
+    }
+
+    updetePrice();
+  });
 
 // End Cleaning of apartments / houses ==============================================================
 
 
+// After renovation ==============================================================
+  $(".after-repair").on("click", function () {
+    $(".after-repair").removeClass("_select");
+    $(this).addClass("_select");
+
+    const price = $(this).attr("data-room-price");
+    squerePrice = price;
+
+    updateAllRepairCleanPrice();
+    updetePrice();
+  });
+
+  $('.renovation-extras').on('click', function() {
+    $(this).toggleClass('_setected');
+    let sum = 0; 
+
+    $('.renovation-extras._setected').each(function(){
+      let price = $(this).attr('data-extras-price');
+      sum += parseInt(price);
+    });
+
+    repairExtras = sum;
+    updateAllRepairCleanPrice();
+    updetePrice();
+  });
+
+  let isRepairClinlevel = false;
+  $('.is-repair-clinlevel').on('click', function() {
+    $(this).toggleClass('_select');
+    isRepairClinlevel = !isRepairClinlevel;
+
+    updetePrice();
+  });
+
+  flsModules.numberWindows?.noUiSlider.on('update', function (values, handle) {
+    const price = $('#numberWindows').attr('data-price-window');
+
+    if($('[data-service="5"]').hasClass('_select')) {
+      repairWindowPrice = values[handle] * price;
+    }
+    else {
+      repairWindowPrice = 0;
+    }
+
+    updateAllRepairCleanPrice();
+    updetePrice();
+
+  });
+// End After renovation ==============================================================
+
 // Control button with calculator ===================================================================
-$(".calculator__btn-next").on("click", function () {
-  if (!checkSelectedService()) {
-    $(".calculator__alerts").fadeIn("slow");
-    $(".calculator__alerts").text('Please make a selection to continue.');
-    return;
-  }
+  $(".calculator__btn-next").on("click", function () {
+    if (!checkSelectedService()) {
+      $(".calculator__alerts").fadeIn("slow");
+      $(".calculator__alerts").text('Please make a selection to continue.');
+      return;
+    }
 
-  const hasSelect = $('[data-service="1"]').hasClass('_select');
-  if(hasSelect && step === 2 && !checkSelectedRoomSize() ) {
-    $(".calculator__alerts").fadeIn("slow");
-    $(".calculator__alerts").text('Please select your home size to continue.');
-      //Please select your home size to continue.
-    return;
-  }
+    const hasSelect = $('[data-service="1"]').hasClass('_select');
+    if(hasSelect && step === 2 && !checkSelectedRoomSize() ) {
+      $(".calculator__alerts").fadeIn("slow");
+      $(".calculator__alerts").text('Please select your home size to continue.');
+        //Please select your home size to continue.
+      return;
+    }
 
-  const hasLawnSelect = $('[data-service="3"]').hasClass('_select');
-  if(hasLawnSelect && step === 2 && !checkSelectedLawnSize()) {
-    $(".calculator__alerts").fadeIn("slow");
-    $(".calculator__alerts").text('Please make a lawn area selection to continue.');
-    //Please make a lawn area selection to continue.
-    return;
-  }
+    const hasLawnSelect = $('[data-service="3"]').hasClass('_select');
+    if(hasLawnSelect && step === 2 && !checkSelectedLawnSize()) {
+      $(".calculator__alerts").fadeIn("slow");
+      $(".calculator__alerts").text('Please make a lawn area selection to continue.');
+      //Please make a lawn area selection to continue.
+      return;
+    }
 
-  $(".calculator__alerts").fadeOut();
+    $(".calculator__alerts").fadeOut();
 
-  showedSpollers();
+    showedSpollers();
 
-  if (step < 3) {
-    step++;
-  }
+    if (step < 3) {
+      step++;
+    }
 
-  stepControl();
-});
+    stepControl();
+  });
 
-$(".calculator__btn-prev").on("click", function () {
-  if (step >= 2) {
-    step--;
-  }
+  $(".calculator__btn-prev").on("click", function () {
+    if (step >= 2) {
+      step--;
+    }
 
-  stepControl();
-});
+    stepControl();
+  });
 
 // End Control button with calculator ===================================================================
 
@@ -208,6 +264,10 @@ function showedSpollers() {
 
 function updeteHomeCleaningPrice() {
   homeCleaningPrice = parseInt(roomPrice) + parseInt(bedroomsPrice) + parseInt(extrasPrice);
+}
+
+function updateAllRepairCleanPrice() {
+  repairCleanPrice = parseInt(squerePrice) + parseInt(repairExtras) + parseInt(repairWindowPrice);
 }
 
 // End Common functions ==============================================================================
@@ -300,6 +360,8 @@ flsModules.rangePipe?.noUiSlider.on('update', function (values, handle) {
 });
 
 
+
+
 $('[data-service="6"]').on('click', function(){
   if($(this).hasClass('_select')) {
     $("html, body").animate(
@@ -329,11 +391,19 @@ function updetePrice() {
     dopProcent = homeCleaningPrice * 1.25 - homeCleaningPrice
   }
 
+  let isRepairExtras = $('.renovation-extras._setected');
+  let dopRepairProcent = 0;
+
+  if(isRepairClinlevel && isRepairExtras.length) {
+    dopRepairProcent = repairCleanPrice * 1.25 - repairCleanPrice;
+  }
+
 
   let finalPrice = (parseInt(homeCleaningPrice) +  parseInt(dopProcent))
   + parseInt(windowsPrice) 
   + parseInt(lawnPrice)
-  + parseInt(pipePrice);
+  + parseInt(pipePrice)
+  + (parseInt(repairCleanPrice) + parseInt(dopRepairProcent));
 
   $(".calculator__total-price span").text(finalPrice);
 }

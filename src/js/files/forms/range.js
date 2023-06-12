@@ -81,7 +81,7 @@ export function rangeInit() {
 		range.push(parseInt(textTo));
 
 		noUiSlider.create(numberWindows, {
-			start: 1, 
+			start: 0, 
 			connect: [true, false],
 			step: 1,
 			tooltips: [wNumb({
