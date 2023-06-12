@@ -24,7 +24,7 @@ export function rangeInit() {
 
 
 		noUiSlider.create(rangeWindows, {
-			start: 1, 
+			start: 0, 
 			connect: [true, false],
 			step: 1,
 			tooltips: [wNumb({
