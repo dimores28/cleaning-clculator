@@ -104,7 +104,10 @@ Template Name: home
                                         </div>
                                         <div class="room living-quarters" data-room-price="510">
                                             <div class="room__img">
-                                                <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/house5.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/house5.png" alt="house image" /></picture>
+                                                <picture>
+                                                    <source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/house5.webp" type="image/webp">
+                                                    <img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/house5.png" alt="house image" />
+                                                </picture>
                                             </div>
                                             <p>5000+ square feet</p>
                                         </div>
