@@ -6,7 +6,7 @@ Template Name: home
 
 <?php get_header();?>
     <section class="offer">
-        <picture><source srcset="img/main_bg.webp" type="image/webp"><img src="img/main_bg.jpg" class="offer__bg" alt="background image" width="1500" height="700" /></picture>
+        <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/main_bg.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/main_bg.jpg" class="offer__bg" alt="background image" width="1500" height="700" /></picture>
         <div class="offer__container">
             <h1 class="offer__heading">Quote Calculator</h1>
             <div class="offer__calculator calculator">
@@ -16,39 +16,39 @@ Template Name: home
                 <div class="calculator__services">
                     <div class="service" data-service-price="30" data-service="1">
                         <div class="service__img">
-                            <picture><source srcset="img/calculator/service1.webp" type="image/webp"><img src="img/calculator/service1.png" alt="service icon" /></picture>
+                            <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/service1.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/service1.png" alt="service icon" /></picture>
                         </div>
                         <p>Cleaning of apartments / houses</p>
                     </div>
                     <div class="service" data-service-price="55" data-service="2">
                         <div class="service__img">
-                            <picture><source srcset="img/calculator/service3.webp" type="image/webp"><img src="img/calculator/service3.png" alt="service icon" /></picture>
+                            <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/service3.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/service3.png" alt="service icon" /></picture>
                         </div>
                         <p>Window cleaning</p>
                     </div>
                     <div class="service" data-service-price="25" data-service="3">
                         <div class="service__img">
-                            <picture><source srcset="img/calculator/service4.webp" type="image/webp"><img src="img/calculator/service4.png" alt="service icon" /></picture>
+                            <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/service4.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/service4.png" alt="service icon" /></picture>
                         </div>
                         <p>Lawn mowing</p>
                     </div>
                     <div class="service" data-service-price="30" data-service="4">
                         <div class="service__img">
-                            <picture><source srcset="img/calculator/service5.webp" type="image/webp"><img src="img/calculator/service5.png" alt="service icon" /></picture>
+                            <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/service5.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/service5.png" alt="service icon" /></picture>
                         </div>
                         <p>Drain pipe cleaning</p>
                     </div>
 
                     <div class="service" data-service-price="30" data-service="5">
                         <div class="service__img">
-                            <picture><source srcset="img/calculator/service6.webp" type="image/webp"><img src="img/calculator/service6.png" alt="service icon" /></picture>
+                            <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/service6.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/service6.png" alt="service icon" /></picture>
                         </div>
                         <p>After renovation</p>
                     </div>
 
                     <div class="service" data-service-price="30" data-service="6">
                         <div class="service__img">
-                            <picture><source srcset="img/calculator/service7.webp" type="image/webp"><img src="img/calculator/service7.png" alt="service icon" /></picture>
+                            <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/service7.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/service7.png" alt="service icon" /></picture>
                         </div>
                         <p>Request a service</p>
                     </div>
@@ -80,31 +80,31 @@ Template Name: home
                                     <div class="calculator__rooms">
                                         <div class="room living-quarters" data-room-price="110">
                                             <div class="room__img">
-                                                <picture><source srcset="img/calculator/house1.webp" type="image/webp"><img src="img/calculator/house1.png" alt="house image" /></picture>
+                                                <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/house1.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/house1.png" alt="house image" /></picture>
                                             </div>
                                             <p>0-2000 square feet</p>
                                         </div>
                                         <div class="room living-quarters" data-room-price="210">
                                             <div class="room__img">
-                                                <picture><source srcset="img/calculator/house2.webp" type="image/webp"><img src="img/calculator/house2.png" alt="house image" /></picture>
+                                                <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/house2.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/house2.png" alt="house image" /></picture>
                                             </div>
                                             <p>2001 - 3000 square feet</p>
                                         </div>
                                         <div class="room living-quarters" data-room-price="310">
                                             <div class="room__img">
-                                                <picture><source srcset="img/calculator/house3.webp" type="image/webp"><img src="img/calculator/house3.png" alt="house image" /></picture>
+                                                <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/house3.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/house3.png" alt="house image" /></picture>
                                             </div>
                                             <p>3001-4000 square feet</p>
                                         </div>
                                         <div class="room living-quarters" data-room-price="410">
                                             <div class="room__img">
-                                                <picture><source srcset="img/calculator/house4.webp" type="image/webp"><img src="img/calculator/house4.png" alt="house image" /></picture>
+                                                <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/house4.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/house4.png" alt="house image" /></picture>
                                             </div>
                                             <p>4001-5000 square feet</p>
                                         </div>
                                         <div class="room living-quarters" data-room-price="510">
                                             <div class="room__img">
-                                                <picture><source srcset="img/calculator/house5.webp" type="image/webp"><img src="img/calculator/house5.png" alt="house image" /></picture>
+                                                <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/house5.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/house5.png" alt="house image" /></picture>
                                             </div>
                                             <p>5000+ square feet</p>
                                         </div>
@@ -117,31 +117,31 @@ Template Name: home
                                         <div class="bedrooms__block">
                                             <div class="bedrooms__item" data-bedroom-price="169">
                                                 <div class="bedrooms__img">
-                                                    <picture><source srcset="img/calculator/bedroom.webp" type="image/webp"><img src="img/calculator/bedroom.png" alt="bedroom icon" /></picture>
+                                                    <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/bedroom.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/bedroom.png" alt="bedroom icon" /></picture>
                                                 </div>
                                                 1
                                             </div>
                                             <div class="bedrooms__item" data-bedroom-price="195">
                                                 <div class="bedrooms__img">
-                                                    <picture><source srcset="img/calculator/bedroom.webp" type="image/webp"><img src="img/calculator/bedroom.png" alt="bedroom icon" /></picture>
+                                                    <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/bedroom.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/bedroom.png" alt="bedroom icon" /></picture>
                                                 </div>
                                                 2
                                             </div>
                                             <div class="bedrooms__item" data-bedroom-price="235">
                                                 <div class="bedrooms__img">
-                                                    <picture><source srcset="img/calculator/bedroom.webp" type="image/webp"><img src="img/calculator/bedroom.png" alt="bedroom icon" /></picture>
+                                                    <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/bedroom.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/bedroom.png" alt="bedroom icon" /></picture>
                                                 </div>
                                                 3
                                             </div>
                                             <div class="bedrooms__item" data-bedroom-price="349">
                                                 <div class="bedrooms__img">
-                                                    <picture><source srcset="img/calculator/bedroom.webp" type="image/webp"><img src="img/calculator/bedroom.png" alt="bedroom icon" /></picture>
+                                                    <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/bedroom.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/bedroom.png" alt="bedroom icon" /></picture>
                                                 </div>
                                                 4
                                             </div>
                                             <div class="bedrooms__item" data-bedroom-price="369">
                                                 <div class="bedrooms__img">
-                                                    <picture><source srcset="img/calculator/bedroom.webp" type="image/webp"><img src="img/calculator/bedroom.png" alt="bedroom icon" /></picture>
+                                                    <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/bedroom.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/bedroom.png" alt="bedroom icon" /></picture>
                                                 </div>
                                                 5
                                             </div>
@@ -168,7 +168,7 @@ Template Name: home
                                     <div class="select-extras">
                                         <div class="select-extras__item living-extras" data-extras-price="25">
                                             <div class="select-extras__img">
-                                                <picture><source srcset="img/calculator/oven.webp" type="image/webp"><img src="img/calculator/oven.png" alt="oven icon" width="64" height="64" /></picture>
+                                                <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/oven.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/oven.png" alt="oven icon" width="64" height="64" /></picture>
                                             </div>
                                             <div class="select-extras__desc">
                                                 Clean inside the oven
@@ -176,7 +176,7 @@ Template Name: home
                                         </div>
                                         <div class="select-extras__item living-extras" data-extras-price="15">
                                             <div class="select-extras__img">
-                                                <picture><source srcset="img/calculator/fridge.webp" type="image/webp"><img src="img/calculator/fridge.png" alt="fridge icon" width="64" height="64" /></picture>
+                                                <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/fridge.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/fridge.png" alt="fridge icon" width="64" height="64" /></picture>
                                             </div>
                                             <div class="select-extras__desc">
                                                 Clean inside fridge
@@ -184,7 +184,7 @@ Template Name: home
                                         </div>
                                         <div class="select-extras__item living-extras" data-extras-price="10">
                                             <div class="select-extras__img">
-                                                <picture><source srcset="img/calculator/pets.webp" type="image/webp"><img src="img/calculator/pets.png" alt="pets icon" width="64" height="64" /></picture>
+                                                <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/pets.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/pets.png" alt="pets icon" width="64" height="64" /></picture>
                                             </div>
                                             <div class="select-extras__desc">
                                                 Pets in home
@@ -192,7 +192,7 @@ Template Name: home
                                         </div>
                                         <div class="select-extras__item living-extras" data-extras-price="10">
                                             <div class="select-extras__img">
-                                                <picture><source srcset="img/calculator/dishes.webp" type="image/webp"><img src="img/calculator/dishes.png" alt="Dishes icon" width="64" height="64" /></picture>
+                                                <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/dishes.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/dishes.png" alt="Dishes icon" width="64" height="64" /></picture>
                                             </div>
                                             <div class="select-extras__desc">
                                                 Dishes
@@ -200,7 +200,7 @@ Template Name: home
                                         </div>
                                         <div class="select-extras__item living-extras" data-extras-price="25">
                                             <div class="select-extras__img">
-                                                <picture><source srcset="img/calculator/basement.webp" type="image/webp"><img src="img/calculator/basement.png" alt="basement icon" width="64" height="64" /></picture>
+                                                <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/basement.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/basement.png" alt="basement icon" width="64" height="64" /></picture>
                                             </div>
                                             <div class="select-extras__desc">
                                                 Finished Basement
@@ -208,7 +208,7 @@ Template Name: home
                                         </div>
                                         <div class="select-extras__item living-extras" data-extras-price="5">
                                             <div class="select-extras__img">
-                                                <picture><source srcset="img/calculator/carpet.webp" type="image/webp"><img src="img/calculator/carpet.png" alt="carpet icon" width="64" height="64" /></picture>
+                                                <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/carpet.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/carpet.png" alt="carpet icon" width="64" height="64" /></picture>
                                             </div>
                                             <div class="select-extras__desc">
                                                 Stains on the carpet
@@ -263,31 +263,31 @@ Template Name: home
                                 <div class="lawn-area">
                                     <div class="lawn-area__item" data-lawn-area="50">
                                         <div class="lawn-area__img">
-                                            <picture><source srcset="img/calculator/lawn.webp" type="image/webp"><img src="img/calculator/lawn.png" alt="lawn icon" width="48" height="48" /></picture>
+                                            <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/lawn.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/lawn.png" alt="lawn icon" width="48" height="48" /></picture>
                                         </div>
                                         х-300 sq.feet
                                     </div>
                                     <div class="lawn-area__item" data-lawn-area="150">
                                         <div class="lawn-area__img">
-                                            <picture><source srcset="img/calculator/lawn.webp" type="image/webp"><img src="img/calculator/lawn.png" alt="lawn icon" width="48" height="48" /></picture>
+                                            <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/lawn.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/lawn.png" alt="lawn icon" width="48" height="48" /></picture>
                                         </div>
                                         300-500 sq.feet
                                     </div>
                                     <div class="lawn-area__item" data-lawn-area="250">
                                         <div class="lawn-area__img">
-                                            <picture><source srcset="img/calculator/lawn.webp" type="image/webp"><img src="img/calculator/lawn.png" alt="lawn icon" width="48" height="48" /></picture>
+                                            <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/lawn.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/lawn.png" alt="lawn icon" width="48" height="48" /></picture>
                                         </div>
                                         500-700 sq.feet
                                     </div>
                                     <div class="lawn-area__item" data-lawn-area="280">
                                         <div class="lawn-area__img">
-                                            <picture><source srcset="img/calculator/lawn.webp" type="image/webp"><img src="img/calculator/lawn.png" alt="lawn icon" width="48" height="48" /></picture>
+                                            <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/lawn.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/lawn.png" alt="lawn icon" width="48" height="48" /></picture>
                                         </div>
                                         700-900 sq.feet
                                     </div>
                                     <div class="lawn-area__item" data-lawn-area="350">
                                         <div class="lawn-area__img">
-                                            <picture><source srcset="img/calculator/lawn.webp" type="image/webp"><img src="img/calculator/lawn.png" alt="lawn icon" width="48" height="48" /></picture>
+                                            <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/lawn.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/lawn.png" alt="lawn icon" width="48" height="48" /></picture>
                                         </div>
                                         1000+ sq.feet
                                     </div>
@@ -333,31 +333,31 @@ Template Name: home
                                     <div class="calculator__rooms">
                                         <div class="room after-repair" data-room-price="110">
                                             <div class="room__img">
-                                                <picture><source srcset="img/calculator/house1.webp" type="image/webp"><img src="img/calculator/house1.png" alt="house image" /></picture>
+                                                <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/house1.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/house1.png" alt="house image" /></picture>
                                             </div>
                                             <p>0-2000 square feet</p>
                                         </div>
                                         <div class="room after-repair" data-room-price="210">
                                             <div class="room__img">
-                                                <picture><source srcset="img/calculator/house2.webp" type="image/webp"><img src="img/calculator/house2.png" alt="house image" /></picture>
+                                                <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/house2.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/house2.png" alt="house image" /></picture>
                                             </div>
                                             <p>2001 - 3000 square feet</p>
                                         </div>
                                         <div class="room after-repair" data-room-price="310">
                                             <div class="room__img">
-                                                <picture><source srcset="img/calculator/house3.webp" type="image/webp"><img src="img/calculator/house3.png" alt="house image" /></picture>
+                                                <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/house3.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/house3.png" alt="house image" /></picture>
                                             </div>
                                             <p>3001-4000 square feet</p>
                                         </div>
                                         <div class="room after-repair" data-room-price="410">
                                             <div class="room__img">
-                                                <picture><source srcset="img/calculator/house4.webp" type="image/webp"><img src="img/calculator/house4.png" alt="house image" /></picture>
+                                                <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/house4.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/house4.png" alt="house image" /></picture>
                                             </div>
                                             <p>4001-5000 square feet</p>
                                         </div>
                                         <div class="room after-repair" data-room-price="510">
                                             <div class="room__img">
-                                                <picture><source srcset="img/calculator/house5.webp" type="image/webp"><img src="img/calculator/house5.png" alt="house image" /></picture>
+                                                <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/house5.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/house5.png" alt="house image" /></picture>
                                             </div>
                                             <p>5000+ square feet</p>
                                         </div>
@@ -384,7 +384,7 @@ Template Name: home
                                         <div class="select-extras">
                                             <div class="select-extras__item renovation-extras" data-extras-price="25">
                                                 <div class="select-extras__img">
-                                                    <picture><source srcset="img/calculator/oven.webp" type="image/webp"><img src="img/calculator/oven.png" alt="oven icon" width="64" height="64" /></picture>
+                                                    <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/oven.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/oven.png" alt="oven icon" width="64" height="64" /></picture>
                                                 </div>
                                                 <div class="select-extras__desc">
                                                     Clean inside the oven
@@ -392,7 +392,7 @@ Template Name: home
                                             </div>
                                             <div class="select-extras__item renovation-extras" data-extras-price="15">
                                                 <div class="select-extras__img">
-                                                    <picture><source srcset="img/calculator/fridge.webp" type="image/webp"><img src="img/calculator/fridge.png" alt="fridge icon" width="64" height="64" /></picture>
+                                                    <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/fridge.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/fridge.png" alt="fridge icon" width="64" height="64" /></picture>
                                                 </div>
                                                 <div class="select-extras__desc">
                                                     Clean inside fridge
@@ -400,7 +400,7 @@ Template Name: home
                                             </div>
                                             <div class="select-extras__item renovation-extras" data-extras-price="10">
                                                 <div class="select-extras__img">
-                                                    <picture><source srcset="img/calculator/pets.webp" type="image/webp"><img src="img/calculator/pets.png" alt="pets icon" width="64" height="64" /></picture>
+                                                    <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/pets.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/pets.png" alt="pets icon" width="64" height="64" /></picture>
                                                 </div>
                                                 <div class="select-extras__desc">
                                                     Pets in home
@@ -408,7 +408,7 @@ Template Name: home
                                             </div>
                                             <div class="select-extras__item renovation-extras" data-extras-price="10">
                                                 <div class="select-extras__img">
-                                                    <picture><source srcset="img/calculator/dishes.webp" type="image/webp"><img src="img/calculator/dishes.png" alt="Dishes icon" width="64" height="64" /></picture>
+                                                    <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/dishes.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/dishes.png" alt="Dishes icon" width="64" height="64" /></picture>
                                                 </div>
                                                 <div class="select-extras__desc">
                                                     Dishes
@@ -416,7 +416,7 @@ Template Name: home
                                             </div>
                                             <div class="select-extras__item renovation-extras" data-extras-price="25">
                                                 <div class="select-extras__img">
-                                                    <picture><source srcset="img/calculator/basement.webp" type="image/webp"><img src="img/calculator/basement.png" alt="basement icon" width="64" height="64" /></picture>
+                                                    <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/basement.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/basement.png" alt="basement icon" width="64" height="64" /></picture>
                                                 </div>
                                                 <div class="select-extras__desc">
                                                     Finished Basement
@@ -424,7 +424,7 @@ Template Name: home
                                             </div>
                                             <div class="select-extras__item renovation-extras" data-extras-price="5">
                                                 <div class="select-extras__img">
-                                                    <picture><source srcset="img/calculator/carpet.webp" type="image/webp"><img src="img/calculator/carpet.png" alt="carpet icon" width="64" height="64" /></picture>
+                                                    <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/carpet.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/carpet.png" alt="carpet icon" width="64" height="64" /></picture>
                                                 </div>
                                                 <div class="select-extras__desc">
                                                     Stains on the carpet
@@ -615,7 +615,7 @@ Template Name: home
                     </p>
                 </div>
                 <div class="about-content__img">
-                    <picture><source srcset="img/about.webp" type="image/webp"><img class="about-img" src="img/about.jpg" alt="" /></picture>
+                    <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/about.webp" type="image/webp"><img class="about-img" src="<?php bloginfo('template_url'); ?>/assets/img/about.jpg" alt="" /></picture>
                 </div>
             </div>
         </div>
@@ -629,7 +629,7 @@ Template Name: home
             <div class="advantages__content">
                 <div class="advantages__item row-reverse">
                     <div class="advantages__item-img">
-                        <picture><source srcset="img/do_it_right.webp" type="image/webp"><img src="img/do_it_right.jpg" alt="" /></picture>
+                        <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/do_it_right.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/do_it_right.jpg" alt="" /></picture>
                     </div>
                     <div class="advantages__item-text">
                         <h3 class="advantages__item-title">
@@ -644,7 +644,7 @@ Template Name: home
                 </div>
                 <div class="advantages__item">
                     <div class="advantages__item-img">
-                        <picture><source srcset="img/buketTools.webp" type="image/webp"><img src="img/buketTools.jpg" alt="" /></picture>
+                        <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/buketTools.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/buketTools.jpg" alt="" /></picture>
                     </div>
                     <div class="advantages__item-text">
                         <h3 class="advantages__item-title">
@@ -659,7 +659,7 @@ Template Name: home
                 </div>
                 <div class="advantages__item row-reverse">
                     <div class="advantages__item-img">
-                        <picture><source srcset="img/woman-worker.webp" type="image/webp"><img src="img/woman-worker.jpg" alt="" /></picture>
+                        <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/woman-worker.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/woman-worker.jpg" alt="" /></picture>
                     </div>
                     <div class="advantages__item-text">
                         <h3 class="advantages__item-title">
@@ -674,7 +674,7 @@ Template Name: home
                 </div>
                 <div class="advantages__item">
                     <div class="advantages__item-img">
-                        <picture><source srcset="img/workers.webp" type="image/webp"><img src="img/workers.jpg" alt="" /></picture>
+                        <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/workers.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/workers.jpg" alt="" /></picture>
                     </div>
                     <div class="advantages__item-text">
                         <h3 class="advantages__item-title">
@@ -689,7 +689,7 @@ Template Name: home
                 </div>
                 <div class="advantages__item row-reverse">
                     <div class="advantages__item-img">
-                        <picture><source srcset="img/Secured.webp" type="image/webp"><img src="img/Secured.jpg" alt="" /></picture>
+                        <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/Secured.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/Secured.jpg" alt="" /></picture>
                     </div>
                     <div class="advantages__item-text">
                         <h3 class="advantages__item-title">
@@ -717,7 +717,7 @@ Template Name: home
                         <h3>C</h3>
                     </div>
                     <h4 class="reviews__item-title">Carol E.</h4>
-                    <img class="reviews__item-grade" src="img/star-rating.svg" alt="" />
+                    <img class="reviews__item-grade" src="<?php bloginfo('template_url'); ?>/assets/img/star-rating.svg" alt="" />
                     <p class="reviews__item-body">
                         Oh my God I would just like to say…THEY ARE AMAZINGG.
                         They did such an amazing job seriously 100/10. Im so
@@ -730,7 +730,7 @@ Template Name: home
                         <h3>S</h3>
                     </div>
                     <h4 class="reviews__item-title">Susan P.</h4>
-                    <img class="reviews__item-grade" src="img/star-rating.svg" alt="" />
+                    <img class="reviews__item-grade" src="<?php bloginfo('template_url'); ?>/assets/img/star-rating.svg" alt="" />
                     <p class="reviews__item-body">
                         They are professional, trustworthy, perfectionists,
                         and leave the place looking like a completely
@@ -744,7 +744,7 @@ Template Name: home
                         <h3>J</h3>
                     </div>
                     <h4 class="reviews__item-title">Jessica B.</h4>
-                    <img class="reviews__item-grade" src="img/star-rating.svg" alt="" />
+                    <img class="reviews__item-grade" src="<?php bloginfo('template_url'); ?>/assets/img/star-rating.svg" alt="" />
                     <p class="reviews__item-body">
                         We asked AP Good Cleaning to help us clean our
                         furnished apartment as we were moving out. They were
@@ -759,7 +759,7 @@ Template Name: home
                         <h3>K</h3>
                     </div>
                     <h4 class="reviews__item-title">Kelly S.</h4>
-                    <img class="reviews__item-grade" src="img/star-rating.svg" alt="" />
+                    <img class="reviews__item-grade" src="<?php bloginfo('template_url'); ?>/assets/img/star-rating.svg" alt="" />
                     <p class="reviews__item-body">
                         This is a very professional business in the area.
                         They first come to your home to visit for a fair
@@ -776,7 +776,7 @@ Template Name: home
     <section class="book">
         <div class="book__container">
             <div class="book__content">
-                <picture><source srcset="img/form-img.webp" type="image/webp"><img class="book__content-img" src="img/form-img.jpg" alt="" /></picture>
+                <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/form-img.webp" type="image/webp"><img class="book__content-img" src="<?php bloginfo('template_url'); ?>/assets/img/form-img.jpg" alt="" /></picture>
             </div>
 
             <form action="" class="book__form" id="bookForm">

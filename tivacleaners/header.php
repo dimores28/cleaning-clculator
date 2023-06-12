@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes(); ?>>
+
 
 <head>
 	<title>TIVA Cleaning</title>
-	<meta charset="UTF-8" />
+	<meta charset="<?php bloginfo('charset'); ?>" />
 	<meta name="format-detection" content="telephone=no" />
 
 	<link rel="shortcut icon" href="favicon.ico" />
@@ -41,7 +42,7 @@
 		<header class="header">
 			<div class="header__container">
 				<div class="header__logo">
-					<a href="#"><img src="img/logo.svg" alt="logo TIVA Cleaning" /></a>
+					<a href="#"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" alt="logo TIVA Cleaning" /></a>
 				</div>
 
 				<div class="header__menu menu">

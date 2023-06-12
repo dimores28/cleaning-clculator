@@ -2,12 +2,12 @@
 		<footer class="footer" id="contacts" data-watch="navigator">
 			<div class="footer__container">
 				<div class="footer__logo-mobile">
-					<img src="img/logo.svg" alt="logo" />
+					<img src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" alt="logo" />
 				</div>
 				<div class="footer__content">
 					<div class="footer__nav">
 						<div class="footer__logo">
-							<img src="img/logo.svg" alt="logo" />
+							<img src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" alt="logo" />
 						</div>
 						<nav class="nav">
 							<ul class="nav__list">
@@ -31,7 +31,7 @@
 							<li class="contacts__item">
 								<a href="mailto:gardenindustrysrl@gmail.com" class="contacts__linck">
 									<svg class="contacts__icon">
-										<use xlink:href="img/icons/icons.svg#email"></use>
+										<use xlink:href="<?php bloginfo('template_url'); ?>/assets/img/icons/icons.svg#email"></use>
 									</svg>
 									<span>name@gmail.com</span>
 								</a>
@@ -39,7 +39,7 @@
 							<li class="contacts__item">
 								<a href="tel:+18252887200" class="contacts__linck">
 									<svg class="contacts__icon">
-										<use xlink:href="img/icons/icons.svg#phone"></use>
+										<use xlink:href="<?php bloginfo('template_url'); ?>/assets/img/icons/icons.svg#phone"></use>
 									</svg>
 
 									<span>+18252887200</span>
@@ -48,7 +48,7 @@
 							<li class="contacts__item">
 								<a href="tel:+18252887202" class="contacts__linck">
 									<svg class="contacts__icon">
-										<use xlink:href="img/icons/icons.svg#phone"></use>
+										<use xlink:href="<?php bloginfo('template_url'); ?>/assets/img/icons/icons.svg#phone"></use>
 									</svg>
 
 									<span>+18252887202</span>
@@ -57,7 +57,7 @@
 							<li class="contacts__item">
 								<a href="https://goo.gl/maps/g1emVUuC1TKwgNTZ7" class="contacts__linck" target="_blank">
 									<svg class="contacts__icon">
-										<use xlink:href="img/icons/icons.svg#point"></use>
+										<use xlink:href="<?php bloginfo('template_url'); ?>/assets/img/icons/icons.svg#point"></use>
 									</svg>
 
 									<span> Calgary. 1515-12st SW </span>

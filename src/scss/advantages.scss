@@ -34,7 +34,7 @@
     justify-content: center;
     align-items: center;
     flex: 1 1 40%;
-    & > img {
+    img {
       max-width: 250px;
       @media (max-width: $mobile) {
         max-width: 150px;
