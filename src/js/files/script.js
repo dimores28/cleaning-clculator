@@ -408,32 +408,16 @@ function updetePrice() {
   $(".calculator__total-price span").text(finalPrice);
 }
 
-
 //Module calendar
-if(document.querySelector('#cleaningDate')) {
-    const start = flsModules.datepicker('#cleaningDate', {
-      id: 1,
-      formatter: (input, date, instance) => {
-        const options = { year: '2-digit', month: '2-digit', day: '2-digit' };
-        const value = date.toLocaleDateString('en-US', options)
-        input.value = value
-    }
-  });
-}
+flatpickr("#cleaningDate",{
+  position: "above",
+});
 
 //input Time
-function getTime() {
-  var timeInput = document.getElementById('timeInput').value;
-  // Перевірка на правильний формат часу
-  var timeRegex = /^([01]\d|2[0-3]):([0-5]\d)$/;
-  if (timeRegex.test(timeInput)) {
-    console.log(timeInput);
-    // Виконати потрібні дії з отриманим часом
-  } else {
-    console.log("Неправильний формат часу!");
-  }
-}
-
-$('#timeInput').on('input', function(){
-  getTime();
+flatpickr("#timeInput", {
+  enableTime: true,
+    noCalendar: true,
+    dateFormat: "H:i",
+    position: "above",
 });
+

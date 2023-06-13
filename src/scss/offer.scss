@@ -44,6 +44,7 @@
       line-height: 1.3em;
       margin-bottom: 30px;
       text-align: center;
+      width: 100%;
 
       @media (max-width:$mobileSmall){
          margin-bottom: 24px; 
@@ -359,7 +360,7 @@
       width: 28px;
       height: 28px;
       background: url(../img/icons/check.png) center center no-repeat;
-      background-size: cover;
+      background-size: cover !important;
       top: 4px;
       right: 4px;
       transition: all 0.3s ease-in;
@@ -780,32 +781,41 @@
 }
 
 //====================================================================================================
+.flatpickr-months .flatpickr-month {
+   background: $darkBlue;
+   color: #fff;
+   fill: #fff;
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+}
 
-.qs-controls {
+.flatpickr-months .flatpickr-prev-month svg path, .flatpickr-months .flatpickr-next-month svg path {
+   fill: #fff;
+}
+
+.flatpickr-weekdays {
    background: $darkBlue;
    color: #fff;
 }
 
-.qs-arrow.qs-right:after {
-   border-left-color:#fff;
+.flatpickr-weekdaycontainer {
+   span.flatpickr-weekday {
+      color: #fff;
+   }
 }
 
-.qs-arrow.qs-left:after {
-   border-right-color: #fff;
+.flatpickr-monthDropdown-months {
+   option {
+      color: $darkBlue;
+   }
 }
 
-.qs-square:not(.qs-empty):not(.qs-disabled):not(.qs-day):not(.qs-active):hover {
-   background: $blue;
+.flatpickr-am-pm {
+   border-top-right-radius: 5px;
+   border-bottom-right-radius: 5px;
 }
 
-.qs-active, .qs-range-start, .qs-range-end {
-   background: $darkBlue;
-   color: #fff;
-}
 
-.qs-day {
-   color: #000;
-}
 //====================================================================================================
 
 

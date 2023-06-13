@@ -76,38 +76,41 @@ Template Name: home
 												</p>
 											</div>
 
-											<div class="calculator__rooms">
-												<div class="room living-quarters" data-room-price="110">
-													<div class="room__img">
-														<img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/house1.png" alt="house image" />
-													</div>
-													<p>0-2000 square feet</p>
-												</div>
-												<div class="room living-quarters" data-room-price="210">
-													<div class="room__img">
-														<img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/house2.png" alt="house image" />
-													</div>
-													<p>2001 - 3000 square feet</p>
-												</div>
-												<div class="room living-quarters" data-room-price="310">
-													<div class="room__img">
-														<img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/house3.png" alt="house image" />
-													</div>
-													<p>3001-4000 square feet</p>
-												</div>
-												<div class="room living-quarters" data-room-price="410">
-													<div class="room__img">
-														<img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/house4.png" alt="house image" />
-													</div>
-													<p>4001-5000 square feet</p>
-												</div>
-												<div class="room living-quarters" data-room-price="510">
-													<div class="room__img">
-														<img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/house5.png" alt="house image" />
-													</div>
-													<p>5000+ square feet</p>
-												</div>
-											</div>
+                                    <div class="calculator__rooms">
+                                        <div class="room living-quarters" data-room-price="110">
+                                            <div class="room__img">
+                                                <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/house1.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/house1.png" alt="house image" /></picture>
+                                            </div>
+                                            <p>0-2000 square feet</p>
+                                        </div>
+                                        <div class="room living-quarters" data-room-price="210">
+                                            <div class="room__img">
+                                                <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/house2.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/house2.png" alt="house image" /></picture>
+                                            </div>
+                                            <p>2001 - 3000 square feet</p>
+                                        </div>
+                                        <div class="room living-quarters" data-room-price="310">
+                                            <div class="room__img">
+                                                <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/house3.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/house3.png" alt="house image" /></picture>
+                                            </div>
+                                            <p>3001-4000 square feet</p>
+                                        </div>
+                                        <div class="room living-quarters" data-room-price="410">
+                                            <div class="room__img">
+                                                <picture><source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/house4.webp" type="image/webp"><img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/house4.png" alt="house image" /></picture>
+                                            </div>
+                                            <p>4001-5000 square feet</p>
+                                        </div>
+                                        <div class="room living-quarters" data-room-price="510">
+                                            <div class="room__img">
+                                                <picture>
+                                                    <source srcset="<?php bloginfo('template_url'); ?>/assets/img/calculator/house5.webp" type="image/webp">
+                                                    <img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/house5.png" alt="house image" />
+                                                </picture>
+                                            </div>
+                                            <p>5000+ square feet</p>
+                                        </div>
+                                    </div>
 
 											<div class="bedrooms">
 												<h4 class="bedrooms__title">Number of bedroom:</h4>
