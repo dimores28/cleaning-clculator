@@ -39,7 +39,8 @@
 // Сніппет (HTML): ibg (div з картинкою та класами)
 // Сніппет (HTML): ibga (a з картинкою та класами)
 
-@import '~js-datepicker/src/datepicker';
+// @import '~js-datepicker/src/datepicker';
+@import 'libs/flatpickr.scss';
 
 [class*="-ibg"] {
 	position: relative;

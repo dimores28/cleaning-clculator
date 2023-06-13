@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  @@include('html/_head.htm',{ "title":"TIVA Cleaning" })
-  <body>
-    <div class="wrapper">
-      @@include('html/_header.htm',{})
-      <main class="page">
-         
-      </main>
-      @@include('html/_footer.htm',{})
-    </div>
-    @@include('html/_js.htm',{})
-  </body>
+   @@include('html/_head.htm',{ "title":"TIVA Cleaning" })
+   <body>
+      <div class="wrapper">
+         @@include('html/_header.htm',{})
+         <main class="page">
+            <section class="blog">
+               <div class="blog__container">
+                  <h2 class="advantages__heading section-heading">Blog</h2>
+                  <div class="blog__content articles">
+                     <article class="articles__item article-card">
+                        <div class="article-card__img">
+                           <a href="#">
+                              <img
+                                 src="@img/blog/blog.jpg"
+                                 alt="Step-by-Step" />
+                           </a>
+                        </div>
+                        <h3 class="article-card__title">
+                           <a href="#">
+                              Build Your Own Cleaning Robot: A Step-by-Step
+                              Guide
+                           </a>
+                        </h3>
+                        <p class="article-card__text">
+                           Building a cleaning robot at home can be an exciting
+                           and fulfilling project. With a few basic materials
+                           and tools, you can create a robot that can help keep
+                           your living space tidy and spotless. Here’s how to
+                        </p>
+                        <div class="article-card__date">May 23, 2023</div>
+                        <a href="#">READ MORE</a>
+                     </article>
+                  </div>
+               </div>
+            </section>
+         </main>
+         @@include('html/_footer.htm',{})
+      </div>
+      @@include('html/_js.htm',{})
+   </body>
 </html>
