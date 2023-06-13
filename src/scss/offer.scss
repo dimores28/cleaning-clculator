@@ -359,7 +359,7 @@
       width: 28px;
       height: 28px;
       background: url(../img/icons/check.png) center center no-repeat;
-      background-size: cover;
+      background-size: cover !important;
       top: 4px;
       right: 4px;
       transition: all 0.3s ease-in;
