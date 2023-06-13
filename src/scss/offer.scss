@@ -213,12 +213,17 @@
       flex-wrap: wrap;
       column-gap: 20px;
 
-      @media (max-width:$mobileSmall){
-          label {
-            font-size: 0px;
-            line-height: 0px;
-          } 
+      #cleaningDate,
+      #timeInput {
+         height: 38px !important;
       }
+
+      // @media (max-width:$mobileSmall){
+      //     label {
+      //       font-size: 0px;
+      //       line-height: 0px;
+      //     } 
+      // }
    }
 
    &__form {
@@ -227,8 +232,14 @@
       }
 
       @media (max-width:$mobileSmall){
+         margin-bottom: 14px;
+
          .input-group {
             width: 100%;
+         }
+
+         button {
+            margin-top: -20px;
          }
       }
    }
