@@ -49,10 +49,10 @@
 	
 
 	//Message
-	$body = '<h1>Встречайте супер письмо!</h1>';
+	$body = '<h1>BOOK A CLEANING</h1>';
 	
-	if(trim(!empty($_POST['name']))){
-		$body.='<p><strong>Name:</strong> '.$_POST['name'].'</p>';
+	if(trim(!empty($_POST['bookUserName']))){
+		$body.='<p><strong>Name:</strong> '.$_POST['bookUserName'].'</p>';
 	}
 	if(trim(!empty($_POST['bookEmail']))){
 		$body.='<p><strong>E-mail:</strong> '.$_POST['bookEmail'].'</p>';
@@ -69,9 +69,9 @@
 	
 	//Send
 	if (!$mail->send()) {
-		$message = 'Ошибка';
+		$message = 'Mailer Error';
 	} else {
-		$message = 'Данные отправлены!';
+		$message = 'Message sent!';
 	}
 
 	$response = ['message' => $message];
