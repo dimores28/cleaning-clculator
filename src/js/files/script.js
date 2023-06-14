@@ -205,6 +205,10 @@ function stepControl() {
     $(".calculator__form").slideDown("slow");
 
     $(".calculator__btn-next").hide();
+    
+    //встаривание цены в платежную систему
+    let price = $(".calculator__total-price span").text();
+    $('.stripe-form input[name="item_price"]').val(parseInt(price));
 
     scrollTopOffer();
   }
@@ -423,6 +427,11 @@ function updetePrice() {
 
   $(".calculator__total-price span").text(finalPrice);
 }
+
+//Payment button 
+$('#buyNowBtn').on('click', function(){
+  $( '.stripe-form input[type="submit"]' ).trigger( "click" );
+});
 
 //Module calendar
 flatpickr("#cleaningDate", {

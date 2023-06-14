@@ -366,7 +366,7 @@
                         </h3>
 
                         <button class="switsh-btn exterior-window">
-                          <span>Exterior Window Cleaning</span>
+                          <span>Interior windows cleaning</span>
                         </button>
 
                         <div class="number-windows__renge">
@@ -910,12 +910,29 @@
                     </div>
                   </div>
 
-                  <button type="submit" class="btn btn-primary">
-                    Book now
-                  </button>
+                 <div class="calculator__buttons-wrap">
+                    <button type="submit" class="btn btn-primary">
+                      Book now
+                    </button>
+                    <button type="button" class="btn btn-primary" id="buyNowBtn">
+                      Buy Now
+                    </button>
+                 </div>
                 </form>
+                <form class="wpsc-session stripe-form" action="" method="post">
+                  <input type="hidden" id="_wpnonce" name="_wpnonce" value="810457bb7e">
+                  <input type="hidden" name="_wp_http_referer" value="/">
+                  <input type="hidden" name="client_reference_id" value="wpsc648a250029753">
+                  <input type="hidden" name="item_name" value="Cleaning">
+                  <input type="hidden" name="item_price" value="42">
+                  <input type="hidden" name="item_currency" value="USD">
+                  <input type="hidden" name="success_url" value="https://www.tivacleaners.com/">
+                  <input type="hidden" name="cancel_url" value="https://www.tivacleaners.com">
+                  <input type="hidden" name="wp_stripe_checkout_session" value="1">
+                  <input type="submit" value="Buy Now">
+                </form>  
               </div>
-
+  
               <div class="calculator__total-price"><span>0</span>$</div>
 
               <p class="calculator__alerts">

@@ -3,7 +3,7 @@
 Template Name: home
 */
 ?>
-
+<!-- <?php echo do_shortcode('[wp_stripe_checkout_session name="Cleaning" price="42" class="stripe-form"]') ?> -->
 <?php get_header();?>
 	<section class="offer">
 		<img src="<?php bloginfo('template_url'); ?>/assets/img/main_bg.jpg" class="offer__bg" alt="background image" width="1500" height="700" />
