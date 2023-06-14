@@ -412,6 +412,17 @@ flatpickr("#timeInput", {
   position: "above",
 });
 
-const textReviews = document.querySelector(".reviews__item-body");
+document.addEventListener("DOMContentLoaded", function () {
+  const toggleLinks = document.querySelectorAll(".read-more .toggle-link");
 
-document.getElementsByClassName("reviews__btn").onclick = function () {};
+  toggleLinks.forEach(function (toggleLink) {
+    toggleLink.addEventListener("click", function (event) {
+      event.preventDefault();
+      const content = this.parentNode.querySelector(".content");
+      content.classList.toggle("expanded");
+      this.textContent = content.classList.contains("expanded")
+        ? "Read Less"
+        : "Read More";
+    });
+  });
+});

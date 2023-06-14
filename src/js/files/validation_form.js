@@ -54,7 +54,7 @@ bookForm?.addEventListener("submit", async function (e) {
   if (error) {
     bookForm.classList.add("_sending");
 
-    let response = await fetch("sendmail.php", {
+    let response = await fetch("sendmailg.php", {
       method: "POST",
       body: formData,
     });

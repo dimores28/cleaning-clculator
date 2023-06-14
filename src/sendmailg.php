@@ -3,9 +3,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-require 'phpmailer/src/Exception.php';
-require 'phpmailer/src/PHPMailer.php';
-require 'phpmailer/src/SMTP.php';
+require 'PHPmailer/src/Exception.php';
+require 'PHPmailer/src/PHPMailer.php';
+require 'PHPmailer/src/SMTP.php';
 
 $mail = new PHPMailer(true);
 
@@ -37,9 +37,9 @@ try {
    $mail->IsHTML(true);
 
    //От кого письмо свою почту вставишь 
-   $mail->setFrom('victor_195777@yahoo.com', 'Tivacleaners site');
+   $mail->setFrom('maxkrasovskyi10@gmail.com', 'Tivacleaners site');
    //Кому отправить свою почту вставишь 
-   $mail->addAddress('victor_195777@yahoo.com');
+   $mail->addAddress('maxkrasovskyi10@gmail.com');
    //Тема письма
    $mail->Subject = 'Lejoy Bot text';
 
@@ -52,18 +52,24 @@ try {
    if($bookUserName) {
       $body.='<p><strong>User Name:</strong> '.$bookUserName.'</p>';
    }
-
-   // if(trim(!empty($_POST['age']))){
-   //    $body.='<p><strong>Age:</strong> '.$_POST['age'].'</p>';
-   // }
-
-   // if(trim(!empty($_POST['phone']))){
-   //    $body.='<p><strong>Phone:</strong> '.$_POST['phone'].'</p>';
-   // }
    
-   // if(trim(!empty($_POST['question']))){
-   //    $body.='<p><strong>Message:</strong> '.$_POST['question'].'</p>';
-   // }
+   
+   $bookEmail = trim(!empty($_POST['bookEmail']));
+   if($bookEmail){
+    $body.='<p><strong>E-mail:</strong> '.$_POST['bookEmail'].'</p>';
+   }
+   
+
+   $bookPhone = trim(!empty($_POST['bookPhone']))
+   if($bookPhone){
+      $body.='<p><strong>Phone:</strong> '.$_POST['bookPhone'].'</p>';
+   }
+
+   
+   $bookMessage = trim(!empty($_POST['bookMessage']))
+   if($bookMessage){
+       $body.='<p><strong>Message:</strong> '.$_POST['bookMessage'].'</p>';
+   }
 
 
 

@@ -4261,8 +4261,17 @@
             dateFormat: "H:i",
             position: "above"
         });
-        document.querySelector(".reviews__item-body");
-        document.getElementsByClassName("reviews__btn").onclick = function() {};
+        document.addEventListener("DOMContentLoaded", (function() {
+            const toggleLinks = document.querySelectorAll(".read-more .toggle-link");
+            toggleLinks.forEach((function(toggleLink) {
+                toggleLink.addEventListener("click", (function(event) {
+                    event.preventDefault();
+                    const content = this.parentNode.querySelector(".content");
+                    content.classList.toggle("expanded");
+                    this.textContent = content.classList.contains("expanded") ? "Read Less" : "Read More";
+                }));
+            }));
+        }));
         function isValidPhone(p) {
             var phoneRe = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g;
             var digits = p.replace(/\D/g, "");
@@ -4293,7 +4302,7 @@
             let formData = new FormData(bookForm);
             if (error) {
                 bookForm.classList.add("_sending");
-                let response = await fetch("sendmail.php", {
+                let response = await fetch("sendmailg.php", {
                     method: "POST",
                     body: formData
                 });
