@@ -9,6 +9,10 @@ require 'PHPmailer/src/SMTP.php';
 
 $mail = new PHPMailer(true);
 
+// Загружаем только ядро WordPress
+define( 'WP_USE_THEMES', false );
+require( 'wp-load.php' );
+
 try {
    //Server settings
    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
@@ -39,7 +43,7 @@ try {
    //От кого письмо свою почту вставишь 
    $mail->setFrom('maxkrasovskyi10@gmail.com', 'Tivacleaners site');
    //Кому отправить свою почту вставишь 
-   $mail->addAddress('maxkrasovskyi10@gmail.com');
+   $mail->addAddress('dmytroivanovichn@gmail.com');
    //Тема письма
    $mail->Subject = 'Lejoy Bot text';
 
@@ -56,19 +60,19 @@ try {
    
    $bookEmail = trim(!empty($_POST['bookEmail']));
    if($bookEmail){
-    $body.='<p><strong>E-mail:</strong> '.$_POST['bookEmail'].'</p>';
+    $body.='<p><strong>E-mail:</strong> '.$bookPhone.'</p>';
    }
    
 
    $bookPhone = trim(!empty($_POST['bookPhone']))
    if($bookPhone){
-      $body.='<p><strong>Phone:</strong> '.$_POST['bookPhone'].'</p>';
+      $body.='<p><strong>Phone:</strong> '.$bookPhone.'</p>';
    }
 
    
    $bookMessage = trim(!empty($_POST['bookMessage']))
    if($bookMessage){
-       $body.='<p><strong>Message:</strong> '.$_POST['bookMessage'].'</p>';
+       $body.='<p><strong>Message:</strong> '.$bookMessage.'</p>';
    }
 
 
@@ -90,4 +94,3 @@ try {
 } catch (Exception $e) {
  echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
-?>

@@ -1,4 +1,6 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 
 	add_action( 'wp_enqueue_scripts', function() {
 		wp_enqueue_style( 'style', get_template_directory_uri() . '/assets/css/style.min.css');
@@ -20,6 +22,31 @@
    add_theme_support('post-thumbnails');
    add_theme_support( 'title-tag' );
    add_theme_support('custom-logo');
+
+   /**
+ * Настройка SMTP
+ *
+ * @param PHPMailer $phpmailer объект мэилера
+ */
+function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
+	$phpmailer->isSMTP();
+	$phpmailer->Host       = 'smtp.gmail.com';
+	$phpmailer->SMTPAuth   = true;
+	$phpmailer->Port       = 465;
+	$phpmailer->Username   = 'dimores95@gmail.com';
+	$phpmailer->Password   = 'tjdsjpgjemfdogqb';
+	$phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+	$phpmailer->From       = 'maxkrasovskyi10@gmail.com';
+	$phpmailer->FromName   = 'Tivacleaners site';
+	// $mail->CharSet = 'UTF-8';
+  }
+  add_action( 'phpmailer_init', 'mihdan_send_smtp_email' );
+
+  add_filter( 'wp_mail_content_type', 'true_content_type' );
+ 
+	function true_content_type( $content_type ) {
+		return 'text/html';
+	}
 
 
 	// add_action( 'init', function () {
