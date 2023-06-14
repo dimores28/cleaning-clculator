@@ -72,7 +72,7 @@ bookForm?.addEventListener("submit", async function (e) {
   if (error) {
     bookForm.classList.add("_sending");
 
-    let response = await fetch("sendmailg.php", {
+    let response = await fetch("mail.php", {
       method: "POST",
       body: formData,
     });
@@ -84,6 +84,7 @@ bookForm?.addEventListener("submit", async function (e) {
       bookForm.classList.remove("_sending");
     } else {
       alert("Ошибка");
+      console.log(response.data);
       bookForm.classList.remove("_sending");
     }
   } else {
