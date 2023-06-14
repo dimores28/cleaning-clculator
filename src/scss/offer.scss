@@ -60,7 +60,7 @@
 .calculator {
    background: $sky;
    width: 100%;
-   max-width: 800px;
+   max-width: 940px;
    margin: 0 auto;
    border-radius: 20px;
    padding: 24px 16px 20px;
@@ -333,10 +333,10 @@
 
 //====================================================================================================
 .service {
-   width: calc(20% - 16px);
+   width: calc(100% / 6 - 17px);
    border: 2px solid $darkBlue;
    border-radius: 6px;
-   padding: 20px;
+   padding: 15px;
    cursor: pointer;
    font-size: 16px;
    line-height: 110%;
@@ -346,17 +346,16 @@
    transition: all 0.4s ease-in;
 
    @media (max-width: em(1024)){
-      width: calc(100% / 6 - 17px);
       padding: 10px 5px;  
    }
 
-   @media (max-width:$mobile){
+   @media (max-width: 840px){
       width: calc(100% / 5 - 16px);
       padding: 5px;  
       font-size: 14px;
    }
 
-   @media (max-width:em(610)){
+   @media (max-width:em(630)){
       width: calc(100% / 4 - 15px);
    }
 

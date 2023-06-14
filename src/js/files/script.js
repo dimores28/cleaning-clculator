@@ -277,13 +277,20 @@ $(".cleaning-level__item").on("click", function () {
   $(this).toggleClass("_select");
 });
 
+
+// Lawn area price ==============================================================================
 $(".lawn-area__item").on("click", function () {
   $(".lawn-area__item").removeClass("_select");
   $(this).toggleClass("_select");
 
-  lawnPrice = $(this).attr("data-lawn-area");
+  const sevicePrice = $('[data-service="3"]').attr('data-service-price');
+  const lawnAreaPrice = $(this).attr("data-lawn-area");
+
+  lawnPrice = parseInt(lawnAreaPrice) + parseInt(sevicePrice);
   updetePrice();
 });
+// End lawn area price ==============================================================================
+
 
 $(".payment-options__option").on("click", function () {
   $(".payment-options__option").removeClass("_setected");
@@ -341,17 +348,35 @@ flsModules.rangeWindows?.noUiSlider.on("update", function (values, handle) {
 });
 //конец калькуляции стомости мытья окон ==========================
 
-flsModules.rangePipe?.noUiSlider.on("update", function (values, handle) {
-  const price = $("#rangePipe").attr("data-price-pipe");
 
-  if ($('[data-service="4"]').hasClass("_select")) {
-    pipePrice = values[handle] * price;
+
+// Drain pipe cleaning ===============================================
+$('[data-service="4"]').on("click", function () {
+  if ($(this).hasClass("_select")) {
+    const price = $("#rangePipe").attr("data-price-one-pipe");
+    pipePrice = parseInt(price);
   } else {
     pipePrice = 0;
   }
 
   updetePrice();
 });
+
+flsModules.rangePipe?.noUiSlider.on("update", function (values, handle) {
+  const price = $("#rangePipe").attr("data-price-pipe");
+  const departurePrice = $("#rangePipe").attr("data-price-one-pipe");
+
+  if ($('[data-service="4"]').hasClass("_select")) {
+    pipePrice = values[handle] * price + parseInt(departurePrice);
+  } else {
+    pipePrice = 0;
+  }
+
+  updetePrice();
+});
+// Drain pipe cleaning ===============================================
+
+
 
 $('[data-service="6"]').on("click", function () {
   if ($(this).hasClass("_select")) {
@@ -378,7 +403,7 @@ function updetePrice() {
   let dopProcent = 0;
 
   if (isDeep && isExtras.length) {
-    dopProcent = homeCleaningPrice * 1.25 - homeCleaningPrice;
+    dopProcent = homeCleaningPrice * 1.2 - homeCleaningPrice;
   }
 
   let isRepairExtras = $(".renovation-extras._setected");

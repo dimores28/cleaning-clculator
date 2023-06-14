@@ -38,7 +38,7 @@
                   </div>
                   <p>Window cleaning</p>
                 </div>
-                <div class="service" data-service-price="25" data-service="3">
+                <div class="service" data-service-price="20" data-service="3">
                   <div class="service__img">
                     <img
                       src="@img/calculator/service4.png"
@@ -247,7 +247,7 @@
                         <div class="select-extras">
                           <div
                             class="select-extras__item living-extras"
-                            data-extras-price="25"
+                            data-extras-price="20"
                           >
                             <div class="select-extras__img">
                               <img
@@ -263,7 +263,7 @@
                           </div>
                           <div
                             class="select-extras__item living-extras"
-                            data-extras-price="15"
+                            data-extras-price="20"
                           >
                             <div class="select-extras__img">
                               <img
@@ -307,7 +307,7 @@
                           </div>
                           <div
                             class="select-extras__item living-extras"
-                            data-extras-price="25"
+                            data-extras-price="20"
                           >
                             <div class="select-extras__img">
                               <img
@@ -323,7 +323,7 @@
                           </div>
                           <div
                             class="select-extras__item living-extras"
-                            data-extras-price="5"
+                            data-extras-price="10"
                           >
                             <div class="select-extras__img">
                               <img
@@ -396,7 +396,7 @@
                         Lawn area*
                       </h3>
                       <div class="lawn-area">
-                        <div class="lawn-area__item" data-lawn-area="50">
+                        <div class="lawn-area__item" data-lawn-area="15">
                           <div class="lawn-area__img">
                             <img
                               src="@img/calculator/lawn.png"
@@ -405,9 +405,9 @@
                               height="48"
                             />
                           </div>
-                          х-300 sq.feet
+                          х-700 sq.feet
                         </div>
-                        <div class="lawn-area__item" data-lawn-area="150">
+                        <div class="lawn-area__item" data-lawn-area="20">
                           <div class="lawn-area__img">
                             <img
                               src="@img/calculator/lawn.png"
@@ -416,9 +416,9 @@
                               height="48"
                             />
                           </div>
-                          300-500 sq.feet
+                          701-1000 sq.feet
                         </div>
-                        <div class="lawn-area__item" data-lawn-area="250">
+                        <div class="lawn-area__item" data-lawn-area="25">
                           <div class="lawn-area__img">
                             <img
                               src="@img/calculator/lawn.png"
@@ -427,9 +427,9 @@
                               height="48"
                             />
                           </div>
-                          500-700 sq.feet
+                          1001-1500 sq.feet
                         </div>
-                        <div class="lawn-area__item" data-lawn-area="280">
+                        <div class="lawn-area__item" data-lawn-area="30">
                           <div class="lawn-area__img">
                             <img
                               src="@img/calculator/lawn.png"
@@ -438,9 +438,9 @@
                               height="48"
                             />
                           </div>
-                          700-900 sq.feet
+                          1501-3000 sq.feet
                         </div>
-                        <div class="lawn-area__item" data-lawn-area="350">
+                        <div class="lawn-area__item" data-lawn-area="35">
                           <div class="lawn-area__img">
                             <img
                               src="@img/calculator/lawn.png"
@@ -449,7 +449,18 @@
                               height="48"
                             />
                           </div>
-                          1000+ sq.feet
+                          3001-3500 sq.feet
+                        </div>
+                        <div class="lawn-area__item" data-lawn-area="40">
+                          <div class="lawn-area__img">
+                            <img
+                              src="@img/calculator/lawn.png"
+                              alt="lawn icon"
+                              width="48"
+                              height="48"
+                            />
+                          </div>
+                          3500х sq.feet
                         </div>
                       </div>
                     </div>
@@ -470,9 +481,10 @@
                         <div class="number-pipe__renge">
                           <div
                             id="rangePipe"
-                            data-from="1"
+                            data-from="0"
                             data-to="16"
                             data-price-pipe="8"
+                            data-price-one-pipe="40"
                             class="range"
                           ></div>
                         </div>
@@ -571,7 +583,7 @@
                           <div class="select-extras">
                             <div
                               class="select-extras__item renovation-extras"
-                              data-extras-price="25"
+                              data-extras-price="20"
                             >
                               <div class="select-extras__img">
                                 <img
@@ -587,7 +599,7 @@
                             </div>
                             <div
                               class="select-extras__item renovation-extras"
-                              data-extras-price="15"
+                              data-extras-price="20"
                             >
                               <div class="select-extras__img">
                                 <img
@@ -633,7 +645,7 @@
                             </div>
                             <div
                               class="select-extras__item renovation-extras"
-                              data-extras-price="25"
+                              data-extras-price="20"
                             >
                               <div class="select-extras__img">
                                 <img
@@ -649,7 +661,7 @@
                             </div>
                             <div
                               class="select-extras__item renovation-extras"
-                              data-extras-price="5"
+                              data-extras-price="10"
                             >
                               <div class="select-extras__img">
                                 <img
@@ -825,9 +837,9 @@
                     <div class="input-group">
                       <label for="zipCode">Zip Code*</label>
                       <input
-                        type="number"
+                        type="text"
                         class="form-control"
-                        placeholder="Zip Code*"
+                        placeholder="T3C 1C7*"
                         required="required"
                         aria-required="true"
                         id="zipCode"
@@ -1149,7 +1161,9 @@
             </div>
 
             <form action="" class="book__form" id="bookForm">
-              <div class="book__loader"><span class="loader"></span></div>
+              <div class="book__loader">
+                <span class="loader"></span>
+              </div>
 
               <label class="book__form-labele" for="bookForm"
                 >BOOK A CLEANING</label
