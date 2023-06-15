@@ -157,7 +157,7 @@ calcAdress?.addEventListener("input", function () {
 });
 
 const calcForm = document.querySelector("#calcForm");
-calcForm?.addEventListener("submit", async function (e) {
+calcForm?.addEventListener("submit", async function(e) {
   e.preventDefault();
 
   let error =
