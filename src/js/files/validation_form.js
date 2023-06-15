@@ -174,7 +174,7 @@ calcForm?.addEventListener("submit", async function (e) {
   if (error) {
     calcForm.classList.add("_sending");
 
-    let response = await fetch("sendmailg.php", {
+    let response = await fetch("calcmail.php", {
       method: "POST",
       body: formData,
     });
