@@ -60,12 +60,22 @@ $(".living-extras").on("click", function () {
 });
 
 let isDeep = false;
-$(".is-deep").on("click", function () {
-  $(this).toggleClass("_select");
-  isDeep = !isDeep;
+$('#clStandart').on('click', function() {
+  isDeep = false;
+  $(this).addClass("_select");
+  $('#clDeep').removeClass("_select");
 
   updetePrice();
 });
+
+$('#clDeep').on('click', function() {
+  isDeep = true;
+  $(this).addClass("_select");
+  $('#clStandart').removeClass("_select");
+
+  updetePrice();
+});
+
 
 $('[data-service="1"]').on("click", function () {
   if (!$(this).hasClass("_select")) {
@@ -80,6 +90,7 @@ $('[data-service="1"]').on("click", function () {
 });
 
 // End Cleaning of apartments / houses ==============================================================
+
 
 // After renovation ==============================================================
 $(".after-repair").on("click", function () {
@@ -108,12 +119,22 @@ $(".renovation-extras").on("click", function () {
 });
 
 let isRepairClinlevel = false;
-$(".is-repair-clinlevel").on("click", function () {
-  $(this).toggleClass("_select");
-  isRepairClinlevel = !isRepairClinlevel;
+$('#clRepairStandart').on('click', function() {
+  isRepairClinlevel = false;
+  $(this).addClass("_select");
+  $('#clRepairDeep').removeClass("_select");
 
   updetePrice();
 });
+
+$('#clRepairDeep').on('click', function() {
+  isRepairClinlevel = true;
+  $(this).addClass("_select");
+  $('#clRepairStandart').removeClass("_select");
+
+  updetePrice();
+});
+
 
 flsModules.numberWindows?.noUiSlider.on("update", function (values, handle) {
   const price = $("#numberWindows").attr("data-price-window");
