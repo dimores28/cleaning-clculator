@@ -2566,7 +2566,7 @@
                 range.push(parseInt(textFrom));
                 range.push(parseInt(textTo));
                 nouislider.create(rangePipe, {
-                    start: 1,
+                    start: 0,
                     connect: [ true, false ],
                     step: 1,
                     tooltips: [ wNumb({
@@ -4060,9 +4060,16 @@
             updetePrice();
         }));
         let isDeep = false;
-        $(".is-deep").on("click", (function() {
-            $(this).toggleClass("_select");
-            isDeep = !isDeep;
+        $("#clStandart").on("click", (function() {
+            isDeep = false;
+            $(this).addClass("_select");
+            $("#clDeep").removeClass("_select");
+            updetePrice();
+        }));
+        $("#clDeep").on("click", (function() {
+            isDeep = true;
+            $(this).addClass("_select");
+            $("#clStandart").removeClass("_select");
             updetePrice();
         }));
         $('[data-service="1"]').on("click", (function() {
@@ -4095,9 +4102,16 @@
             updetePrice();
         }));
         let isRepairClinlevel = false;
-        $(".is-repair-clinlevel").on("click", (function() {
-            $(this).toggleClass("_select");
-            isRepairClinlevel = !isRepairClinlevel;
+        $("#clRepairStandart").on("click", (function() {
+            isRepairClinlevel = false;
+            $(this).addClass("_select");
+            $("#clRepairDeep").removeClass("_select");
+            updetePrice();
+        }));
+        $("#clRepairDeep").on("click", (function() {
+            isRepairClinlevel = true;
+            $(this).addClass("_select");
+            $("#clRepairStandart").removeClass("_select");
             updetePrice();
         }));
         flsModules.numberWindows?.noUiSlider.on("update", (function(values, handle) {
@@ -4154,6 +4168,8 @@
                 $(".calculator__square").slideUp("slow");
                 $(".calculator__form").slideDown("slow");
                 $(".calculator__btn-next").hide();
+                let price = $(".calculator__total-price span").text();
+                $('.stripe-form input[name="item_price"]').val(parseInt(price));
                 scrollTopOffer();
             }
         }
@@ -4194,7 +4210,9 @@
         $(".lawn-area__item").on("click", (function() {
             $(".lawn-area__item").removeClass("_select");
             $(this).toggleClass("_select");
-            lawnPrice = $(this).attr("data-lawn-area");
+            const sevicePrice = $('[data-service="3"]').attr("data-service-price");
+            const lawnAreaPrice = $(this).attr("data-lawn-area");
+            lawnPrice = parseInt(lawnAreaPrice) + parseInt(sevicePrice);
             updetePrice();
         }));
         $(".payment-options__option").on("click", (function() {
@@ -4228,9 +4246,17 @@
             if ($('[data-service="2"]').hasClass("_select")) if (!exteriorWindow) windowsPrice = values[handle] * price + parseInt(departurePrice); else windowsPrice = values[handle] * price2 + parseInt(departurePrice); else windowsPrice = 0;
             updetePrice();
         }));
+        $('[data-service="4"]').on("click", (function() {
+            if ($(this).hasClass("_select")) {
+                const price = $("#rangePipe").attr("data-price-one-pipe");
+                pipePrice = parseInt(price);
+            } else pipePrice = 0;
+            updetePrice();
+        }));
         flsModules.rangePipe?.noUiSlider.on("update", (function(values, handle) {
             const price = $("#rangePipe").attr("data-price-pipe");
-            if ($('[data-service="4"]').hasClass("_select")) pipePrice = values[handle] * price; else pipePrice = 0;
+            const departurePrice = $("#rangePipe").attr("data-price-one-pipe");
+            if ($('[data-service="4"]').hasClass("_select")) pipePrice = values[handle] * price + parseInt(departurePrice); else pipePrice = 0;
             updetePrice();
         }));
         $('[data-service="6"]').on("click", (function() {
@@ -4245,13 +4271,16 @@
         function updetePrice() {
             let isExtras = $(".living-extras._setected");
             let dopProcent = 0;
-            if (isDeep && isExtras.length) dopProcent = homeCleaningPrice * 1.25 - homeCleaningPrice;
+            if (isDeep && isExtras.length) dopProcent = homeCleaningPrice * 1.2 - homeCleaningPrice;
             let isRepairExtras = $(".renovation-extras._setected");
             let dopRepairProcent = 0;
             if (isRepairClinlevel && isRepairExtras.length) dopRepairProcent = repairCleanPrice * 1.25 - repairCleanPrice;
             let finalPrice = parseInt(homeCleaningPrice) + parseInt(dopProcent) + parseInt(windowsPrice) + parseInt(lawnPrice) + parseInt(pipePrice) + (parseInt(repairCleanPrice) + parseInt(dopRepairProcent));
             $(".calculator__total-price span").text(finalPrice);
         }
+        $("#buyNowBtn").on("click", (function() {
+            $('.stripe-form input[type="submit"]').trigger("click");
+        }));
         flatpickr("#cleaningDate", {
             position: "above"
         });
@@ -4280,8 +4309,20 @@
         function isValidEmail(value) {
             return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(value);
         }
+        function isValidLastName(value) {
+            return /^([А-Я]{1}[а-яё]{1,23}|[A-Z]{1}[a-z]{1,23})$/.test(value);
+        }
         function isValidName(value) {
             return /^([А-Я]{1}[а-яё]{1,23}|[A-Z]{1}[a-z]{1,23})$/.test(value);
+        }
+        function isValidZipCode(value) {
+            return /^(?:[A-Z0-9]+([- ]?[A-Z0-9]+)*)?$/.test(value);
+        }
+        function isValidAdress(value) {
+            return /^(?![ -.&,_'":?!/])(?!.*[- &_'":]$)(?!.*[-.#@&,:?!/]{2})[a-zA-Z0-9- .#@&,_'":.?!/]+$/.test(value);
+        }
+        function isValidCityName(value) {
+            return /^\s*[a-zA-Z]{1}[0-9a-zA-Z][0-9a-zA-Z '-.=#/]*$/.test(value);
         }
         const bookEmail = document.querySelector("#bookEmail");
         const bookPhone = document.querySelector("#bookPhone");
@@ -4302,7 +4343,7 @@
             let formData = new FormData(bookForm);
             if (error) {
                 bookForm.classList.add("_sending");
-                let response = await fetch("sendmailg.php", {
+                let response = await fetch("mail.php", {
                     method: "POST",
                     body: formData
                 });
@@ -4313,7 +4354,58 @@
                     bookForm.classList.remove("_sending");
                 } else {
                     alert("Ошибка");
+                    console.log(response.data);
                     bookForm.classList.remove("_sending");
+                }
+            } else alert("Заполните обязательные поля!");
+        }));
+        const calcFirstName = document.querySelector("#firstName");
+        const calcLasttName = document.querySelector("#lastName");
+        const calcEmail = document.querySelector("#userEmail");
+        const calcPhone = document.querySelector("#userPhone");
+        const calcZipCode = document.querySelector("#zipCode");
+        const calcCityName = document.querySelector("#userCity");
+        const calcAdress = document.querySelector("#userAddres");
+        calcPhone?.addEventListener("input", (function() {
+            if (!isValidPhone(calcPhone.value)) calcPhone.classList.add("_notvalid"); else calcPhone.classList.remove("_notvalid");
+        }));
+        calcEmail?.addEventListener("input", (function() {
+            if (!isValidEmail(calcEmail.value)) calcEmail.classList.add("_notvalid"); else calcEmail.classList.remove("_notvalid");
+        }));
+        calcFirstName?.addEventListener("input", (function() {
+            if (!isValidName(calcFirstName.value)) calcFirstName.classList.add("_notvalid"); else calcFirstName.classList.remove("_notvalid");
+        }));
+        calcLasttName?.addEventListener("input", (function() {
+            if (!isValidLastName(calcLasttName.value)) calcLasttName.classList.add("_notvalid"); else calcLasttName.classList.remove("_notvalid");
+        }));
+        calcZipCode?.addEventListener("input", (function() {
+            if (!isValidZipCode(calcZipCode.value)) calcZipCode.classList.add("_notvalid"); else calcZipCode.classList.remove("_notvalid");
+        }));
+        calcCityName?.addEventListener("input", (function() {
+            if (!isValidCityName(calcCityName.value)) calcCityName.classList.add("_notvalid"); else calcCityName.classList.remove("_notvalid");
+        }));
+        calcAdress?.addEventListener("input", (function() {
+            if (!isValidAdress(calcAdress.value)) calcAdress.classList.add("_notvalid"); else calcAdress.classList.remove("_notvalid");
+        }));
+        const calcForm = document.querySelector("#calcForm");
+        calcForm?.addEventListener("submit", (async function(e) {
+            e.preventDefault();
+            let error = isValidEmail(calcEmail.value) && isValidPhone(calcPhone.value) && isValidName(calcFirstName.value) && isValidLastName(calcLasttName.value) && isValidZipCode(calcZipCode.value) && isValidCityName(calcCityName.value) && isValidAdress(calcAdress.value);
+            let formData = new FormData(calcForm);
+            if (error) {
+                calcForm.classList.add("_sending");
+                let response = await fetch("calcmail.php", {
+                    method: "POST",
+                    body: formData
+                });
+                if (response.ok) {
+                    let result = await response.json();
+                    alert(result.message);
+                    calcForm.reset();
+                    calcForm.classList.remove("_sending");
+                } else {
+                    alert("Ошибка");
+                    calcForm.classList.remove("_sending");
                 }
             } else alert("Заполните обязательные поля!");
         }));
