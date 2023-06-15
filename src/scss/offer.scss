@@ -243,6 +243,11 @@
          }
       }
    }
+
+   &__buttons-wrap {
+      display: flex;
+      gap: 20px;
+   }
 }
 
 //====================================================================================================
@@ -285,7 +290,7 @@
       width: 32px;
       height: 32px;
       background: url(../img/icons/check.png) center center no-repeat;
-      background-size: cover;
+      background-size: cover !important;
       top: 4px;
       right: 4px;
       overflow: hidden;
@@ -496,6 +501,10 @@
    flex-wrap: wrap;
    gap: 20px;
 
+   @media (max-width: em(334)){
+      gap: 10px; 
+   }
+
    // .cleaning-level__item
    &__item {
       width: calc(100% / 4 - 15px);
@@ -526,6 +535,10 @@
             background: $blue;
          }
       }
+   }
+
+   button {
+      width: 116px;
    }
 }
 
@@ -843,7 +856,6 @@
    &._select {
       background: $blue;
       color: #ffffff98;
-      transform: rotateY(360deg);
    }
 
    @media (any-hover: hover) {
@@ -854,3 +866,10 @@
 }
 
 //====================================================================================================
+
+.stripe-form {
+   opacity: 0;
+   input[type="submit"] {
+      opacity: 0;
+   }
+}

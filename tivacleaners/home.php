@@ -1,10 +1,12 @@
 <?php
 /*
-Template Name: home
+Template Name: Home
 */
 ?>
+<!-- <?php echo do_shortcode('[wp_stripe_checkout_session name="Cleaning" price="42" class="stripe-form"]') ?> -->
 
 <?php get_header();?>
+
 	<section class="offer">
 		<img src="<?php bloginfo('template_url'); ?>/assets/img/main_bg.jpg" class="offer__bg" alt="background image" width="1500" height="700" />
 		<div class="offer__container">
@@ -26,7 +28,7 @@ Template Name: home
 						</div>
 						<p>Window cleaning</p>
 					</div>
-					<div class="service" data-service-price="25" data-service="3">
+					<div class="service" data-service-price="20" data-service="3">
 						<div class="service__img">
 							<img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/service4.png" alt="service icon" />
 						</div>
@@ -157,7 +159,7 @@ Template Name: home
 										</p>
 									</div>
 									<div class="select-extras">
-										<div class="select-extras__item living-extras" data-extras-price="25">
+										<div class="select-extras__item living-extras" data-extras-price="20">
 											<div class="select-extras__img">
 												<img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/oven.png" alt="oven icon" width="64" height="64" />
 											</div>
@@ -165,7 +167,7 @@ Template Name: home
 												Clean inside the oven
 											</div>
 										</div>
-										<div class="select-extras__item living-extras" data-extras-price="15">
+										<div class="select-extras__item living-extras" data-extras-price="20">
 											<div class="select-extras__img">
 												<img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/fridge.png" alt="fridge icon" width="64" height="64" />
 											</div>
@@ -185,7 +187,7 @@ Template Name: home
 											</div>
 											<div class="select-extras__desc">Dishes</div>
 										</div>
-										<div class="select-extras__item living-extras" data-extras-price="25">
+										<div class="select-extras__item living-extras" data-extras-price="20">
 											<div class="select-extras__img">
 												<img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/basement.png" alt="basement icon" width="64" height="64" />
 											</div>
@@ -193,7 +195,7 @@ Template Name: home
 												Finished Basement
 											</div>
 										</div>
-										<div class="select-extras__item living-extras" data-extras-price="5">
+										<div class="select-extras__item living-extras" data-extras-price="10">
 											<div class="select-extras__img">
 												<img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/carpet.png" alt="carpet icon" width="64" height="64" />
 											</div>
@@ -226,7 +228,7 @@ Template Name: home
 									</h3>
 
 									<button class="switsh-btn exterior-window">
-										<span>Exterior Window Cleaning</span>
+										<span>Interior windows cleaning</span>
 									</button>
 
 									<div class="number-windows__renge">
@@ -244,35 +246,41 @@ Template Name: home
 									Lawn area*
 								</h3>
 								<div class="lawn-area">
-									<div class="lawn-area__item" data-lawn-area="50">
+									<div class="lawn-area__item" data-lawn-area="15">
 										<div class="lawn-area__img">
 											<img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/lawn.png" alt="lawn icon" width="48" height="48" />
 										</div>
-										х-300 sq.feet
+										х-700 sq.feet
 									</div>
-									<div class="lawn-area__item" data-lawn-area="150">
+									<div class="lawn-area__item" data-lawn-area="20">
 										<div class="lawn-area__img">
 											<img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/lawn.png" alt="lawn icon" width="48" height="48" />
 										</div>
-										300-500 sq.feet
+										701-1000 sq.feet
 									</div>
-									<div class="lawn-area__item" data-lawn-area="250">
+									<div class="lawn-area__item" data-lawn-area="25">
 										<div class="lawn-area__img">
 											<img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/lawn.png" alt="lawn icon" width="48" height="48" />
 										</div>
-										500-700 sq.feet
+										1001-1500 sq.feet
 									</div>
-									<div class="lawn-area__item" data-lawn-area="280">
+									<div class="lawn-area__item" data-lawn-area="30">
 										<div class="lawn-area__img">
 											<img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/lawn.png" alt="lawn icon" width="48" height="48" />
 										</div>
-										700-900 sq.feet
+										1501-3000 sq.feet
 									</div>
-									<div class="lawn-area__item" data-lawn-area="350">
+									<div class="lawn-area__item" data-lawn-area="35">
 										<div class="lawn-area__img">
 											<img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/lawn.png" alt="lawn icon" width="48" height="48" />
 										</div>
-										1000+ sq.feet
+										3001-3500 sq.feet
+									</div>
+									<div class="lawn-area__item" data-lawn-area="40">
+										<div class="lawn-area__img">
+											<img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/lawn.png" alt="lawn icon" width="48" height="48" />
+										</div>
+										3500х sq.feet
 									</div>
 								</div>
 							</div>
@@ -287,7 +295,7 @@ Template Name: home
 										Number of pipe
 									</h3>
 									<div class="number-pipe__renge">
-										<div id="rangePipe" data-from="1" data-to="16" data-price-pipe="8" class="range"></div>
+										<div id="rangePipe" data-from="0" data-to="16" data-price-pipe="8" data-price-one-pipe="40" class="range"></div>
 									</div>
 								</div>
 							</div>
@@ -360,7 +368,7 @@ Template Name: home
 										<h3 class="block-row__title">SELECT EXTRAS</h3>
 
 										<div class="select-extras">
-											<div class="select-extras__item renovation-extras" data-extras-price="25">
+											<div class="select-extras__item renovation-extras" data-extras-price="20">
 												<div class="select-extras__img">
 													<img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/oven.png" alt="oven icon" width="64" height="64" />
 												</div>
@@ -368,7 +376,7 @@ Template Name: home
 													Clean inside the oven
 												</div>
 											</div>
-											<div class="select-extras__item renovation-extras" data-extras-price="15">
+											<div class="select-extras__item renovation-extras" data-extras-price="20">
 												<div class="select-extras__img">
 													<img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/fridge.png" alt="fridge icon" width="64" height="64" />
 												</div>
@@ -390,7 +398,7 @@ Template Name: home
 												</div>
 												<div class="select-extras__desc">Dishes</div>
 											</div>
-											<div class="select-extras__item renovation-extras" data-extras-price="25">
+											<div class="select-extras__item renovation-extras" data-extras-price="20">
 												<div class="select-extras__img">
 													<img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/basement.png" alt="basement icon" width="64" height="64" />
 												</div>
@@ -398,7 +406,7 @@ Template Name: home
 													Finished Basement
 												</div>
 											</div>
-											<div class="select-extras__item renovation-extras" data-extras-price="5">
+											<div class="select-extras__item renovation-extras" data-extras-price="10">
 												<div class="select-extras__img">
 													<img src="<?php bloginfo('template_url'); ?>/assets/img/calculator/carpet.png" alt="carpet icon" width="64" height="64" />
 												</div>
@@ -500,7 +508,7 @@ Template Name: home
 
 							<div class="input-group">
 								<label for="zipCode">Zip Code*</label>
-								<input type="number" class="form-control" placeholder="Zip Code*" required="required" aria-required="true" id="zipCode" aria-describedby="Zip Code Help" />
+								<input type="text" class="form-control" placeholder="T3C 1C7*" required="required" aria-required="true" id="zipCode" aria-describedby="Zip Code Help" />
 							</div>
 
 							<div class="input-group">
@@ -530,10 +538,16 @@ Template Name: home
 							</div>
 						</div>
 
-						<button type="submit" class="btn btn-primary">
-							Book now
-						</button>
+						<div class="calculator__buttons-wrap">
+							<button type="submit" class="btn btn-primary">
+								Book now
+							</button>
+							<button type="button" class="btn btn-primary" id="buyNowBtn">
+								Buy Now
+							</button>
+						</div>
 					</form>
+					<?php echo do_shortcode('[wp_stripe_checkout_session name="Cleaning" price="2" class="stripe-form"]') ?>
 				</div>
 
 				<div class="calculator__total-price"><span>0</span>$</div>
@@ -562,7 +576,6 @@ Template Name: home
 
 	<section class="about" id="about">
 		<div class="about__container">
-			<!-- <h2 class="about__heading section-heading">about</h2> -->
 			<div class="about-content">
 				<div class="about-content__body">
 					<h3 class="about-content__heading">
@@ -674,11 +687,14 @@ Template Name: home
 					</div>
 					<h4 class="reviews__item-title">Carol E.</h4>
 					<img class="reviews__item-grade" src="<?php bloginfo('template_url'); ?>/assets/img/star-rating.svg" alt="" />
-					<p class="reviews__item-body">
-						Oh my God I would just like to say…THEY ARE AMAZINGG. They did
-						such an amazing job seriously 100/10. Im so glad I found them.
-						They did everything I asked for and more!
-					</p>
+					<div class="reviews__item-body read-more">
+						<p class="content">
+							Oh my God I would just like to say…THEY ARE AMAZINGG. They
+							did such an amazing job seriously 100/10. Im so glad I found
+							them. They did everything I asked for and more!
+						</p>
+						<a href="#" class="toggle-link">Read More</a>
+					</div>
 				</div>
 				<div class="reviews__item">
 					<div class="reviews__item-icon">
@@ -686,12 +702,15 @@ Template Name: home
 					</div>
 					<h4 class="reviews__item-title">Susan P.</h4>
 					<img class="reviews__item-grade" src="<?php bloginfo('template_url'); ?>/assets/img/star-rating.svg" alt="" />
-					<p class="reviews__item-body">
-						They are professional, trustworthy, perfectionists, and leave
-						the place looking like a completely different place. (from the
-						mess) Also, they are meticulous and organi,e things! Axtually
-						think they should be interior designers
-					</p>
+					<div class="reviews__item-body read-more">
+						<p class="content">
+							They are professional, trustworthy, perfectionists, and
+							leave the place looking like a completely different place.
+							(from the mess) Also, they are meticulous and organi,e
+							things! Axtually think they should be interior designers
+						</p>
+						<a href="#" class="toggle-link">Read More</a>
+					</div>
 				</div>
 				<div class="reviews__item">
 					<div class="reviews__item-icon">
@@ -699,13 +718,16 @@ Template Name: home
 					</div>
 					<h4 class="reviews__item-title">Jessica B.</h4>
 					<img class="reviews__item-grade" src="<?php bloginfo('template_url'); ?>/assets/img/star-rating.svg" alt="" />
-					<p class="reviews__item-body">
-						We asked AP Good Cleaning to help us clean our furnished
-						apartment as we were moving out. They were exceptionally
-						thorough and we left the apartment in even better condition
-						than when we moved in! AP Good Cleaning will be our first call
-						the next time we need housecleaning.
-					</p>
+					<div class="reviews__item-body read-more">
+						<p class="content">
+							We asked AP Good Cleaning to help us clean our furnished
+							apartment as we were moving out. They were exceptionally
+							thorough and we left the apartment in even better condition
+							than when we moved in! AP Good Cleaning will be our first
+							call the next time we need housecleaning.
+						</p>
+						<a href="#" class="toggle-link">Read More</a>
+					</div>
 				</div>
 				<div class="reviews__item">
 					<div class="reviews__item-icon">
@@ -713,13 +735,18 @@ Template Name: home
 					</div>
 					<h4 class="reviews__item-title">Kelly S.</h4>
 					<img class="reviews__item-grade" src="<?php bloginfo('template_url'); ?>/assets/img/star-rating.svg" alt="" />
-					<p class="reviews__item-body">
-						This is a very professional business in the area. They first
-						come to your home to visit for a fair estimate. After our
-						first cleaning with A & P we were really impressed with the
-						attention to detail and value of the girls cleaning services.
-						Highly recommend!!
-					</p>
+					<div class="reviews__item-body read-more">
+						<p class="content">
+							This is a very professional business in the area. They first
+							come to your home to visit for a fair estimate. After our
+							first cleaning with A & P we were really impressed with the
+							attention to detail and value of the girls cleaning
+							services. Highly recommend!!
+						</p>
+						<a href="#" class="toggle-link">Read More</a>
+					</div>
+
+					<button class="reviews__btn">Read more</button>
 				</div>
 			</div>
 		</div>
@@ -732,6 +759,10 @@ Template Name: home
 			</div>
 
 			<form action="" class="book__form" id="bookForm">
+				<div class="book__loader">
+					<span class="loader"></span>
+				</div>
+
 				<label class="book__form-labele" for="bookForm">BOOK A CLEANING</label>
 				<div class="book__form-upper">
 					<div class="book__form-group upper-group">
@@ -759,4 +790,5 @@ Template Name: home
 			</form>
 		</div>
 	</section>
+
 <?php get_footer();?>
