@@ -1,0 +1,56 @@
+.post {
+  &__container {
+    margin: 150px auto;
+    padding: 80px 20px 100px 20px;
+    border-radius: 10px;
+    color: #0077b6;
+    background-color: rgba(255, 255, 255, 1);
+    @media (max-width: $mobile) {
+      margin: 100px 0;
+      padding: 60px 20px;
+    }
+  }
+
+  &__heading {
+  }
+
+  &__content {
+  }
+
+  h2 {
+    @include adaptiveValue("font-size", 28, 20);
+    font-family: $fontFamily, sans-serif;
+    line-height: 1.23;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 30px 0;
+  }
+
+  p {
+    line-height: 30px;
+    font-size: 16px;
+    text-indent: 30px;
+  }
+
+  ul {
+    list-style: inside !important;
+    list-style-type: disc !important;
+    line-height: 30px;
+  }
+
+  li {
+    list-style: inside !important;
+    list-style-type: disc !important;
+  }
+
+  figure {
+    display: block;
+    margin: 0 auto;
+    padding: 50px 0;
+    img {
+      display: block;
+
+      margin: 0 auto;
+    }
+  }
+}

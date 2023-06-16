@@ -758,7 +758,10 @@
               </div>
 
               <div class="calculator__form" style="display: none">
-                <form id="calcForm">
+                <form id="calcForm" class="calc__form">
+                  <div class="form__loader calc__loader">
+                    <span class="loader"></span>
+                  </div>
                   <div class="calculator__form-group">
                     <div class="input-group">
                       <label for="firstName">First name*</label>
@@ -902,6 +905,7 @@
                         name="message"
                       ></textarea>
                     </div>
+                    <div class="calculator__alert"></div>
 
                     <div class="input-group">
                       <fieldset>
@@ -1197,7 +1201,7 @@
             </div>
 
             <form action="" class="book__form" id="bookForm">
-              <div class="book__loader">
+              <div class="form__loader book__loader">
                 <span class="loader"></span>
               </div>
 
@@ -1254,6 +1258,7 @@
                   placeholder="Message"
                 ></textarea>
               </div>
+              <div class="book__alert"></div>
               <button type="submit" class="btn btn-form book__submit">
                 Submit
               </button>
