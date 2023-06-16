@@ -216,4 +216,49 @@
   }
 }
 
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.read-more .toggle-link {
+  display: none;
+}
+
+@media (max-width: $mobile) {
+  .read-more .content {
+    overflow: hidden;
+    max-height: 80px;
+    transition: max-height 0.6s ease-out;
+  }
+
+  .read-more .content.expanded {
+    max-height: none;
+  }
+
+  .read-more .toggle-link {
+    color: #000;
+    display: inline-block;
+    margin-top: 8px;
+  }
+}
+.alert {
+  display: none;
+  color: #000;
+}
 //====================================================================================================

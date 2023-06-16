@@ -16,10 +16,10 @@
           <div class="offer__container">
             <h1 class="offer__heading">Quote Calculator</h1>
             <div class="offer__calculator calculator">
-              <h2 class="offer__sub-title">
-                What service are you interested in?
-              </h2>
               <div class="calculator__services">
+                <h2 class="offer__sub-title">
+                  What service are you interested in?
+                </h2>
                 <div class="service" data-service-price="30" data-service="1">
                   <div class="service__img">
                     <img
@@ -38,7 +38,7 @@
                   </div>
                   <p>Window cleaning</p>
                 </div>
-                <div class="service" data-service-price="25" data-service="3">
+                <div class="service" data-service-price="20" data-service="3">
                   <div class="service__img">
                     <img
                       src="@img/calculator/service4.png"
@@ -247,7 +247,7 @@
                         <div class="select-extras">
                           <div
                             class="select-extras__item living-extras"
-                            data-extras-price="25"
+                            data-extras-price="20"
                           >
                             <div class="select-extras__img">
                               <img
@@ -263,7 +263,7 @@
                           </div>
                           <div
                             class="select-extras__item living-extras"
-                            data-extras-price="15"
+                            data-extras-price="20"
                           >
                             <div class="select-extras__img">
                               <img
@@ -307,7 +307,7 @@
                           </div>
                           <div
                             class="select-extras__item living-extras"
-                            data-extras-price="25"
+                            data-extras-price="20"
                           >
                             <div class="select-extras__img">
                               <img
@@ -323,7 +323,7 @@
                           </div>
                           <div
                             class="select-extras__item living-extras"
-                            data-extras-price="5"
+                            data-extras-price="10"
                           >
                             <div class="select-extras__img">
                               <img
@@ -346,7 +346,15 @@
                           <p></p>
                         </div>
                         <div class="cleaning-level">
-                          <button class="switsh-btn is-deep">Deep</button>
+                          <button class="switsh-btn _select" id="clStandart">
+                            Standart
+                          </button>
+                          <button
+                            class="switsh-btn cleaning-level-deep"
+                            id="clDeep"
+                          >
+                            Deep
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -366,7 +374,7 @@
                         </h3>
 
                         <button class="switsh-btn exterior-window">
-                          <span>Exterior Window Cleaning</span>
+                          <span>Interior windows cleaning</span>
                         </button>
 
                         <div class="number-windows__renge">
@@ -396,7 +404,7 @@
                         Lawn area*
                       </h3>
                       <div class="lawn-area">
-                        <div class="lawn-area__item" data-lawn-area="50">
+                        <div class="lawn-area__item" data-lawn-area="15">
                           <div class="lawn-area__img">
                             <img
                               src="@img/calculator/lawn.png"
@@ -405,9 +413,9 @@
                               height="48"
                             />
                           </div>
-                          х-300 sq.feet
+                          х-700 sq.feet
                         </div>
-                        <div class="lawn-area__item" data-lawn-area="150">
+                        <div class="lawn-area__item" data-lawn-area="20">
                           <div class="lawn-area__img">
                             <img
                               src="@img/calculator/lawn.png"
@@ -416,9 +424,9 @@
                               height="48"
                             />
                           </div>
-                          300-500 sq.feet
+                          701-1000 sq.feet
                         </div>
-                        <div class="lawn-area__item" data-lawn-area="250">
+                        <div class="lawn-area__item" data-lawn-area="25">
                           <div class="lawn-area__img">
                             <img
                               src="@img/calculator/lawn.png"
@@ -427,9 +435,9 @@
                               height="48"
                             />
                           </div>
-                          500-700 sq.feet
+                          1001-1500 sq.feet
                         </div>
-                        <div class="lawn-area__item" data-lawn-area="280">
+                        <div class="lawn-area__item" data-lawn-area="30">
                           <div class="lawn-area__img">
                             <img
                               src="@img/calculator/lawn.png"
@@ -438,9 +446,9 @@
                               height="48"
                             />
                           </div>
-                          700-900 sq.feet
+                          1501-3000 sq.feet
                         </div>
-                        <div class="lawn-area__item" data-lawn-area="350">
+                        <div class="lawn-area__item" data-lawn-area="35">
                           <div class="lawn-area__img">
                             <img
                               src="@img/calculator/lawn.png"
@@ -449,7 +457,18 @@
                               height="48"
                             />
                           </div>
-                          1000+ sq.feet
+                          3001-3500 sq.feet
+                        </div>
+                        <div class="lawn-area__item" data-lawn-area="40">
+                          <div class="lawn-area__img">
+                            <img
+                              src="@img/calculator/lawn.png"
+                              alt="lawn icon"
+                              width="48"
+                              height="48"
+                            />
+                          </div>
+                          3500х sq.feet
                         </div>
                       </div>
                     </div>
@@ -470,9 +489,10 @@
                         <div class="number-pipe__renge">
                           <div
                             id="rangePipe"
-                            data-from="1"
+                            data-from="0"
                             data-to="16"
                             data-price-pipe="8"
+                            data-price-one-pipe="40"
                             class="range"
                           ></div>
                         </div>
@@ -571,7 +591,7 @@
                           <div class="select-extras">
                             <div
                               class="select-extras__item renovation-extras"
-                              data-extras-price="25"
+                              data-extras-price="20"
                             >
                               <div class="select-extras__img">
                                 <img
@@ -587,7 +607,7 @@
                             </div>
                             <div
                               class="select-extras__item renovation-extras"
-                              data-extras-price="15"
+                              data-extras-price="20"
                             >
                               <div class="select-extras__img">
                                 <img
@@ -633,7 +653,7 @@
                             </div>
                             <div
                               class="select-extras__item renovation-extras"
-                              data-extras-price="25"
+                              data-extras-price="20"
                             >
                               <div class="select-extras__img">
                                 <img
@@ -649,7 +669,7 @@
                             </div>
                             <div
                               class="select-extras__item renovation-extras"
-                              data-extras-price="5"
+                              data-extras-price="10"
                             >
                               <div class="select-extras__img">
                                 <img
@@ -673,7 +693,13 @@
                           <p></p>
                         </div>
                         <div class="cleaning-level">
-                          <button class="switsh-btn is-repair-clinlevel">
+                          <button
+                            class="switsh-btn _select"
+                            id="clRepairStandart"
+                          >
+                            Standart
+                          </button>
+                          <button class="switsh-btn" id="clRepairDeep">
                             Deep
                           </button>
                         </div>
@@ -732,7 +758,7 @@
               </div>
 
               <div class="calculator__form" style="display: none">
-                <form>
+                <form id="calcForm">
                   <div class="calculator__form-group">
                     <div class="input-group">
                       <label for="firstName">First name*</label>
@@ -744,6 +770,7 @@
                         aria-required="true"
                         placeholder="First name*"
                         aria-label="First name"
+                        name="firstName"
                       />
                     </div>
 
@@ -755,6 +782,7 @@
                         id="lastName"
                         placeholder="Last name"
                         aria-label="Last name"
+                        name="lastName"
                       />
                     </div>
 
@@ -769,6 +797,7 @@
                         aria-required="true"
                         pattern="[0-9()#&+*-=.]+"
                         aria-describedby="userPhone"
+                        name="userPhone"
                       />
                     </div>
 
@@ -782,6 +811,7 @@
                         aria-required="true"
                         id="userEmail"
                         aria-describedby="emailHelp"
+                        name="userEmail"
                       />
                     </div>
 
@@ -795,6 +825,7 @@
                         aria-required="true"
                         id="userAddres"
                         aria-describedby="Addres Help"
+                        name="userAddres"
                       />
                     </div>
 
@@ -806,6 +837,7 @@
                         placeholder="Apt/Suite #"
                         id="aptSuite"
                         aria-describedby="Apt/Suite Help"
+                        name="aptSuite"
                       />
                     </div>
 
@@ -819,19 +851,21 @@
                         aria-required="true"
                         id="userCity"
                         aria-describedby="City Help"
+                        name="userCity"
                       />
                     </div>
 
                     <div class="input-group">
                       <label for="zipCode">Zip Code*</label>
                       <input
-                        type="number"
+                        type="text"
                         class="form-control"
-                        placeholder="Zip Code*"
+                        placeholder="T3C 1C7*"
                         required="required"
                         aria-required="true"
                         id="zipCode"
                         aria-describedby="Zip Code Help"
+                        name="zipCode"
                       />
                     </div>
 
@@ -843,6 +877,7 @@
                         id="cleaningDate"
                         placeholder="Date"
                         aria-label="cleaning date"
+                        name="cleaningDate"
                       />
                     </div>
 
@@ -854,6 +889,7 @@
                         id="timeInput"
                         placeholder="Enter time (hh:mm)"
                         aria-describedby="time Help"
+                        name="timeInput"
                       />
                     </div>
 
@@ -863,6 +899,7 @@
                         id="message"
                         class="form-control form-textarea"
                         placeholder="Message"
+                        name="message"
                       ></textarea>
                     </div>
 
@@ -898,9 +935,18 @@
                     </div>
                   </div>
 
-                  <button type="submit" class="btn btn-primary">
-                    Book now
-                  </button>
+                  <div class="calculator__buttons-wrap">
+                    <button type="submit" class="btn btn-primary">
+                      Book now
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      id="buyNowBtn"
+                    >
+                      Buy Now
+                    </button>
+                  </div>
                 </form>
               </div>
 
@@ -1065,11 +1111,14 @@
                   src="@img/star-rating.svg"
                   alt=""
                 />
-                <p class="reviews__item-body">
-                  Oh my God I would just like to say…THEY ARE AMAZINGG. They did
-                  such an amazing job seriously 100/10. Im so glad I found them.
-                  They did everything I asked for and more!
-                </p>
+                <div class="reviews__item-body read-more">
+                  <p class="content">
+                    Oh my God I would just like to say…THEY ARE AMAZINGG. They
+                    did such an amazing job seriously 100/10. Im so glad I found
+                    them. They did everything I asked for and more!
+                  </p>
+                  <a href="#" class="toggle-link">Read More</a>
+                </div>
               </div>
               <div class="reviews__item">
                 <div class="reviews__item-icon">
@@ -1081,12 +1130,15 @@
                   src="@img/star-rating.svg"
                   alt=""
                 />
-                <p class="reviews__item-body">
-                  They are professional, trustworthy, perfectionists, and leave
-                  the place looking like a completely different place. (from the
-                  mess) Also, they are meticulous and organi,e things! Axtually
-                  think they should be interior designers
-                </p>
+                <div class="reviews__item-body read-more">
+                  <p class="content">
+                    They are professional, trustworthy, perfectionists, and
+                    leave the place looking like a completely different place.
+                    (from the mess) Also, they are meticulous and organi,e
+                    things! Axtually think they should be interior designers
+                  </p>
+                  <a href="#" class="toggle-link">Read More</a>
+                </div>
               </div>
               <div class="reviews__item">
                 <div class="reviews__item-icon">
@@ -1098,13 +1150,16 @@
                   src="@img/star-rating.svg"
                   alt=""
                 />
-                <p class="reviews__item-body">
-                  We asked AP Good Cleaning to help us clean our furnished
-                  apartment as we were moving out. They were exceptionally
-                  thorough and we left the apartment in even better condition
-                  than when we moved in! AP Good Cleaning will be our first call
-                  the next time we need housecleaning.
-                </p>
+                <div class="reviews__item-body read-more">
+                  <p class="content">
+                    We asked AP Good Cleaning to help us clean our furnished
+                    apartment as we were moving out. They were exceptionally
+                    thorough and we left the apartment in even better condition
+                    than when we moved in! AP Good Cleaning will be our first
+                    call the next time we need housecleaning.
+                  </p>
+                  <a href="#" class="toggle-link">Read More</a>
+                </div>
               </div>
               <div class="reviews__item">
                 <div class="reviews__item-icon">
@@ -1116,13 +1171,18 @@
                   src="@img/star-rating.svg"
                   alt=""
                 />
-                <p class="reviews__item-body">
-                  This is a very professional business in the area. They first
-                  come to your home to visit for a fair estimate. After our
-                  first cleaning with A & P we were really impressed with the
-                  attention to detail and value of the girls cleaning services.
-                  Highly recommend!!
-                </p>
+                <div class="reviews__item-body read-more">
+                  <p class="content">
+                    This is a very professional business in the area. They first
+                    come to your home to visit for a fair estimate. After our
+                    first cleaning with A & P we were really impressed with the
+                    attention to detail and value of the girls cleaning
+                    services. Highly recommend!!
+                  </p>
+                  <a href="#" class="toggle-link">Read More</a>
+                </div>
+
+                <button class="reviews__btn">Read more</button>
               </div>
             </div>
           </div>
@@ -1135,6 +1195,10 @@
             </div>
 
             <form action="" class="book__form" id="bookForm">
+              <div class="book__loader">
+                <span class="loader"></span>
+              </div>
+
               <label class="book__form-labele" for="bookForm"
                 >BOOK A CLEANING</label
               >

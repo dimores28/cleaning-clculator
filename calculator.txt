@@ -38,3 +38,67 @@
 •Weekly (7%off)
 
 и в конце поле небольшое где клиент может написать какой-то комментарий. 
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+Cleaning of apartments / houses:
+
+1. HOW BIG IS YOUR HOME?
+    Пока нет точных цен
+NUMBER OF BEDROOM:
+    1 bedroom - 169$
+    2 bedroom - 195$
+    3 bedroom - 235$
+    4 bedroom - 289$
+    5 bedroom - 349$
+    6 bedroom - 369$
+
+2. SELECT EXTRAS
+    Clean inside oven +20$
+    Clean inside fridge +20$
+    Pets in home +10$
+    Dishes +10$
+    Finished basement +20$
+    Stains on the carpet +10$
+
+3. CLEANING LEVEL
+    Deep +20% к общей суме за эту услугу
+
+Window cleaning
+    25$ - за выезд
+    7$ - с одной стороны
+    10$ - с двух сторон
+
+
+Lawn mowing 
+    сразу 20$
+    х-700 +15$
+    700-1000 +20$
+    1000-1500 +25$
+    1500-3000 +30$
+    3000-3500 +35$
+    3500х +40$
+
+Drain pipe cleaning
+  сразу 40$
+  8$ - за каждую
+
+After renovation
+
+HOW BIG IS YOUR HOME?
+ пока нет точных цен
+
+SELECT EXTRAS
+    Clean inside oven +20$
+    Clean inside fridge +20$
+    Pets in home +10$
+    Dishes +10$
+    Finished basement +20$
+    Stains on the carpet +10$
+
+WASH WINDOWS?
+    12$ цена считается с двух сторон так как выбрать можно только с 2х сторон
+
+CLEANING LEVEL
+    Deep +25% - к общей суме за эту услугу

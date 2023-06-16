@@ -15,6 +15,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 30px;
+    @media (max-width: $mobile) {
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      grid-gap: 20px;
+    }
   }
   &__item {
     display: flex;
@@ -36,12 +40,25 @@
     & > h3 {
       font-size: 30px;
     }
+
+    @media (max-width: $mobile) {
+      width: 40px;
+      height: 40px;
+      margin: 15px;
+      & > h3 {
+        font-size: 24px;
+      }
+    }
   }
 
   &__item-title {
     color: #000;
     margin: 0 20px 20px 20px;
     font-size: 24px;
+    @media (max-width: $mobile) {
+      margin: 0 15px 15px 15px;
+      font-size: 20px;
+    }
   }
 
   &__item-body {
@@ -54,5 +71,8 @@
   &__item-grade {
     max-width: 150px;
     margin: 0 20px 20px 20px;
+    @media (max-width: $mobile) {
+      max-width: 120px;
+    }
   }
 }
