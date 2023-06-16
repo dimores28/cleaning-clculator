@@ -79,7 +79,10 @@ bookForm?.addEventListener("submit", async function (e) {
 
     if (response.ok) {
       let result = await response.json();
-      alert(result.message);
+      let alertMsg = document.querySelector(".book__alert");
+      alertMsg.innerHTML =
+        '<p class="alert__msg" >Your message has been sent!!!<p/>';
+      alertMsg.classList.add("_show");
       bookForm.reset();
       bookForm.classList.remove("_sending");
     } else {
@@ -187,7 +190,10 @@ calcForm?.addEventListener("submit", async function (e) {
 
     if (response.ok) {
       let result = await response.json();
-      alert(result.message);
+      let alertMsg = document.querySelector(".calculator__alert");
+      alertMsg.innerHTML =
+        '<p class="alert__msg" >Your message has been sent!!!<p/>';
+      alertMsg.classList.add("_show");
       calcForm.reset();
       calcForm.classList.remove("_sending");
     } else {
