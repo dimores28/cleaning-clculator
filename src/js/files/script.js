@@ -79,11 +79,17 @@ $('#clDeep').on('click', function() {
 
 $('[data-service="1"]').on("click", function () {
   if (!$(this).hasClass("_select")) {
+    //обнуляем стоимость и очищаем ранее выбранные опции
     roomPrice = 0;
     bedroomsPrice = 0;
     extrasPrice = 0;
+
     updeteHomeCleaningPrice();
-    console.log("unselect");
+
+    $(".living-quarters").removeClass("_select");
+    $(".bedrooms__item").removeClass("_select");
+    $(".living-extras").removeClass("_setected");
+    $('#clStandart').trigger( "click" );
   }
 
   updetePrice();
@@ -146,6 +152,30 @@ flsModules.numberWindows?.noUiSlider.on("update", function (values, handle) {
   }
 
   updateAllRepairCleanPrice();
+  updetePrice();
+});
+
+$('[data-service="5"]').on("click", function () {
+  if (!$(this).hasClass("_select")) {
+    //обнуляем стоимость и очищаем ранее выбранные опции
+     squerePrice = 0;
+     repairExtras = 0;
+     repairWindowPrice = 0;
+     repairCleanPrice = 0;
+     flsModules.numberWindows?.noUiSlider.set(0);
+     updateAllRepairCleanPrice();
+
+     $(".after-repair").removeClass("_select");
+     $('#clRepairStandart').trigger( "click" );
+
+     $(".is-furniture").removeClass("_select");
+     $(".renovation-extras__wrap").css("display", "none")
+     $(".renovation-extras").removeClass("_setected");
+
+     $(".is-window").removeClass("_select");
+     $(".window-wash__wrap").css("display", "none")
+  }
+
   updetePrice();
 });
 // End After renovation ==============================================================
@@ -314,6 +344,17 @@ $(".lawn-area__item").on("click", function () {
   lawnPrice = parseInt(lawnAreaPrice) + parseInt(sevicePrice);
   updetePrice();
 });
+
+$('[data-service="3"]').on('click', function() {
+
+  if (!$(this).hasClass("_select")) {
+    lawnPrice = 0;
+    $(".lawn-area__item").removeClass("_select");
+  }
+
+  updetePrice();
+})
+
 // End lawn area price ==============================================================================
 
 
@@ -341,6 +382,19 @@ let exteriorWindow = false;
 $(".exterior-window").on("click", function () {
   $(this).toggleClass("_select");
   exteriorWindow = !exteriorWindow;
+
+  const price = $("#rangeWindows").attr("data-price-window");
+  const price2 = $("#rangeWindows").attr("data-price-exterior-window");
+  const departurePrice = $("#rangeWindows").attr("data-price-one-window");
+  const numberWindow = parseInt(flsModules.rangeWindows?.noUiSlider.get());
+
+  if (!exteriorWindow) {
+    windowsPrice = numberWindow * price + parseInt(departurePrice);
+  } else {
+    windowsPrice = numberWindow * price2 + parseInt(departurePrice);
+  }
+
+  updetePrice();
 });
 
 $('[data-service="2"]').on("click", function () {
@@ -349,10 +403,12 @@ $('[data-service="2"]').on("click", function () {
     windowsPrice = parseInt(price);
   } else {
     windowsPrice = 0;
+    flsModules.rangeWindows?.noUiSlider.set(0);
   }
 
   updetePrice();
 });
+
 
 flsModules.rangeWindows?.noUiSlider.on("update", function (values, handle) {
   const price = $("#rangeWindows").attr("data-price-window");
@@ -382,6 +438,7 @@ $('[data-service="4"]').on("click", function () {
     pipePrice = parseInt(price);
   } else {
     pipePrice = 0;
+    flsModules.rangePipe?.noUiSlider.set(0);
   }
 
   updetePrice();
