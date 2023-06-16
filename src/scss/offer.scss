@@ -195,7 +195,26 @@
       line-height: 108%;
       font-weight: 700;
       text-align: center;
+      margin-bottom: 10px;
+   }
+
+   &__discount {
+      text-align: center;
+      line-height: 103%; 
+      opacity: 0;
       margin-bottom: 20px;
+      transition: all 0.3s ease-in;
+
+      span {
+         font-size: 30px;
+         font-weight: 700;
+         margin-left: 4px;
+      }
+
+      strong {
+         font-size: 30px;
+         font-weight: 700;
+      }
    }
 
   &__btn-group {
