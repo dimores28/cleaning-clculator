@@ -515,10 +515,10 @@ function updateDiscountPrice() {
 }
 
 function updetePrice() {
-  let isExtras = $(".living-extras._setected");
+  // let isExtras = $(".living-extras._setected");
   let dopProcent = 0;
 
-  if (isDeep && isExtras.length) {
+  if (isDeep) {
     dopProcent = homeCleaningPrice * 1.2 - homeCleaningPrice;
   }
 
