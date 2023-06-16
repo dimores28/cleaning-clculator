@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Post
+Template Name: category
 */
 ?>
 
