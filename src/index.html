@@ -741,16 +741,16 @@
                     </p>
                   </div>
                   <div class="payment-options__variants">
-                    <label class="payment-options__option" for="oneTime"
+                    <label class="payment-options__option _setected" for="oneTime" data-discont-procent="0"
                       >One time</label
                     >
-                    <label class="payment-options__option" for="monthly"
+                    <label class="payment-options__option" for="monthly" data-discont-procent="5"
                       >Monthly (5%off)</label
                     >
-                    <label class="payment-options__option" for="biweekly"
+                    <label class="payment-options__option" for="biweekly" data-discont-procent="7"
                       >Biweekly (7%off)</label
                     >
-                    <label class="payment-options__option" for="weekly"
+                    <label class="payment-options__option" for="weekly" data-discont-procent="7"
                       >Weekly (7%off)</label
                     >
                   </div>
@@ -911,6 +911,7 @@
                             id="oneTime"
                             name="payment"
                             value="One time"
+                            checked
                           />
                           <input
                             type="radio"
@@ -951,6 +952,7 @@
               </div>
 
               <div class="calculator__total-price"><span>0</span>$</div>
+              <div class="calculator__discount">Discount price: <span>0</span><strong>$</strong></div>
 
               <p class="calculator__alerts">
                 Please make a selection to continue

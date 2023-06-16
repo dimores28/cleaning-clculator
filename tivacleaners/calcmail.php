@@ -68,6 +68,11 @@ require( 'wp-load.php' );
      $body.='<p><strong>Message:</strong> '.$_POST['message'].'</p>';
  }
 
+ $payment = trim(!empty($_POST['payment']));
+ if($payment){
+    $body.='<p><strong>CHOOSE YOUR FREQUENCY:</strong> '.$_POST['payment'].'</p>';
+}
+
 
    
 // Отправляем письмо

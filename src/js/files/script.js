@@ -361,7 +361,22 @@ $('[data-service="3"]').on('click', function() {
 $(".payment-options__option").on("click", function () {
   $(".payment-options__option").removeClass("_setected");
   $(this).toggleClass("_setected");
+
+  let procent = parseInt($(this).attr('data-discont-procent'));
+
+  if(procent) {
+    $('.calculator__discount').css("opacity", "1");
+    let price = $('.calculator__total-price span').text();
+
+    let totalPrice = price * ( (100 - procent) / 100 );
+
+    $('.calculator__discount span').text( totalPrice.toFixed(1));
+  } else {
+    $('.calculator__discount').css("opacity", "0");
+    $('.calculator__discount span').text(0);
+  }
 });
+
 
 $(".is-furniture").on("click", function () {
   $(this).toggleClass("_select");
@@ -480,6 +495,25 @@ window.addEventListener("scroll", function () {
   }
 });
 
+
+function updateDiscountPrice() {
+
+  let procent = parseInt($(".payment-options__option._setected").attr('data-discont-procent'));
+
+  if(procent) {
+    $('.calculator__discount').css("opacity", "1");
+    let price = $('.calculator__total-price span').text();
+
+    let totalPrice = price * ( (100 - procent) / 100 );
+
+    $('.calculator__discount span').text( totalPrice.toFixed(1));
+  } else {
+    $('.calculator__discount').css("opacity", "0");
+    $('.calculator__discount span').text(0);
+  }
+  
+}
+
 function updetePrice() {
   let isExtras = $(".living-extras._setected");
   let dopProcent = 0;
@@ -504,6 +538,8 @@ function updetePrice() {
     (parseInt(repairCleanPrice) + parseInt(dopRepairProcent));
 
   $(".calculator__total-price span").text(finalPrice);
+
+  updateDiscountPrice();
 }
 
 //Payment button 
@@ -538,3 +574,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
