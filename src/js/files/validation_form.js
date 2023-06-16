@@ -1,5 +1,5 @@
 function isValidPhone(p) {
-  var phoneRe = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g;
+  var phoneRe = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/g;
   var digits = p.replace(/\D/g, "");
   return phoneRe.test(digits);
 }
@@ -9,15 +9,15 @@ function isValidEmail(value) {
 }
 
 function isValidLastName(value) {
-  return /^([А-Я]{1}[а-яё]{1,23}|[A-Z]{1}[a-z]{1,23})$/.test(value);
+  return /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/.test(value);
 }
 
 function isValidName(value) {
-  return /^([А-Я]{1}[а-яё]{1,23}|[A-Z]{1}[a-z]{1,23})$/.test(value);
+  return /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/.test(value);
 }
 
 function isValidZipCode(value) {
-  return /^(?:[A-Z0-9]+([- ]?[A-Z0-9]+)*)?$/.test(value);
+  return /^(?:[0-9a-zA-Z]+([- ]?[0-9a-zA-Z]+)*)?$/.test(value);
 }
 
 function isValidAdress(value) {
@@ -83,12 +83,18 @@ bookForm?.addEventListener("submit", async function (e) {
       bookForm.reset();
       bookForm.classList.remove("_sending");
     } else {
-      alert("Ошибка");
+      let alertMsg = document.querySelector(".book__alert");
+      alertMsg.innerHTML = '<p class="alert__msg" >Error!!!<p/>';
+      alertMsg.classList.add("_show");
       console.log(response.data);
       bookForm.classList.remove("_sending");
     }
   } else {
-    alert("Заполните обязательные поля!");
+    let alertMsg = document.querySelector(".book__alert");
+    alertMsg.innerHTML =
+      '<p class="alert__msg" >Fill in required fields!!!<p/>';
+    alertMsg.classList.add("_show");
+    // alert("Fill in required fields!");
   }
 });
 
@@ -185,10 +191,15 @@ calcForm?.addEventListener("submit", async function (e) {
       calcForm.reset();
       calcForm.classList.remove("_sending");
     } else {
-      alert("Ошибка");
+      let alertMsg = document.querySelector(".calculator__alert");
+      alertMsg.innerHTML = '<p class="alert__msg" >Error!!!<p/>';
+      alertMsg.classList.add("_show");
       calcForm.classList.remove("_sending");
     }
   } else {
-    alert("Заполните обязательные поля!");
+    let alertMsg = document.querySelector(".calculator__alert");
+    alertMsg.innerHTML =
+      '<p class="alert__msg" >Fill in required fields!!!<p/>';
+    alertMsg.classList.add("_show");
   }
 });
