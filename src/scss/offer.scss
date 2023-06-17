@@ -210,43 +210,6 @@
       }
    }
 
-   &__discount {
-      text-align: center;
-      line-height: 103%; 
-      opacity: 0;
-      margin-bottom: 20px;
-      
-      transition: all 0.3s ease-in;
-
-      span {
-         font-size: 30px;
-         font-weight: 700;
-      }
-
-      strong {
-         font-size: 30px;
-         font-weight: 700;
-         position: relative;
-
-         @media (max-width:$mobileSmall){
-           font-size: 26px; 
-         }
-
-         &::before {
-          content: 'D. price:';
-          position: absolute;
-          font-size: 20px;
-          font-weight: 400;
-          left: -86px;
-
-          @media (max-width:$mobileSmall){
-            font-size: 16px;
-            left: -70px;
-          }
-         }
-      }
-   }
-
   &__btn-group {
     display: flex;
     align-items: center;
@@ -829,6 +792,13 @@
     line-height: 1.3;
     transition: all 0.3s ease-in;
 
+    span {
+      display: block;
+      margin-top: 4px;
+      @include adaptiveValue("font-size", 16, 14);
+      opacity: 0;
+    }
+
     @media (max-width: $mobileSmall) {
       width: calc(100% / 3 - 14px);
       padding: 20px 5px;
@@ -993,3 +963,77 @@
     }
   }
 }
+
+//=================================================================================================
+
+.bathrooms-ar {
+  margin-bottom: 30px;
+
+  // .bathrooms-ar__title
+  &__title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  // .bathrooms-ar__block
+  &__block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  // .bathrooms-ar__item
+  &__item {
+    width: calc(20% - 16px);
+    border: 2px solid $darkBlue;
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease-in;
+
+    @media (max-width: $mobile) {
+      width: calc(25% - 15px);
+    }
+
+    @media (max-width: $mobileSmall) {
+      padding: 5px;
+      font-size: 12px;
+    }
+
+    &._select {
+      background: $blue;
+
+      img {
+        filter: contrast(40%);
+        transform: rotateX(360deg);
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background: $blue;
+      }
+    }
+  }
+
+  // .bathrooms-ar__img
+  &__img {
+    margin: 0 auto 6px auto;
+    width: 48px;
+
+    @media (max-width: $mobile) {
+      width: 32px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      transition: all 0.3s ease-in;
+    }
+  }
+}
+//=================================================================================================

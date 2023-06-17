@@ -234,7 +234,7 @@
                         <div class="bathrooms">
                           <h4 class="bathrooms__title">Number of bathrooms:</h4>
                           <div class="bathrooms__block">
-                              <div class="bathrooms__item" data-bathrooms-price="169">
+                              <div class="bathrooms__item" data-bathrooms-price="15">
                                 <div class="bathrooms__img">
                                   <img
                                     src="@img/calculator/bathroom.png"
@@ -244,7 +244,7 @@
                                 1
                               </div>
 
-                              <div class="bathrooms__item" data-bathrooms-price="189">
+                              <div class="bathrooms__item" data-bathrooms-price="30">
                                 <div class="bathrooms__img">
                                   <img
                                     src="@img/calculator/bathroom.png"
@@ -254,7 +254,7 @@
                                 2
                               </div>
 
-                              <div class="bathrooms__item" data-bathrooms-price="199">
+                              <div class="bathrooms__item" data-bathrooms-price="45">
                                 <div class="bathrooms__img">
                                   <img
                                     src="@img/calculator/bathroom.png"
@@ -264,7 +264,7 @@
                                 3
                               </div>
 
-                              <div class="bathrooms__item" data-bathrooms-price="209">
+                              <div class="bathrooms__item" data-bathrooms-price="60">
                                 <div class="bathrooms__img">
                                   <img
                                     src="@img/calculator/bathroom.png"
@@ -274,7 +274,7 @@
                                 4
                               </div>
 
-                              <div class="bathrooms__item" data-bathrooms-price="219">
+                              <div class="bathrooms__item" data-bathrooms-price="75">
                                 <div class="bathrooms__img">
                                   <img
                                     src="@img/calculator/bathroom.png"
@@ -427,6 +427,11 @@
                         <h3 class="filter-title number-windows__title">
                           Number of windows
                         </h3>
+                        <div class="block-row__desc">
+                          <p>
+                            Please remove all items from windows (mosquito nets, etc.) before cleaning
+                          </p>
+                        </div>
 
                         <button class="switsh-btn exterior-window">
                           <span>Interior windows cleaning</span>
@@ -436,7 +441,7 @@
                           <div
                             id="rangeWindows"
                             data-from="0"
-                            data-to="30"
+                            data-to="50"
                             data-price-window="7"
                             data-price-exterior-window="10"
                             data-price-one-window="25"
@@ -625,6 +630,61 @@
                             <p>4000+ square feet</p>
                           </div>
                         </div>
+
+                        <div class="bathrooms-ar">
+                          <h4 class="bathrooms-ar__title">Number of bathrooms:</h4>
+                          <div class="bathrooms-ar__block">
+                              <div class="bathrooms-ar__item" data-bathrooms-price="15">
+                                <div class="bathrooms-ar__img">
+                                  <img
+                                    src="@img/calculator/bathroom.png"
+                                    alt="bathrooms icon"
+                                  />
+                                </div>
+                                1
+                              </div>
+
+                              <div class="bathrooms-ar__item" data-bathrooms-price="30">
+                                <div class="bathrooms-ar__img">
+                                  <img
+                                    src="@img/calculator/bathroom.png"
+                                    alt="bathrooms icon"
+                                  />
+                                </div>
+                                2
+                              </div>
+
+                              <div class="bathrooms-ar__item" data-bathrooms-price="45">
+                                <div class="bathrooms-ar__img">
+                                  <img
+                                    src="@img/calculator/bathroom.png"
+                                    alt="bathrooms icon"
+                                  />
+                                </div>
+                                3
+                              </div>
+
+                              <div class="bathrooms-ar__item" data-bathrooms-price="60">
+                                <div class="bathrooms-ar__img">
+                                  <img
+                                    src="@img/calculator/bathroom.png"
+                                    alt="bathrooms icon"
+                                  />
+                                </div>
+                                4
+                              </div>
+
+                              <div class="bathrooms-ar__item" data-bathrooms-price="75">
+                                <div class="bathrooms-ar__img">
+                                  <img
+                                    src="@img/calculator/bathroom.png"
+                                    alt="bathrooms icon"
+                                  />
+                                </div>
+                                5
+                              </div>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="block-row">
@@ -796,18 +856,22 @@
                     </p>
                   </div>
                   <div class="payment-options__variants">
-                    <label class="payment-options__option _setected" for="oneTime" data-discont-procent="0"
-                      >One time</label
-                    >
-                    <label class="payment-options__option" for="monthly" data-discont-procent="5"
-                      >Monthly (5%off)</label
-                    >
-                    <label class="payment-options__option" for="biweekly" data-discont-procent="7"
-                      >Biweekly (7%off)</label
-                    >
-                    <label class="payment-options__option" for="weekly" data-discont-procent="7"
-                      >Weekly (7%off)</label
-                    >
+                    <label class="payment-options__option _setected" for="oneTime" data-discont-procent="0">
+                      One time
+                      <span>100</span>
+                    </label>
+                    <label class="payment-options__option" for="monthly" data-discont-procent="5">
+                      Monthly (5%off)
+                      <span></span>
+                    </label>
+                    <label class="payment-options__option" for="biweekly" data-discont-procent="7">
+                      Biweekly (7%off)
+                      <span></span>
+                    </label>
+                    <label class="payment-options__option" for="weekly" data-discont-procent="7">
+                      Weekly (7%off)
+                      <span></span>
+                    </label>
                   </div>
                 </div>
               </div>
@@ -1000,7 +1064,7 @@
                       Book now
                     </button>
                     <button
-                      type="button"
+                      type="submit"
                       class="btn btn-primary"
                       id="buyNowBtn"
                     >
@@ -1011,7 +1075,6 @@
               </div>
 
               <div class="calculator__total-price">$<span>0</span><strong>+GST 5%</strong></div>
-              <div class="calculator__discount"><strong>$</strong><span>0</span></div>
 
               <p class="calculator__alerts">
                 Please make a selection to continue

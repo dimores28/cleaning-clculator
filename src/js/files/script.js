@@ -17,6 +17,7 @@ let windowsPrice = 0;
 let lawnPrice = 0;
 //===============
 let squerePrice = 0;
+let bathroomsARPrice = 0;
 let repairExtras = 0;
 let repairWindowPrice = 0;
 let repairCleanPrice = 0;
@@ -118,6 +119,17 @@ $(".after-repair").on("click", function () {
   const price = $(this).attr("data-room-price");
   squerePrice = price;
 
+  updateAllRepairCleanPrice();
+  updetePrice();
+});
+
+$('.bathrooms-ar__item').on("click", function () {
+  $(".bathrooms-ar__item").removeClass("_select");
+  $(this).toggleClass("_select");
+
+  //калькуляция цены
+  const price = parseInt($(this).attr("data-bathrooms-price"));
+  bathroomsARPrice = parseInt(price);
   updateAllRepairCleanPrice();
   updetePrice();
 });
@@ -338,7 +350,8 @@ function updateAllRepairCleanPrice() {
   repairCleanPrice =
     parseInt(squerePrice) +
     parseInt(repairExtras) +
-    parseInt(repairWindowPrice);
+    parseInt(repairWindowPrice) + 
+    parseInt(bathroomsARPrice);
 }
 
 // End Common functions ==============================================================================
@@ -381,15 +394,15 @@ $(".payment-options__option").on("click", function () {
   let procent = parseInt($(this).attr('data-discont-procent'));
 
   if(procent) {
-    $('.calculator__discount').css("opacity", "1");
+    $(".payment-options__option").children().css("opacity", "0");
+    $(this).children().css("opacity", "1");
     let price = $('.calculator__total-price span').text();
 
     let totalPrice = price * ( (100 - procent) / 100 );
 
-    $('.calculator__discount span').text( totalPrice.toFixed(1));
+    $(this).children().text(`Discount price: $${totalPrice.toFixed(1)}`);
   } else {
-    $('.calculator__discount').css("opacity", "0");
-    $('.calculator__discount span').text(0);
+    $(".payment-options__option").children().css("opacity", "0");
   }
 });
 
@@ -560,6 +573,7 @@ function updetePrice() {
 
 //Payment button 
 $('#buyNowBtn').on('click', function(){
+  // $('#calcForm').trigger( "submit");
   $( '.stripe-form input[type="submit"]' ).trigger( "click" );
 });
 
