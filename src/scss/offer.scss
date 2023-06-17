@@ -195,7 +195,19 @@
       line-height: 108%;
       font-weight: 700;
       text-align: center;
-      margin-bottom: 10px;
+      margin-bottom: 14px;
+      margin-top: 14px;
+      position: relative;
+
+      strong {
+        font-size: 16px;
+        font-weight: 400;
+        margin-left: 8px;
+        display: none;
+        transition: all 0.3s ease-in;
+        position: absolute;
+        top: -8px;
+      }
    }
 
    &__discount {
@@ -203,17 +215,35 @@
       line-height: 103%; 
       opacity: 0;
       margin-bottom: 20px;
+      
       transition: all 0.3s ease-in;
 
       span {
          font-size: 30px;
          font-weight: 700;
-         margin-left: 4px;
       }
 
       strong {
          font-size: 30px;
          font-weight: 700;
+         position: relative;
+
+         @media (max-width:$mobileSmall){
+           font-size: 26px; 
+         }
+
+         &::before {
+          content: 'D. price:';
+          position: absolute;
+          font-size: 20px;
+          font-weight: 400;
+          left: -86px;
+
+          @media (max-width:$mobileSmall){
+            font-size: 16px;
+            left: -70px;
+          }
+         }
       }
    }
 
@@ -258,6 +288,9 @@
 
       button {
         margin-top: -20px;
+        @media (max-width:$mobileSmall){
+          font-size: 14px; 
+        }
       }
     }
   }
@@ -265,6 +298,10 @@
   &__buttons-wrap {
     display: flex;
     gap: 20px;
+
+    @media (max-width:$mobileSmall){
+      justify-content: space-between; 
+    }
   }
 }
 
@@ -881,5 +918,78 @@
   opacity: 0;
   input[type="submit"] {
     opacity: 0;
+  }
+}
+
+//=================================================================================================
+
+.bathrooms {
+  margin-bottom: 30px;
+
+  // .bathrooms__title
+  &__title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  // .bathrooms__block
+  &__block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  // .bathrooms__item
+  &__item {
+    width: calc(20% - 16px);
+    border: 2px solid $darkBlue;
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease-in;
+
+    @media (max-width: $mobile) {
+      width: calc(25% - 15px);
+    }
+
+    @media (max-width: $mobileSmall) {
+      padding: 5px;
+      font-size: 12px;
+    }
+
+    &._select {
+      background: $blue;
+
+      img {
+        filter: contrast(40%);
+        transform: rotateX(360deg);
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background: $blue;
+      }
+    }
+  }
+
+  // .bathrooms__img
+  &__img {
+    margin: 0 auto 6px auto;
+    width: 48px;
+
+    @media (max-width: $mobile) {
+      width: 32px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      transition: all 0.3s ease-in;
+    }
   }
 }

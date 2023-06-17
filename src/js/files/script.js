@@ -7,6 +7,7 @@ let step = 1;
 //===============
 let roomPrice = 0;
 let bedroomsPrice = 0;
+let bathroomsPrice = 0;
 let extrasPrice = 0;
 let homeCleaningPrice = 0;
 //===============
@@ -42,6 +43,17 @@ $(".bedrooms__item").on("click", function () {
   //калькуляция цены
   const price = parseInt($(this).attr("data-bedroom-price"));
   bedroomsPrice = parseInt(price);
+  updeteHomeCleaningPrice();
+  updetePrice();
+});
+
+$('.bathrooms__item').on("click", function () {
+  $(".bedrooms__item").removeClass("_select");
+  $(this).toggleClass("_select");
+
+  //калькуляция цены
+  const price = parseInt($(this).attr("data-bathrooms-price"));
+  bathroomsPrice = parseInt(price);
   updeteHomeCleaningPrice();
   updetePrice();
 });
@@ -249,6 +261,7 @@ function stepControl() {
 
     $(".calculator__btn-prev").show();
     $(".calculator__btn-next").show();
+    $('.calculator__total-price strong').hide();
   }
 
   if (step === 3) {
@@ -259,7 +272,10 @@ function stepControl() {
     
     //встаривание цены в платежную систему
     let price = $(".calculator__total-price span").text();
-    $('.stripe-form input[name="item_price"]').val(parseInt(price));
+    let totalPrice = price * 1.05;
+    $('.stripe-form input[name="item_price"]').val(totalPrice.toFixed(2));
+
+    $('.calculator__total-price strong').show();
 
     scrollTopOffer();
   }
@@ -315,7 +331,7 @@ function showedSpollers() {
 
 function updeteHomeCleaningPrice() {
   homeCleaningPrice =
-    parseInt(roomPrice) + parseInt(bedroomsPrice) + parseInt(extrasPrice);
+    parseInt(roomPrice) + parseInt(bedroomsPrice) + parseInt(extrasPrice) + parseInt(bathroomsPrice);
 }
 
 function updateAllRepairCleanPrice() {
