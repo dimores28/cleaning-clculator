@@ -262,6 +262,7 @@ function stepControl() {
     $(".calculator__form").slideUp("slow");
     $(".calculator__square").slideUp("slow");
 
+    $('.calculator__total-price').css("opacity", "0");
     $(".calculator__btn-prev").hide();
     scrollTopOffer();
   }
@@ -273,6 +274,7 @@ function stepControl() {
 
     $(".calculator__btn-prev").show();
     $(".calculator__btn-next").show();
+    $('.calculator__total-price').css("opacity", "1");
     $('.calculator__total-price strong').hide();
   }
 
@@ -286,6 +288,8 @@ function stepControl() {
     let price = $(".calculator__total-price span").text();
     let totalPrice = price * 1.05;
     $('.stripe-form input[name="item_price"]').val(totalPrice.toFixed(2));
+    $('#totalPrice').val(totalPrice.toFixed(2));
+    $('#clientId').val($('.stripe-form input[name="client_reference_id"]').val());
 
     $('.calculator__total-price strong').show();
 
@@ -400,7 +404,7 @@ $(".payment-options__option").on("click", function () {
 
     let totalPrice = price * ( (100 - procent) / 100 );
 
-    $(this).children().text(`Discount price: $${totalPrice.toFixed(1)}`);
+    $(this).children().text(`Disc. price: $${totalPrice.toFixed(1)}`);
   } else {
     $(".payment-options__option").children().css("opacity", "0");
   }
@@ -606,3 +610,4 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+//client_reference_id
