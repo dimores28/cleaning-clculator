@@ -83,6 +83,12 @@
     line-height: 24px;
     margin-bottom: 20px;
     transition: all 0.3s ease-in;
+    height: 75px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
 
     @media (any-hover: hover) {
       &:hover {
