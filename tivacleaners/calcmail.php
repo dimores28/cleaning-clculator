@@ -63,16 +63,26 @@ require( 'wp-load.php' );
      $body.='<p><strong>Time Cleaning: </strong> '.$_POST['timeInput'].'</p>';
  }
 
+ $payment = trim(!empty($_POST['payment']));
+ if($payment) {
+    $body.='<p><strong>CHOOSE YOUR FREQUENCY:</strong> '.$_POST['payment'].'</p>';
+ }
+
+ $totalPrice = trim(!empty($_POST['totalPrice']));
+ if($totalPrice) {
+    $body.='<p><strong>Total price: </strong>'.$_POST['totalPrice'].'</p>';
+ }
+
+ $clientId = trim(!empty($_POST['clientId']));
+ if($clientId) {
+    $body.='<p><strong>Client ID: </strong>'.$_POST['clientId'].'</p>';
+ }
+
  $message = trim(!empty($_POST['message']));
  if($message){
      $body.='<p><strong>Message: </strong> '.$_POST['message'].'</p>';
  }
 
- $body.='<p><strong>CHOOSE YOUR FREQUENCY:</strong> '.$_POST['payment'].'</p>';
-//  $payment = trim(!empty($_POST['payment']));
-//  if($payment){
-    
-// }
 
 
    
