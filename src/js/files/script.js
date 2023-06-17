@@ -48,7 +48,7 @@ $(".bedrooms__item").on("click", function () {
 });
 
 $('.bathrooms__item').on("click", function () {
-  $(".bedrooms__item").removeClass("_select");
+  $(".bathrooms__item").removeClass("_select");
   $(this).toggleClass("_select");
 
   //калькуляция цены
