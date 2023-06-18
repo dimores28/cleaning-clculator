@@ -577,8 +577,9 @@ function updetePrice() {
 
 //Payment button 
 $('#buyNowBtn').on('click', function(){
-  // $('#calcForm').trigger( "submit");
-  $( '.stripe-form input[type="submit"]' ).trigger( "click" );
+  $('#calcForm').addClass('payment');
+  $('#bookNowBtn').trigger( "click");
+  // $( '.stripe-form input[type="submit"]' ).trigger( "click" );
 });
 
 //Module calendar

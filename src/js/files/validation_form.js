@@ -196,6 +196,11 @@ calcForm?.addEventListener("submit", async function (e) {
       alertMsg.classList.add("_show__success");
       calcForm.reset();
       calcForm.classList.remove("_sending");
+
+      if($(e.target).hasClass('payment')) {
+        $( '.stripe-form input[type="submit"]' ).trigger( "click" );
+      }
+
     } else {
       let alertMsg = document.querySelector(".calculator__alert");
       alertMsg.innerHTML = '<p class="alert__msg" >Error!!!<p/>';
