@@ -35,6 +35,8 @@ $(".living-quarters").on("click", function () {
   roomPrice = price;
   updeteHomeCleaningPrice();
   updetePrice();
+
+  $('[name="houseSize"]').val($(this).children('p').text());
 });
 
 $(".bedrooms__item").on("click", function () {
@@ -46,6 +48,8 @@ $(".bedrooms__item").on("click", function () {
   bedroomsPrice = parseInt(price);
   updeteHomeCleaningPrice();
   updetePrice();
+
+  $('[name="numberBeadroom"]').val($(this).text());
 });
 
 $('.bathrooms__item').on("click", function () {
@@ -57,19 +61,27 @@ $('.bathrooms__item').on("click", function () {
   bathroomsPrice = parseInt(price);
   updeteHomeCleaningPrice();
   updetePrice();
+
+  $('[name="numberBathrooms"]').val($(this).text());
 });
 
 $(".living-extras").on("click", function () {
   $(this).toggleClass("_setected");
   let sum = 0;
+  let extrass = '';
+
   $(".living-extras._setected").each(function () {
     let price = $(this).attr("data-extras-price");
     sum += parseInt(price);
+
+    extrass = extrass + $(this).text() + ', ';
   });
 
   extrasPrice = sum;
   updeteHomeCleaningPrice();
   updetePrice();
+
+  $('[name="extras"]').val(extrass);
 });
 
 let isDeep = false;
@@ -79,6 +91,7 @@ $('#clStandart').on('click', function() {
   $('#clDeep').removeClass("_select");
 
   updetePrice();
+  $('[name="cleaningLevel"]').val('');
 });
 
 $('#clDeep').on('click', function() {
@@ -87,6 +100,7 @@ $('#clDeep').on('click', function() {
   $('#clStandart').removeClass("_select");
 
   updetePrice();
+  $('[name="cleaningLevel"]').val('Deep');
 });
 
 
@@ -103,7 +117,16 @@ $('[data-service="1"]').on("click", function () {
     $(".bedrooms__item").removeClass("_select");
     $(".living-extras").removeClass("_setected");
     $('#clStandart').trigger( "click" );
+
+    $('[name="houseSize"]').val('');
+    $('[name="houseClean"]').val('');
+    $('[name="numberBeadroom"]').val('');
+    $('[name="numberBathrooms"]').val('');
+    $('[name="extras"]').val('');
+    $('[name="cleaningLevel"]').val('');
   }
+
+  $('[name="houseClean"]').val($(this).text());
 
   updetePrice();
 });
