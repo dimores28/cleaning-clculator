@@ -1,6 +1,7 @@
 <?php
 // Кому отправляем
-$to = 'maxkrasovskyi10@gmail.com';
+// $to = 'maxkrasovskyi10@gmail.com';
+$to = ['dmytroivanovichn@gmail.com', 'maxkrasovskyi10@gmail.com'];
    
 // Тема письма
 $subject = 'Tivacleaners website!';
@@ -13,7 +14,114 @@ require( 'wp-load.php' );
  //Тело письма
  $body = '<h1>Tivacleaners website!</h1>';
 
- //Пример name="bookUserName"
+ //-------------------------------------------//
+$houseClean = trim(!empty($_POST['houseClean']));
+if($houseClean) {
+   $body.='<h2>'.$_POST['houseClean'].'</h2>';
+}
+
+$houseSize = trim(!empty($_POST['houseSize']));
+if($houseSize) {
+   $body.='<p><strong>House size: </strong>'.$_POST['houseSize'].'</p>';
+}
+
+$numberBeadroom =  trim(!empty($_POST['numberBeadroom']));
+if($numberBeadroom) {
+   $body.='<p><strong>Number of Beadroom: </strong>'.$_POST['numberBeadroom'].'</p>';
+}
+
+$numberBathrooms =  trim(!empty($_POST['numberBathrooms']));
+if($numberBathrooms) {
+   $body.='<p><strong>Number of Bathrooms: </strong>'.$_POST['numberBathrooms'].'</p>';
+}
+
+$extras =  trim(!empty($_POST['extras']));
+if($extras) {
+   $body.='<p><strong>Extras: </strong>'.$_POST['extras'].'</p>';
+}
+
+$cleaningLevel =  trim(!empty($_POST['cleaningLevel']));
+if($cleaningLevel) {
+   $body.='<p><strong>Cleaning level: </strong>'.$_POST['cleaningLevel'].'</p>';
+}
+
+//-------------------------------------------//
+
+$cleaningWindow = trim(!empty($_POST['cleaningWindow']));
+if($cleaningWindow) {
+   $body.='<h2>'.$_POST['cleaningWindow'].'</h2>';
+}
+
+$interiorWindowsClean =  trim(!empty($_POST['interiorWindowsClean']));
+if($interiorWindowsClean) {
+   $body.='<p><strong>Interior Windows Clean: </strong>'.$_POST['interiorWindowsClean'].'</p>';
+}
+
+$numberWindow =  trim(!empty($_POST['numberWindow']));
+if($numberWindow) {
+   $body.='<p><strong>Number of windows: </strong>'.$_POST['numberWindow'].'</p>';
+}
+//-------------------------------------------//
+
+$lawnMowing = trim(!empty($_POST['lawnMowing']));
+if($lawnMowing) {
+   $body.='<h2>'.$_POST['lawnMowing'].'</h2>';
+}
+
+$lawnArea =  trim(!empty($_POST['lawnArea']));
+if($lawnArea) {
+   $body.='<p><strong>Lawn area: </strong>'.$_POST['lawnArea'].'</p>';
+}
+
+//-------------------------------------------//
+
+$pipeCleaning = trim(!empty($_POST['pipeCleaning']));
+if($pipeCleaning) {
+   $body.='<h2>'.$_POST['pipeCleaning'].'</h2>';
+}
+
+$pipeCleaningNumber =  trim(!empty($_POST['pipeCleaningNumber']));
+if($pipeCleaningNumber) {
+   $body.='<p><strong>Number of pipe: </strong>'.$_POST['pipeCleaningNumber'].'</p>';
+}
+
+//-------------------------------------------//
+
+$afterRenovationClean = trim(!empty($_POST['afterRenovationClean']));
+if($afterRenovationClean) {
+   $body.='<h2>'.$_POST['afterRenovationClean'].'</h2>';
+}
+
+$renovationHouseSize =  trim(!empty($_POST['renovationHouseSize']));
+if($renovationHouseSize) {
+   $body.='<p><strong>House size: </strong>'.$_POST['renovationHouseSize'].'</p>';
+}
+
+$renovationNumberBathrooms =  trim(!empty($_POST['renovationNumberBathrooms']));
+if($renovationNumberBathrooms) {
+   $body.='<p><strong>Number of Bathrooms: </strong>'.$_POST['renovationNumberBathrooms'].'</p>';
+}
+
+$renovationExtras =  trim(!empty($_POST['renovationExtras']));
+if($renovationExtras) {
+   $body.='<p><strong>Extras: </strong>'.$_POST['renovationExtras'].'</p>';
+}
+
+$renovationNumberWindows =  trim(!empty($_POST['renovationNumberWindows']));
+if($renovationNumberWindows) {
+   $body.='<p><strong>Number of windows: </strong>'.$_POST['renovationNumberWindows'].'</p>';
+}
+
+$renovationCleaningLevel =  trim(!empty($_POST['renovationCleaningLevel']));
+if($renovationCleaningLevel) {
+   $body.='<p><strong>Cleaning level: </strong>'.$_POST['renovationCleaningLevel'].'</p>';
+}
+
+//-------------------------------------------//
+
+//================================================================================================================//
+$body.= '<hr>';
+
  $firstName = trim(!empty($_POST['firstName']));
  if($firstName) {
     $body.='<p><strong>First name: </strong> '.$_POST['firstName'].'</p>';
@@ -63,17 +171,32 @@ require( 'wp-load.php' );
      $body.='<p><strong>Time Cleaning: </strong> '.$_POST['timeInput'].'</p>';
  }
 
+ //================================================================================================================//
+ $body.= '<hr>';
+
+ $payment = trim(!empty($_POST['payment']));
+ if($payment) {
+    $body.='<p><strong>CHOOSE YOUR FREQUENCY:</strong> '.$_POST['payment'].'</p>';
+ }
+
+ $totalPrice = trim(!empty($_POST['totalPrice']));
+ if($totalPrice) {
+    $body.='<p><strong>Total price: </strong>'.$_POST['totalPrice'].'</p>';
+ }
+
+ $clientId = trim(!empty($_POST['clientId']));
+ if($clientId) {
+    $body.='<p><strong>Client ID: </strong>'.$_POST['clientId'].'</p>';
+ }
+
+ $body.= '<hr>';
+
  $message = trim(!empty($_POST['message']));
  if($message){
      $body.='<p><strong>Message: </strong> '.$_POST['message'].'</p>';
  }
 
- $body.='<p><strong>CHOOSE YOUR FREQUENCY:</strong> '.$_POST['payment'].'</p>';
-//  $payment = trim(!empty($_POST['payment']));
-//  if($payment){
-    
-// }
-
+//================================================================================================================//
 
    
 // Отправляем письмо

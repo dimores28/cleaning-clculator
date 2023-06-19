@@ -17,6 +17,7 @@ let windowsPrice = 0;
 let lawnPrice = 0;
 //===============
 let squerePrice = 0;
+let bathroomsARPrice = 0;
 let repairExtras = 0;
 let repairWindowPrice = 0;
 let repairCleanPrice = 0;
@@ -34,6 +35,8 @@ $(".living-quarters").on("click", function () {
   roomPrice = price;
   updeteHomeCleaningPrice();
   updetePrice();
+
+  $('[name="houseSize"]').val($(this).children('p').text());
 });
 
 $(".bedrooms__item").on("click", function () {
@@ -45,6 +48,8 @@ $(".bedrooms__item").on("click", function () {
   bedroomsPrice = parseInt(price);
   updeteHomeCleaningPrice();
   updetePrice();
+
+  $('[name="numberBeadroom"]').val($(this).text());
 });
 
 $('.bathrooms__item').on("click", function () {
@@ -56,19 +61,27 @@ $('.bathrooms__item').on("click", function () {
   bathroomsPrice = parseInt(price);
   updeteHomeCleaningPrice();
   updetePrice();
+
+  $('[name="numberBathrooms"]').val($(this).text());
 });
 
 $(".living-extras").on("click", function () {
   $(this).toggleClass("_setected");
   let sum = 0;
+  let extrass = '';
+
   $(".living-extras._setected").each(function () {
     let price = $(this).attr("data-extras-price");
     sum += parseInt(price);
+
+    extrass = extrass + $(this).text() + ', ';
   });
 
   extrasPrice = sum;
   updeteHomeCleaningPrice();
   updetePrice();
+
+  $('[name="extras"]').val(extrass);
 });
 
 let isDeep = false;
@@ -78,6 +91,7 @@ $('#clStandart').on('click', function() {
   $('#clDeep').removeClass("_select");
 
   updetePrice();
+  $('[name="cleaningLevel"]').val('');
 });
 
 $('#clDeep').on('click', function() {
@@ -86,6 +100,7 @@ $('#clDeep').on('click', function() {
   $('#clStandart').removeClass("_select");
 
   updetePrice();
+  $('[name="cleaningLevel"]').val('Deep');
 });
 
 
@@ -102,7 +117,16 @@ $('[data-service="1"]').on("click", function () {
     $(".bedrooms__item").removeClass("_select");
     $(".living-extras").removeClass("_setected");
     $('#clStandart').trigger( "click" );
+
+    $('[name="houseSize"]').val('');
+    $('[name="houseClean"]').val('');
+    $('[name="numberBeadroom"]').val('');
+    $('[name="numberBathrooms"]').val('');
+    $('[name="extras"]').val('');
+    $('[name="cleaningLevel"]').val('');
   }
+
+  $('[name="houseClean"]').val($(this).text());
 
   updetePrice();
 });
@@ -118,6 +142,17 @@ $(".after-repair").on("click", function () {
   const price = $(this).attr("data-room-price");
   squerePrice = price;
 
+  updateAllRepairCleanPrice();
+  updetePrice();
+});
+
+$('.bathrooms-ar__item').on("click", function () {
+  $(".bathrooms-ar__item").removeClass("_select");
+  $(this).toggleClass("_select");
+
+  //калькуляция цены
+  const price = parseInt($(this).attr("data-bathrooms-price"));
+  bathroomsARPrice = parseInt(price);
   updateAllRepairCleanPrice();
   updetePrice();
 });
@@ -250,6 +285,7 @@ function stepControl() {
     $(".calculator__form").slideUp("slow");
     $(".calculator__square").slideUp("slow");
 
+    $('.calculator__total-price').css("opacity", "0");
     $(".calculator__btn-prev").hide();
     scrollTopOffer();
   }
@@ -261,6 +297,7 @@ function stepControl() {
 
     $(".calculator__btn-prev").show();
     $(".calculator__btn-next").show();
+    $('.calculator__total-price').css("opacity", "1");
     $('.calculator__total-price strong').hide();
   }
 
@@ -274,6 +311,8 @@ function stepControl() {
     let price = $(".calculator__total-price span").text();
     let totalPrice = price * 1.05;
     $('.stripe-form input[name="item_price"]').val(totalPrice.toFixed(2));
+    $('#totalPrice').val(totalPrice.toFixed(2));
+    $('#clientId').val($('.stripe-form input[name="client_reference_id"]').val());
 
     $('.calculator__total-price strong').show();
 
@@ -338,7 +377,8 @@ function updateAllRepairCleanPrice() {
   repairCleanPrice =
     parseInt(squerePrice) +
     parseInt(repairExtras) +
-    parseInt(repairWindowPrice);
+    parseInt(repairWindowPrice) + 
+    parseInt(bathroomsARPrice);
 }
 
 // End Common functions ==============================================================================
@@ -381,15 +421,15 @@ $(".payment-options__option").on("click", function () {
   let procent = parseInt($(this).attr('data-discont-procent'));
 
   if(procent) {
-    $('.calculator__discount').css("opacity", "1");
+    $(".payment-options__option").children().css("opacity", "0");
+    $(this).children().css("opacity", "1");
     let price = $('.calculator__total-price span').text();
 
     let totalPrice = price * ( (100 - procent) / 100 );
 
-    $('.calculator__discount span').text( totalPrice.toFixed(1));
+    $(this).children().text(`Disc. price: $${totalPrice.toFixed(1)}`);
   } else {
-    $('.calculator__discount').css("opacity", "0");
-    $('.calculator__discount span').text(0);
+    $(".payment-options__option").children().css("opacity", "0");
   }
 });
 
@@ -560,7 +600,9 @@ function updetePrice() {
 
 //Payment button 
 $('#buyNowBtn').on('click', function(){
-  $( '.stripe-form input[type="submit"]' ).trigger( "click" );
+  $('#calcForm').addClass('payment');
+  $('#bookNowBtn').trigger( "click");
+  // $( '.stripe-form input[type="submit"]' ).trigger( "click" );
 });
 
 //Module calendar
@@ -592,3 +634,4 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+//client_reference_id
