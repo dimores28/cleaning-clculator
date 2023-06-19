@@ -17,6 +17,10 @@
   &__content {
   }
 
+  &__data {
+    text-align: right;
+  }
+
   h2 {
     @include adaptiveValue("font-size", 28, 20);
     font-family: $fontFamily, sans-serif;
