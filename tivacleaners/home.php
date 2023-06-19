@@ -723,6 +723,7 @@ Template Name: Home
 							</button>
 						</div>
 					</form>
+					<?php echo do_shortcode('[wp_stripe_checkout_session name="Cleaning" price="42" class="stripe-form"]') ?>
 				</div>
 
 				<div class="calculator__total-price">

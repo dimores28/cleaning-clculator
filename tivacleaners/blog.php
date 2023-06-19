@@ -26,11 +26,15 @@ Template Name: Blog
                            <div class="article-card__img">
                               <a href="<?php echo get_the_permalink(); ?>">
                                  <?php 
-                                    the_post_thumbnail(
-                                       array(565, 250),
-                                       array('alt'   => "Post thumbnail",)
-                                    );
-                                 ?>
+                                    if(has_post_thumbnail()) {
+                                       the_post_thumbnail(
+                                          array(565, 250),
+                                          array('alt'   => "Post thumbnail",)
+                                       );
+                                    } else { ?>
+                                       <img src="<?php bloginfo('template_url'); ?>/assets/img/blog/blog1.webp" alt="Post thumbnail" />
+                                    <?php } ?>
+                                 
                               </a>
                            </div>
 

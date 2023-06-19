@@ -49,33 +49,56 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 	}
 
 
-	// add_action( 'init', function () {
+	add_action( 'init', function () {
 
-	// 	register_post_type( 'faq', [
-	// 		'label'  => 'faq',
-	// 		'labels' => [
-	// 			'name'               => 'Вопрос ответ', // основное название для типа записи
-	// 			'singular_name'      => 'Вопрос', // название для одной записи этого типа
-	// 			'add_new'            => 'Добавить ответ', // для добавления новой записи
-	// 			'add_new_item'       => 'Добавление ответа', // заголовка у вновь создаваемой записи в админ-панели.
-	// 			'edit_item'          => 'Редактирование ответа', // для редактирования типа записи
-	// 			'new_item'           => 'Новое ответ', // текст новой записи
-	// 			'view_item'          => 'Смотреть ответ', // для просмотра записи этого типа.
-	// 			'search_items'       => 'Искать ответ', // для поиска по этим типам записи
-	// 			'not_found'          => 'Не найдено', // если в результате поиска ничего не было найдено
-	// 			'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
-	// 			'menu_name'          => 'ЧАВО', // название меню
-	// 		],
-	// 		'public'              => false,
-	// 		'show_ui'             => true, // зависит от public
-	// 		'menu_icon'           => 'dashicons-format-quote',
-	// 		'supports'            => [ 'title', 'editor' ], 
+		register_post_type( 'Extras', [
+			'label'  => 'Extras',
+			'labels' => [
+				'name'               => 'Extras', // основное название для типа записи
+				'singular_name'      => 'Extra', // название для одной записи этого типа
+				'add_new'            => 'Adding an add-on', // для добавления новой записи
+				'add_new_item'       => 'Adding extras', // заголовка у вновь создаваемой записи в админ-панели.
+				'edit_item'          => 'Add-on Editing', // для редактирования типа записи
+				'new_item'           => 'New addition', // текст новой записи
+				'view_item'          => 'Watch add-on', // для просмотра записи этого типа.
+				'search_items'       => 'Found Extra', // для поиска по этим типам записи
+				'not_found'          => 'Not found', // если в результате поиска ничего не было найдено
+				'not_found_in_trash' => 'Not found in cart', // если не было найдено в корзине
+				'menu_name'          => 'Extras', // название меню
+			],
+			'public'              => false,
+			'show_ui'             => true, // зависит от public
+			'menu_icon'           => 'dashicons-filter',
+			'supports'            => [ 'title', 'editor' ,'thumbnail'],  // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
 
-	// 	] );
+		] );
 
-	// });
+	});
 
 
+	function getExtras() {
+		return $psts  = get_posts( array(
+			'post_type' => 'Extras',
+		));
+	}
+
+	function getReviews() {
+		$args = array(
+			'post_type' => 'Extras',
+		);
+
+		$reviews = [];
+
+		foreach(get_posts($args) sa $post) {
+			$review = get_fields($post->ID);
+			$review['title'] = $post->post_title;
+			$review['img'] = get_the_post_thumbnail_url($post->ID, 'thumbnail');
+
+			$reviews[] = $review;
+		}
+
+		return $reviews;
+	}
 //======================SVG===========================================//
 add_filter( 'upload_mimes', 'svg_upload_allow' );
 

@@ -12,16 +12,16 @@
 					<nav class="nav">
 						<ul class="nav__list">
 							<li class="nav__item">
-								<a href="#" class="nav__link">About</a>
+								<a href="https://www.tivacleaners.com/" class="nav__link">Home</a>
 							</li>
 							<li class="nav__item">
-								<a href="#" class="nav__link">Reviews</a>
+								<a href="#" class="nav__link" data-goto-footer data-goto="#about">About</a>
 							</li>
 							<li class="nav__item">
-								<a href="#" class="nav__link">FAQ</a>
+								<a href="#" class="nav__link" data-goto-footer data-goto="#reviews">Reviews</a>
 							</li>
 							<li class="nav__item">
-								<a href="#" class="nav__link">Contacts</a>
+								<a href="https://www.tivacleaners.com/blog/" class="nav__link">Blog</a>
 							</li>
 						</ul>
 					</nav>
