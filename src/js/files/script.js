@@ -105,6 +105,9 @@ $('#clDeep').on('click', function() {
 
 
 $('[data-service="1"]').on("click", function () {
+
+  $('[name="houseClean"]').val($(this).text());
+
   if (!$(this).hasClass("_select")) {
     //обнуляем стоимость и очищаем ранее выбранные опции
     roomPrice = 0;
@@ -126,8 +129,6 @@ $('[data-service="1"]').on("click", function () {
     $('[name="cleaningLevel"]').val('');
   }
 
-  $('[name="houseClean"]').val($(this).text());
-
   updetePrice();
 });
 
@@ -144,6 +145,8 @@ $(".after-repair").on("click", function () {
 
   updateAllRepairCleanPrice();
   updetePrice();
+
+  $('[name="renovationHouseSize"]').val($(this).text());
 });
 
 $('.bathrooms-ar__item').on("click", function () {
@@ -155,20 +158,27 @@ $('.bathrooms-ar__item').on("click", function () {
   bathroomsARPrice = parseInt(price);
   updateAllRepairCleanPrice();
   updetePrice();
+
+  $('[name="renovationNumberBathrooms"]').val($(this).text());
 });
 
 $(".renovation-extras").on("click", function () {
   $(this).toggleClass("_setected");
   let sum = 0;
+  let extras = '';
 
   $(".renovation-extras._setected").each(function () {
     let price = $(this).attr("data-extras-price");
     sum += parseInt(price);
+
+    extras = extras + $(this).text() + ', ';
   });
 
   repairExtras = sum;
   updateAllRepairCleanPrice();
   updetePrice();
+
+  $('[name="renovationExtras"]').val(extras);
 });
 
 let isRepairClinlevel = false;
@@ -178,6 +188,7 @@ $('#clRepairStandart').on('click', function() {
   $('#clRepairDeep').removeClass("_select");
 
   updetePrice();
+  $('[name="renovationCleaningLevel"]').val('');
 });
 
 $('#clRepairDeep').on('click', function() {
@@ -186,6 +197,7 @@ $('#clRepairDeep').on('click', function() {
   $('#clRepairStandart').removeClass("_select");
 
   updetePrice();
+  $('[name="renovationCleaningLevel"]').val('Deep');
 });
 
 
@@ -194,8 +206,10 @@ flsModules.numberWindows?.noUiSlider.on("update", function (values, handle) {
 
   if ($('[data-service="5"]').hasClass("_select")) {
     repairWindowPrice = values[handle] * price;
+    $('[name="renovationNumberWindows"]').val(values[handle]);
   } else {
     repairWindowPrice = 0;
+    $('[name="renovationNumberWindows"]').val('');
   }
 
   updateAllRepairCleanPrice();
@@ -203,6 +217,8 @@ flsModules.numberWindows?.noUiSlider.on("update", function (values, handle) {
 });
 
 $('[data-service="5"]').on("click", function () {
+  $('[name="afterRenovationClean"').val($(this).text());
+
   if (!$(this).hasClass("_select")) {
     //обнуляем стоимость и очищаем ранее выбранные опции
      squerePrice = 0;
@@ -220,7 +236,14 @@ $('[data-service="5"]').on("click", function () {
      $(".renovation-extras").removeClass("_setected");
 
      $(".is-window").removeClass("_select");
-     $(".window-wash__wrap").css("display", "none")
+     $(".window-wash__wrap").css("display", "none");
+
+     $('[name="afterRenovationClean"').val('');
+     $('[name="renovationHouseSize"]').val('');
+     $('[name="renovationNumberBathrooms"]').val('');
+     $('[name="renovationExtras"]').val('');
+     $('[name="renovationCleaningLevel"]').val('');
+     $('[name="renovationNumberWindows"]').val('');
   }
 
   updetePrice();
@@ -398,6 +421,8 @@ $(".lawn-area__item").on("click", function () {
   const lawnAreaPrice = $(this).attr("data-lawn-area");
 
   lawnPrice = parseInt(lawnAreaPrice) + parseInt(sevicePrice);
+
+  $('[name="lawnArea"]').val($(this).text());
   updetePrice();
 });
 
@@ -406,8 +431,12 @@ $('[data-service="3"]').on('click', function() {
   if (!$(this).hasClass("_select")) {
     lawnPrice = 0;
     $(".lawn-area__item").removeClass("_select");
+
+    $('[name="lawnMowing"]').val('');
+    $('[name="lawnArea"]').val('');
   }
 
+  $('[name="lawnMowing"]').val($(this).text());
   updetePrice();
 })
 
@@ -461,8 +490,10 @@ $(".exterior-window").on("click", function () {
 
   if (!exteriorWindow) {
     windowsPrice = numberWindow * price + parseInt(departurePrice);
+    $('[name="interiorWindowsClean"]').val('No');
   } else {
     windowsPrice = numberWindow * price2 + parseInt(departurePrice);
+    $('[name="interiorWindowsClean"]').val('Yes');
   }
 
   updetePrice();
@@ -472,9 +503,15 @@ $('[data-service="2"]').on("click", function () {
   if ($(this).hasClass("_select")) {
     const price = $("#rangeWindows").attr("data-price-one-window");
     windowsPrice = parseInt(price);
+
+    $('[name="cleaningWindow"]').val($(this).text());
   } else {
     windowsPrice = 0;
     flsModules.rangeWindows?.noUiSlider.set(0);
+
+    $('[name="cleaningWindow"]').val('');
+    $('[name="numberWindow"]').val('');
+    $('[name="interiorWindowsClean"]').val('');
   }
 
   updetePrice();
@@ -492,8 +529,12 @@ flsModules.rangeWindows?.noUiSlider.on("update", function (values, handle) {
     } else {
       windowsPrice = values[handle] * price2 + parseInt(departurePrice);
     }
+
+    $('[name="numberWindow"]').val(values[handle]);
   } else {
     windowsPrice = 0;
+
+    $('[name="numberWindow"]').val('');
   }
 
   updetePrice();
@@ -507,9 +548,14 @@ $('[data-service="4"]').on("click", function () {
   if ($(this).hasClass("_select")) {
     const price = $("#rangePipe").attr("data-price-one-pipe");
     pipePrice = parseInt(price);
+
+    $('[name="pipeCleaning"]').val($(this).text());
   } else {
     pipePrice = 0;
     flsModules.rangePipe?.noUiSlider.set(0);
+
+    $('[name="pipeCleaning"]').val('');
+    $('[name="pipeCleaningNumber"]').val('');
   }
 
   updetePrice();
@@ -521,8 +567,11 @@ flsModules.rangePipe?.noUiSlider.on("update", function (values, handle) {
 
   if ($('[data-service="4"]').hasClass("_select")) {
     pipePrice = values[handle] * price + parseInt(departurePrice);
+
+    $('[name="pipeCleaningNumber"]').val(values[handle]);
   } else {
     pipePrice = 0;
+    $('[name="pipeCleaningNumber"]').val('');
   }
 
   updetePrice();
