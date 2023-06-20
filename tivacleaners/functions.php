@@ -69,36 +69,207 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 			'public'              => false,
 			'show_ui'             => true, // зависит от public
 			'menu_icon'           => 'dashicons-filter',
-			'supports'            => [ 'title', 'editor' ,'thumbnail'],  // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+			'supports'            => [ 'title', 'thumbnail'],  // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+
+		] );
+
+		register_post_type( 'House areas', [
+			'label'  => 'House areas',
+			'labels' => [
+				'name'               => 'House areas', // основное название для типа записи
+				'singular_name'      => 'House area', // название для одной записи этого типа
+				'add_new'            => 'Add house area', // для добавления новой записи
+				'add_new_item'       => 'Adding home area', // заголовка у вновь создаваемой записи в админ-панели.
+				'edit_item'          => 'Editing the area of the house', // для редактирования типа записи
+				'new_item'           => 'New house area', // текст новой записи
+				'view_item'          => 'See the area of the house', // для просмотра записи этого типа.
+				'search_items'       => 'Search for the area of the house', // для поиска по этим типам записи
+				'not_found'          => 'House area not found', // если в результате поиска ничего не было найдено
+				'not_found_in_trash' => 'Not found in cart', // если не было найдено в корзине
+				'menu_name'          => 'House areas', // название меню
+			],
+			'public'              => false,
+			'show_ui'             => true, // зависит от public
+			'menu_icon'           => 'dashicons-admin-home',
+			'supports'            => [ 'title', 'thumbnail'],  // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+
+		] );
+
+		register_post_type( 'Bedrooms', [
+			'label'  => 'Bedrooms',
+			'labels' => [
+				'name'               => 'Bedrooms', // основное название для типа записи
+				'singular_name'      => 'Bedroom', // название для одной записи этого типа
+				'add_new'            => 'Add bedroom', // для добавления новой записи
+				'add_new_item'       => 'Adding a bedroom', // заголовка у вновь создаваемой записи в админ-панели.
+				'edit_item'          => 'Bedroom Editing', // для редактирования типа записи
+				'new_item'           => 'New bedroom', // текст новой записи
+				'view_item'          => 'Watch the bedroom', // для просмотра записи этого типа.
+				'search_items'       => 'Search for a bedroom', // для поиска по этим типам записи
+				'not_found'          => 'Bedroom not found', // если в результате поиска ничего не было найдено
+				'not_found_in_trash' => 'Not found in cart', // если не было найдено в корзине
+				'menu_name'          => 'Bedrooms', // название меню
+			],
+			'public'              => false,
+			'show_ui'             => true, // зависит от public
+			'menu_icon'           => 'dashicons-admin-home',
+			'supports'            => [ 'title', 'thumbnail'],  // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+
+		] );
+
+		register_post_type( 'Bathrooms', [
+			'label'  => 'Bathrooms',
+			'labels' => [
+				'name'               => 'Bathrooms', // основное название для типа записи
+				'singular_name'      => 'Bathroom', // название для одной записи этого типа
+				'add_new'            => 'Add bathroom', // для добавления новой записи
+				'add_new_item'       => 'Adding a bathroom', // заголовка у вновь создаваемой записи в админ-панели.
+				'edit_item'          => 'Bathroom Editing', // для редактирования типа записи
+				'new_item'           => 'New bathroom', // текст новой записи
+				'view_item'          => 'Watch the bathroom', // для просмотра записи этого типа.
+				'search_items'       => 'Search for a bathroom', // для поиска по этим типам записи
+				'not_found'          => 'Bathroom not found', // если в результате поиска ничего не было найдено
+				'not_found_in_trash' => 'Not found in cart', // если не было найдено в корзине
+				'menu_name'          => 'Bathrooms', // название меню
+			],
+			'public'              => false,
+			'show_ui'             => true, // зависит от public
+			'menu_icon'           => 'dashicons-image-filter',
+			'supports'            => [ 'title', 'thumbnail'],  // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+
+		] );
+
+		register_post_type( 'Lawn area', [
+			'label'  => 'Bathrooms',
+			'labels' => [
+				'name'               => 'Lawn area', // основное название для типа записи
+				'singular_name'      => 'Lawn area', // название для одной записи этого типа
+				'add_new'            => 'Add lawn area', // для добавления новой записи
+				'add_new_item'       => 'Adding a lawn area', // заголовка у вновь создаваемой записи в админ-панели.
+				'edit_item'          => 'Lawn area Editing', // для редактирования типа записи
+				'new_item'           => 'New lawn area', // текст новой записи
+				'view_item'          => 'Watch the lawn area', // для просмотра записи этого типа.
+				'search_items'       => 'Search for a lawn area', // для поиска по этим типам записи
+				'not_found'          => 'Lawn area not found', // если в результате поиска ничего не было найдено
+				'not_found_in_trash' => 'Not found in cart', // если не было найдено в корзине
+				'menu_name'          => 'Lawn area', // название меню
+			],
+			'public'              => false,
+			'show_ui'             => true, // зависит от public
+			'menu_icon'           => 'dashicons-image-filter',
+			'supports'            => [ 'title', 'thumbnail'],  
 
 		] );
 
 	});
 
 
-	function getExtras() {
-		return $psts  = get_posts( array(
-			'post_type' => 'Extras',
-		));
-	}
+	// function getExtras() {
+	// 	return $psts  = get_posts( array(
+	// 		'post_type' => 'Extras',
+	// 	));
+	// }
 
-	function getReviews() {
+	function getExtras() {
 		$args = array(
 			'post_type' => 'Extras',
+			'orderby'   => 'date',
+			'order'     => 'ASC',
 		);
 
-		$reviews = [];
+		$extras = [];
 
-		foreach(get_posts($args) sa $post) {
-			$review = get_fields($post->ID);
-			$review['title'] = $post->post_title;
-			$review['img'] = get_the_post_thumbnail_url($post->ID, 'thumbnail');
+		foreach(get_posts($args) as $post) {
+			$extra = get_fields($post->ID);
+			$extra['title'] = $post->post_title;
+			$extra['img'] = get_the_post_thumbnail_url($post->ID, 'thumbnail');
 
-			$reviews[] = $review;
+			$extras[] = $extra;
 		}
 
-		return $reviews;
+		return $extras;
 	}
+
+	function getHouseAreas() {
+		$args = array(
+			'post_type' => 'House areas',
+			'orderby'   => 'date',
+			'order'     => 'ASC',
+		);
+
+		$houseAreas = [];
+
+		foreach(get_posts($args) as $post) {
+			$area = get_fields($post->ID);
+			$area['title'] = $post->post_title;
+			$area['img'] = get_the_post_thumbnail_url($post->ID, 'thumbnail');
+
+			$houseAreas[] = $area;
+		}
+
+		return $houseAreas;
+	}
+
+	function getBedrooms() {
+		$args = array(
+			'post_type' => 'Bedrooms',
+			'orderby'   => 'title',
+			'order'     => 'ASC',
+		);
+
+		$bedrooms = [];
+
+		foreach(get_posts($args) as $post) {
+			$bedroom = get_fields($post->ID);
+			$bedroom['title'] = $post->post_title;
+			$bedroom['img'] = get_the_post_thumbnail_url($post->ID, 'thumbnail');
+
+			$bedrooms[] = $bedroom;
+		}
+
+		return $bedrooms;
+	}
+
+	function getBathrooms() {
+		$args = array(
+			'post_type' => 'Bathrooms',
+			'orderby'   => 'title',
+			'order'     => 'ASC',
+		);
+
+		$bathrooms = [];
+
+		foreach(get_posts($args) as $post) {
+			$bathroom = get_fields($post->ID);
+			$bathroom['title'] = $post->post_title;
+			$bathroom['img'] = get_the_post_thumbnail_url($post->ID, 'thumbnail');
+
+			$bathrooms[] = $bathroom;
+		}
+
+		return $bathrooms;
+	}
+
+	function getLawnArea() {
+		$args = array(
+			'post_type' => 'Lawn area',
+			'orderby'   => 'date',
+			'order'     => 'ASC',
+		);
+
+		$lawnAreas = [];
+
+		foreach(get_posts($args) as $post) {
+			$area = get_fields($post->ID);
+			$area['title'] = $post->post_title;
+			$area['img'] = get_the_post_thumbnail_url($post->ID, 'thumbnail');
+
+			$lawnAreas[] = $area;
+		}
+
+		return $lawnAreas;
+	}
+
 //======================SVG===========================================//
 add_filter( 'upload_mimes', 'svg_upload_allow' );
 
