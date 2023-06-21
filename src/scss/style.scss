@@ -5,13 +5,13 @@
 
 // Підключення шрифтів ===========================================================================================================================================================================================================================================================================
 //&display=swap - додати при підключенні через плагін
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Roboto&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Roboto&display=swap");
 
-//font-family: 'Montserrat', sans-serif;
-//font-family: 'Roboto', sans-serif;
+//font-family: 'Montserrat', sans-serif; GothamPro regular Medium
+//font-family: 'Roboto', sans-serif;  ArnoPro
 
 // Підключити, якщо є локальні файли шрифтів
-//@import "fonts/fonts";
+@import "fonts/fonts";
 
 // Підключення іконкових шрифтів ==============================================================================================================================================================================================================================================================================
 // Підключити, якщо є файл іконкового шрифту
@@ -24,10 +24,14 @@
 // За замовчуванням шрифт ==============================================================================================================================================================================================================================================================================
 $fontFamily: "Montserrat";
 $controlFonts: "Roboto";
+
+$mainFont: 'GothamPro';
+$minorFont: 'ArnoPro';
+
 $fontSize: rem(16); // де 14(px) - розмір шрифту за замовчуванням з макету
 
 // Основні кольори
-$mainColor: #fff; // Колір шрифту за замовчуванням
+$mainColor: #000; // Колір шрифту за замовчуванням
 
 $darkBlue: #0077b6;
 $blue: #00b4d8;
@@ -179,8 +183,8 @@ body {
 @import "home";
 @import "offer";
 @import "about";
-@import "advantages";
-@import "reviews";
-@import "book";
-@import "blog";
-@import "post";
+// @import "advantages";
+// @import "reviews";
+// @import "book";
+// @import "blog";
+// @import "post";

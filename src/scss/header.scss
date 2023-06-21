@@ -154,7 +154,7 @@
   @media (max-width: $mobile) {
     display: block;
     position: relative;
-    width: rem(30);
+    width: rem(24);
     height: rem(18);
     z-index: 5;
     @media (any-hover: none) {
@@ -169,7 +169,7 @@
       position: absolute;
       width: 100%;
       height: rem(2);
-      background-color: #fff;
+      background-color: #3bafa2;
     }
     &::before {
       top: 0;
