@@ -25,8 +25,8 @@
 $fontFamily: "Montserrat";
 $controlFonts: "Roboto";
 
-$mainFont: 'GothamPro';
-$minorFont: 'ArnoPro';
+$mainFont: GothamPro;
+$minorFont: ArnoPro;
 
 $fontSize: rem(16); // де 14(px) - розмір шрифту за замовчуванням з макету
 
@@ -74,13 +74,8 @@ $responsiveType: 1;
 // Стилі тега BODY ============================================================================================================================================================================================================================================================================================================================================================================================
 
 body {
-  font-family: $fontFamily, sans-serif;
-  background-image: url(../img/pxfuel.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  // background: $sky;
+  font-family: $mainFont, sans-serif;
+
   // Скролл заблоковано
   .lock & {
     overflow: hidden;
