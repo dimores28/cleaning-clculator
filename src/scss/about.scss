@@ -1,0 +1,75 @@
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__container {
+    display: flex;
+    flex-direction: row;
+  }
+  &__content {
+    flex: 1 1 50%;
+  }
+  &__text {
+    flex: 1 1 50%;
+    padding: 160px 0 0 50px;
+  }
+  &__subheading {
+    font-family: ArnoPro-SmText;
+    color: #54a497;
+    font-size: 20px;
+    line-height: normal;
+    margin: 0 0 17px 0;
+  }
+  &__heading {
+    font-family: ArnoPro-SmbdDisplay;
+    color: #0e608c;
+    margin: 0 0 12px 0;
+    line-height: normal;
+    font-size: 55px;
+  }
+
+  &__body {
+    font-family: GothamPro;
+    font-size: 18px;
+    color: #000;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 32px;
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 32px 37px;
+    background-color: #fff;
+    border-radius: 20px;
+    -webkit-box-shadow: 10px 10px 72px -37px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 72px -37px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 72px -37px rgba(0, 0, 0, 0.75);
+  }
+
+  &__item-icon {
+    fill: #31b59e;
+    margin: 0 0 31px 0;
+  }
+  &__item-title {
+    font-family: ArnoPro-SmText;
+    text-align: center;
+    color: #0e608c;
+    font-size: 30px;
+    line-height: normal;
+    margin: 0 0 18px 0;
+  }
+  &__item-body {
+    font-family: GothamPro;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: normal;
+  }
+}

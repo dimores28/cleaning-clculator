@@ -8,8 +8,9 @@
     flex-direction: row;
   }
   &__content {
-    flex: 1 1 60%;
+    flex: 1 1 50%;
     margin: 308px 0 0 0;
+    padding: 0 55px 0 0;
   }
   &__heading {
     font-size: 60px;
@@ -24,10 +25,18 @@
   &__body {
     font-size: 23px;
     line-height: 1.65;
+    max-width: 600px;
+    margin: 0 0 50px 0;
+  }
+
+  &__btns {
+    display: flex;
+    gap: 23px;
   }
 
   &__img {
-    flex: 1 1 40%;
+    flex: 1 1 50%;
     margin: 162px 0 62px 0;
+    max-width: 535px;
   }
 }
