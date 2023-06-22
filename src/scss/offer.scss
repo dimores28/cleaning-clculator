@@ -513,9 +513,13 @@
   // .select-extras__item
   &__item {
     width: calc(100% / 4 - 15px);
-    border: 2px solid $darkBlue;
-    border-radius: 6px;
+    border: solid 2px #eaeaea;
     @include adaptiveValue("padding", 10, 5);
+    font-family: $mainFont, sans-serif;
+    @include adaptiveValue("font-size", 18, 14);
+    font-weight: normal;
+    line-height: normal;
+    color: #040000;
     transition: all 0.3s ease-in;
 
     @media (max-width: $mobileSmall) {
@@ -526,17 +530,26 @@
       &:hover {
         cursor: pointer;
         color: #fff;
-        background: $blue;
+        background: #0c6284;
+        border: solid 2px #0c6284;
+
+        .select-extras__img {
+          svg {
+            fill: #ffffff;
+          }
+        }
       }
     }
 
     &._setected {
       color: #fff;
-      background: $blue;
+      background: #0c6284;
+      border: solid 2px #0c6284;
 
-      img {
-        filter: contrast(40%);
-        transform: rotateY(360deg);
+      .select-extras__img {
+        svg {
+          fill: #ffffff;
+        }
       }
     }
   }
@@ -548,11 +561,12 @@
     margin-right: auto;
     margin-bottom: 8px;
 
-    img {
+    svg {
       width: 48px;
       height: 48px;
       display: block;
       margin: 0 auto;
+      fill: #bfbebe;
       transition: all 0.3s ease-in;
 
       @media (max-width: $mobileSmall) {
