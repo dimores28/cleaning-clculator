@@ -82,8 +82,7 @@
     div {
       width: 16px;
       height: 16px;
-      background: #fff;
-      border-radius: 50%;
+      background: #45c5a6;
       opacity: 0.7;
       transition: all 0.4s ease-in;
 
@@ -657,40 +656,46 @@
   &__block {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    @include adaptiveValue("gap", 20, 10);
   }
 
   // .bedrooms__item
   &__item {
     width: calc(20% - 16px);
-    border: 2px solid $darkBlue;
-    border-radius: 6px;
-    padding: 10px;
+    border: solid 2px #eaeaea;
+    padding: 23px 26px 23px 26px;
+    @include adaptiveValue("font-size", 22, 14);
+    font-family: $mainFont, sans-serif;
+    font-weight: normal;
+    line-height: 1.5;
+    color: #a1a6a8;
     cursor: pointer;
     text-align: center;
     transition: all 0.3s ease-in;
 
     @media (max-width: $mobile) {
-      width: calc(25% - 15px);
+      padding: 20px;
     }
 
     @media (max-width: $mobileSmall) {
-      padding: 5px;
-      font-size: 12px;
+      width: calc(100% / 4 - 9px);
+    }
+
+    @media (max-width: 356px) {
+      width: calc(100% / 3 - 7px);
     }
 
     &._select {
-      background: $blue;
-
-      img {
-        filter: contrast(40%);
-        transform: rotateX(360deg);
-      }
+      background: #0c6284;
+      border: solid 2px #0c6284;
+      color: #fff;
     }
 
     @media (any-hover: hover) {
       &:hover {
-        background: $blue;
+        background: #0c6284;
+        border: solid 2px #0c6284;
+        color: #fff;
       }
     }
   }
@@ -996,40 +1001,47 @@
   &__block {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    @include adaptiveValue("gap", 20, 10);
   }
+
 
   // .bathrooms__item
   &__item {
     width: calc(20% - 16px);
-    border: 2px solid $darkBlue;
-    border-radius: 6px;
-    padding: 10px;
+    border: solid 2px #eaeaea;
+    padding: 23px 26px 23px 26px;
+    @include adaptiveValue("font-size", 22, 14);
+    font-family: $mainFont, sans-serif;
+    font-weight: normal;
+    line-height: 1.5;
+    color: #a1a6a8;
     cursor: pointer;
     text-align: center;
     transition: all 0.3s ease-in;
 
     @media (max-width: $mobile) {
-      width: calc(25% - 15px);
+      padding: 20px;
     }
 
     @media (max-width: $mobileSmall) {
-      padding: 5px;
-      font-size: 12px;
+      width: calc(100% / 4 - 9px);
+    }
+
+    @media (max-width: 356px) {
+      width: calc(100% / 3 - 7px);
     }
 
     &._select {
-      background: $blue;
-
-      img {
-        filter: contrast(40%);
-        transform: rotateX(360deg);
-      }
+      background: #0c6284;
+      border: solid 2px #0c6284;
+      color: #fff;
     }
 
     @media (any-hover: hover) {
       &:hover {
-        background: $blue;
+        background: #0c6284;
+        border: solid 2px #0c6284;
+        color: #fff;
       }
     }
   }

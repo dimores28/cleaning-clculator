@@ -305,3 +305,11 @@
 }
 
 //====================================================================================================
+.sub-title {
+  font-family: $fontFamily, sans-serif;
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+  color: #000203;
+ @include adaptiveValue("margin-bottom", 32, 20);
+}
