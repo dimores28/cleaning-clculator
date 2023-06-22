@@ -13,16 +13,21 @@
     padding: 0 55px 0 0;
   }
   &__heading {
+    font-family: ArnoPro-SmbdSmText;
+    letter-spacing: normal;
     font-size: 60px;
     line-height: 80px;
     color: #0c6185;
     margin: 0 0 45px 0;
+    max-width: 550px;
     span {
       color: #30b7a7;
     }
   }
 
   &__body {
+    font-family: GothamPro;
+    letter-spacing: normal;
     font-size: 23px;
     line-height: 1.65;
     max-width: 600px;
