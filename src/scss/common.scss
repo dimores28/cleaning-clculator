@@ -91,7 +91,7 @@
   }
 
   .noUi-connect {
-    background: $darkBlue;
+    background: #45c5a6;
   }
 
   .noUi-handle {
@@ -101,7 +101,7 @@
     right: -10px; /* half the width */
     border-radius: 50%;
     background: $blue;
-    border: 4px solid $darkBlue;
+    border: 4px solid #45c5a6;
 
     &::before,
     &::after {
@@ -110,10 +110,10 @@
   }
 
   .noUi-tooltip {
-    color: $darkBlue;
+    color: #45c5a6;
     background: transparent;
     border: none;
-    font-family: $controlFonts, sans-serif;
+    font-family: $mainFont, sans-serif;
     font-weight: 400;
   }
 
@@ -129,15 +129,26 @@
   .noUi-touch-area {
     height: 100%;
     width: 100%;
-    background: #fff;
+    background: #45c5a6;
     border-radius: 50%;
   }
 
   .noUi-value {
-    top: -9px;
-    color: #fff;
-    font-family: $controlFonts, sans-serif;
+    top: 40px;
+    color: #a1a6a8;
+    font-family: $mainFont, sans-serif;
     font-weight: 400;
+  }
+
+  .noUi-value:last-child{
+    left: 40px !important;
+
+    &::before {
+      position: absolute;
+      content: '-';
+      left: -15px;
+    }
+    
   }
 }
 
