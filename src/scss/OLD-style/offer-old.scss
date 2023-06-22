@@ -30,24 +30,20 @@
 
   // .offer__heading
   &__heading {
-    @include adaptiveValue("font-size", 55, 36);
-    font-family: ArnoPro-SmbdDisplay, sans-serif;
-    color: #0e608c;
-    font-weight: 400;
-    line-height: normal;
+    @include adaptiveValue("font-size", 42, 28);
+    font-weight: 700;
+    line-height: 1.3em;
     margin-bottom: 20px;
     text-align: center;
+    text-transform: uppercase;
   }
 
   &__sub-title {
-    @include adaptiveValue("font-size", 20, 16);
-    font-family: ArnoPro-SmText, sans-serif;
-    color: #54a497;
-    font-weight: normal;
-    line-height: normal;
-    margin-bottom: 16px;
+    @include adaptiveValue("font-size", 28, 18);
+    font-weight: 700;
+    line-height: 1.3em;
+    margin-bottom: 30px;
     text-align: center;
-    text-transform: uppercase;
     width: 100%;
 
     @media (max-width: $mobileSmall) {
@@ -62,11 +58,13 @@
 
 //====================================================================================================
 .calculator {
+  background: $sky;
   width: 100%;
-  max-width: 880px;
+  max-width: 940px;
   margin: 0 auto;
+  border-radius: 20px;
   padding: 24px 16px 20px;
-
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
   &__steps {
     display: flex;
@@ -359,89 +357,91 @@
 
 //====================================================================================================
 .service {
-  width: calc(100% / 3 - 17px);
-  border-radius: 20px;
-  padding: 37px 35px 33px;
+  width: calc(100% / 6 - 17px);
+  border: 2px solid $darkBlue;
+  border-radius: 6px;
+  padding: 15px;
   cursor: pointer;
-  font-family: $mainFont, sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.67;
+  font-size: 16px;
+  line-height: 110%;
+  font-weight: 400;
   text-align: center;
-  color: #125b7e;
   position: relative;
-  background-color: rgb(255, 255, 255);
-  box-shadow: -0.7px 3.9px 32px 0 rgb(230, 244, 249);
   transition: all 0.4s ease-in;
 
-  svg {
-    fill: #3bafa2;
-    transition: all 0.3s ease-in;
+  @media (max-width: em(1024)) {
+    padding: 10px 5px;
   }
 
-  p {
-    height: 62px;
+  @media (max-width: 840px) {
+    width: calc(100% / 5 - 16px);
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  @media (max-width: em(630)) {
+    width: calc(100% / 4 - 15px);
+  }
+
+  @media (max-width: $mobileSmall) {
+    width: calc(100% / 3 - 14px);
+    font-size: 12px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    background: url(../img/icons/check.png) center center no-repeat;
+    background-size: cover !important;
+    top: 4px;
+    right: 4px;
+    transition: all 0.3s ease-in;
+    opacity: 0;
+    transform: scale(0.4);
   }
 
   &__img {
+    max-width: 64px;
     margin: 0 auto;
     margin-bottom: 12px;
-  }
 
-  &__indicator {
-    margin: 26px auto 0px auto;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: #ecf7f9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease-in;
-
-    &_chosen {
-      display: none;
+    @media (max-width: em(1024)) {
+      max-width: 48px;
+      margin-bottom: 8px;
     }
 
-    &_not-chosen {
-      display: block;
+    @media (max-width: $mobile) {
+      max-width: 32px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      transition: all 0.3s ease-in;
     }
   }
 
   &._select {
-    background: #0c6284;
-    color: #fff;
+    background: $blue;
 
-    svg {
-      fill: #fff;
+    img {
+      filter: contrast(40%);
+      transform: rotateY(360deg);
     }
 
-    .service__indicator {
-      background: #3d819d; 
-
-      &_chosen {
-        display: block;
-        width: 28px;
-        height: 20px;
-      }
-
-      &_not-chosen {
-        display: none;
-        width: 17px;
-        height: 15px;
+    @media (min-width: $mobileSmall) {
+      &::after {
+        opacity: 1;
+        transform: scale(1);
       }
     }
-
   }
 
   @media (any-hover: hover) {
     &:hover {
-      background: #0c6284;
-      color: #fff;
-
-      svg {
-        fill: #fff;
-      }
+      background: $blue;
     }
   }
 }
