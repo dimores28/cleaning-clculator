@@ -217,6 +217,8 @@
       position: relative;
       transition: all 0.3s ease-in;
       opacity: 0;
+      max-height: 0;
+      overflow: hidden;
 
       strong {
         font-size: 18px;
@@ -290,17 +292,32 @@
 //====================================================================================================
 .room {
   width: calc(25% - 16px);
-  border: 2px solid $darkBlue;
-  border-radius: 6px;
+  border: solid 2px #eaeaea;
   padding: 20px;
+  font-family: $mainFont, sans-serif;
   cursor: pointer;
-  font-size: 18px;
-  @include adaptiveValue("font-size", 18, 12);
-  line-height: 110%;
+  @include adaptiveValue("font-size", 18, 14);
+  line-height: normal;
   font-weight: 400;
   text-align: center;
+  color: #040000;
   transition: all 0.4s ease-in;
   position: relative;
+
+
+  &__img {
+    margin: 0 auto;
+
+    svg {
+      width: 100%;
+      height: auto;
+      fill: #bfbebe;
+      width: 64px;
+      transition: all 0.3s ease-in;
+    }
+
+    margin-bottom: 16px;
+  }
 
   @media (max-width: em(1024)) {
     width: calc(20% - 16px);
@@ -308,7 +325,12 @@
 
   @media (max-width: $mobile) {
     width: calc(25% - 16px);
-    // font-size: 16px;
+    
+    &__img {
+      svg {
+        width: 32px;
+      }
+    }
   }
 
   @media (max-width: 640px) {
@@ -319,42 +341,22 @@
   @media (max-width: $mobileSmall) {
     width: calc(100% / 3 - 14px);
     padding: 10px;
-  }
 
-  &::after {
-    content: "";
-    position: absolute;
-    width: 32px;
-    height: 32px;
-    background: url(../img/icons/check.png) center center no-repeat;
-    background-size: cover !important;
-    top: 4px;
-    right: 4px;
-    overflow: hidden;
-    transition: all 0.3s ease-in;
-    opacity: 0;
-    transform: scale(0.4);
-  }
-
-  &__img {
-    width: 80%;
-    margin: 0 auto;
-
-    img {
-      width: 100%;
-      height: auto;
-      transition: all 0.3s ease-in;
+    &__img {
+      svg {
+        width: 32px;
+      }
     }
-
-    margin-bottom: 16px;
   }
+
 
   &._select {
-    background: $blue;
+    background: #0c6284;
+    border: solid 2px #0c6284;
+    color: #fff;
 
-    img {
-      filter: contrast(40%);
-      transform: rotateX(360deg);
+    svg {
+      fill: #fff;
     }
 
     @media (min-width: $mobileSmall) {
@@ -367,7 +369,13 @@
 
   @media (any-hover: hover) {
     &:hover {
-      background: $blue;
+      background: #0c6284;
+      border: solid 2px #0c6284;
+      color: #fff;
+
+      svg {
+        fill: #fff;
+      }
     }
   }
 }

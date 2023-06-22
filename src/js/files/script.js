@@ -308,7 +308,7 @@ function stepControl() {
     $(".calculator__form").slideUp("slow");
     $(".calculator__square").slideUp("slow");
 
-    $('.calculator__total-price').css("opacity", "0");
+    $('.calculator__total-price').css({"opacity" : "0", "max-height": "0"});
     $(".calculator__btn-prev").hide();
     scrollTopOffer();
   }
@@ -320,7 +320,7 @@ function stepControl() {
 
     $(".calculator__btn-prev").show();
     $(".calculator__btn-next").show();
-    $('.calculator__total-price').css("opacity", "1");
+    $('.calculator__total-price').css({"opacity": "1", "max-height": "unset"});
     $('.calculator__total-price strong').hide();
   }
 
