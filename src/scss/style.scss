@@ -71,11 +71,11 @@ $responsiveType: 1;
 
 body {
   font-family: $fontFamily, sans-serif;
-  background-image: url(../img/pxfuel.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  // background-image: url(../img/pxfuel.jpg);
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: center;
+  // background-attachment: fixed;
   // background: $sky;
   // Скролл заблоковано
   .lock & {
@@ -177,10 +177,12 @@ body {
 
 // Підключення стилів окремих сторінок
 @import "home";
+@import "banner";
 @import "offer";
-@import "about";
-@import "advantages";
-@import "reviews";
-@import "book";
+
+// @import "about";
+// @import "advantages";
+// @import "reviews";
+// @import "book";
 @import "blog";
 @import "post";

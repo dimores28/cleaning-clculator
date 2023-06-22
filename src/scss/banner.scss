@@ -1,0 +1,33 @@
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  &__container {
+    display: flex;
+    flex-direction: row;
+  }
+  &__content {
+    flex: 1 1 60%;
+    margin: 308px 0 0 0;
+  }
+  &__heading {
+    font-size: 60px;
+    line-height: 80px;
+    color: #0c6185;
+    margin: 0 0 45px 0;
+    span {
+      color: #30b7a7;
+    }
+  }
+
+  &__body {
+    font-size: 23px;
+    line-height: 1.65;
+  }
+
+  &__img {
+    flex: 1 1 40%;
+    margin: 162px 0 62px 0;
+  }
+}
