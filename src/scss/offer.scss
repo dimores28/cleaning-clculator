@@ -67,6 +67,10 @@
   margin: 0 auto;
   padding: 24px 16px 20px;
 
+  @media (max-width:$mobileSmall){
+    padding: 24px 0px 20px;
+  }
+
 
   &__steps {
     display: flex;
@@ -359,12 +363,12 @@
 
 //====================================================================================================
 .service {
-  width: calc(100% / 3 - 17px);
+  width: calc(100% / 3 - 14px);
   border-radius: 20px;
   padding: 37px 35px 33px;
   cursor: pointer;
   font-family: $mainFont, sans-serif;
-  font-size: 18px;
+  @include adaptiveValue("font-size", 18, 14);
   font-weight: 500;
   line-height: 1.67;
   text-align: center;
@@ -373,10 +377,36 @@
   background-color: rgb(255, 255, 255);
   box-shadow: -0.7px 3.9px 32px 0 rgb(230, 244, 249);
   transition: all 0.4s ease-in;
+  margin-bottom: 40px;
+
+  @media (max-width: em(894)){
+    padding: 24px 15px 20px;
+  }
+  
+  @media (max-width:$mobile){
+    width: calc(100% / 2 - 10px);
+    margin-bottom: 0px;
+  }
+
+  @media (max-width:$mobileSmall){
+      padding: 24px 5px 20px 5px;
+  }
 
   svg {
     fill: #3bafa2;
     transition: all 0.3s ease-in;
+    width: 100%;
+    max-width: 84px;
+    height: 75px;
+
+    @media (max-width: em(618)){
+       max-width: 51px; 
+    }
+
+    @media (max-width:$mobileSmall){
+      height: 46px;
+    }
+
   }
 
   p {
@@ -398,6 +428,16 @@
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease-in;
+
+    @media (max-width:$mobile){
+      margin: 14px auto 0px auto;
+      width: 33px;
+      height: 33px;
+    }
+
+    @media (max-width:$mobileSmall){
+      margin: 10px auto 0px auto;
+    }
 
     &_chosen {
       display: none;
