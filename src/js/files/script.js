@@ -692,6 +692,17 @@ $('#buyNowBtn').on('click', function(){
   // $( '.stripe-form input[type="submit"]' ).trigger( "click" );
 });
 
+$('#payment_method').on('change', function() {
+ 
+  if(this.value == 2) {
+    $('#calcForm').addClass('payment');
+  }
+  else {
+    $('#calcForm').removeClass('payment');
+  }
+  
+});
+
 //Module calendar
 flatpickr("#cleaningDate", {
   position: "above",
