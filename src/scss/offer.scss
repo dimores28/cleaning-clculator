@@ -822,7 +822,6 @@
 
 .number-windows {
   padding-top: 20px;
-  margin-bottom: 20px;
 
   // .number-windows__titlee
   &__title {
@@ -835,6 +834,10 @@
     @media (max-width: $mobileSmall) {
       padding: 20px 10px;
     }
+  }
+
+  &__group-btn {
+    margin-top: 40px;
   }
 }
 
@@ -857,9 +860,9 @@
 
 //====================================================================================================
 .payment-options {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding-top: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 40px;
   border-top: 1px solid #d1d3d2;
 
   // .payment-options__title

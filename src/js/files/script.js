@@ -479,10 +479,32 @@ $(".is-window").on("click", function () {
 
 //калькуляция стомости мытья окон ==========================
 let exteriorWindow = false;
-$(".exterior-window").on("click", function () {
-  $(this).toggleClass("_select");
-  exteriorWindow = !exteriorWindow;
 
+$('#inside').on('click', function(){
+  $(this).toggleClass("_select");
+
+  if($(this).hasClass("_select") && $('#outside').hasClass("_select")) {
+    exteriorWindow = true;
+  } else {
+    exteriorWindow = false;
+  }
+
+  exteriorWindows();
+});
+
+$('#outside').on('click', function(){
+  $(this).toggleClass("_select");
+
+  if($(this).hasClass("_select") && $('#inside').hasClass("_select")) {
+    exteriorWindow = true;
+  } else {
+    exteriorWindow = false;
+  }
+
+  exteriorWindows();
+});
+
+function exteriorWindows() {
   const price = $("#rangeWindows").attr("data-price-window");
   const price2 = $("#rangeWindows").attr("data-price-exterior-window");
   const departurePrice = $("#rangeWindows").attr("data-price-one-window");
@@ -497,7 +519,8 @@ $(".exterior-window").on("click", function () {
   }
 
   updetePrice();
-});
+}
+
 
 $('[data-service="2"]').on("click", function () {
   if ($(this).hasClass("_select")) {
