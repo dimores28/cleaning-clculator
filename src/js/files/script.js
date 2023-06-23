@@ -341,6 +341,7 @@ function stepControl() {
 
     $('.calculator__total-price strong').text('(+GST 5%)');
     $('.calculator__total-price strong').show();
+    $('.calculator__total-price strong').removeClass('_plus');
 
     scrollTopOffer();
   }
@@ -433,7 +434,11 @@ $(".lawn-area__item").on("click", function () {
   if(text.indexOf('+') > 0 ){
     $('.calculator__total-price strong').text('+');
     $('.calculator__total-price strong').show();
-  } 
+    $('.calculator__total-price strong').addClass('_plus');
+  } else {
+    $('.calculator__total-price strong').removeClass('_plus');
+    $('.calculator__total-price strong').hide();
+  }
 });
 
 $('[data-service="3"]').on('click', function() {

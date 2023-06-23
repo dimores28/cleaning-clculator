@@ -228,6 +228,11 @@
         position: absolute;
         top: 0px;
       }
+
+       ._plus {
+        position: relative !important;
+        @include adaptiveValue("font-size", 60, 40);
+      }
    }
 
   &__btn-group {

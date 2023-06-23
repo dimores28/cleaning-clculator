@@ -57,7 +57,9 @@
    }
 
    &__all-btn {
-
+      @media (max-width:$mobile){
+         padding: 16px 49px; 
+      }
    }
 }
 
