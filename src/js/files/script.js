@@ -3,6 +3,8 @@ import { isMobile } from "./functions.js";
 // Підключення списку активних модулів
 import { flsModules } from "./modules.js";
 
+import "../jquery.min.js";
+
 let step = 1;
 //===============
 let roomPrice = 0;
