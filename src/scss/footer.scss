@@ -1,175 +1,104 @@
 //====================================================================================================
 
 .footer {
-  background: #0096c7;
+  background: #054863;
   color: #fff;
-  padding: 70px 0px 0px 0px;
+  padding: 61px 0px 0 0px;
 
-  // .footer__container
   &__container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
 
-  &__logo-mobile {
-    display: none;
-    @media (max-width: $mobile) {
-      display: flex;
-      margin: 0 0 40px;
-      img {
-        display: block;
-        margin: 0 auto;
-        max-height: 121px;
-      }
+  &__logo {
+    flex: 1 1 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 0 112px 0;
+    &-img {
+      max-width: 140px;
+      margin: 0 0 23px;
+    }
+    &-desc {
+      max-width: 266px;
+      font-family: GothamPro;
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.57;
+      letter-spacing: normal;
     }
   }
 
-  // .footer__content
   &__content {
+    flex: 1 1 70%;
     display: flex;
     flex-direction: row;
-    gap: 30px;
-    margin: 0 0 60px;
-
-    @media (max-width: $tablet) {
-      flex-wrap: wrap;
-    }
-    @media (max-width: 450px) {
-      flex-direction: column;
-    }
+    margin: 104px 0 112px 0;
   }
 
-  &__map {
-    flex: 1 1 33.333%;
-    min-width: 450px;
-    max-height: 450px;
-    @media (max-width: $tablet) {
-      flex: 1 1 100%;
-    }
-    @media (max-width: $mobileSmall) {
-      display: none;
-    }
-
-    iframe {
-      width: 100%;
-      border-radius: 4px;
-    }
-  }
-
-  // .footer__nav
-  &__nav {
-    flex: 1 1 33.333%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    @media (max-width: $tablet) {
-      flex: 1 1 calc(50% - 30px);
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-    @media (max-width: $mobile) {
-      flex: 1 1 calc(50% - 30px);
-      justify-content: flex-start;
-      align-items: center;
-    }
-    @media (max-width: $mobileSmall) {
-      flex: 1 1 calc(40% - 30px);
-      justify-content: center;
-    }
-  }
-
-  // .footer__contacts
   &__contacts {
+    min-width: 280px;
     flex: 1 1 33.333%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    margin: 0 0 50px 0;
-
-    @media (max-width: $tablet) {
-      flex: 1 1 calc(50% - 30px);
-      align-items: center;
-      justify-content: flex-start;
-    }
-
-    @media (max-width: $mobile) {
-      flex: 1 1 calc(50% - 30px);
-      align-items: flex-start;
-    }
-
-    @media (max-width: $mobileSmall) {
-      flex: 1 1 calc(60% - 30px);
-      margin: 0;
-    }
-
-    @media (max-width: 450px) {
-      align-items: center;
-    }
   }
 
-  // .footer__logo
-  &__logo {
-    @media (max-width: $mobile) {
-      display: none;
-    }
-    img {
-      display: block;
-      margin: 0 auto;
-      max-height: 121px;
-    }
+  &__more-info {
+    flex: 1 1 33.333%;
+    display: flex;
+    flex-direction: column;
   }
 
-  // .footer__policy
+  &__fol-us {
+  }
+
+  &__heading {
+    font-family: GothamPro;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.22;
+    letter-spacing: normal;
+    margin: 0 0 41px;
+  }
+
   &__policy {
-    background: #0077b6;
+    font-family: GothamPro;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: normal;
+    background: #054863;
     padding: 20px;
     text-align: center;
     color: #fff;
-    font-family: PTSansNarrow, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 22px;
-    line-height: 108%;
   }
 }
-.nav {
-  margin: 50px 0 50px 20px;
-  @media (max-width: $tablet) {
-    margin: 0 60px 50px 20px;
-  }
-  @media (max-width: $mobile) {
-    margin: 0 0 50px 0;
-  }
 
-  &__list {
-    @media (max-width: 450px) {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
+.contacts,
+.more-info,
+.fol-us {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 
   &__item {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    height: 32px;
-    color: #fff;
-    font-family: PTSansNarrow, sans-serif;
-    font-weight: 400;
+    font-family: GothamPro;
+    font-size: 14px;
+    font-weight: 300;
+    font-stretch: normal;
     font-style: normal;
-    font-size: 18px;
-    line-height: 108%;
-    margin-bottom: 20px;
+    line-height: 1.57;
+    letter-spacing: normal;
   }
 
   &__link {
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 4px;
-    border-radius: 4px;
     outline: none;
     transition: all 0.3s ease-in;
 
@@ -191,65 +120,35 @@
   }
 }
 
-.contacts {
-  @media (max-width: $tablet) {
-    padding: 0;
-  }
-
-  @media (max-width: $mobile) {
-    margin: 0;
-  }
-
-  @media (max-width: 450px) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  // .contacts__item
-  &__item {
-    color: #fff;
-    font-family: PTSansNarrow, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 18px;
-    line-height: 108%;
-
-    margin-bottom: 20px;
-  }
-
-  &__linck {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 4px;
-    border-radius: 4px;
-    outline: none;
-    transition: all 0.3s ease-in;
-
-    @media (any-hover: hover) {
-      &:hover {
-        color: #28263c;
-
-        svg {
-          fill: #28263c;
-        }
-      }
-    }
-
-    &:focus-visible,
-    &:active {
-      box-shadow: rgba(255, 255, 255, 0.16) 0px 1px 4px,
-        rgb(255, 255, 255) 0px 0px 0px 3px;
-    }
-  }
-
+.contacts,
+.more-info {
   &__icon {
     fill: #fff;
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
+    margin: 0 24px 0 0;
     transition: all 0.3s ease-in;
   }
+}
+
+.fol-us {
+  &__link {
+    border-radius: 50%;
+    background-color: #4d9ce9;
+    width: 45px;
+    height: 45px;
+    justify-content: center;
+  }
+  &__icon {
+    fill: #fff;
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease-in;
+  }
+}
+
+.margin-left {
+  margin: 0 0 0 20px;
 }
 
 //====================================================================================================
