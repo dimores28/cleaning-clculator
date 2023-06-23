@@ -324,10 +324,15 @@
 
 //====================================================================================================
 .payment-method {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 
   // .payment-method__title
   &__title {
-    margin-bottom: 26px;
+    font-family: $mainFont, sans-serif;
+    color: #0e608c;
+    font-weight: 500;
+    line-height: normal;
+    @include adaptiveValue("font-size", 24, 18);
+    margin-bottom: 20px;
   }
 }
