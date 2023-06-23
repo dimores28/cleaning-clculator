@@ -383,19 +383,18 @@
 .service {
   width: calc(100% / 3 - 14px);
   border-radius: 20px;
-  padding: 37px 35px 33px;
+  padding: 20px 20px 16px;
   cursor: pointer;
   font-family: $mainFont, sans-serif;
-  @include adaptiveValue("font-size", 18, 14);
+  @include adaptiveValue("font-size", 16, 13);
   font-weight: 500;
-  line-height: 1.67;
+  line-height: 1.3;
   text-align: center;
   color: #125b7e;
   position: relative;
   background-color: rgb(255, 255, 255);
   box-shadow: -0.7px 3.9px 32px 0 rgb(230, 244, 249);
   transition: all 0.4s ease-in;
-  margin-bottom: 40px;
 
   @media (max-width: em(894)){
     padding: 24px 15px 20px;
@@ -414,7 +413,7 @@
     fill: #3bafa2;
     transition: all 0.3s ease-in;
     width: 100%;
-    max-width: 84px;
+    max-width: 64px;
     height: 75px;
 
     @media (max-width: em(618)){
@@ -428,18 +427,18 @@
   }
 
   p {
-    height: 62px;
+    height: 48px;
   }
 
   &__img {
     margin: 0 auto;
-    margin-bottom: 12px;
+    // margin-bottom: 12px;
   }
 
   &__indicator {
-    margin: 26px auto 0px auto;
-    width: 52px;
-    height: 52px;
+    margin: 16px auto 0px auto;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     background: #ecf7f9;
     display: flex;
@@ -449,8 +448,8 @@
 
     @media (max-width:$mobile){
       margin: 14px auto 0px auto;
-      width: 33px;
-      height: 33px;
+      width: 32px;
+      height: 32px;
     }
 
     @media (max-width:$mobileSmall){
@@ -510,6 +509,10 @@
   flex-wrap: wrap;
   gap: 20px;
 
+  @media (max-width: em(361)){
+    gap: 10px;
+  }
+
   // .select-extras__item
   &__item {
     width: calc(100% / 4 - 15px);
@@ -524,6 +527,10 @@
 
     @media (max-width: $mobileSmall) {
       width: calc(100% / 3 - 14px);
+    }
+
+    @media (max-width: em(361)){
+      width: calc(100% / 3 - 7px);
     }
 
     @media (any-hover: hover) {
@@ -620,6 +627,7 @@
     @media (any-hover: hover) {
       &:hover {
         background: $blue;
+        color: #fff;
       }
     }
   }
@@ -687,16 +695,21 @@
     text-align: center;
     transition: all 0.3s ease-in;
 
+    @media (max-width: em(759)){
+      width: calc(20% - 12px);
+    }
+
     @media (max-width: $mobile) {
       padding: 20px;
     }
 
+
     @media (max-width: $mobileSmall) {
-      width: calc(100% / 4 - 9px);
+      width: calc(20% - 10px);
     }
 
-    @media (max-width: 356px) {
-      width: calc(100% / 3 - 7px);
+    @media (max-width: 374px) {
+      padding: 10px 15px;
     }
 
     &._select {
@@ -983,7 +996,9 @@
 
   @media (any-hover: hover) {
     &:hover {
+      border: solid 2px #0c6284;
       background: $blue;
+      color: #fff;
     }
   }
 }
@@ -1033,16 +1048,21 @@
     text-align: center;
     transition: all 0.3s ease-in;
 
+    @media (max-width: em(759)){
+      width: calc(20% - 12px);
+    }
+
     @media (max-width: $mobile) {
       padding: 20px;
     }
 
+
     @media (max-width: $mobileSmall) {
-      width: calc(100% / 4 - 9px);
+      width: calc(20% - 10px);
     }
 
-    @media (max-width: 356px) {
-      width: calc(100% / 3 - 7px);
+    @media (max-width: 374px) {
+      padding: 10px 15px;
     }
 
     &._select {
@@ -1059,6 +1079,7 @@
       }
     }
   }
+
 
   // .bathrooms__img
   &__img {
@@ -1101,37 +1122,49 @@
   // .bathrooms-ar__item
   &__item {
     width: calc(20% - 16px);
-    border: 2px solid $darkBlue;
-    border-radius: 6px;
-    padding: 10px;
+    border: solid 2px #eaeaea;
+    padding: 23px 26px 23px 26px;
+    @include adaptiveValue("font-size", 22, 14);
+    font-family: $mainFont, sans-serif;
+    font-weight: normal;
+    line-height: 1.5;
+    color: #a1a6a8;
     cursor: pointer;
     text-align: center;
     transition: all 0.3s ease-in;
 
-    @media (max-width: $mobile) {
-      width: calc(25% - 15px);
+    @media (max-width: em(759)){
+      width: calc(20% - 12px);
     }
 
+    @media (max-width: $mobile) {
+      padding: 20px;
+    }
+
+
     @media (max-width: $mobileSmall) {
-      padding: 5px;
-      font-size: 12px;
+      width: calc(20% - 10px);
+    }
+
+    @media (max-width: 374px) {
+      padding: 10px 15px;
     }
 
     &._select {
-      background: $blue;
-
-      img {
-        filter: contrast(40%);
-        transform: rotateX(360deg);
-      }
+      background: #0c6284;
+      border: solid 2px #0c6284;
+      color: #fff;
     }
 
     @media (any-hover: hover) {
       &:hover {
-        background: $blue;
+        background: #0c6284;
+        border: solid 2px #0c6284;
+        color: #fff;
       }
     }
   }
+
 
   // .bathrooms-ar__img
   &__img {
