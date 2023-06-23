@@ -337,6 +337,7 @@ function stepControl() {
     $('#totalPrice').val(totalPrice.toFixed(2));
     $('#clientId').val($('.stripe-form input[name="client_reference_id"]').val());
 
+    $('.calculator__total-price strong').text('(+GST 5%)');
     $('.calculator__total-price strong').show();
 
     scrollTopOffer();
@@ -419,11 +420,18 @@ $(".lawn-area__item").on("click", function () {
 
   const sevicePrice = $('[data-service="3"]').attr('data-service-price');
   const lawnAreaPrice = $(this).attr("data-lawn-area");
+  const text = $(this).text();
 
   lawnPrice = parseInt(lawnAreaPrice) + parseInt(sevicePrice);
 
   $('[name="lawnArea"]').val($(this).text());
+
   updetePrice();
+
+  if(text.indexOf('+') > 0 ){
+    $('.calculator__total-price strong').text('+');
+    $('.calculator__total-price strong').show();
+  } 
 });
 
 $('[data-service="3"]').on('click', function() {
