@@ -1,4 +1,4 @@
-.about {
+.why-us {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,6 +29,9 @@
       align-items: center;
       padding: 0;
     }
+    @media (max-width: $mobile) {
+      align-items: flex-start;
+    }
   }
   &__subheading {
     font-family: ArnoPro-SmText;
@@ -39,6 +42,9 @@
     @media (max-width: $tablet) {
       font-size: 16px;
       text-align: center;
+    }
+    @media (max-width: $mobile) {
+      text-align: left;
     }
   }
   &__heading {
@@ -52,6 +58,9 @@
       line-height: 46px;
       text-align: center;
     }
+    @media (max-width: $mobile) {
+      text-align: left;
+    }
   }
 
   &__body {
@@ -60,9 +69,13 @@
     color: #000;
     line-height: normal;
     letter-spacing: normal;
+    text-align: left;
     @media (max-width: $tablet) {
       max-width: 700px;
       text-align: center;
+    }
+    @media (max-width: $mobile) {
+      text-align: left;
     }
   }
 }

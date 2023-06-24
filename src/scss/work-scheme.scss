@@ -21,6 +21,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    @media (max-width: $mobile) {
+      align-items: flex-start;
+    }
   }
 
   &__subheading {
@@ -33,6 +36,9 @@
     @media (max-width: $tablet) {
       font-size: 16px;
       text-align: center;
+    }
+    @media (max-width: $mobile) {
+      text-align: left;
     }
   }
   &__heading {
@@ -47,6 +53,9 @@
       line-height: 46px;
       text-align: center;
     }
+    @media (max-width: $mobile) {
+      text-align: left;
+    }
   }
   &__body {
     max-width: 808px;
@@ -58,6 +67,9 @@
     letter-spacing: normal;
     text-align: center;
     color: #040000;
+    @media (max-width: $mobile) {
+      text-align: left;
+    }
   }
   &__content {
     display: grid;
