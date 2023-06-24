@@ -169,7 +169,7 @@ body {
 
 // Підключення стилів загальних елементів проекту
 @import "common";
-
+@import "./base/popup";
 // Підключення стилів окремих блоків
 @import "header";
 @import "footer";
@@ -185,7 +185,7 @@ body {
 @import "poster";
 // // @import "advantages";
 // // @import "reviews";
-// // @import "book";
+
 @import "blog";
 @import "confirmation";
 // @import "post";

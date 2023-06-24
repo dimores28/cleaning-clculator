@@ -1,10 +1,80 @@
 <div id="popup" aria-hidden="true" class="popup">
-	<div class="popup__wrapper">
-		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрити</button>
-			<div class="popup__text">
-				Text
-			</div>
-		</div>
-	</div>
+  <div class="popup__wrapper">
+    <div class="popup__content">
+      <button data-close type="button" class="popup__close">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-x-lg"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+          />
+        </svg>
+      </button>
+
+      <form action="" class="popup__form" id="popupForm">
+        <div class="form__loader popup__loader">
+          <span class="loader"></span>
+        </div>
+
+        <label class="popup__form-labele" for="popupForm">CONTACT US</label>
+        <div class="popup__form-upper">
+          <div class="popup__form-group upper-group">
+            <label class="form-group__labele" for="popupUserName"></label>
+            <input
+              type="text"
+              class="input popup__input popup__input-name"
+              id="popupUserName"
+              name="popupUserName"
+              placeholder="Name"
+            />
+          </div>
+
+          <div class="popup__form-group upper-group">
+            <label class="form-group__labele" for="popupEmail"></label>
+            <input
+              type="email"
+              class="input popup__input popup__input-email"
+              id="popupEmail"
+              placeholder="Email*"
+              required="required"
+              aria-required="true"
+              name="popupEmail"
+            />
+          </div>
+          <div class="popup__form-group upper-group">
+            <label class="form-group__labele" for="popupPhone"></label>
+            <input
+              type="tel"
+              class="input popup__input popup__input-phone"
+              id="popupPhone"
+              placeholder="Phone"
+              required="required"
+              aria-required="true"
+              pattern="[0-9()#&+*-=.]+"
+              name="popupPhone"
+              title="Only numbers and phone symbols (#, -, *, і etc.) are accepted."
+            />
+          </div>
+        </div>
+
+        <div class="popup__form-group lower-group">
+          <label class="form-group__labele" for="popupMessage"></label>
+          <textarea
+            class="input popup__input popup__input-ms"
+            id="popupMessage"
+            name="popupMessage"
+            rows="3"
+            placeholder="Message"
+          ></textarea>
+        </div>
+        <div class="popup__alert"></div>
+        <button type="submit" class="btn btn-form popup__submit">Submit</button>
+      </form>
+    </div>
+  </div>
 </div>
