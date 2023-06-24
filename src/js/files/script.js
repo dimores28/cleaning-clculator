@@ -38,7 +38,7 @@ $(".living-quarters").on("click", function () {
   updeteHomeCleaningPrice();
   updetePrice();
 
-  $('[name="houseSize"]').val($(this).children('p').text());
+  $('[name="houseSize"]').val($(this).children("p").text());
 });
 
 $(".bedrooms__item").on("click", function () {
@@ -54,7 +54,7 @@ $(".bedrooms__item").on("click", function () {
   $('[name="numberBeadroom"]').val($(this).text());
 });
 
-$('.bathrooms__item').on("click", function () {
+$(".bathrooms__item").on("click", function () {
   $(".bathrooms__item").removeClass("_select");
   $(this).toggleClass("_select");
 
@@ -70,13 +70,13 @@ $('.bathrooms__item').on("click", function () {
 $(".living-extras").on("click", function () {
   $(this).toggleClass("_setected");
   let sum = 0;
-  let extrass = '';
+  let extrass = "";
 
   $(".living-extras._setected").each(function () {
     let price = $(this).attr("data-extras-price");
     sum += parseInt(price);
 
-    extrass = extrass + $(this).text() + ', ';
+    extrass = extrass + $(this).text() + ", ";
   });
 
   extrasPrice = sum;
@@ -87,27 +87,25 @@ $(".living-extras").on("click", function () {
 });
 
 let isDeep = false;
-$('#clStandart').on('click', function() {
+$("#clStandart").on("click", function () {
   isDeep = false;
   $(this).addClass("_select");
-  $('#clDeep').removeClass("_select");
+  $("#clDeep").removeClass("_select");
 
   updetePrice();
-  $('[name="cleaningLevel"]').val('');
+  $('[name="cleaningLevel"]').val("");
 });
 
-$('#clDeep').on('click', function() {
+$("#clDeep").on("click", function () {
   isDeep = true;
   $(this).addClass("_select");
-  $('#clStandart').removeClass("_select");
+  $("#clStandart").removeClass("_select");
 
   updetePrice();
-  $('[name="cleaningLevel"]').val('Deep');
+  $('[name="cleaningLevel"]').val("Deep");
 });
 
-
 $('[data-service="1"]').on("click", function () {
-
   $('[name="houseClean"]').val($(this).text());
 
   if (!$(this).hasClass("_select")) {
@@ -121,21 +119,20 @@ $('[data-service="1"]').on("click", function () {
     $(".living-quarters").removeClass("_select");
     $(".bedrooms__item").removeClass("_select");
     $(".living-extras").removeClass("_setected");
-    $('#clStandart').trigger( "click" );
+    $("#clStandart").trigger("click");
 
-    $('[name="houseSize"]').val('');
-    $('[name="houseClean"]').val('');
-    $('[name="numberBeadroom"]').val('');
-    $('[name="numberBathrooms"]').val('');
-    $('[name="extras"]').val('');
-    $('[name="cleaningLevel"]').val('');
+    $('[name="houseSize"]').val("");
+    $('[name="houseClean"]').val("");
+    $('[name="numberBeadroom"]').val("");
+    $('[name="numberBathrooms"]').val("");
+    $('[name="extras"]').val("");
+    $('[name="cleaningLevel"]').val("");
   }
 
   updetePrice();
 });
 
 // End Cleaning of apartments / houses ==============================================================
-
 
 // After renovation ==============================================================
 $(".after-repair").on("click", function () {
@@ -151,7 +148,7 @@ $(".after-repair").on("click", function () {
   $('[name="renovationHouseSize"]').val($(this).text());
 });
 
-$('.bathrooms-ar__item').on("click", function () {
+$(".bathrooms-ar__item").on("click", function () {
   $(".bathrooms-ar__item").removeClass("_select");
   $(this).toggleClass("_select");
 
@@ -167,13 +164,13 @@ $('.bathrooms-ar__item').on("click", function () {
 $(".renovation-extras").on("click", function () {
   $(this).toggleClass("_setected");
   let sum = 0;
-  let extras = '';
+  let extras = "";
 
   $(".renovation-extras._setected").each(function () {
     let price = $(this).attr("data-extras-price");
     sum += parseInt(price);
 
-    extras = extras + $(this).text() + ', ';
+    extras = extras + $(this).text() + ", ";
   });
 
   repairExtras = sum;
@@ -184,24 +181,23 @@ $(".renovation-extras").on("click", function () {
 });
 
 let isRepairClinlevel = false;
-$('#clRepairStandart').on('click', function() {
+$("#clRepairStandart").on("click", function () {
   isRepairClinlevel = false;
   $(this).addClass("_select");
-  $('#clRepairDeep').removeClass("_select");
+  $("#clRepairDeep").removeClass("_select");
 
   updetePrice();
-  $('[name="renovationCleaningLevel"]').val('');
+  $('[name="renovationCleaningLevel"]').val("");
 });
 
-$('#clRepairDeep').on('click', function() {
+$("#clRepairDeep").on("click", function () {
   isRepairClinlevel = true;
   $(this).addClass("_select");
-  $('#clRepairStandart').removeClass("_select");
+  $("#clRepairStandart").removeClass("_select");
 
   updetePrice();
-  $('[name="renovationCleaningLevel"]').val('Deep');
+  $('[name="renovationCleaningLevel"]').val("Deep");
 });
-
 
 flsModules.numberWindows?.noUiSlider.on("update", function (values, handle) {
   const price = $("#numberWindows").attr("data-price-window");
@@ -211,7 +207,7 @@ flsModules.numberWindows?.noUiSlider.on("update", function (values, handle) {
     $('[name="renovationNumberWindows"]').val(values[handle]);
   } else {
     repairWindowPrice = 0;
-    $('[name="renovationNumberWindows"]').val('');
+    $('[name="renovationNumberWindows"]').val("");
   }
 
   updateAllRepairCleanPrice();
@@ -223,29 +219,29 @@ $('[data-service="5"]').on("click", function () {
 
   if (!$(this).hasClass("_select")) {
     //обнуляем стоимость и очищаем ранее выбранные опции
-     squerePrice = 0;
-     repairExtras = 0;
-     repairWindowPrice = 0;
-     repairCleanPrice = 0;
-     flsModules.numberWindows?.noUiSlider.set(0);
-     updateAllRepairCleanPrice();
+    squerePrice = 0;
+    repairExtras = 0;
+    repairWindowPrice = 0;
+    repairCleanPrice = 0;
+    flsModules.numberWindows?.noUiSlider.set(0);
+    updateAllRepairCleanPrice();
 
-     $(".after-repair").removeClass("_select");
-     $('#clRepairStandart').trigger( "click" );
+    $(".after-repair").removeClass("_select");
+    $("#clRepairStandart").trigger("click");
 
-     $(".is-furniture").removeClass("_select");
-     $(".renovation-extras__wrap").css("display", "none")
-     $(".renovation-extras").removeClass("_setected");
+    $(".is-furniture").removeClass("_select");
+    $(".renovation-extras__wrap").css("display", "none");
+    $(".renovation-extras").removeClass("_setected");
 
-     $(".is-window").removeClass("_select");
-     $(".window-wash__wrap").css("display", "none");
+    $(".is-window").removeClass("_select");
+    $(".window-wash__wrap").css("display", "none");
 
-     $('[name="afterRenovationClean"').val('');
-     $('[name="renovationHouseSize"]').val('');
-     $('[name="renovationNumberBathrooms"]').val('');
-     $('[name="renovationExtras"]').val('');
-     $('[name="renovationCleaningLevel"]').val('');
-     $('[name="renovationNumberWindows"]').val('');
+    $('[name="afterRenovationClean"').val("");
+    $('[name="renovationHouseSize"]').val("");
+    $('[name="renovationNumberBathrooms"]').val("");
+    $('[name="renovationExtras"]').val("");
+    $('[name="renovationCleaningLevel"]').val("");
+    $('[name="renovationNumberWindows"]').val("");
   }
 
   updetePrice();
@@ -310,7 +306,7 @@ function stepControl() {
     $(".calculator__form").slideUp("slow");
     $(".calculator__square").slideUp("slow");
 
-    $('.calculator__total-price').css({"opacity" : "0", "max-height": "0"});
+    $(".calculator__total-price").css({ opacity: "0", "max-height": "0" });
     $(".calculator__btn-prev").hide();
     scrollTopOffer();
   }
@@ -322,8 +318,8 @@ function stepControl() {
 
     $(".calculator__btn-prev").show();
     $(".calculator__btn-next").show();
-    $('.calculator__total-price').css({"opacity": "1", "max-height": "unset"});
-    $('.calculator__total-price strong').hide();
+    $(".calculator__total-price").css({ opacity: "1", "max-height": "unset" });
+    $(".calculator__total-price strong").hide();
   }
 
   if (step === 3) {
@@ -331,17 +327,19 @@ function stepControl() {
     $(".calculator__form").slideDown("slow");
 
     $(".calculator__btn-next").hide();
-    
+
     //встаривание цены в платежную систему
     let price = $(".calculator__total-price span").text();
     let totalPrice = price * 1.05;
     $('.stripe-form input[name="item_price"]').val(totalPrice.toFixed(2));
-    $('#totalPrice').val(totalPrice.toFixed(2));
-    $('#clientId').val($('.stripe-form input[name="client_reference_id"]').val());
+    $("#totalPrice").val(totalPrice.toFixed(2));
+    $("#clientId").val(
+      $('.stripe-form input[name="client_reference_id"]').val()
+    );
 
-    $('.calculator__total-price strong').text('(+GST 5%)');
-    $('.calculator__total-price strong').show();
-    $('.calculator__total-price strong').removeClass('_plus');
+    $(".calculator__total-price strong").text("(+GST 5%)");
+    $(".calculator__total-price strong").show();
+    $(".calculator__total-price strong").removeClass("_plus");
 
     scrollTopOffer();
   }
@@ -397,14 +395,17 @@ function showedSpollers() {
 
 function updeteHomeCleaningPrice() {
   homeCleaningPrice =
-    parseInt(roomPrice) + parseInt(bedroomsPrice) + parseInt(extrasPrice) + parseInt(bathroomsPrice);
+    parseInt(roomPrice) +
+    parseInt(bedroomsPrice) +
+    parseInt(extrasPrice) +
+    parseInt(bathroomsPrice);
 }
 
 function updateAllRepairCleanPrice() {
   repairCleanPrice =
     parseInt(squerePrice) +
     parseInt(repairExtras) +
-    parseInt(repairWindowPrice) + 
+    parseInt(repairWindowPrice) +
     parseInt(bathroomsARPrice);
 }
 
@@ -415,13 +416,12 @@ $(".cleaning-level__item").on("click", function () {
   $(this).toggleClass("_select");
 });
 
-
 // Lawn area price ==============================================================================
 $(".lawn-area__item").on("click", function () {
   $(".lawn-area__item").removeClass("_select");
   $(this).toggleClass("_select");
 
-  const sevicePrice = $('[data-service="3"]').attr('data-service-price');
+  const sevicePrice = $('[data-service="3"]').attr("data-service-price");
   const lawnAreaPrice = $(this).attr("data-lawn-area");
   const text = $(this).text();
 
@@ -431,52 +431,51 @@ $(".lawn-area__item").on("click", function () {
 
   updetePrice();
 
-  if(text.indexOf('+') > 0 ){
-    $('.calculator__total-price strong').text('+');
-    $('.calculator__total-price strong').show();
-    $('.calculator__total-price strong').addClass('_plus');
+  if (text.indexOf("+") > 0) {
+    $(".calculator__total-price strong").text("+");
+    $(".calculator__total-price strong").show();
+    $(".calculator__total-price strong").addClass("_plus");
   } else {
-    $('.calculator__total-price strong').removeClass('_plus');
-    $('.calculator__total-price strong').hide();
+    $(".calculator__total-price strong").removeClass("_plus");
+    $(".calculator__total-price strong").hide();
   }
 });
 
-$('[data-service="3"]').on('click', function() {
-
+$('[data-service="3"]').on("click", function () {
   if (!$(this).hasClass("_select")) {
     lawnPrice = 0;
     $(".lawn-area__item").removeClass("_select");
 
-    $('[name="lawnMowing"]').val('');
-    $('[name="lawnArea"]').val('');
+    $('[name="lawnMowing"]').val("");
+    $('[name="lawnArea"]').val("");
   }
 
   $('[name="lawnMowing"]').val($(this).text());
   updetePrice();
-})
+});
 
 // End lawn area price ==============================================================================
-
 
 $(".payment-options__option").on("click", function () {
   $(".payment-options__option").removeClass("_setected");
   $(this).toggleClass("_setected");
 
-  let procent = parseInt($(this).attr('data-discont-procent'));
+  let procent = parseInt($(this).attr("data-discont-procent"));
 
-  if(procent) {
+  if (procent) {
     $(".payment-options__option").children().css("opacity", "0");
     $(this).children().css("opacity", "1");
-    let price = $('.calculator__total-price span').text();
+    let price = $(".calculator__total-price span").text();
 
-    let totalPrice = price * ( (100 - procent) / 100 );
+    let totalPrice = price * ((100 - procent) / 100);
 
-    $(this).children().text(`Disc. price: $${totalPrice.toFixed(1)}`);
+    $(this)
+      .children()
+      .text(`Disc. price: $${totalPrice.toFixed(1)}`);
   } else {
     $(".payment-options__option").children().css("opacity", "0");
   }
 });
-
 
 $(".is-furniture").on("click", function () {
   $(this).toggleClass("_select");
@@ -495,10 +494,10 @@ $(".is-window").on("click", function () {
 //калькуляция стомости мытья окон ==========================
 let exteriorWindow = false;
 
-$('#inside').on('click', function(){
+$("#inside").on("click", function () {
   $(this).toggleClass("_select");
 
-  if($(this).hasClass("_select") && $('#outside').hasClass("_select")) {
+  if ($(this).hasClass("_select") && $("#outside").hasClass("_select")) {
     exteriorWindow = true;
   } else {
     exteriorWindow = false;
@@ -507,10 +506,10 @@ $('#inside').on('click', function(){
   exteriorWindows();
 });
 
-$('#outside').on('click', function(){
+$("#outside").on("click", function () {
   $(this).toggleClass("_select");
 
-  if($(this).hasClass("_select") && $('#inside').hasClass("_select")) {
+  if ($(this).hasClass("_select") && $("#inside").hasClass("_select")) {
     exteriorWindow = true;
   } else {
     exteriorWindow = false;
@@ -527,15 +526,14 @@ function exteriorWindows() {
 
   if (!exteriorWindow) {
     windowsPrice = numberWindow * price + parseInt(departurePrice);
-    $('[name="interiorWindowsClean"]').val('No');
+    $('[name="interiorWindowsClean"]').val("No");
   } else {
     windowsPrice = numberWindow * price2 + parseInt(departurePrice);
-    $('[name="interiorWindowsClean"]').val('Yes');
+    $('[name="interiorWindowsClean"]').val("Yes");
   }
 
   updetePrice();
 }
-
 
 $('[data-service="2"]').on("click", function () {
   if ($(this).hasClass("_select")) {
@@ -547,14 +545,13 @@ $('[data-service="2"]').on("click", function () {
     windowsPrice = 0;
     flsModules.rangeWindows?.noUiSlider.set(0);
 
-    $('[name="cleaningWindow"]').val('');
-    $('[name="numberWindow"]').val('');
-    $('[name="interiorWindowsClean"]').val('');
+    $('[name="cleaningWindow"]').val("");
+    $('[name="numberWindow"]').val("");
+    $('[name="interiorWindowsClean"]').val("");
   }
 
   updetePrice();
 });
-
 
 flsModules.rangeWindows?.noUiSlider.on("update", function (values, handle) {
   const price = $("#rangeWindows").attr("data-price-window");
@@ -572,14 +569,12 @@ flsModules.rangeWindows?.noUiSlider.on("update", function (values, handle) {
   } else {
     windowsPrice = 0;
 
-    $('[name="numberWindow"]').val('');
+    $('[name="numberWindow"]').val("");
   }
 
   updetePrice();
 });
 //конец калькуляции стомости мытья окон ==========================
-
-
 
 // Drain pipe cleaning ===============================================
 $('[data-service="4"]').on("click", function () {
@@ -592,8 +587,8 @@ $('[data-service="4"]').on("click", function () {
     pipePrice = 0;
     flsModules.rangePipe?.noUiSlider.set(0);
 
-    $('[name="pipeCleaning"]').val('');
-    $('[name="pipeCleaningNumber"]').val('');
+    $('[name="pipeCleaning"]').val("");
+    $('[name="pipeCleaningNumber"]').val("");
   }
 
   updetePrice();
@@ -609,14 +604,12 @@ flsModules.rangePipe?.noUiSlider.on("update", function (values, handle) {
     $('[name="pipeCleaningNumber"]').val(values[handle]);
   } else {
     pipePrice = 0;
-    $('[name="pipeCleaningNumber"]').val('');
+    $('[name="pipeCleaningNumber"]').val("");
   }
 
   updetePrice();
 });
 // Drain pipe cleaning ===============================================
-
-
 
 $('[data-service="6"]').on("click", function () {
   if ($(this).hasClass("_select")) {
@@ -638,23 +631,22 @@ window.addEventListener("scroll", function () {
   }
 });
 
-
 function updateDiscountPrice() {
+  let procent = parseInt(
+    $(".payment-options__option._setected").attr("data-discont-procent")
+  );
 
-  let procent = parseInt($(".payment-options__option._setected").attr('data-discont-procent'));
+  if (procent) {
+    $(".calculator__discount").css("opacity", "1");
+    let price = $(".calculator__total-price span").text();
 
-  if(procent) {
-    $('.calculator__discount').css("opacity", "1");
-    let price = $('.calculator__total-price span').text();
+    let totalPrice = price * ((100 - procent) / 100);
 
-    let totalPrice = price * ( (100 - procent) / 100 );
-
-    $('.calculator__discount span').text( totalPrice.toFixed(1));
+    $(".calculator__discount span").text(totalPrice.toFixed(1));
   } else {
-    $('.calculator__discount').css("opacity", "0");
-    $('.calculator__discount span').text(0);
+    $(".calculator__discount").css("opacity", "0");
+    $(".calculator__discount span").text(0);
   }
-  
 }
 
 function updetePrice() {
@@ -685,22 +677,19 @@ function updetePrice() {
   updateDiscountPrice();
 }
 
-//Payment button 
-$('#buyNowBtn').on('click', function(){
-  $('#calcForm').addClass('payment');
-  $('#bookNowBtn').trigger( "click");
+//Payment button
+$("#buyNowBtn").on("click", function () {
+  $("#calcForm").addClass("payment");
+  $("#bookNowBtn").trigger("click");
   // $( '.stripe-form input[type="submit"]' ).trigger( "click" );
 });
 
-$('#payment_method').on('change', function() {
- 
-  if(this.value == 2) {
-    $('#calcForm').addClass('payment');
+$("#payment_method").on("change", function () {
+  if (this.value == 2) {
+    $("#calcForm").addClass("payment");
+  } else {
+    $("#calcForm").removeClass("payment");
   }
-  else {
-    $('#calcForm').removeClass('payment');
-  }
-  
 });
 
 //Module calendar
@@ -731,5 +720,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+document.querySelector(".banner__btn")?.addEventListener("click", function () {
+  flsModules.popup.open("#popup");
+});
+document.querySelector(".poster__btn")?.addEventListener("click", function () {
+  flsModules.popup.open("#popup");
+});
+document.querySelector(".header__btn")?.addEventListener("click", function () {
+  flsModules.popup.open("#popup");
+});
 
 //client_reference_id

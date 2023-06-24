@@ -28,6 +28,9 @@
 }
 
 //====================================================================================================
+.input::placeholder {
+  color: #0c6284;
+}
 .input-group {
   position: relative;
   display: flex;
@@ -56,7 +59,6 @@
   appearance: none;
   border: solid 2px #45c5a6;
 
-
   outline: none;
   transition: all 0.3s ease-in;
 
@@ -80,8 +82,8 @@
 .form-select {
   width: calc(50% - 10px);
 
-  @media (max-width:$mobileSmall){
-     width: 100%; 
+  @media (max-width: $mobileSmall) {
+    width: 100%;
   }
 }
 
@@ -148,15 +150,14 @@
     font-weight: 400;
   }
 
-  .noUi-value:last-child{
+  .noUi-value:last-child {
     left: 40px !important;
 
     &::before {
       position: absolute;
-      content: '-';
+      content: "-";
       left: -15px;
     }
-    
   }
 }
 
@@ -176,7 +177,11 @@
   padding: 16px 32px 16px 32px;
   text-transform: uppercase;
   border-radius: 22px;
-  background-image: linear-gradient(to top, rgb(95, 218, 171), rgb(67, 196, 166));
+  background-image: linear-gradient(
+    to top,
+    rgb(95, 218, 171),
+    rgb(67, 196, 166)
+  );
   transition: all 0.3s ease-in;
   outline: none;
 
@@ -190,17 +195,6 @@
   &:active {
     box-shadow: rgba(12, 98, 132, 0.16) 0px 1px 4px,
       rgb(12, 98, 132) 0px 0px 0px 3px;
-  }
-}
-
-.book__submit {
-  @include adaptiveValue("font-size", 20, 16);
-
-  @media (any-hover: hover) {
-    &:hover {
-      border-color: #656872;
-      background: #656872;
-    }
   }
 }
 
@@ -244,7 +238,7 @@
   z-index: 10;
 }
 
-.book__loader {
+.popup__loader {
   position: absolute;
   object-fit: cover;
   z-index: 10;
@@ -279,7 +273,7 @@
   }
 }
 .calculator__alert,
-.book__alert {
+.popup__alert {
   display: none;
 }
 
@@ -319,7 +313,7 @@
   font-weight: normal;
   text-align: center;
   color: #000203;
- @include adaptiveValue("margin-bottom", 32, 20);
+  @include adaptiveValue("margin-bottom", 32, 20);
 }
 
 //====================================================================================================

@@ -30,47 +30,47 @@ function isValidCityName(value) {
   return /^\s*[a-zA-Z]{1}[0-9a-zA-Z][0-9a-zA-Z '-.=#/]*$/.test(value);
 }
 
-const bookEmail = document.querySelector("#bookEmail");
-const bookPhone = document.querySelector("#bookPhone");
-const bookUserName = document.querySelector("#bookUserName");
+const popupEmail = document.querySelector("#popupEmail");
+const popupPhone = document.querySelector("#popupPhone");
+const popupUserName = document.querySelector("#popupUserName");
 
-bookPhone?.addEventListener("input", function () {
-  if (!isValidPhone(bookPhone.value)) {
-    bookPhone.classList.add("_notvalid");
+popupPhone?.addEventListener("input", function () {
+  if (!isValidPhone(popupPhone.value)) {
+    popupPhone.classList.add("_notvalid");
   } else {
-    bookPhone.classList.remove("_notvalid");
+    popupPhone.classList.remove("_notvalid");
   }
 });
 
-bookEmail?.addEventListener("input", function () {
-  if (!isValidEmail(bookEmail.value)) {
-    bookEmail.classList.add("_notvalid");
+popupEmail?.addEventListener("input", function () {
+  if (!isValidEmail(popupEmail.value)) {
+    popupEmail.classList.add("_notvalid");
   } else {
-    bookEmail.classList.remove("_notvalid");
+    popupEmail.classList.remove("_notvalid");
   }
 });
 
-bookUserName?.addEventListener("input", function () {
-  if (!isValidName(bookUserName.value)) {
-    bookUserName.classList.add("_notvalid");
+popupUserName?.addEventListener("input", function () {
+  if (!isValidName(popupUserName.value)) {
+    popupUserName.classList.add("_notvalid");
   } else {
-    bookUserName.classList.remove("_notvalid");
+    popupUserName.classList.remove("_notvalid");
   }
 });
 
-const bookForm = document.querySelector("#bookForm");
-bookForm?.addEventListener("submit", async function (e) {
+const popupForm = document.querySelector("#popupForm");
+popupForm?.addEventListener("submit", async function (e) {
   e.preventDefault();
 
   let error =
-    isValidEmail(bookEmail.value) &&
-    isValidPhone(bookPhone.value) &&
-    isValidName(bookUserName.value);
+    isValidEmail(popupEmail.value) &&
+    isValidPhone(popupPhone.value) &&
+    isValidName(popupUserName.value);
 
-  let formData = new FormData(bookForm);
+  let formData = new FormData(popupForm);
 
   if (error) {
-    bookForm.classList.add("_sending");
+    popupForm.classList.add("_sending");
 
     let response = await fetch("mail.php", {
       method: "POST",
@@ -79,21 +79,21 @@ bookForm?.addEventListener("submit", async function (e) {
 
     if (response.ok) {
       let result = await response.json();
-      let alertMsg = document.querySelector(".book__alert");
+      let alertMsg = document.querySelector(".popup__alert");
       alertMsg.innerHTML =
         '<p class="alert__msg" >Your message has been sent!!!<p/>';
       alertMsg.classList.add("_show__success");
-      bookForm.reset();
-      bookForm.classList.remove("_sending");
+      popupForm.reset();
+      popupForm.classList.remove("_sending");
     } else {
-      let alertMsg = document.querySelector(".book__alert");
+      let alertMsg = document.querySelector(".popup__alert");
       alertMsg.innerHTML = '<p class="alert__msg" >Error!!!<p/>';
       alertMsg.classList.add("_show");
       console.log(response.data);
-      bookForm.classList.remove("_sending");
+      popupForm.classList.remove("_sending");
     }
   } else {
-    let alertMsg = document.querySelector(".book__alert");
+    let alertMsg = document.querySelector(".popup__alert");
     alertMsg.innerHTML =
       '<p class="alert__msg" >Fill in required fields!!!<p/>';
     alertMsg.classList.add("_show");
@@ -197,10 +197,9 @@ calcForm?.addEventListener("submit", async function (e) {
       calcForm.reset();
       calcForm.classList.remove("_sending");
 
-      if($(e.target).hasClass('payment')) {
-        $( '.stripe-form input[type="submit"]' ).trigger( "click" );
+      if ($(e.target).hasClass("payment")) {
+        $('.stripe-form input[type="submit"]').trigger("click");
       }
-
     } else {
       let alertMsg = document.querySelector(".calculator__alert");
       alertMsg.innerHTML = '<p class="alert__msg" >Error!!!<p/>';
