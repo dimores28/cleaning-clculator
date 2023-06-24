@@ -83,10 +83,10 @@
 										<a href="#" class="menu__link" data-goto-header data-goto="#why-us">Why us</a>
 									</li>
 									<li class="menu__item">
-										<a href="#" data-goto-header data-goto="#contacts" class="menu__link">Blog</a>
+										<a href="#" data-goto-header data-goto="#blog" class="menu__link">Blog</a>
 									</li>
 									<li class="menu__item">
-										<a href="#" class="menu__link" data-goto-header data-goto="#blog">Contacts</a>
+										<a href="#" class="menu__link" data-goto-header data-goto="#contacts">Contacts</a>
 									</li>
 								</ul>
 							</nav>
