@@ -101,7 +101,7 @@
 
 							<div class="popup__form-group upper-group">
 								<label class="form-group__labele" for="popupEmail"></label>
-								<input type="email" class="input popup__input popup__input-email" id="popupEmail" placeholder="Email*" required="required" aria-required="true" name="popupEmail" />
+								<input type="email" class="input popup__input popup__input-email" id="popupEmail" placeholder="Email" required="required" aria-required="true" name="popupEmail" />
 							</div>
 							<div class="popup__form-group upper-group">
 								<label class="form-group__labele" for="popupPhone"></label>

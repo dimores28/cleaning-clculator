@@ -1163,9 +1163,9 @@ Template Name: Home
 			</div>
 		</section>
 
-		<section class="about" id="about">
-			<div class="about__container">
-				<div class="about__content grid">
+		<section class="why-us" id="why-us">
+			<div class="why-us__container">
+				<div class="why-us__content grid">
 					<div class="grid__item">
 						<svg class="grid__item-icon" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="74px" height="74px" version="1.1" style="
 						shape-rendering: geometricPrecision;
@@ -1202,7 +1202,7 @@ Template Name: Home
 						<h4 class="grid__item-title">We provide all supplies</h4>
 						<p class="grid__item-body">
 							We come fully prepared, so you don’t need to buy supplies. Ask
-							about our green eco products options!
+							why-us our green eco products options!
 						</p>
 					</div>
 					<div class="grid__item">
@@ -1244,10 +1244,10 @@ Template Name: Home
 						</p>
 					</div>
 				</div>
-				<div class="about__text">
-					<p class="about__subheading">OUR SPECIALITY</p>
-					<h1 class="about__heading">Why Choose Us</h1>
-					<p class="about__body">
+				<div class="why-us__text">
+					<p class="why-us__subheading">OUR SPECIALITY</p>
+					<h1 class="why-us__heading">Why Choose Us</h1>
+					<p class="why-us__body">
 						We take pride in our attention to detail and commitment to
 						customer satisfaction. Our team of professional cleaners is
 						experienced, reliable, and dedicated to delivering exceptional
