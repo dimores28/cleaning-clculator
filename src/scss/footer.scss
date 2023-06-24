@@ -8,6 +8,12 @@
   &__container {
     display: flex;
     flex-direction: row;
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
+    @media (max-width: 600px) {
+      align-items: center;
+    }
   }
 
   &__logo {
@@ -16,6 +22,18 @@
     flex-direction: column;
     justify-content: center;
     margin: 0 0 112px 0;
+    @media (max-width: $tablet) {
+      flex: 1 1 100%;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      margin: 0 0 50px 0;
+    }
+    @media (max-width: 600px) {
+      flex-direction: column;
+      gap: 0;
+    }
     &-img {
       max-width: 140px;
       margin: 0 0 23px;
@@ -35,22 +53,51 @@
     display: flex;
     flex-direction: row;
     margin: 104px 0 112px 0;
+    @media (max-width: $tablet) {
+      flex: 1 1 100%;
+      margin: 0 0 112px 0;
+    }
+    @media (max-width: $mobile) {
+      flex-wrap: wrap;
+    }
+    @media (max-width: 600px) {
+      flex-direction: column;
+      gap: 44px;
+      max-width: 280px;
+      margin: 0 0 60px 0;
+    }
   }
 
   &__contacts {
     min-width: 280px;
-    flex: 1 1 33.333%;
+    flex: 1 1 40%;
     display: flex;
     flex-direction: column;
+    @media (max-width: $mobile) {
+      flex: 1 1 50%;
+    }
   }
 
   &__more-info {
-    flex: 1 1 33.333%;
+    flex: 1 1 35%;
     display: flex;
     flex-direction: column;
+    @media (max-width: $mobile) {
+      flex: 1 1 50%;
+    }
   }
 
   &__fol-us {
+    flex: 1 1 25%;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: $mobile) {
+      flex: 1 1 100%;
+      margin: 44px 0 0;
+    }
+    @media (max-width: 600px) {
+      margin: 0 0;
+    }
   }
 
   &__heading {

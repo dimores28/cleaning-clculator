@@ -1,6 +1,9 @@
 .work-scheme {
   position: relative;
   padding: 230px 0 103px 0;
+  @media (max-width: $tablet) {
+    padding: 117px 0 10px 0;
+  }
   &__bg {
     position: absolute;
     top: 0;
@@ -27,6 +30,10 @@
     line-height: normal;
     letter-spacing: normal;
     margin: 0 0 17px 0;
+    @media (max-width: $tablet) {
+      font-size: 16px;
+      text-align: center;
+    }
   }
   &__heading {
     font-family: ArnoPro-SmbdDisplay;
@@ -35,10 +42,15 @@
     letter-spacing: normal;
     color: #0e608c;
     margin: 0 0 24px 0;
+    @media (max-width: $tablet) {
+      font-size: 36px;
+      line-height: 46px;
+      text-align: center;
+    }
   }
   &__body {
-    width: 808px;
-    height: 66px;
+    max-width: 808px;
+    min-height: 66px;
     margin: 0 0 54px 0;
     font-family: GothamPro;
     font-size: 18.5px;
@@ -48,11 +60,17 @@
     color: #040000;
   }
   &__content {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 334px));
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    gap: 32px;
+    @media (max-width: $mobile) {
+      grid-template-columns: repeat(1, minmax(200px, 350px));
+      align-content: center;
+      justify-content: center;
+    }
   }
 }
 
@@ -61,7 +79,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  max-width: 334px;
   position: relative;
   &::before {
     content: "";
@@ -72,6 +89,9 @@
     z-index: 10;
     right: -80px;
     top: 80px;
+    @media (max-width: 1200px) {
+      display: none;
+    }
   }
   &:last-child {
     &::before {
@@ -90,8 +110,15 @@
     -webkit-box-shadow: 0px 0px 24px 8px rgba(233, 246, 255, 1);
     -moz-box-shadow: 0px 0px 24px 8px rgba(233, 246, 255, 1);
     box-shadow: 0px 0px 24px 8px rgba(233, 246, 255, 1);
-
     margin: 0 0 22px 0;
+    @media (max-width: 1200px) {
+      height: 125px;
+      width: 125px;
+    }
+    @media (max-width: $tablet) {
+      height: 95px;
+      width: 95px;
+    }
 
     svg {
       fill: #41ac98;
@@ -110,6 +137,11 @@
     border-radius: 50%;
     background-color: #50a4ed;
     color: #fff;
+    @media (max-width: 1200px) {
+      height: 32px;
+      width: 32px;
+      font-size: 24px;
+    }
   }
 
   &__title {
@@ -120,10 +152,13 @@
     line-height: 1.07;
     letter-spacing: normal;
     color: #135b81;
+    @media (max-width: $tablet) {
+      font-size: 18px;
+    }
   }
 
   &__body {
-    width: 334px;
+    max-width: 334px;
     height: 87px;
     font-family: GothamPro;
     font-size: 18.5px;
@@ -131,5 +166,8 @@
     letter-spacing: normal;
     text-align: center;
     color: #000;
+    @media (max-width: $tablet) {
+      font-size: 16px;
+    }
   }
 }

@@ -3,11 +3,9 @@
   position: relative;
   padding-top: 230px;
   min-height: 100vh;
-  padding-bottom: 80px;
 
   @media (max-width: 640px) {
-    padding-top: 200px;
-    padding-bottom: 60px;
+    padding-top: 170px;
   }
 
   // .offer__bg
@@ -67,10 +65,9 @@
   margin: 0 auto;
   padding: 24px 16px 20px;
 
-  @media (max-width:$mobileSmall){
+  @media (max-width: $mobileSmall) {
     padding: 24px 0px 20px;
   }
-
 
   &__steps {
     display: flex;
@@ -147,7 +144,7 @@
     .spollers__title {
       font-family: $mainFont, sans-serif;
       font-size: 18px;
-      font-weight: normal;  
+      font-weight: normal;
       line-height: 1.33;
       color: #000000;
       text-transform: uppercase;
@@ -160,7 +157,7 @@
 
         &::after {
           position: absolute;
-          content: '';
+          content: "";
           width: 30px;
           height: 30px;
           border-radius: 50%;
@@ -202,33 +199,32 @@
     }
   }
 
+  &__total-price {
+    font-family: $mainFont, sans-serif;
+    @include adaptiveValue("font-size", 60, 40);
+    line-height: normal;
+    letter-spacing: normal;
+    font-weight: 500;
+    color: #0e608b;
+    text-align: center;
+    margin-bottom: 14px;
+    margin-top: 14px;
+    position: relative;
+    transition: all 0.3s ease-in;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
 
-   &__total-price {
-      font-family: $mainFont, sans-serif;
-      @include adaptiveValue("font-size", 60, 40);
-      line-height: normal;
-      letter-spacing: normal;
-      font-weight: 500;
-      color: #0e608b;
-      text-align: center;
-      margin-bottom: 14px;
-      margin-top: 14px;
-      position: relative;
+    strong {
+      font-size: 18px;
+      font-weight: 400;
+      margin-left: 8px;
+      display: none;
       transition: all 0.3s ease-in;
-      opacity: 0;
-      max-height: 0;
-      overflow: hidden;
-
-      strong {
-        font-size: 18px;
-        font-weight: 400;
-        margin-left: 8px;
-        display: none;
-        transition: all 0.3s ease-in;
-        position: absolute;
-        top: 0px;
-      }
-   }
+      position: absolute;
+      top: 0px;
+    }
+  }
 
   &__btn-group {
     display: flex;
@@ -271,8 +267,8 @@
 
       button {
         margin-top: -20px;
-        @media (max-width:$mobileSmall){
-          font-size: 14px; 
+        @media (max-width: $mobileSmall) {
+          font-size: 14px;
         }
       }
     }
@@ -282,8 +278,8 @@
     display: flex;
     gap: 20px;
 
-    @media (max-width:$mobileSmall){
-      justify-content: space-between; 
+    @media (max-width: $mobileSmall) {
+      justify-content: space-between;
     }
   }
 }
@@ -302,7 +298,6 @@
   color: #040000;
   transition: all 0.4s ease-in;
   position: relative;
-
 
   &__img {
     margin: 0 auto;
@@ -324,7 +319,7 @@
 
   @media (max-width: $mobile) {
     width: calc(25% - 16px);
-    
+
     &__img {
       svg {
         width: 32px;
@@ -347,7 +342,6 @@
       }
     }
   }
-
 
   &._select {
     background: #0c6284;
@@ -396,17 +390,17 @@
   box-shadow: -0.7px 3.9px 32px 0 rgb(230, 244, 249);
   transition: all 0.4s ease-in;
 
-  @media (max-width: em(894)){
+  @media (max-width: em(894)) {
     padding: 24px 15px 20px;
   }
-  
-  @media (max-width:$mobile){
+
+  @media (max-width: $mobile) {
     width: calc(100% / 2 - 10px);
     margin-bottom: 0px;
   }
 
-  @media (max-width:$mobileSmall){
-      padding: 24px 5px 20px 5px;
+  @media (max-width: $mobileSmall) {
+    padding: 24px 5px 20px 5px;
   }
 
   svg {
@@ -416,14 +410,13 @@
     max-width: 64px;
     height: 75px;
 
-    @media (max-width: em(618)){
-       max-width: 51px; 
+    @media (max-width: em(618)) {
+      max-width: 51px;
     }
 
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       height: 46px;
     }
-
   }
 
   p {
@@ -446,13 +439,13 @@
     justify-content: center;
     transition: all 0.3s ease-in;
 
-    @media (max-width:$mobile){
+    @media (max-width: $mobile) {
       margin: 14px auto 0px auto;
       width: 32px;
       height: 32px;
     }
 
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       margin: 10px auto 0px auto;
     }
 
@@ -474,7 +467,7 @@
     }
 
     .service__indicator {
-      background: #3d819d; 
+      background: #3d819d;
 
       &_chosen {
         display: block;
@@ -488,7 +481,6 @@
         height: 15px;
       }
     }
-
   }
 
   @media (any-hover: hover) {
@@ -509,7 +501,7 @@
   flex-wrap: wrap;
   gap: 20px;
 
-  @media (max-width: em(361)){
+  @media (max-width: em(361)) {
     gap: 10px;
   }
 
@@ -529,7 +521,7 @@
       width: calc(100% / 3 - 14px);
     }
 
-    @media (max-width: em(361)){
+    @media (max-width: em(361)) {
       width: calc(100% / 3 - 7px);
     }
 
@@ -695,14 +687,13 @@
     text-align: center;
     transition: all 0.3s ease-in;
 
-    @media (max-width: em(759)){
+    @media (max-width: em(759)) {
       width: calc(20% - 12px);
     }
 
     @media (max-width: $mobile) {
       padding: 20px;
     }
-
 
     @media (max-width: $mobileSmall) {
       width: calc(20% - 10px);
@@ -796,8 +787,8 @@
     margin: 0 auto 8px auto;
     width: 48px;
 
-    @media (max-width:$mobile){
-       width: 32px; 
+    @media (max-width: $mobile) {
+      width: 32px;
     }
 
     svg {
@@ -805,7 +796,6 @@
       width: 48px;
       width: 100%;
       transition: all 0.3s ease-in;
-
     }
   }
 }
@@ -906,7 +896,6 @@
     line-height: 1.5;
     color: #000102;
     transition: all 0.3s ease-in;
-
 
     span {
       display: block;
@@ -1036,7 +1025,6 @@
     @include adaptiveValue("gap", 20, 10);
   }
 
-
   // .bathrooms__item
   &__item {
     width: calc(20% - 16px);
@@ -1051,14 +1039,13 @@
     text-align: center;
     transition: all 0.3s ease-in;
 
-    @media (max-width: em(759)){
+    @media (max-width: em(759)) {
       width: calc(20% - 12px);
     }
 
     @media (max-width: $mobile) {
       padding: 20px;
     }
-
 
     @media (max-width: $mobileSmall) {
       width: calc(20% - 10px);
@@ -1082,7 +1069,6 @@
       }
     }
   }
-
 
   // .bathrooms__img
   &__img {
@@ -1136,14 +1122,13 @@
     text-align: center;
     transition: all 0.3s ease-in;
 
-    @media (max-width: em(759)){
+    @media (max-width: em(759)) {
       width: calc(20% - 12px);
     }
 
     @media (max-width: $mobile) {
       padding: 20px;
     }
-
 
     @media (max-width: $mobileSmall) {
       width: calc(20% - 10px);
@@ -1167,7 +1152,6 @@
       }
     }
   }
-
 
   // .bathrooms-ar__img
   &__img {

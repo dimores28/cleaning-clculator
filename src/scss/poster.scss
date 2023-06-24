@@ -1,5 +1,5 @@
 .poster {
-  margin: 0 0 130px;
+  margin: 0 20px 130px 20px;
   &__container {
     position: relative;
     display: flex;
@@ -7,6 +7,14 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 76px;
+    @media (max-width: $tablet) {
+      padding: 0 40px;
+    }
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
   &__bg {
     position: absolute;
@@ -23,6 +31,9 @@
   &__content {
     max-width: 480px;
     margin: 0 0 76px 0;
+    @media (max-width: $mobile) {
+      margin: 0 0 56px 0;
+    }
   }
   &__heading {
     margin: 61px 0 26px 0;
@@ -32,6 +43,10 @@
     line-height: normal;
     letter-spacing: normal;
     color: #fff;
+    @media (max-width: $tablet) {
+      font-size: 24px;
+      max-width: 300px;
+    }
   }
   &__body {
     font-family: GothamPro;
@@ -40,9 +55,16 @@
     line-height: normal;
     letter-spacing: normal;
     color: #fff;
+    @media (max-width: $tablet) {
+      font-size: 18px;
+      max-width: 300px;
+    }
   }
 
   &__btn {
     margin: 0 69px 0 0;
+    @media (max-width: $mobile) {
+      margin: 0 0 38px 0;
+    }
   }
 }

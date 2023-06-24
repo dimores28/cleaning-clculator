@@ -2,17 +2,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 80px;
 
   &__container {
     display: flex;
     flex-direction: row;
+    @media (max-width: 1064px) {
+      flex-direction: column-reverse;
+    }
   }
   &__content {
     flex: 1 1 50%;
+    @media (max-width: $tablet) {
+      flex: 1 1 100%;
+    }
   }
   &__text {
+    display: flex;
+    flex-direction: column;
     flex: 1 1 50%;
     padding: 160px 0 0 50px;
+    @media (max-width: 1064px) {
+      flex: 1 1 100%;
+      margin: 0 0 50px 0;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+    }
   }
   &__subheading {
     font-family: ArnoPro-SmText;
@@ -20,6 +36,10 @@
     font-size: 20px;
     line-height: normal;
     margin: 0 0 17px 0;
+    @media (max-width: $tablet) {
+      font-size: 16px;
+      text-align: center;
+    }
   }
   &__heading {
     font-family: ArnoPro-SmbdDisplay;
@@ -27,6 +47,11 @@
     margin: 0 0 12px 0;
     line-height: normal;
     font-size: 55px;
+    @media (max-width: $tablet) {
+      font-size: 36px;
+      line-height: 46px;
+      text-align: center;
+    }
   }
 
   &__body {
@@ -35,6 +60,10 @@
     color: #000;
     line-height: normal;
     letter-spacing: normal;
+    @media (max-width: $tablet) {
+      max-width: 700px;
+      text-align: center;
+    }
   }
 }
 
@@ -42,6 +71,11 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(280px, 1fr));
   gap: 32px;
+  @media (max-width: 650px) {
+    grid-template-columns: repeat(1, minmax(200px, 350px));
+    align-content: center;
+    justify-content: center;
+  }
   &__item {
     display: flex;
     justify-content: center;
@@ -51,6 +85,9 @@
     background-color: #fff;
     border-radius: 20px;
     box-shadow: -1px 5.9px 49.5px 1.5px rgba(202, 202, 202, 0.63);
+    @media (max-width: $tablet) {
+      padding: 20px 30px;
+    }
   }
 
   &__item-icon {
@@ -64,11 +101,18 @@
     font-size: 30px;
     line-height: normal;
     margin: 0 0 18px 0;
+    @media (max-width: $tablet) {
+      font-size: 24px;
+      margin: 0 0 10px 0;
+    }
   }
   &__item-body {
     font-family: GothamPro;
     font-size: 18px;
     line-height: 1.3;
     letter-spacing: normal;
+    @media (max-width: $tablet) {
+      font-size: 14px;
+    }
   }
 }
