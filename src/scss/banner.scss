@@ -1,13 +1,11 @@
 .banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: #000;
   @media (max-width: $mobile) {
     height: 100%;
   }
   &__container {
     display: flex;
+    width: 100%;
     flex-direction: row;
     @media (max-width: $mobile) {
       flex-direction: column-reverse;
@@ -15,9 +13,9 @@
     }
   }
   &__content {
-    flex: 1 1 60%;
-    margin: 308px 0 0 0;
-    padding: 0 55px 0 0;
+    flex: 1 1 57%;
+    margin: 290px 0 0 0;
+    // padding: 0 55px 0 0;
     @media (max-width: 1150px) {
       margin: 250px 0 0 0;
     }
@@ -41,7 +39,7 @@
     line-height: 80px;
     color: #0c6185;
     margin: 0 0 40px 0;
-    max-width: 550px;
+    max-width: 500px;
     span {
       color: #30b7a7;
     }
@@ -68,8 +66,8 @@
   &__body {
     font-family: GothamPro;
     letter-spacing: normal;
-    font-size: 23px;
-    line-height: 38px;
+    font-size: 22px;
+    line-height: 1.5;
     max-width: 600px;
     margin: 0 0 40px 0;
     @media (max-width: 1150px) {
@@ -95,20 +93,26 @@
   }
 
   &__img {
-    flex: 0 1 40%;
-    max-height: 500px;
-    margin: 170px 0 52px 0;
-    @media (max-width: $tablet) {
-      max-width: 370px;
+    flex: 1 1 43%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 180px 0 62px 0;
+    img {
+      max-width: 100%;
     }
     @media (max-width: $mobile) {
       flex: 1 1 100%;
       margin: 93px 0 46px 0;
-      max-width: 300px;
+      img {
+        max-width: 300px;
+      }
     }
     @media (max-width: $mobileSmall) {
-      max-width: 210px;
       margin: 85px 0 28px 0;
+      img {
+        max-width: 210px;
+      }
     }
   }
 }
