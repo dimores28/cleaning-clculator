@@ -13,26 +13,26 @@ require( 'wp-load.php' );
  //Тело письма
  $body = '<h1>Tivacleaners website!</h1>';
 
- //Пример name="bookUserName"
- $bookUserName = trim(!empty($_POST['bookUserName']));
- if($bookUserName) {
-    $body.='<p><strong>User Name:</strong> '.$_POST['bookUserName'].'</p>';
+ //Пример name="popupUserName"
+ $popupUserName = trim(!empty($_POST['popupUserName']));
+ if($popupUserName) {
+    $body.='<p><strong>User Name:</strong> '.$_POST['popupUserName'].'</p>';
  }
  
  
- $bookEmail = trim(!empty($_POST['bookEmail']));
- if($bookEmail){
-  $body.='<p><strong>E-mail:</strong> '.$_POST['bookEmail'].'</p>';
+ $popupEmail = trim(!empty($_POST['popupEmail']));
+ if($popupEmail){
+  $body.='<p><strong>E-mail:</strong> '.$_POST['popupEmail'].'</p>';
  }
 
- $bookPhone = trim(!empty($_POST['bookPhone']));
- if($bookPhone){
-    $body.='<p><strong>Phone:</strong> '.$_POST['bookPhone'].'</p>';
+ $popupPhone = trim(!empty($_POST['popupPhone']));
+ if($popupPhone){
+    $body.='<p><strong>Phone:</strong> '.$_POST['popupPhone'].'</p>';
  }
  
- $bookMessage = trim(!empty($_POST['bookMessage']));
- if($bookMessage){
-     $body.='<p><strong>Message:</strong> '.$_POST['bookMessage'].'</p>';
+ $popupMessage = trim(!empty($_POST['popupMessage']));
+ if($popupMessage){
+     $body.='<p><strong>Message:</strong> '.$_POST['popupMessage'].'</p>';
  }
 
 
