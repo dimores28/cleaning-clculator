@@ -237,18 +237,6 @@
     display: flex;
     flex-wrap: wrap;
     column-gap: 20px;
-
-    #cleaningDate,
-    #timeInput {
-      height: 38px !important;
-    }
-
-    // @media (max-width:$mobileSmall){
-    //     label {
-    //       font-size: 0px;
-    //       line-height: 0px;
-    //     }
-    // }
   }
 
   &__form {
