@@ -157,3 +157,19 @@
    }
 }
 //====================================================================================================
+
+.blog-page {
+   padding-top: 250px;
+   padding-bottom: 100px;
+
+   .post {
+      @media (max-width:$mobile){
+         width: calc(100% / 2 - 12px);
+         margin: unset;
+      }
+
+      @media (max-width:$mobileSmall){
+         width: 100%; 
+     }
+   }
+}
