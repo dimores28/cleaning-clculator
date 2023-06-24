@@ -3,7 +3,6 @@ import { isMobile } from "./functions.js";
 // Підключення списку активних модулів
 import { flsModules } from "./modules.js";
 
-import "../jquery.min.js";
 
 let step = 1;
 //===============
@@ -613,12 +612,7 @@ flsModules.rangePipe?.noUiSlider.on("update", function (values, handle) {
 
 $('[data-service="6"]').on("click", function () {
   if ($(this).hasClass("_select")) {
-    $("html, body").animate(
-      {
-        scrollTop: $(".book").offset().top,
-      },
-      1200
-    );
+    flsModules.popup.open("#popup");
   }
 });
 

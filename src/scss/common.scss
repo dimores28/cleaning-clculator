@@ -31,6 +31,8 @@
 .input::placeholder {
   color: #0c6284;
 }
+
+
 .input-group {
   position: relative;
   display: flex;
@@ -69,6 +71,13 @@
       rgb(12, 98, 132) 0px 0px 0px 3px;
   }
 
+  &._notvalid {
+    box-shadow: rgba(175, 0, 0, 0.16) 0px 1px 4px,
+      rgb(175, 0, 0) 0px 0px 0px 2px;
+  }
+}
+
+.input {
   &._notvalid {
     box-shadow: rgba(175, 0, 0, 0.16) 0px 1px 4px,
       rgb(175, 0, 0) 0px 0px 0px 2px;
