@@ -1,0 +1,32 @@
+.confirmation {
+   padding-top: 220px;
+   min-height: 100vh;
+
+   // .confirmation__container
+   &__container {
+   }
+
+   // .confirmation__heading
+   &__heading {
+      font-family: ArnoPro-SmbdSmText, sans-serif;
+      @include adaptiveValue("font-size", 60, 36);
+      font-weight: normal;
+      text-align: center;
+      line-height: 1.33;
+      color: #0c6185;
+      margin-bottom: 30px;
+   }
+
+   // .confirmation__sub-heading
+   &__sub-heading {
+      font-family: ArnoPro-SmText, sans-serif;
+      @include adaptiveValue("font-size", 28, 20);
+      text-align: center;
+      font-weight: normal;
+      line-height: normal;
+      text-transform: uppercase;
+      color: #54a497;
+      max-width: 800px;
+      margin: 0 auto;
+   }
+}
