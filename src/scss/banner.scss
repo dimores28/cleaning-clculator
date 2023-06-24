@@ -38,7 +38,7 @@
     @include adaptiveValue("font-size", 60, 36);
     @include adaptiveValue("line-height", 80, 46);
     color: #0c6185;
-    margin: 0 0 45px 0;
+    margin: 0 0 40px 0;
     max-width: 550px;
     span {
       color: #30b7a7;
@@ -57,7 +57,7 @@
     @include adaptiveValue("font-size", 23, 14);
     @include adaptiveValue("line-height", 38, 24);
     max-width: 600px;
-    margin: 0 0 50px 0;
+    margin: 0 0 40px 0;
     @media (max-width: $tablet) {
       max-width: 500px;
       font-size: 14px;
@@ -72,8 +72,8 @@
 
   &__img {
     flex: 1 1 50%;
-    margin: 162px 0 62px 0;
-    max-width: 535px;
+    margin: 170px 0 52px 0;
+    max-width: 490px;
     @media (max-width: $tablet) {
       max-width: 370px;
     }

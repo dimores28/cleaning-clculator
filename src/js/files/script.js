@@ -3,6 +3,8 @@ import { isMobile } from "./functions.js";
 // Підключення списку активних модулів
 import { flsModules } from "./modules.js";
 
+import "../jquery.min.js";
+
 let step = 1;
 //===============
 let roomPrice = 0;
@@ -339,6 +341,7 @@ function stepControl() {
 
     $('.calculator__total-price strong').text('(+GST 5%)');
     $('.calculator__total-price strong').show();
+    $('.calculator__total-price strong').removeClass('_plus');
 
     scrollTopOffer();
   }
@@ -431,7 +434,11 @@ $(".lawn-area__item").on("click", function () {
   if(text.indexOf('+') > 0 ){
     $('.calculator__total-price strong').text('+');
     $('.calculator__total-price strong').show();
-  } 
+    $('.calculator__total-price strong').addClass('_plus');
+  } else {
+    $('.calculator__total-price strong').removeClass('_plus');
+    $('.calculator__total-price strong').hide();
+  }
 });
 
 $('[data-service="3"]').on('click', function() {
@@ -683,6 +690,17 @@ $('#buyNowBtn').on('click', function(){
   $('#calcForm').addClass('payment');
   $('#bookNowBtn').trigger( "click");
   // $( '.stripe-form input[type="submit"]' ).trigger( "click" );
+});
+
+$('#payment_method').on('change', function() {
+ 
+  if(this.value == 2) {
+    $('#calcForm').addClass('payment');
+  }
+  else {
+    $('#calcForm').removeClass('payment');
+  }
+  
 });
 
 //Module calendar

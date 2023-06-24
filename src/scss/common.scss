@@ -77,6 +77,14 @@
   resize: none;
 }
 
+.form-select {
+  width: calc(50% - 10px);
+
+  @media (max-width:$mobileSmall){
+     width: 100%; 
+  }
+}
+
 //====================================================================================================
 .offer .range {
   height: 5px;
@@ -312,4 +320,19 @@
   text-align: center;
   color: #000203;
  @include adaptiveValue("margin-bottom", 32, 20);
+}
+
+//====================================================================================================
+.payment-method {
+  margin-bottom: 24px;
+
+  // .payment-method__title
+  &__title {
+    font-family: $mainFont, sans-serif;
+    color: #0e608c;
+    font-weight: 500;
+    line-height: normal;
+    @include adaptiveValue("font-size", 24, 18);
+    margin-bottom: 20px;
+  }
 }
