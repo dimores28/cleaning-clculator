@@ -153,6 +153,7 @@
 
       span {
         position: relative;
+        display: inline-block;
 
         &::after {
           position: absolute;
@@ -432,7 +433,8 @@
     }
 
     @media (max-width: $mobileSmall) {
-      margin: 10px auto 0px auto;
+      // margin: 10px auto 0px auto;
+      display: none;
     }
 
     &_chosen {

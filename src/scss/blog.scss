@@ -162,6 +162,10 @@
    padding-top: 250px;
    padding-bottom: 100px;
 
+   @media (max-width:$mobile){
+      padding-top: 160px;
+   }
+
    .post {
       @media (max-width:$mobile){
          width: calc(100% / 2 - 12px);
