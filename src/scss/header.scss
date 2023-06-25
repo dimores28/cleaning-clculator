@@ -172,6 +172,9 @@
 
     @media (max-width:$mobile){
        flex-direction: column; 
+       font-size: 26px;
+       line-height: 1.5;
+       gap: 36px;
     }
   }
 
@@ -227,8 +230,8 @@
   @media (max-width: $mobile) {
     display: block;
     position: relative;
-    width: rem(24);
-    height: rem(18);
+    width: rem(32);
+    height: rem(22);
     z-index: 5;
     @media (any-hover: none) {
       cursor: default;
@@ -241,7 +244,7 @@
       right: 0;
       position: absolute;
       width: 100%;
-      height: rem(2);
+      height: rem(3);
       background-color: #3bafa2;
     }
     &::before {
@@ -261,11 +264,11 @@
       &::after {
       }
       &::before {
-        top: calc(50% - rem(1));
+        top: calc(50% - rem(1.5));
         transform: rotate(-45deg);
       }
       &::after {
-        bottom: calc(50% - rem(1));
+        bottom: calc(50% - rem(1.5));
         transform: rotate(45deg);
       }
     }
