@@ -25,7 +25,10 @@ Template Name: Home
 						</a>
 					</div>
 				</div>
-				<img class="banner__img" src="<?php bloginfo('template_url'); ?>/assets/img/banner.png" alt="banner" />
+				<div class="banner__img">
+              		<img  src="<?php bloginfo('template_url'); ?>/assets/img/banner.png" alt="banner" />
+           		</div>
+				
 			</div>
 		</section>
 

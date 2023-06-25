@@ -1272,6 +1272,11 @@ span.flatpickr-weekday {
           box-shadow: rgba(175, 0, 0, 0.16) 0px 1px 4px, rgb(175, 0, 0) 0px 0px 0px 2px;
 }
 
+#cleaningDate,
+#timeInput {
+  height: 45px !important;
+}
+
 .form-textarea {
   resize: none;
 }
@@ -1590,7 +1595,7 @@ body::after {
       -ms-flex-pack: justify;
           justify-content: space-between;
   gap: 30px;
-  margin: 0 0 60px 0;
+  margin: 0 0 30px 0;
   width: 100%;
 }
 
@@ -2094,15 +2099,6 @@ body::after {
 }
 
 .banner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   color: #000;
 }
 
@@ -2110,6 +2106,7 @@ body::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -2118,9 +2115,9 @@ body::after {
 
 .banner__content {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 60%;
-          flex: 1 1 60%;
-  margin: 308px 0 0 0;
+      -ms-flex: 1 1 57%;
+          flex: 1 1 57%;
+  margin: 290px 0 0 0;
   padding: 0 55px 0 0;
 }
 
@@ -2131,7 +2128,7 @@ body::after {
   line-height: 80px;
   color: #0c6185;
   margin: 0 0 40px 0;
-  max-width: 550px;
+  max-width: 500px;
 }
 
 .banner__heading span {
@@ -2141,8 +2138,8 @@ body::after {
 .banner__body {
   font-family: GothamPro;
   letter-spacing: normal;
-  font-size: 23px;
-  line-height: 38px;
+  font-size: 22px;
+  line-height: 1.5;
   max-width: 600px;
   margin: 0 0 40px 0;
 }
@@ -2155,11 +2152,23 @@ body::after {
 }
 
 .banner__img {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 40%;
-          flex: 0 1 40%;
-  max-height: 500px;
-  margin: 170px 0 52px 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 43%;
+          flex: 1 1 43%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 170px 0 62px 0;
+}
+
+.banner__img img {
+  max-width: 100%;
 }
 
 .offer {
@@ -2386,11 +2395,6 @@ body::after {
   -webkit-column-gap: 20px;
      -moz-column-gap: 20px;
           column-gap: 20px;
-}
-
-.calculator__form-group #cleaningDate,
-.calculator__form-group #timeInput {
-  height: 38px !important;
 }
 
 .calculator__form {
@@ -4463,7 +4467,6 @@ body::after {
         -ms-flex-direction: column;
             flex-direction: column;
     width: 70%;
-    margin: 0 0 30px 0;
   }
 
   .upper-group {
@@ -4508,10 +4511,6 @@ body::after {
     margin: 0 0 112px 0;
   }
 
-  .banner__content {
-    margin: 290px 0 0 0;
-  }
-
   .banner__heading {
     max-width: 340px;
     margin: 0 0 30px 0;
@@ -4526,7 +4525,7 @@ body::after {
   }
 
   .banner__img {
-    max-width: 370px;
+    margin: 130px 0 46px 0;
   }
 
   .why-us__content {
@@ -4828,11 +4827,18 @@ body::after {
     padding: 0;
   }
 
+  .banner__body {
+    max-width: 400px;
+  }
+
   .banner__img {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
     margin: 93px 0 46px 0;
+  }
+
+  .banner__img img {
     max-width: 300px;
   }
 
@@ -5083,8 +5089,11 @@ body::after {
   }
 
   .banner__img {
-    max-width: 210px;
     margin: 85px 0 28px 0;
+  }
+
+  .banner__img img {
+    max-width: 210px;
   }
 
   .offer__sub-title {
