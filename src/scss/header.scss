@@ -32,6 +32,10 @@
 
     .header__container {
       align-items: flex-start;
+
+      @media (max-width:$mobileSmall){
+        align-items: center; 
+     }
     }
   }
 
@@ -230,8 +234,8 @@
   @media (max-width: $mobile) {
     display: block;
     position: relative;
-    width: rem(32);
-    height: rem(22);
+    width: rem(40);
+    height: rem(24);
     z-index: 5;
     @media (any-hover: none) {
       cursor: default;

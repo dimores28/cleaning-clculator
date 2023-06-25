@@ -319,6 +319,8 @@ function stepControl() {
     $(".calculator__btn-next").show();
     $(".calculator__total-price").css({ opacity: "1", "max-height": "unset" });
     $(".calculator__total-price strong").hide();
+
+    scrollTopOffer();
   }
 
   if (step === 3) {
@@ -689,6 +691,7 @@ $("#payment_method").on("change", function () {
 //Module calendar
 flatpickr("#cleaningDate", {
   position: "above",
+  minDate: new Date(),
 });
 
 //input Time

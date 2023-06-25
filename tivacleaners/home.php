@@ -1027,7 +1027,7 @@ Template Name: Home
 
 								<div class="input-group">
 									<label for="userPhone">Telephone*</label>
-									<input type="tel" class="form-control" id="userPhone" placeholder="+182xxxxx*" required="required" aria-required="true" pattern="[0-9()#&+*-=.]+" aria-describedby="userPhone" name="userPhone" />
+									<input type="tel" class="form-control" id="userPhone" placeholder="+1xxxxxxx*" required="required" aria-required="true" pattern="[0-9()#&+*-=.]+" aria-describedby="userPhone" name="userPhone" />
 								</div>
 
 								<div class="input-group">
