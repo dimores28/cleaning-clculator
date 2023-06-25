@@ -8,16 +8,21 @@ Template Name: Post
 
 <?php the_post(); have_posts(); ?>
 
-<section class="post">
-    <div class="post__container">
-        <h1 class="post__heading section-heading">
+<section class="article">
+    <div class="article__container">
+
+        <h1 class="article__heading">
             <?php the_title() ?>
         </h1>
-        <div class="post__content">
+
+        <div class="article__content">
             <?php the_content(); ?>
         </div>
-        <div class="post__data-wrap">
-            <div class="post__data"><?php echo the_time('F j Y'); ?></div>
+
+        <div class="">
+            <div class="article__data">
+                <?php echo the_time('F j Y'); ?>
+            </div>
         </div>
     </div>
 </section>

@@ -19,15 +19,15 @@ Template Name: Home
 						your home spotless and sparkling.
 					</p>
 					<div class="banner__btns">
-						<button class="btn banner__btn">contact us</button>
-						<a class="btn-play banner__btn-play" href="">
+						<!-- <button class="btn banner__btn">contact us</button> -->
+						<!-- <a class="btn-play banner__btn-play" href="">
 							<img src="<?php bloginfo('template_url'); ?>/assets/<?php bloginfo('template_url'); ?>/assets/img/play.png" alt="" />
-						</a>
+						</a> -->
 					</div>
 				</div>
 				<div class="banner__img">
-              		<img  src="<?php bloginfo('template_url'); ?>/assets/img/banner.png" alt="banner" />
-           		</div>
+					<img  src="<?php bloginfo('template_url'); ?>/assets/img/banner.png" alt="banner" />
+				</div>
 				
 			</div>
 		</section>
@@ -1337,6 +1337,8 @@ Template Name: Home
 						</p>
 					</div>
 				</div>
+
+				<button class="btn" style="display: inline-block; margin-top: 46px;">contact us</button>
 			</div>
 		</section>
 

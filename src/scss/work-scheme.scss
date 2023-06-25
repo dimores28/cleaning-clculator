@@ -154,6 +154,12 @@
       width: 32px;
       font-size: 24px;
     }
+
+    @media (max-width:$mobileSmall){
+      height: 26px;
+      width: 26px;
+      font-size: 18px;
+    }
   }
 
   &__title {
