@@ -7,7 +7,7 @@ Template Name: Blog
 <?php get_header();?>
 
    <section class="blog blog-page" id="blog">
-      <img src="img/themes/blog_bg.png" class="blog__bg" alt="background image">
+      <img src="<?php bloginfo('template_url'); ?>/assets/img/themes/blog_bg.png" class="blog__bg" alt="background image">
       <div class="blog__container">
          <h3 class="blog__subheading">OUR ARTICLES</h3>
          <h2 class="blog__heading">What’s News</h2>

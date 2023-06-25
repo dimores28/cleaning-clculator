@@ -155,7 +155,7 @@ class Popup {
 			// Перевірка зміни адресного рядка
 			window.addEventListener('hashchange', function () {
 				if (window.location.hash) {
-					this._openToHash();
+					this?._openToHash();
 				} else {
 					this.close(this.targetOpen.selector);
 				}
@@ -163,7 +163,7 @@ class Popup {
 
 			window.addEventListener('load', function () {
 				if (window.location.hash) {
-					this._openToHash();
+					this?._openToHash();
 				}
 			}.bind(this))
 		}
@@ -320,7 +320,7 @@ class Popup {
 
 		const buttons = document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) ? document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) : document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash.replace('.', "#")}"]`);
 
-		this.youTubeCode = buttons.getAttribute(this.options.youtubeAttribute) ?
+		this.youTubeCode = buttons?.getAttribute(this.options.youtubeAttribute) ?
 			buttons.getAttribute(this.options.youtubeAttribute) :
 			null;
 

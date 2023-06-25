@@ -35,7 +35,7 @@
 
    // .blog__heading
    &__heading {
-      font-family: ArnoPro-SmbdDisplay;
+      font-family: ArnoPro-SmbdDisplay, sans-serif;
       color: #0e608c;
       margin: 0 0 12px 0;
       line-height: normal;
@@ -161,6 +161,10 @@
 .blog-page {
    padding-top: 250px;
    padding-bottom: 100px;
+
+   @media (max-width:$mobile){
+      padding-top: 160px;
+   }
 
    .post {
       @media (max-width:$mobile){

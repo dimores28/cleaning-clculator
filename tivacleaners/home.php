@@ -1057,12 +1057,12 @@ Template Name: Home
 
 								<div class="input-group">
 									<label for="cleaningDate">Date</label>
-									<input type="text" class="form-control datapicker" id="cleaningDate" placeholder="Date" aria-label="cleaning date" name="cleaningDate" />
+									<input type="text" class="form-control datapicker" id="cleaningDate" placeholder="Date" aria-label="cleaning date" name="cleaningDate" value="Date" />
 								</div>
 
 								<div class="input-group">
 									<label for="timeInput">Time:</label>
-									<input type="text" class="form-control" id="timeInput" placeholder="Enter time (hh:mm)" aria-describedby="time Help" name="timeInput" />
+									<input type="text" class="form-control" id="timeInput" placeholder="Enter time (hh:mm)" aria-describedby="time Help" name="timeInput" value="Enter time (hh:mm)" />
 								</div>
 
 								<div class="input-group">
@@ -1131,9 +1131,6 @@ Template Name: Home
 								<button type="submit" class="btn btn-primary" id="bookNowBtn">
 									Book my cleaning
 								</button>
-								<!-- <button type="button" class="btn btn-primary" id="buyNowBtn">
-						Buy Now
-					</button> -->
 							</div>
 						</form>
 
@@ -1242,8 +1239,7 @@ Template Name: Home
 						</svg>
 						<h4 class="grid__item-title">Secured and insured</h4>
 						<p class="grid__item-body">
-							We value your belongings as much as you. That’s why we carry
-							insurance for any accidental damages incurred on our watch
+							Property care. In the process of work our employees make every effort to ensure high quality of cleaning and avoid any damage. But if such a fact occurs, we will fully compensate for the damage caused.
 						</p>
 					</div>
 				</div>
