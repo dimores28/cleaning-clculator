@@ -1338,7 +1338,7 @@ Template Name: Home
 					</div>
 				</div>
 
-				<button class="btn" style="display: inline-block; margin-top: 46px;">contact us</button>
+				<button class="btn banner__btn" style="display: inline-block; margin-top: 46px;">contact us</button>
 			</div>
 		</section>
 
