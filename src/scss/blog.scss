@@ -122,7 +122,6 @@
     font-weight: 300;
     line-height: normal;
     color: #575757;
-
     display: flex;
     align-items: center;
     gap: 4px;
@@ -135,7 +134,6 @@
   // .post__title
   &__title {
     @include adaptiveValue("font-size", 24, 20);
-
     font-weight: 500;
     line-height: normal;
     color: #0e608c;
