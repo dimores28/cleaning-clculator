@@ -149,7 +149,7 @@
   &__text {
     @include adaptiveValue("font-size", 18, 14);
     font-style: normal;
-    line-height: 1.33;
+    // line-height: 1.33;
     overflow: hidden;
     //  -webkit-line-clamp: 3;
     //  display: -webkit-box;

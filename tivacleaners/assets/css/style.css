@@ -2414,7 +2414,7 @@ body::after {
 }
 
 .room {
-  width: calc(25% - 16px);
+  width: calc(20% - 16px);
   border: solid 2px #eaeaea;
   padding: 20px;
   font-family: GothamPro, sans-serif;
@@ -3610,18 +3610,68 @@ body::after {
   color: #0e608c;
   margin-bottom: 20px;
   overflow: hidden;
-  -webkit-line-clamp: 2;
+  overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  max-height: 2.4em;
+}
+
+@supports not (-webkit-line-clamp: 2) {
+  .post__title {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    line-height: 1.2em;
+    max-height: 2.4em;
+  }
+
+  .post__title::before {
+    content: "...";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-left: 1em;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(50%, #fff));
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 0), #fff 50%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #fff 50%);
+  }
 }
 
 .post__text {
   font-style: normal;
   line-height: 1.33;
   overflow: hidden;
-  -webkit-line-clamp: 3;
+  overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  max-height: 3.6em;
+}
+
+@supports not (-webkit-line-clamp: 3) {
+  .post__text {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    line-height: 1.2em;
+    max-height: 3.6em;
+  }
+
+  .post__text::before {
+    content: "...";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding-left: 1em;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(50%, #fff));
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 0), #fff 50%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #fff 50%);
+  }
 }
 
 .blog-page {
