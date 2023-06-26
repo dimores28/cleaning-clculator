@@ -19,15 +19,15 @@ Template Name: Home
 						your home spotless and sparkling.
 					</p>
 					<div class="banner__btns">
-						<button class="btn banner__btn">contact us</button>
-						<a class="btn-play banner__btn-play" href="">
+						<!-- <button class="btn banner__btn">contact us</button> -->
+						<!-- <a class="btn-play banner__btn-play" href="">
 							<img src="<?php bloginfo('template_url'); ?>/assets/<?php bloginfo('template_url'); ?>/assets/img/play.png" alt="" />
-						</a>
+						</a> -->
 					</div>
 				</div>
 				<div class="banner__img">
-              		<img  src="<?php bloginfo('template_url'); ?>/assets/img/banner.png" alt="banner" />
-           		</div>
+					<img  src="<?php bloginfo('template_url'); ?>/assets/img/banner.png" alt="banner" />
+				</div>
 				
 			</div>
 		</section>
@@ -1027,7 +1027,7 @@ Template Name: Home
 
 								<div class="input-group">
 									<label for="userPhone">Telephone*</label>
-									<input type="tel" class="form-control" id="userPhone" placeholder="+182xxxxx*" required="required" aria-required="true" pattern="[0-9()#&+*-=.]+" aria-describedby="userPhone" name="userPhone" />
+									<input type="tel" class="form-control" id="userPhone" placeholder="+1xxxxxxx*" required="required" aria-required="true" pattern="[0-9()#&+*-=.]+" aria-describedby="userPhone" name="userPhone" />
 								</div>
 
 								<div class="input-group">
@@ -1337,6 +1337,8 @@ Template Name: Home
 						</p>
 					</div>
 				</div>
+
+				<button class="btn banner__btn" style="display: inline-block; margin-top: 46px;">contact us</button>
 			</div>
 		</section>
 

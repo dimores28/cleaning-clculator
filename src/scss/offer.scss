@@ -433,8 +433,8 @@
     }
 
     @media (max-width: $mobileSmall) {
-      // margin: 10px auto 0px auto;
-      display: none;
+      margin: 10px auto 0px auto;
+      // display: none;
     }
 
     &_chosen {
