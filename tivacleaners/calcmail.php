@@ -50,11 +50,17 @@ if($cleaningLevel) {
 $cleaningWindow = trim(!empty($_POST['cleaningWindow']));
 if($cleaningWindow) {
    $body.='<h2>'.$_POST['cleaningWindow'].'</h2>';
+   $body.= '<p><strong>Options: </strong></p>'
 }
 
-$interiorWindowsClean =  trim(!empty($_POST['interiorWindowsClean']));
-if($interiorWindowsClean) {
-   $body.='<p><strong>Interior Windows Clean: </strong>'.$_POST['interiorWindowsClean'].'</p>';
+$outsideWindowsClean =  trim(!empty($_POST['outsideWindowsClean']));
+if($outsideWindowsClean) {
+   $body.='<p>'.$_POST['outsideWindowsClean'].'</p>';
+}
+
+$insideWindowsClean =  trim(!empty($_POST['insideWindowsClean']));
+if($insideWindowsClean) {
+   $body.='<p>'.$_POST['insideWindowsClean'].'</p>';
 }
 
 $numberWindow =  trim(!empty($_POST['numberWindow']));

@@ -2,6 +2,7 @@
 import { isMobile } from "./functions.js";
 // Підключення списку активних модулів
 import { flsModules } from "./modules.js";
+// import '../jquery.min.js';
 
 
 let step = 1;
@@ -504,6 +505,12 @@ $("#inside").on("click", function () {
     exteriorWindow = false;
   }
 
+  if($(this).hasClass("_select")) {
+    $('[name="insideWindowsClean"]').val("Inside");
+  } else {
+    $('[name="insideWindowsClean"]').val("");
+  }
+
   exteriorWindows();
 });
 
@@ -516,6 +523,13 @@ $("#outside").on("click", function () {
     exteriorWindow = false;
   }
 
+  if($(this).hasClass("_select")) {
+    $('[name="outsideWindowsClean"]').val("Outside");
+  } else {
+    $('[name="outsideWindowsClean"]').val("");
+  }
+
+
   exteriorWindows();
 });
 
@@ -527,10 +541,8 @@ function exteriorWindows() {
 
   if (!exteriorWindow) {
     windowsPrice = numberWindow * price + parseInt(departurePrice);
-    $('[name="interiorWindowsClean"]').val("No");
   } else {
     windowsPrice = numberWindow * price2 + parseInt(departurePrice);
-    $('[name="interiorWindowsClean"]').val("Yes");
   }
 
   updetePrice();
