@@ -3322,6 +3322,11 @@ body::after {
           flex: 1 1 50%;
 }
 
+.trust-triggers__img img {
+  width: 100%;
+  height: 100%;
+}
+
 .trust-triggers__content {
   padding: 0 0 0 50px;
   -webkit-box-flex: 1;
@@ -4888,8 +4893,8 @@ body::after {
   .icon-menu {
     display: block;
     position: relative;
-    width: 2rem;
-    height: 1.375rem;
+    width: 2.5rem;
+    height: 1.5rem;
     z-index: 5;
   }
 
@@ -5246,6 +5251,12 @@ body::after {
     width: 100%;
   }
 
+  .header__bottom-menu .header__container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
   .header__phone svg {
     display: inline-block;
   }
@@ -5319,7 +5330,7 @@ body::after {
   }
 
   .service__indicator {
-    display: none;
+    margin: 10px auto 0px auto;
   }
 
   .select-extras__item {
@@ -5353,6 +5364,12 @@ body::after {
 
   .bathrooms-ar__item {
     width: calc(20% - 10px);
+  }
+
+  .item__icon-namber {
+    height: 26px;
+    width: 26px;
+    font-size: 18px;
   }
 
   .trust-triggers__img {
