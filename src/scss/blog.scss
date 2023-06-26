@@ -139,9 +139,10 @@
     color: #0e608c;
     margin-bottom: 20px;
     overflow: hidden;
-    -webkit-line-clamp: 2;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
+    //  -webkit-line-clamp: 2;
+    //  display: -webkit-box;
+    //  -webkit-box-orient: vertical;
+    @include multiline-clamp(1.2em, 2, 2.4em);
   }
 
   // .post__text
@@ -150,9 +151,10 @@
     font-style: normal;
     line-height: 1.33;
     overflow: hidden;
-    -webkit-line-clamp: 3;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
+    //  -webkit-line-clamp: 3;
+    //  display: -webkit-box;
+    //  -webkit-box-orient: vertical;
+    @include multiline-clamp(1.2em, 3, 3.6em);
   }
 }
 //====================================================================================================

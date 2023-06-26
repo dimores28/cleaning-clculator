@@ -97,3 +97,30 @@
 		}
 	}
 }
+
+@mixin multiline-clamp($line-height, $line-count, $height) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line-count;
+  max-height: $height;
+
+  // Cross-browser support
+  @supports not (-webkit-line-clamp: $line-count) {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    line-height: $line-height;
+    max-height: $line-height * $line-count;
+
+    &::before {
+      content: "...";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      padding-left: 1em;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), #fff 50%);
+    }
+  }
+}
