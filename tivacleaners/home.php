@@ -1344,7 +1344,9 @@ Template Name: Home
 
 		<section class="trust-triggers" id="trust-triggers">
 			<div class="trust-triggers__container">
-				<img class="trust-triggers__img" src="<?php bloginfo('template_url'); ?>/assets/img/pipe.png" alt="" />
+				<div class="trust-triggers__img">
+              		<img src="<?php bloginfo('template_url'); ?>/assets/img/pipe.png" alt="trust-triggers__img" />
+            	</div>
 				<div class="trust-triggers__content">
 					<p class="trust-triggers__subheading">
 						tiva cleaners is your trusted partner
