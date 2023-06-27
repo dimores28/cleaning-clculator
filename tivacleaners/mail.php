@@ -1,7 +1,9 @@
 <?php
 // Кому отправляем
 $to = 'info@tivacleaners.com';
-   
+
+// $to = 'dmytroivanovichn@gmail.com';
+
 // Тема письма
 $subject = 'Tivacleaners website!';
    

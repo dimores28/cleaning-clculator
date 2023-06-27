@@ -28,18 +28,19 @@ use PHPMailer\PHPMailer\SMTP;
  *
  * @param PHPMailer $phpmailer объект мэилера
  */
+
 function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 	$phpmailer->isSMTP();
-	$phpmailer->Host       = 'smtp.gmail.com';
+	$phpmailer->Host       = 'mail.adm.tools';
 	$phpmailer->SMTPAuth   = true;
 	$phpmailer->Port       = 465;
-	$phpmailer->Username   = 'dimores95@gmail.com';
-	$phpmailer->Password   = 'tjdsjpgjemfdogqb';
+	$phpmailer->Username   = 'info@tivacleaners.com';
+	$phpmailer->Password   = 'Tivacleaners2023!';
 	$phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-	$phpmailer->From       = 'maxkrasovskyi10@gmail.com';
+	$phpmailer->From       = 'info@tivacleaners.com';
 	$phpmailer->FromName   = 'Tivacleaners site';
-	// $mail->CharSet = 'UTF-8';
-  }
+
+}
   add_action( 'phpmailer_init', 'mihdan_send_smtp_email' );
 
   add_filter( 'wp_mail_content_type', 'true_content_type' );

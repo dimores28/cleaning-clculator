@@ -1,7 +1,7 @@
 <?php
 // Кому отправляем
-// $to = 'maxkrasovskyi10@gmail.com';
-$to = ['dmytroivanovichn@gmail.com', 'maxkrasovskyi10@gmail.com', 'info@tivacleaners.com'];
+// $to = ['dmytroivanovichn@gmail.com', 'maxkrasovskyi10@gmail.com', 'info@tivacleaners.com'];
+$to = 'info@tivacleaners.com';
    
 // Тема письма
 $subject = 'Tivacleaners website!';
@@ -50,7 +50,7 @@ if($cleaningLevel) {
 $cleaningWindow = trim(!empty($_POST['cleaningWindow']));
 if($cleaningWindow) {
    $body.='<h2>'.$_POST['cleaningWindow'].'</h2>';
-   $body.= '<p><strong>Options: </strong></p>'
+   $body.= '<p><strong>Options: </strong></p>';
 }
 
 $outsideWindowsClean =  trim(!empty($_POST['outsideWindowsClean']));
