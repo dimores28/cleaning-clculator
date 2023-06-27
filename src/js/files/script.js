@@ -704,7 +704,9 @@ $("#payment_method").on("change", function () {
 flatpickr("#cleaningDate", {
   position: "above",
   minDate: new Date(),
+  disableMobile: "true"
 });
+
 
 //input Time
 flatpickr("#timeInput", {
@@ -712,7 +714,9 @@ flatpickr("#timeInput", {
   noCalendar: true,
   dateFormat: "H:i",
   position: "above",
+  disableMobile: "true"
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const toggleLinks = document.querySelectorAll(".read-more .toggle-link");
