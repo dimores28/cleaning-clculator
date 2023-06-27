@@ -7,12 +7,12 @@ Template Name: category
 <?php get_header();?>
 <div class="ctegory__container" style="background: #90e0ef; padding: 20px">
 
-      <div class="select-extras" style="margin-top: 150px">
+    <div class="select-extras" style="margin-top: 150px">
         <?php foreach(getExtras() as $extra) {?>
 
             <div class="select-extras__item living-extras" data-extras-price="<?php echo $extra["Extras-priceprice"];?>">
                 <div class="select-extras__img">
-                    <img src="<?php echo $extra["img"];?>" alt="oven icon" width="64" height="64" />
+                    <?php echo $extra["svg_icon"];?>
                 </div>
                 <div class="select-extras__desc">
                     <?php echo $extra["title"];?>
