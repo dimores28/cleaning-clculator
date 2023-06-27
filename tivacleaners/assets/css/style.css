@@ -2612,6 +2612,7 @@ body::after {
   border-radius: 6px;
   padding: 23px 10px;
   text-align: center;
+  text-transform: uppercase;
   -webkit-transition: all 0.3s ease-in;
   -o-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
@@ -2623,7 +2624,9 @@ body::after {
 }
 
 .cleaning-level button {
-  width: 116px;
+  width: 148px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .block-row {
@@ -3642,7 +3645,6 @@ body::after {
 
 .post__text {
   font-style: normal;
-  line-height: 1.33;
   overflow: hidden;
   overflow: hidden;
   display: -webkit-box;
@@ -4251,6 +4253,10 @@ body::after {
     font-size: 1rem;
   }
 
+  .cleaning-level button {
+    font-size: 1rem;
+  }
+
   .bedrooms__block {
     gap: 1.25rem;
   }
@@ -4579,6 +4585,10 @@ body::after {
 
   .select-extras__desc {
     font-size: 0.75rem;
+  }
+
+  .cleaning-level button {
+    font-size: 0.875rem;
   }
 
   .bedrooms__block {
@@ -5427,6 +5437,10 @@ body::after {
     min-width: 100px;
   }
 
+  .blog__posts {
+    gap: 40px;
+  }
+
   .post {
     width: 100%;
   }
@@ -5456,6 +5470,13 @@ body::after {
 
   .select-extras__item {
     width: calc(33.3333333333% - 7px);
+  }
+}
+
+@media (max-width: 22.25em) {
+  .cleaning-level button {
+    width: 130px;
+    padding: 10px 20px;
   }
 }
 
@@ -5633,6 +5654,18 @@ body::after {
 @supports not (font-size: clamp( 0.75rem , 0.6601123596rem  +  0.4494382022vw , 1rem )) {
     .select-extras__desc {
       font-size: calc(0.75rem + 0.25 * (100vw - 20rem) / 55.625);
+    }
+}
+
+@supports (font-size: clamp( 0.875rem , 0.8300561798rem  +  0.2247191011vw , 1rem )) {
+    .cleaning-level button {
+      font-size: clamp( 0.875rem , 0.8300561798rem  +  0.2247191011vw , 1rem );
+    }
+}
+
+@supports not (font-size: clamp( 0.875rem , 0.8300561798rem  +  0.2247191011vw , 1rem )) {
+    .cleaning-level button {
+      font-size: calc(0.875rem + 0.125 * (100vw - 20rem) / 55.625);
     }
 }
 
