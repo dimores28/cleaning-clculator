@@ -587,6 +587,7 @@
     border-radius: 6px;
     padding: 23px 10px;
     text-align: center;
+    text-transform: uppercase;
     transition: all 0.3s ease-in;
 
     @media (max-width: 620px) {
@@ -613,7 +614,15 @@
   }
 
   button {
-    width: 116px;
+    @include adaptiveValue("font-size", 16, 14);
+    width: 148px;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media (max-width: em(356)){
+      width: 130px;
+      padding: 10px 20px;
+    }
   }
 }
 
