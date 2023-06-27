@@ -175,6 +175,7 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 			'post_type' => 'Extras',
 			'orderby'   => 'date',
 			'order'     => 'ASC',
+			'numberposts' => -1,
 		);
 
 		$extras = [];
@@ -195,6 +196,7 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 			'post_type' => 'House areas',
 			'orderby'   => 'date',
 			'order'     => 'ASC',
+			'numberposts' => -1,
 		);
 
 		$houseAreas = [];
@@ -215,6 +217,7 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 			'post_type' => 'Bedrooms',
 			'orderby'   => 'title',
 			'order'     => 'ASC',
+			'numberposts' => -1,
 		);
 
 		$bedrooms = [];
@@ -235,6 +238,7 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 			'post_type' => 'Bathrooms',
 			'orderby'   => 'title',
 			'order'     => 'ASC',
+			'numberposts' => -1,
 		);
 
 		$bathrooms = [];
@@ -255,6 +259,7 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 			'post_type' => 'Lawn area',
 			'orderby'   => 'date',
 			'order'     => 'ASC',
+			'numberposts' => -1,
 		);
 
 		$lawnAreas = [];
