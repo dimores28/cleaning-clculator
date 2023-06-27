@@ -287,7 +287,14 @@ Template Name: Home
                   </div>
 
                   <div class="number-windows__renge">
-                    <div id="rangeWindows" data-from="0" data-to="50" data-price-window="7" data-price-exterior-window="10" data-price-one-window="25" class="range"></div>
+                    <?php $window = getWindow(); ?>
+                    <div id="rangeWindows" 
+                      data-from="<?php echo $window["min_number__windows"] ?>" 
+                      data-to="<?php echo $window["max_number_windows"] ?>" 
+                      data-price-window="<?php echo $window["one_side_price"] ?>" 
+                      data-price-exterior-window="<?php echo $window["price__both_sides"] ?>" 
+                      data-price-one-window="<?php echo $window["departure_cost"] ?>" 
+                    class="range"></div>
                   </div>
 
                   <div class="number-windows__group-btn">

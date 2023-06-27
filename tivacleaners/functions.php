@@ -161,6 +161,28 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 
 		] );
 
+		register_post_type( 'Window', [
+			'label'  => 'Window',
+			'labels' => [
+				'name'               => 'Window', // основное название для типа записи
+				'singular_name'      => 'Window', // название для одной записи этого типа
+				'add_new'            => 'Add Window', // для добавления новой записи
+				'add_new_item'       => 'Adding Window', // заголовка у вновь создаваемой записи в админ-панели.
+				'edit_item'          => 'Window area Editing', // для редактирования типа записи
+				'new_item'           => 'New Window', // текст новой записи
+				'view_item'          => 'Watch the Window', // для просмотра записи этого типа.
+				'search_items'       => 'Search for a Window', // для поиска по этим типам записи
+				'not_found'          => 'Window not found', // если в результате поиска ничего не было найдено
+				'not_found_in_trash' => 'Not found in cart', // если не было найдено в корзине
+				'menu_name'          => 'Window', // название меню
+			],
+			'public'              => false,
+			'show_ui'             => true, // зависит от public
+			'menu_icon'           => 'dashicons-screenoptions',
+			'supports'            => [ 'title'],  
+
+		] );
+
 	});
 
 
@@ -273,6 +295,25 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 		}
 
 		return $lawnAreas;
+	}
+
+	function getWindow() {
+		$args = array(
+			'post_type' => 'Window',
+			'orderby'   => 'date',
+			'order'     => 'ASC',
+			'numberposts' => 1,
+		);
+
+		$windows = [];
+
+		foreach(get_posts($args) as $post) {
+			$win = get_fields($post->ID);
+
+			$windows[] = $win;
+		}
+
+		return $windows[0];
 	}
 
 //======================SVG===========================================//

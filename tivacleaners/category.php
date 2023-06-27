@@ -75,7 +75,10 @@ Template Name: category
             </div>
         <?php }?>
     </div>
-
+    
+    <pre>
+        <!-- <?php print_r(getWindow()); ?> -->
+    </pre>
 
 </div>
 
