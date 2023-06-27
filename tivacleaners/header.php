@@ -3,7 +3,8 @@
 
 
 <head>
-	<title>TIVA Cleaning</title>
+	<title><?php echo wp_get_document_title(); ?></title>
+
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<meta name="format-detection" content="telephone=no" />
 
@@ -12,7 +13,6 @@
 	<!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" /> -->
-	<link rel="manifest" href="/site.webmanifest" />
 
 	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
 	<meta name="msapplication-TileColor" content="#da532c" />
@@ -33,7 +33,7 @@
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- <link rel="stylesheet" href="css/style.min.css?_v=20230612142449" /> -->
+
     <?php wp_head(); ?>
 </head>
 
@@ -59,11 +59,11 @@
 			<div class="header__bottom-menu">
 				<div class="header__container">
 					<div class="header__logo">
-						<a href="#"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" alt="logo TIVA Cleaning" /></a>
+						<a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" alt="logo TIVA Cleaning" /></a>
 					</div>
 
 					<div class="header__logo-mobile">
-						<a href="#"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo_mobile.svg" alt="mobile logo TIVA Cleaning" /></a>
+						<a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo_mobile.svg" alt="mobile logo TIVA Cleaning" /></a>
 					</div>
 
 					<div class="header__nav">
@@ -74,7 +74,7 @@
 							<nav class="menu__body">
 								<ul class="menu__list">
 									<li class="menu__item">
-										<a href="https://www.tivacleaners.com/home/" class="menu__link">Home</a>
+										<a href="<?php echo get_home_url(); ?>" class="menu__link">Home</a>
 									</li>
 									<li class="menu__item">
 										<a href="#" class="menu__link" data-goto-header data-goto="#calculator">Calculator</a>
