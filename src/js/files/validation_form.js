@@ -199,7 +199,11 @@ calcForm?.addEventListener("submit", async function (e) {
 
       if ($(e.target).hasClass("payment")) {
         $('.stripe-form input[type="submit"]').trigger("click");
+        return;
       }
+
+      window.location.href ='https://www.tivacleaners.com/confirmation/';
+
     } else {
       let alertMsg = document.querySelector(".calculator__alert");
       alertMsg.innerHTML = '<p class="alert__msg" >Error!!!<p/>';

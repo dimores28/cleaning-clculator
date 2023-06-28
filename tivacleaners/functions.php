@@ -28,18 +28,19 @@ use PHPMailer\PHPMailer\SMTP;
  *
  * @param PHPMailer $phpmailer объект мэилера
  */
+
 function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 	$phpmailer->isSMTP();
-	$phpmailer->Host       = 'smtp.gmail.com';
+	$phpmailer->Host       = 'mail.adm.tools';
 	$phpmailer->SMTPAuth   = true;
 	$phpmailer->Port       = 465;
-	$phpmailer->Username   = 'dimores95@gmail.com';
-	$phpmailer->Password   = 'tjdsjpgjemfdogqb';
+	$phpmailer->Username   = 'info@tivacleaners.com';
+	$phpmailer->Password   = 'Tivacleaners2023!';
 	$phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-	$phpmailer->From       = 'maxkrasovskyi10@gmail.com';
+	$phpmailer->From       = 'info@tivacleaners.com';
 	$phpmailer->FromName   = 'Tivacleaners site';
-	// $mail->CharSet = 'UTF-8';
-  }
+
+}
   add_action( 'phpmailer_init', 'mihdan_send_smtp_email' );
 
   add_filter( 'wp_mail_content_type', 'true_content_type' );
@@ -161,6 +162,72 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 
 		] );
 
+		register_post_type( 'Window', [
+			'label'  => 'Window',
+			'labels' => [
+				'name'               => 'Window', // основное название для типа записи
+				'singular_name'      => 'Window', // название для одной записи этого типа
+				'add_new'            => 'Add Window', // для добавления новой записи
+				'add_new_item'       => 'Adding Window', // заголовка у вновь создаваемой записи в админ-панели.
+				'edit_item'          => 'Window area Editing', // для редактирования типа записи
+				'new_item'           => 'New Window', // текст новой записи
+				'view_item'          => 'Watch the Window', // для просмотра записи этого типа.
+				'search_items'       => 'Search for a Window', // для поиска по этим типам записи
+				'not_found'          => 'Window not found', // если в результате поиска ничего не было найдено
+				'not_found_in_trash' => 'Not found in cart', // если не было найдено в корзине
+				'menu_name'          => 'Window', // название меню
+			],
+			'public'              => false,
+			'show_ui'             => true, // зависит от public
+			'menu_icon'           => 'dashicons-screenoptions',
+			'supports'            => [ 'title'],  
+
+		] );
+
+		register_post_type( 'Drain pipes', [
+			'label'  => 'Drain pipes',
+			'labels' => [
+				'name'               => 'Drain pipes', // основное название для типа записи
+				'singular_name'      => 'Drain pipe', // название для одной записи этого типа
+				'add_new'            => 'Add Drain pipe', // для добавления новой записи
+				'add_new_item'       => 'Adding Drain pipe', // заголовка у вновь создаваемой записи в админ-панели.
+				'edit_item'          => 'Drain pipes area Editing', // для редактирования типа записи
+				'new_item'           => 'New Drain pipe', // текст новой записи
+				'view_item'          => 'Watch the Drain pipe', // для просмотра записи этого типа.
+				'search_items'       => 'Search for a Drain pipes', // для поиска по этим типам записи
+				'not_found'          => 'Drain pipe not found', // если в результате поиска ничего не было найдено
+				'not_found_in_trash' => 'Not found in cart', // если не было найдено в корзине
+				'menu_name'          => 'Drain pipes', // название меню
+			],
+			'public'              => false,
+			'show_ui'             => true, // зависит от public
+			'menu_icon'           => 'dashicons-screenoptions',
+			'supports'            => [ 'title'],  
+
+		] );
+
+		register_post_type( 'Payment options', [
+			'label'  => 'Payment options',
+			'labels' => [
+				'name'               => 'Drain pipes', // основное название для типа записи
+				'singular_name'      => 'Payment option', // название для одной записи этого типа
+				'add_new'            => 'Add Payment option', // для добавления новой записи
+				'add_new_item'       => 'Adding Payment option', // заголовка у вновь создаваемой записи в админ-панели.
+				'edit_item'          => 'Payment option Editing', // для редактирования типа записи
+				'new_item'           => 'New Payment option', // текст новой записи
+				'view_item'          => 'Watch the Payment option', // для просмотра записи этого типа.
+				'search_items'       => 'Search for a Payment option', // для поиска по этим типам записи
+				'not_found'          => 'Payment option not found', // если в результате поиска ничего не было найдено
+				'not_found_in_trash' => 'Not found in cart', // если не было найдено в корзине
+				'menu_name'          => 'Payment options', // название меню
+			],
+			'public'              => false,
+			'show_ui'             => true, // зависит от public
+			'menu_icon'           => 'dashicons-tickets-alt',
+			'supports'            => [ 'title'],  
+
+		] );
+
 	});
 
 
@@ -175,6 +242,7 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 			'post_type' => 'Extras',
 			'orderby'   => 'date',
 			'order'     => 'ASC',
+			'numberposts' => -1,
 		);
 
 		$extras = [];
@@ -195,6 +263,7 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 			'post_type' => 'House areas',
 			'orderby'   => 'date',
 			'order'     => 'ASC',
+			'numberposts' => -1,
 		);
 
 		$houseAreas = [];
@@ -215,6 +284,7 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 			'post_type' => 'Bedrooms',
 			'orderby'   => 'title',
 			'order'     => 'ASC',
+			'numberposts' => -1,
 		);
 
 		$bedrooms = [];
@@ -235,6 +305,7 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 			'post_type' => 'Bathrooms',
 			'orderby'   => 'title',
 			'order'     => 'ASC',
+			'numberposts' => -1,
 		);
 
 		$bathrooms = [];
@@ -255,6 +326,7 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 			'post_type' => 'Lawn area',
 			'orderby'   => 'date',
 			'order'     => 'ASC',
+			'numberposts' => -1,
 		);
 
 		$lawnAreas = [];
@@ -268,6 +340,63 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 		}
 
 		return $lawnAreas;
+	}
+
+	function getWindow() {
+		$args = array(
+			'post_type' => 'Window',
+			'orderby'   => 'date',
+			'order'     => 'ASC',
+			'numberposts' => 1,
+		);
+
+		$windows = [];
+
+		foreach(get_posts($args) as $post) {
+			$win = get_fields($post->ID);
+
+			$windows[] = $win;
+		}
+
+		return $windows[0];
+	}
+
+	function getDrainPipes() {
+		$args = array(
+			'post_type' => 'Drain pipes',
+			'orderby'   => 'date',
+			'order'     => 'ASC',
+			'numberposts' => 1,
+		);
+
+		$pipes = [];
+
+		foreach(get_posts($args) as $post) {
+			$pipe = get_fields($post->ID);
+
+			$pipes[] = $pipe;
+		}
+
+		return $pipes[0];
+	}
+
+	function getPaymentOptions() {
+		$args = array(
+			'post_type' => 'Payment options',
+			'orderby'   => 'date',
+			'order'     => 'ASC',
+			'numberposts' => 1,
+		);
+
+		$pipes = [];
+
+		foreach(get_posts($args) as $post) {
+			$pipe = get_fields($post->ID);
+
+			$pipes[] = $pipe;
+		}
+
+		return $pipes[0];
 	}
 
 //======================SVG===========================================//

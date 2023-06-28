@@ -587,6 +587,7 @@
     border-radius: 6px;
     padding: 23px 10px;
     text-align: center;
+    text-transform: uppercase;
     transition: all 0.3s ease-in;
 
     @media (max-width: 620px) {
@@ -613,7 +614,15 @@
   }
 
   button {
-    width: 116px;
+    @include adaptiveValue("font-size", 16, 14);
+    width: 148px;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media (max-width: em(356)){
+      width: 130px;
+      padding: 10px 20px;
+    }
   }
 }
 
@@ -911,6 +920,32 @@
       background: #0c6284;
       border: solid 2px #0c6284;
       color: #fff;
+    }
+  }
+
+  &__desc {
+    margin-top: 20px;
+    border: solid 2px rgb(234, 234, 234);
+    padding: 10px;
+    display: none;
+
+    @media (max-width:$mobileSmall){
+      padding: 5px;
+      border: solid 1px rgb(234, 234, 234);
+    }
+
+    p {
+      font-family: $mainFont, sans-serif;
+      @include adaptiveValue("font-size", 18, 14);
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.33;
+      letter-spacing: normal;
+      text-align: left;
+      color: #000;
+      text-indent: 30px;
+      margin-bottom: 20px;
     }
   }
 }

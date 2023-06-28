@@ -470,21 +470,17 @@ $(".payment-options__option").on("click", function () {
     let price = $(".calculator__total-price span").text();
 
     let totalPrice = price * ((100 - procent) / 100);
+    $('.payment-options__desc').slideDown("slow");
 
     $(this)
       .children()
       .text(`Disc. price: $${totalPrice.toFixed(1)}`);
   } else {
     $(".payment-options__option").children().css("opacity", "0");
+    $('.payment-options__desc').slideUp("slow");
   }
 });
 
-$(".is-furniture").on("click", function () {
-  $(this).toggleClass("_select");
-  $(".renovation-extras__wrap").fadeToggle("slow");
-
-  // updetePrice();
-});
 
 $(".is-window").on("click", function () {
   $(this).toggleClass("_select");
@@ -704,7 +700,9 @@ $("#payment_method").on("change", function () {
 flatpickr("#cleaningDate", {
   position: "above",
   minDate: new Date(),
+  disableMobile: "true"
 });
+
 
 //input Time
 flatpickr("#timeInput", {
@@ -712,7 +710,9 @@ flatpickr("#timeInput", {
   noCalendar: true,
   dateFormat: "H:i",
   position: "above",
+  disableMobile: "true"
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const toggleLinks = document.querySelectorAll(".read-more .toggle-link");
