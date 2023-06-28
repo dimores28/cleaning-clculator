@@ -81,7 +81,7 @@ Template Name: category
     </pre>
 
     <pre>
-        <?php print_r(getPaymentOptions()); ?> 
+        <?php print_r(getContacts()); ?> 
     </pre>
 
 </div>
