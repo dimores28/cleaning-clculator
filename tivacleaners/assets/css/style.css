@@ -3642,7 +3642,6 @@ body::after {
 
 .post__text {
   font-style: normal;
-  line-height: 1.33;
   overflow: hidden;
   overflow: hidden;
   display: -webkit-box;
@@ -5425,6 +5424,10 @@ body::after {
   .trust-triggers__img {
     max-width: 300px;
     min-width: 100px;
+  }
+
+  .blog__posts {
+    gap: 40px;
   }
 
   .post {
