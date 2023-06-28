@@ -206,6 +206,28 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 
 		] );
 
+		register_post_type( 'Payment options', [
+			'label'  => 'Payment options',
+			'labels' => [
+				'name'               => 'Drain pipes', // основное название для типа записи
+				'singular_name'      => 'Payment option', // название для одной записи этого типа
+				'add_new'            => 'Add Payment option', // для добавления новой записи
+				'add_new_item'       => 'Adding Payment option', // заголовка у вновь создаваемой записи в админ-панели.
+				'edit_item'          => 'Payment option Editing', // для редактирования типа записи
+				'new_item'           => 'New Payment option', // текст новой записи
+				'view_item'          => 'Watch the Payment option', // для просмотра записи этого типа.
+				'search_items'       => 'Search for a Payment option', // для поиска по этим типам записи
+				'not_found'          => 'Payment option not found', // если в результате поиска ничего не было найдено
+				'not_found_in_trash' => 'Not found in cart', // если не было найдено в корзине
+				'menu_name'          => 'Payment options', // название меню
+			],
+			'public'              => false,
+			'show_ui'             => true, // зависит от public
+			'menu_icon'           => 'dashicons-tickets-alt',
+			'supports'            => [ 'title'],  
+
+		] );
+
 	});
 
 
@@ -342,6 +364,25 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 	function getDrainPipes() {
 		$args = array(
 			'post_type' => 'Drain pipes',
+			'orderby'   => 'date',
+			'order'     => 'ASC',
+			'numberposts' => 1,
+		);
+
+		$pipes = [];
+
+		foreach(get_posts($args) as $post) {
+			$pipe = get_fields($post->ID);
+
+			$pipes[] = $pipe;
+		}
+
+		return $pipes[0];
+	}
+
+	function getPaymentOptions() {
+		$args = array(
+			'post_type' => 'Payment options',
 			'orderby'   => 'date',
 			'order'     => 'ASC',
 			'numberposts' => 1,

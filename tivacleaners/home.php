@@ -475,20 +475,21 @@ Template Name: Home
             <h3 class="payment-options__title">CHOOSE YOUR FREQUENCY</h3>
 
             <div class="payment-options__variants">
+              <?php $payment = getPaymentOptions(); ?>
               <label class="payment-options__option _setected" for="oneTime" data-discont-procent="0">
                 One time
                 <span>100</span>
               </label>
-              <label class="payment-options__option" for="monthly" data-discont-procent="5">
-                Monthly (5%off)
+              <label class="payment-options__option" for="monthly" data-discont-procent="<?php echo $payment["monthly"]; ?>">
+                Monthly (<?php echo $payment["monthly"]; ?>%off)
                 <span></span>
               </label>
-              <label class="payment-options__option" for="biweekly" data-discont-procent="7">
-                Biweekly (7%off)
+              <label class="payment-options__option" for="biweekly" data-discont-procent="<?php echo $payment["biweekly"]; ?>">
+                Biweekly (<?php echo $payment["biweekly"]; ?>%off)
                 <span></span>
               </label>
-              <label class="payment-options__option" for="weekly" data-discont-procent="15">
-                Weekly (15%off)
+              <label class="payment-options__option" for="weekly" data-discont-procent="<?php echo $payment["weekly"]; ?>">
+                Weekly (<?php echo $payment["weekly"]; ?>%off)
                 <span></span>
               </label>
             </div>
