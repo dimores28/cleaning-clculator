@@ -184,6 +184,28 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 
 		] );
 
+		register_post_type( 'Drain pipes', [
+			'label'  => 'Drain pipes',
+			'labels' => [
+				'name'               => 'Drain pipes', // основное название для типа записи
+				'singular_name'      => 'Drain pipe', // название для одной записи этого типа
+				'add_new'            => 'Add Drain pipe', // для добавления новой записи
+				'add_new_item'       => 'Adding Drain pipe', // заголовка у вновь создаваемой записи в админ-панели.
+				'edit_item'          => 'Drain pipes area Editing', // для редактирования типа записи
+				'new_item'           => 'New Drain pipe', // текст новой записи
+				'view_item'          => 'Watch the Drain pipe', // для просмотра записи этого типа.
+				'search_items'       => 'Search for a Drain pipes', // для поиска по этим типам записи
+				'not_found'          => 'Drain pipe not found', // если в результате поиска ничего не было найдено
+				'not_found_in_trash' => 'Not found in cart', // если не было найдено в корзине
+				'menu_name'          => 'Drain pipes', // название меню
+			],
+			'public'              => false,
+			'show_ui'             => true, // зависит от public
+			'menu_icon'           => 'dashicons-screenoptions',
+			'supports'            => [ 'title'],  
+
+		] );
+
 	});
 
 
@@ -315,6 +337,25 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 		}
 
 		return $windows[0];
+	}
+
+	function getDrainPipes() {
+		$args = array(
+			'post_type' => 'Drain pipes',
+			'orderby'   => 'date',
+			'order'     => 'ASC',
+			'numberposts' => 1,
+		);
+
+		$pipes = [];
+
+		foreach(get_posts($args) as $post) {
+			$pipe = get_fields($post->ID);
+
+			$pipes[] = $pipe;
+		}
+
+		return $pipes[0];
 	}
 
 //======================SVG===========================================//

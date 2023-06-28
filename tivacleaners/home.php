@@ -289,11 +289,11 @@ Template Name: Home
                   <div class="number-windows__renge">
                     <?php $window = getWindow(); ?>
                     <div id="rangeWindows" 
-                      data-from="<?php echo $window["min_number__windows"] ?>" 
-                      data-to="<?php echo $window["max_number_windows"] ?>" 
-                      data-price-window="<?php echo $window["one_side_price"] ?>" 
-                      data-price-exterior-window="<?php echo $window["price__both_sides"] ?>" 
-                      data-price-one-window="<?php echo $window["departure_cost"] ?>" 
+                      data-from="<?php echo $window["min_number__windows"]; ?>" 
+                      data-to="<?php echo $window["max_number_windows"]; ?>" 
+                      data-price-window="<?php echo $window["one_side_price"]; ?>" 
+                      data-price-exterior-window="<?php echo $window["price__both_sides"]; ?>" 
+                      data-price-one-window="<?php echo $window["departure_cost"]; ?>" 
                     class="range"></div>
                   </div>
 
@@ -349,7 +349,13 @@ Template Name: Home
                     Enter quantity
                   </h3>
                   <div class="number-pipe__renge">
-                    <div id="rangePipe" data-from="0" data-to="16" data-price-pipe="8" data-price-one-pipe="40" class="range"></div>
+                    <?php $pipe = getDrainPipes(); ?>
+                    <div id="rangePipe" 
+                      data-from="<?php echo $pipe["min_number_pipes"]; ?>" 
+                      data-to="<?php echo $pipe["max_number_pipes"]; ?>" 
+                      data-price-pipe="<?php echo $pipe["cleaning_price"]; ?>" 
+                      data-price-one-pipe="<?php echo $pipe["check_out_price"]; ?>" 
+                    class="range"></div>
                   </div>
                 </div>
               </div>
@@ -452,7 +458,12 @@ Template Name: Home
                         Number of windows
                       </h3>
                       <div class="number-windows__renge">
-                        <div id="numberWindows" data-from="0" data-to="30" data-price-window="12" class="range"></div>
+                        <?php $window = getWindow(); ?>
+                        <div id="numberWindows" 
+                          data-from="<?php echo $window["min_number__windows"]; ?>" 
+                          data-to="<?php echo $window["max_number_windows"]; ?>" 
+                          data-price-window="<?php echo $window["price__both_sides"]; ?>" 
+                        class="range"></div>
                       </div>
                     </div>
                   </div>

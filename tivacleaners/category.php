@@ -80,6 +80,10 @@ Template Name: category
         <!-- <?php print_r(getWindow()); ?> -->
     </pre>
 
+    <pre>
+        <?php print_r(getDrainPipes()); ?>
+    </pre>
+
 </div>
 
 <?php get_footer();?>
