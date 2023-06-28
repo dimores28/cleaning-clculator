@@ -22,12 +22,12 @@ Template Name: Home
         <div class="banner__btns">
           <!-- <button class="btn banner__btn">contact us</button> -->
           <!-- <a class="btn-play banner__btn-play" href="">
-              <img src="<?php bloginfo('template_url'); ?>/assets/img/play.png" alt="" />
+              <img src="<?php bloginfo('template_url'); ?>/assets/img/play.png" alt="banner__btn" />
             </a> -->
         </div>
       </div>
       <div class="banner__img">
-        <img src="<?php bloginfo('template_url'); ?>/assets/img/banner.png" alt="banner" />
+        <img width="535" height="639" src="<?php bloginfo('template_url'); ?>/assets/img/banner.png" alt="banner_img" />
       </div>
     </div>
   </section>
@@ -774,7 +774,7 @@ Template Name: Home
   </section>
 
   <section class="work-scheme" id="work-scheme">
-    <img src="<?php bloginfo('template_url'); ?>/assets/img/themes/bg_work_scheme.png" class="work-scheme__bg" alt="background image" width="1500" height="700" />
+    <img  width="1920" height="673" src="<?php bloginfo('template_url'); ?>/assets/img/themes/bg_work_scheme.png" class="work-scheme__bg" alt="background image"  />
     <div class="work-scheme__container">
       <p class="work-scheme__subheading">PROCESS OF WORK</p>
       <h2 class="work-scheme__heading">How It Works</h2>
@@ -861,7 +861,7 @@ Template Name: Home
   <section class="trust-triggers" id="trust-triggers">
     <div class="trust-triggers__container">
       <div class="trust-triggers__img">
-        <img src="<?php bloginfo('template_url'); ?>/assets/img/pipe.png" alt="" />
+        <img  width="579" height="528" src="<?php bloginfo('template_url'); ?>/assets/img/pipe.png" alt="trust-triggers__img" />
       </div>
 
       <div class="trust-triggers__content">
@@ -920,7 +920,7 @@ Template Name: Home
   </section>
 
   <section class="blog" id="blog">
-    <img src="<?php bloginfo('template_url'); ?>/assets/img/themes/blog_bg.png" class="blog__bg" alt="background image" />
+    <img width="1930" height="546" src="<?php bloginfo('template_url'); ?>/assets/img/themes/blog_bg.png" class="blog__bg" alt="background image" />
     <div class="blog__container">
       <h3 class="blog__subheading">OUR ARTICLES</h3>
       <h2 class="blog__heading">What’s News</h2>
@@ -949,7 +949,7 @@ Template Name: Home
                                 array('alt'   => "Post thumbnail",)
                               );
                           } else { ?>
-                              <img src="<?php bloginfo('template_url'); ?>/assets/img/blog/post1.jpg" alt="Post thumbnail" />
+                              <img width="480" height="320" src="<?php bloginfo('template_url'); ?>/assets/img/blog/post1.jpg" alt="Post thumbnail" />
                           <?php } ?>
                         </a>
                     </div>
@@ -1129,7 +1129,7 @@ Template Name: Home
 
   <section class="poster" id="poster">
     <div class="poster__container">
-      <img src="<?php bloginfo('template_url'); ?>/assets/img/themes/poster_bg.png" class="poster__bg" alt="background image" width="1500" height="700" />
+      <img src="<?php bloginfo('template_url'); ?>/assets/img/themes/poster_bg.png" class="poster__bg" alt="background image" width="1173" height="256" />
       <div class="poster__content">
         <h2 class="poster__heading">
           Save Time. Save Money. Save Yourself Too!
