@@ -184,7 +184,7 @@ Template Name: Home
 
                   <div class="calculator__rooms">
                     <?php foreach(getHouseAreas() as $area) {?>
-                        <div class="room living-quarters" data-room-price="<?php echo $area["house-area-price"];?>">
+                        <div class="room living-quarters" data-room-price="<?php echo $area["house-area-price"];?>" data-tippy-content="<?php echo $area["cleaning_time"];?> hours">
                             <div class="room__img">
                             <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="25" height="23" style="
                                 shape-rendering: geometricPrecision;
@@ -373,7 +373,7 @@ Template Name: Home
 
                   <div class="calculator__rooms">
                       <?php foreach(getHouseAreas() as $area) {?>
-                          <div class="room living-quarters" data-room-price="<?php echo $area["house-area-price"];?>">
+                          <div class="room living-quarters" data-room-price="<?php echo $area["house-area-price"];?>" data-tippy-content="<?php echo $area["cleaning_time"];?> hours">
                               <div class="room__img">
                               <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="25" height="23" style="
                                   shape-rendering: geometricPrecision;
