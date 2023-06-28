@@ -386,7 +386,7 @@ function checkSelectedLawnSize() {
 
 function showedSpollers() {
   //Скрываем все спойлеры
-  $(".spollers__item ").hide();
+  $(".calculator__spollers .spollers__item").hide();
 
   //Открываем необходимые спойлеры под выбранные услуги
   $(".service._select").each(function () {
