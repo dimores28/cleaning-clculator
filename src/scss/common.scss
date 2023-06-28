@@ -180,7 +180,6 @@
 
 //====================================================================================================
 .btn {
-  font-size: 18px;
   font-weight: 500;
   @include adaptiveValue("font-size", 18, 14);
   line-height: normal;

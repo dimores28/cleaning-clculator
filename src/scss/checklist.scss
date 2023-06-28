@@ -1,0 +1,97 @@
+.cleaning-checklist {
+    padding-top: 50px;
+    padding-bottom: 150px;
+
+    // .cleaning-checklist__container
+    &__container {
+    }
+
+    // .cleaning-checklist__heading
+    &__heading {
+        font-family: ArnoPro-SmbdDisplay, sans-serif;
+        color: #0e608c;
+        margin: 0 0 12px 0;
+        line-height: normal;
+        @include adaptiveValue("font-size", 55, 36);
+        text-align: center;
+    }
+
+    // .cleaning-checklist__decs
+    &__decs {
+        max-width: 800px;
+        margin: 0px auto 30px auto;
+        text-align: center;
+        font-family: ArnoPro-SmText;
+        color: #54a497;
+        @include adaptiveValue("font-size", 20, 16);
+    }
+
+    // .cleaning-checklist__spollers
+    &__spollers {
+        max-width: 960px;
+        margin: 0 auto;
+
+        .spollers__title {
+            padding: 1rem 0.9375rem;
+            font-family: $mainFont, sans-serif;
+            @include adaptiveValue("font-size", 20, 16);
+            font-weight: 500;
+            background-color: rgba(247,245,245,.59);
+           
+            display: flex;
+            align-items: center;
+
+            svg {
+                transition: all 0.3s ease-in;
+                margin-right: 8px;
+                fill: #3bafa2;
+            }
+        }
+
+        .spollers__title._spoller-active {
+            background-image: linear-gradient( to top,rgb(95, 218, 171), rgb(67, 196, 166));
+            color: #FFF;
+            transition: all 0.3s ease-in;
+
+            svg {
+                fill: #FFF;
+            }
+
+            &::before,
+            &::after {
+                background-color: #FFF;
+            }
+        }
+    }
+
+    &__list-check {
+        margin: 30px 0;
+        column-count: auto;
+        column-width: rem(350);
+
+        li {
+            margin-bottom: 16px;
+            padding-left: 36px;
+            position: relative;
+            font-family: $mainFont, sans-serif;
+            @include adaptiveValue("font-size", 16, 14);
+            color: #115b7e;
+
+            &::before {
+                content: '';
+                position: absolute;
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                background-color: #54a497;
+                background-image: url(../img/icons/angle-small-down.svg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                left: 0;
+            }
+        }
+    }
+}
+.spollers {
+}
