@@ -3,7 +3,7 @@
 	<footer class="footer" id="contacts" data-watch="navigator">
 			<div class="footer__container">
 				<div class="footer__logo">
-					<img class="footer__logo-img" src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" alt="logo" />
+					<img width="47.9726" height="48.9296" class="footer__logo-img" src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" alt="logo" />
 					<p class="footer__logo-desc">
 						We take pride in our attention to detail and commitment to customer
 						satisfaction.

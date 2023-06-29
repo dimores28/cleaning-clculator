@@ -59,11 +59,11 @@
 			<div class="header__bottom-menu">
 				<div class="header__container">
 					<div class="header__logo">
-						<a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" alt="logo TIVA Cleaning" /></a>
+						<a href="<?php echo get_home_url(); ?>"><img width="47.9726" height="48.9296" src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" alt="logo TIVA Cleaning" /></a>
 					</div>
 
 					<div class="header__logo-mobile">
-						<a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo_mobile.svg" alt="mobile logo TIVA Cleaning" /></a>
+						<a href="<?php echo get_home_url(); ?>"><img width="47.9726" height="14.6173" src="<?php bloginfo('template_url'); ?>/assets/img/logo_mobile.svg" alt="mobile logo TIVA Cleaning" /></a>
 					</div>
 
 					<div class="header__nav">
@@ -83,7 +83,7 @@
 										<a href="#" class="menu__link" data-goto-header data-goto="#why-us">Why us</a>
 									</li>
 									<li class="menu__item">
-										<a href="#" data-goto-header data-goto="#blog" class="menu__link">Blog</a>
+										<a href="https://www.tivacleaners.com/blog/" data-goto-header  class="menu__link">Blog</a>
 									</li>
 									<li class="menu__item">
 										<a href="#" class="menu__link" data-goto-header data-goto="#contacts">Contacts</a>
