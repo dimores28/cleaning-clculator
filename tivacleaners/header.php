@@ -77,13 +77,13 @@
 										<a href="<?php echo get_home_url(); ?>" class="menu__link">Home</a>
 									</li>
 									<li class="menu__item">
-										<a href="#" class="menu__link" data-goto-header data-goto="#calculator">Calculator</a>
+										<a href="<?php echo get_home_url(); ?>#calculator" class="menu__link">Calculator</a>
 									</li>
 									<li class="menu__item">
-										<a href="#" class="menu__link" data-goto-header data-goto="#why-us">Why us</a>
+										<a href="<?php echo get_home_url(); ?>#why-us" class="menu__link">Why us</a>
 									</li>
 									<li class="menu__item">
-										<a href="#" data-goto-header data-goto="#blog" class="menu__link">Blog</a>
+										<a href="https://www.tivacleaners.com/blog" class="menu__link">Blog</a>
 									</li>
 									<li class="menu__item">
 										<a href="#" class="menu__link" data-goto-header data-goto="#contacts">Contacts</a>
