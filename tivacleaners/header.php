@@ -10,6 +10,13 @@
 
 	<link rel="shortcut icon" href="favicon.ico" />
 
+	<meta property="og:site_name" content="tivacleaners.com">
+    <meta property="og:url" content="www.tivacleaners.com/">
+	<meta name="theme-color" content="#50a4ed"/>
+	<meta name="robots" content="max-image-preview:large">
+	<meta name="description"
+		content="Whether you live in an apartment or a house, we are here to provide you with top-notch cleaning services that will leave your home spotless and sparkling.">
+
 	<!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" /> -->
@@ -59,11 +66,11 @@
 			<div class="header__bottom-menu">
 				<div class="header__container">
 					<div class="header__logo">
-						<a href="<?php echo get_home_url(); ?>"><img width="47.9726" height="48.9296" src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" alt="logo TIVA Cleaning" /></a>
+						<a href="<?php echo get_home_url(); ?>"><img width="47.9726" height="48.9296" src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" width="120" height="123" alt="logo TIVA Cleaning" /></a>
 					</div>
 
 					<div class="header__logo-mobile">
-						<a href="<?php echo get_home_url(); ?>"><img width="47.9726" height="14.6173" src="<?php bloginfo('template_url'); ?>/assets/img/logo_mobile.svg" alt="mobile logo TIVA Cleaning" /></a>
+						<a href="<?php echo get_home_url(); ?>"><img width="47.9726" height="14.6173" src="<?php bloginfo('template_url'); ?>/assets/img/logo_mobile.svg" width="132" height="40" alt="mobile logo TIVA Cleaning" /></a>
 					</div>
 
 					<div class="header__nav">
