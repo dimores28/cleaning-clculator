@@ -59,11 +59,11 @@
 			<div class="header__bottom-menu">
 				<div class="header__container">
 					<div class="header__logo">
-						<a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" alt="logo TIVA Cleaning" /></a>
+						<a href="<?php echo get_home_url(); ?>"><img width="47.9726" height="48.9296" src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" alt="logo TIVA Cleaning" /></a>
 					</div>
 
 					<div class="header__logo-mobile">
-						<a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/assets/img/logo_mobile.svg" alt="mobile logo TIVA Cleaning" /></a>
+						<a href="<?php echo get_home_url(); ?>"><img width="47.9726" height="14.6173" src="<?php bloginfo('template_url'); ?>/assets/img/logo_mobile.svg" alt="mobile logo TIVA Cleaning" /></a>
 					</div>
 
 					<div class="header__nav">
