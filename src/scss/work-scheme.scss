@@ -94,7 +94,7 @@
   position: relative;
   &::before {
     content: "";
-    background-image: url(../img/arrow.png);
+    background-image: url(../img/arrow.webp);
     position: absolute;
     width: 50px;
     height: 37px;
@@ -155,7 +155,7 @@
       font-size: 24px;
     }
 
-    @media (max-width:$mobileSmall){
+    @media (max-width: $mobileSmall) {
       height: 26px;
       width: 26px;
       font-size: 18px;
