@@ -17,7 +17,7 @@ Template Name: Blog
 
                $myposts = get_posts([ 
                   'numberposts' => -1,
-                  'order'       => 'ASC',
+                  'order'       => 'DESC',
                   'category'    => 0
                ]);
 

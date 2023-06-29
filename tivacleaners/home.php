@@ -931,7 +931,7 @@ Template Name: Home
 
             $myposts = get_posts([ 
               'numberposts' => 3,
-              'order'       => 'ASC',
+              'order'       => 'DESC',
               'category'    => 0
             ]);
 
