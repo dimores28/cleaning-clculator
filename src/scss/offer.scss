@@ -387,7 +387,7 @@
   }
 
   @media (max-width: $mobileSmall) {
-    padding: 24px 5px 20px 5px;
+    padding: 18px 5px 12px 5px;
   }
 
   svg {
@@ -407,7 +407,11 @@
   }
 
   p {
-    height: 48px;
+    height: 34px;
+
+    @media (max-width: em(354)){
+      height: 46px;
+    }
   }
 
   &__img {
