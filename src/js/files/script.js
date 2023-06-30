@@ -711,6 +711,7 @@ if(isMobile) {
     noCalendar: true,
     dateFormat: "H:i",
     position: "above",
+    disableMobile: "false"
   });
 }
 
