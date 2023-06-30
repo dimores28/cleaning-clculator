@@ -700,19 +700,38 @@ $("#payment_method").on("change", function () {
 let datapiker = flatpickr("#cleaningDate", {
   position: "above",
   minDate: new Date(),
+  onChange: function(selectedDates, dateStr, instance) {
+    if(selectedDates.length == 0) {
+      setDatePick();
+    }
+  },
 });
 
-datapiker.setDate(new Date(), true);
+function setDatePick() {
+  datapiker.setDate(new Date(), true);
+}
+setDatePick();
 
 
 let timepicker = flatpickr("#timeInput", {
   enableTime: true,
   noCalendar: true,
   dateFormat: "H:i",
-  position: "above"
+  position: "above",
+  onChange: function(selectedDates, dateStr, instance) {
+    if(selectedDates.length == 0) {
+      setTime();
+    }
+  },
 });
 
-timepicker.setDate("12:00",true);
+function setTime(){
+  timepicker.setDate("12:00",true);
+}
+
+setTime();
+
+
 
 
 
