@@ -697,11 +697,12 @@ $("#payment_method").on("change", function () {
 });
 
 //Module calendar
-flatpickr("#cleaningDate", {
+let datapiker = flatpickr("#cleaningDate", {
   position: "above",
   minDate: new Date(),
-  disableMobile: "true"
 });
+
+datapiker.setDate(new Date(), true);
 
 
 let timepicker = flatpickr("#timeInput", {
