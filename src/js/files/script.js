@@ -1,5 +1,5 @@
 // Підключення функціоналу "Чертоги Фрілансера"
-import { isMobile } from "./functions.js";
+import { isMobile, menuClose } from "./functions.js";
 // Підключення списку активних модулів
 import { flsModules } from "./modules.js";
 // import '../jquery.min.js';
@@ -737,6 +737,12 @@ document.querySelector(".poster__btn")?.addEventListener("click", function () {
 });
 document.querySelector(".header__btn")?.addEventListener("click", function () {
   flsModules.popup.open("#popup");
+});
+
+$('.menu__link').on('click', function(){
+  if(!$(this).is('[data-goto]')) {
+    document.documentElement.classList.contains("menu-open") ? menuClose() : null;
+  }
 });
 
 //client_reference_id
