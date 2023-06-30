@@ -704,7 +704,7 @@ flatpickr("#cleaningDate", {
 });
 
 
-if(isMobile) {
+if(!isMobile) {
   //input Time
   flatpickr("#timeInput", {
     enableTime: true,
@@ -713,6 +713,9 @@ if(isMobile) {
     position: "above",
     disableMobile: "false"
   });
+}
+else {
+  $('#timeInput').get(0).type = 'time';
 }
 
 
