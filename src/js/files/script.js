@@ -704,12 +704,14 @@ flatpickr("#cleaningDate", {
 });
 
 
-flatpickr("#timeInput", {
+let timepicker = flatpickr("#timeInput", {
   enableTime: true,
   noCalendar: true,
   dateFormat: "H:i",
   position: "above"
 });
+
+timepicker.setDate("12:00",true);
 
 
 
