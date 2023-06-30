@@ -704,19 +704,13 @@ flatpickr("#cleaningDate", {
 });
 
 
-if(!isMobile) {
-  //input Time
-  flatpickr("#timeInput", {
-    enableTime: true,
-    noCalendar: true,
-    dateFormat: "H:i",
-    position: "above",
-    disableMobile: "false"
-  });
-}
-else {
-  $('#timeInput').get(0).type = 'time';
-}
+flatpickr("#timeInput", {
+  enableTime: true,
+  noCalendar: true,
+  dateFormat: "H:i",
+  position: "above"
+});
+
 
 
 
