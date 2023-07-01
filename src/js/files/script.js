@@ -704,12 +704,21 @@ let datapiker = flatpickr("#cleaningDate", {
     if(selectedDates.length == 0) {
       setDatePick();
     }
+    console.log(selectedDates)
   },
+});
+
+$('#cleaningDate').on('input', function(){
+
+  if($(this).val() === '') {
+    setDatePick();
+  }
 });
 
 function setDatePick() {
   datapiker.setDate(new Date(), true);
 }
+
 setDatePick();
 
 
@@ -728,6 +737,13 @@ let timepicker = flatpickr("#timeInput", {
 function setTime(){
   timepicker.setDate("12:00",true);
 }
+
+$('#timeInput').on('input', function(){
+
+  if($(this).val() === '') {
+    setTime();
+  }
+});
 
 setTime();
 
