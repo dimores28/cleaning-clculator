@@ -697,21 +697,60 @@ $("#payment_method").on("change", function () {
 });
 
 //Module calendar
-flatpickr("#cleaningDate", {
+let datapiker = flatpickr("#cleaningDate", {
   position: "above",
   minDate: new Date(),
-  disableMobile: "true"
+  onChange: function(selectedDates, dateStr, instance) {
+    if(selectedDates.length == 0) {
+      setDatePick();
+    }
+    console.log(selectedDates)
+  },
 });
 
+$('#cleaningDate').on('input', function(){
 
-//input Time
-flatpickr("#timeInput", {
+  if($(this).val() === '') {
+    setDatePick();
+  }
+});
+
+function setDatePick() {
+  datapiker.setDate(new Date(), true);
+}
+
+setDatePick();
+
+
+let timepicker = flatpickr("#timeInput", {
   enableTime: true,
   noCalendar: true,
   dateFormat: "H:i",
   position: "above",
-  disableMobile: "true"
+  onChange: function(selectedDates, dateStr, instance) {
+    if(selectedDates.length == 0) {
+      setTime();
+    }
+  },
 });
+
+function setTime(){
+  timepicker.setDate("12:00",true);
+}
+
+$('#timeInput').on('input', function(){
+
+  if($(this).val() === '') {
+    setTime();
+  }
+});
+
+setTime();
+
+
+
+
+
 
 
 document.addEventListener("DOMContentLoaded", function () {

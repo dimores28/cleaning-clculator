@@ -35,10 +35,10 @@ Template Name: Home
   <section class="offer" id="calculator">
     <img src="<?php bloginfo('template_url'); ?>/assets/img/themes/calc_bg.webp" class="offer__bg" alt="background image" width="1500" height="700" />
     <div class="offer__container">
-      <h2 class="offer__sub-title">
+      <h3 class="offer__sub-title">
         What service are you interested in?
-      </h2>
-      <h1 class="offer__heading">Quote Calculator</h1>
+      </h3>
+      <h2 class="offer__heading">Quote Calculator</h2>
       <div class="offer__calculator calculator">
         <div class="calculator__services">
           <div class="service" data-service-price="30" data-service="1">
@@ -761,7 +761,7 @@ Template Name: Home
       </div>
       <div class="why-us__text">
         <p class="why-us__subheading">OUR SPECIALITY</p>
-        <h1 class="why-us__heading">Why Choose Us</h1>
+        <h2 class="why-us__heading">Why Choose Us</h2>
         <p class="why-us__body">
           We take pride in our attention to detail and commitment to
           customer satisfaction. Our team of professional cleaners is
