@@ -37,7 +37,7 @@
 
 		gtag('config', 'G-2QHGCGXS08');
 	</script>
-	<!-- <meta name="robots" content="noindex, nofollow"> -->
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 
