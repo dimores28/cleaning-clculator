@@ -35,6 +35,11 @@ if($numberBathrooms) {
    $body.='<p><strong>Number of Bathrooms: </strong>'.$_POST['numberBathrooms'].'</p>';
 }
 
+$numberReception =  trim(!empty($_POST['numberReception']));
+if($numberReception) {
+   $body.='<p><strong>Number of Receptions: </strong>'.$_POST['numberReception'].'</p>';
+}
+
 $extras =  trim(!empty($_POST['extras']));
 if($extras) {
    $body.='<p><strong>Extras: </strong>'.$_POST['extras'].'</p>';

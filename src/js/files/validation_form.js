@@ -9,11 +9,11 @@ function isValidEmail(value) {
 }
 
 function isValidLastName(value) {
-  return /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/.test(value);
+  return /^[a-zA-Z\-]+$/.test(value);
 }
 
 function isValidName(value) {
-  return /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/.test(value);
+  return /^[a-zA-Z\-]+$/.test(value);
 }
 
 function isValidZipCode(value) {

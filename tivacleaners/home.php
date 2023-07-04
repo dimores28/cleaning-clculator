@@ -224,6 +224,27 @@ Template Name: Home
                         <?php }?> 
                     </div>
                   </div>
+
+                  <div class="reception">
+                    <h4 class="sub-title">How many reception room(s) need cleaning?</h4>
+                    <div class="reception__block">
+                      <div class="reception__item" data-reception-price="25">
+                        1
+                      </div>
+                      <div class="reception__item" data-reception-price="50">
+                        2
+                      </div>
+                      <div class="reception__item" data-reception-price="75">
+                        3
+                      </div>
+                      <div class="reception__item" data-reception-price="100">
+                        4
+                      </div>
+                      <div class="reception__item" data-reception-price="125">
+                        5
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="block-row">
@@ -520,7 +541,7 @@ Template Name: Home
         </div>
 
         <div class="calculator__form" style="display: none">
-          <form id="calcForm" class="calc__form">
+          <form id="calcForm" class="calc__form payment">
             <div class="form__loader calc__loader">
               <span class="loader"></span>
             </div>
@@ -588,6 +609,7 @@ Template Name: Home
                 <input type="hidden" name="houseSize" />
                 <input type="hidden" name="numberBeadroom" />
                 <input type="hidden" name="numberBathrooms" />
+                <input type="hidden" name="numberReception" />
                 <input type="hidden" name="extras" />
                 <input type="hidden" name="cleaningLevel" />
 
@@ -633,8 +655,8 @@ Template Name: Home
                 Select a Payment Method
               </h2>
               <select name="payment_method" class="form-control form-select" id="payment_method">
-                <option value="1">Payment upon receipt</option>
                 <option value="2">Payment on site</option>
+                <option value="1">Payment upon receipt</option>
               </select>
             </div>
 

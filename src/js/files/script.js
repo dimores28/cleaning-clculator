@@ -10,6 +10,7 @@ let step = 1;
 let roomPrice = 0;
 let bedroomsPrice = 0;
 let bathroomsPrice = 0;
+let receptionPprice = 0;
 let extrasPrice = 0;
 let homeCleaningPrice = 0;
 //===============
@@ -65,6 +66,19 @@ $(".bathrooms__item").on("click", function () {
   updetePrice();
 
   $('[name="numberBathrooms"]').val($(this).text());
+});
+
+$(".reception__item").on("click", function () {
+  $(".reception__item").removeClass("_select");
+  $(this).toggleClass("_select");
+
+  //калькуляция цены
+  const price = parseInt($(this).attr("data-reception-price"));
+  receptionPprice = parseInt(price);
+  updeteHomeCleaningPrice();
+  updetePrice();
+
+  $('[name="numberReception"]').val($(this).text());
 });
 
 $(".living-extras").on("click", function () {
@@ -400,7 +414,8 @@ function updeteHomeCleaningPrice() {
     parseInt(roomPrice) +
     parseInt(bedroomsPrice) +
     parseInt(extrasPrice) +
-    parseInt(bathroomsPrice);
+    parseInt(bathroomsPrice) +
+    parseInt(receptionPprice);
 }
 
 function updateAllRepairCleanPrice() {
