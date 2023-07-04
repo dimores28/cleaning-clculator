@@ -119,6 +119,12 @@ $("#clDeep").on("click", function () {
   $('[name="cleaningLevel"]').val("Deep");
 });
 
+$('#isCleanWindow').on('click', function(){
+  $(this).toggleClass("_select");
+  $('[data-service="2"]').trigger("click");
+  $('[data-service-filters="2"]').slideToggle("slow");
+})
+
 $('[data-service="1"]').on("click", function () {
   $('[name="houseClean"]').val($(this).text());
 

@@ -228,19 +228,19 @@ Template Name: Home
                   <div class="reception">
                     <h4 class="sub-title">How many reception room(s) need cleaning?</h4>
                     <div class="reception__block">
-                      <div class="reception__item" data-reception-price="25">
+                      <div class="reception__item" data-reception-price="10">
                         1
                       </div>
-                      <div class="reception__item" data-reception-price="50">
+                      <div class="reception__item" data-reception-price="20">
                         2
                       </div>
-                      <div class="reception__item" data-reception-price="75">
+                      <div class="reception__item" data-reception-price="30">
                         3
                       </div>
-                      <div class="reception__item" data-reception-price="100">
+                      <div class="reception__item" data-reception-price="40">
                         4
                       </div>
-                      <div class="reception__item" data-reception-price="125">
+                      <div class="reception__item" data-reception-price="50">
                         5
                       </div>
                     </div>
@@ -288,6 +288,11 @@ Template Name: Home
                       Deep
                     </button>
                   </div>
+                </div>
+
+                <div class="block-row">
+                  <h3 class="block-row__title">4. Wash windows?</h3>
+                  <button class="switsh-btn" id="isCleanWindow">YES</button>
                 </div>
               </div>
             </div>
