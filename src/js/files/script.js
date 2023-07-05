@@ -345,6 +345,7 @@ function stepControl() {
 
     // $(".calculator__total-price span").text();
     $('.calculator__full-price').hide();
+    updetePrice();
 
     scrollTopOffer();
   }

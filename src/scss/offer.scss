@@ -74,6 +74,7 @@
     justify-content: center;
     gap: 12px;
     margin-bottom: 20px;
+    margin-top: 20px;
 
     div {
       width: 16px;
@@ -201,7 +202,7 @@
 
   &__total-price {
     font-family: $mainFont, sans-serif;
-    @include adaptiveValue("font-size", 60, 40);
+    @include adaptiveValue("font-size", 52, 36);
     line-height: normal;
     letter-spacing: normal;
     font-weight: 500;
@@ -228,7 +229,7 @@
 
   &__full-price {
     font-family: $mainFont, sans-serif;
-    @include adaptiveValue("font-size", 20, 14);
+    @include adaptiveValue("font-size", 28, 18);
     line-height: normal;
     letter-spacing: normal;
     text-align: center;

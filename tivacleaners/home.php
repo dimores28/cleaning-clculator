@@ -681,6 +681,10 @@ Template Name: Home
           $<span>0</span><strong>(+GST 5%)</strong>
         </div>
 
+        <div class="calculator__full-price">
+          $<span>0</span>
+        </div>
+
         <p class="calculator__alerts">
           Please make a selection to continue
         </p>
