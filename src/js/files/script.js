@@ -322,6 +322,7 @@ function stepControl() {
 
     $(".calculator__total-price").css({ opacity: "0", "max-height": "0" });
     $(".calculator__btn-prev").hide();
+    $(".calculator__total-price span").text('');
     scrollTopOffer();
   }
 
@@ -335,6 +336,8 @@ function stepControl() {
     $(".calculator__total-price").css({ opacity: "1", "max-height": "unset" });
     $(".calculator__total-price strong").hide();
 
+
+    // $(".calculator__total-price span").text();
     $('.calculator__full-price').hide();
 
     scrollTopOffer();
