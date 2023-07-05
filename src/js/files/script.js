@@ -328,6 +328,7 @@ function stepControl() {
 
     $(".calculator__total-price").css({ opacity: "0", "max-height": "0" });
     $(".calculator__btn-prev").hide();
+    $(".calculator__total-price span").text('');
     scrollTopOffer();
   }
 
@@ -341,6 +342,10 @@ function stepControl() {
     $(".calculator__total-price").css({ opacity: "1", "max-height": "unset" });
     $(".calculator__total-price strong").hide();
 
+
+    // $(".calculator__total-price span").text();
+    $('.calculator__full-price').hide();
+
     scrollTopOffer();
   }
 
@@ -350,8 +355,20 @@ function stepControl() {
 
     $(".calculator__btn-next").hide();
 
-    //встаривание цены в платежную систему
+    //цена без скидки
     let price = $(".calculator__total-price span").text();
+    let procent = parseInt($('.payment-options__option._setected').attr("data-discont-procent"));
+    console.log(procent);
+
+    if(procent) {
+      $('.calculator__full-price').show();
+      $('.calculator__full-price span').text(price);
+
+      price = price * ((100 - procent) / 100);
+      $(".calculator__total-price span").text(price);
+    }
+
+    //встаривание цены в платежную систему
     let totalPrice = price * 1.05;
     $('.stripe-form input[name="item_price"]').val(totalPrice.toFixed(2));
     $("#totalPrice").val(totalPrice.toFixed(2));
