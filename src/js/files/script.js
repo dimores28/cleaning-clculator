@@ -359,7 +359,6 @@ function stepControl() {
     //цена без скидки
     let price = $(".calculator__total-price span").text();
     let procent = parseInt($('.payment-options__option._setected').attr("data-discont-procent"));
-    console.log(procent);
 
     if(procent) {
       $('.calculator__full-price').show();
@@ -376,6 +375,7 @@ function stepControl() {
     $("#clientId").val(
       $('.stripe-form input[name="client_reference_id"]').val()
     );
+
 
     $(".calculator__total-price strong").text("(+GST 5%)");
     $(".calculator__total-price strong").show();
@@ -589,6 +589,7 @@ $('[data-service="2"]').on("click", function () {
     windowsPrice = parseInt(price);
 
     $('[name="cleaningWindow"]').val($(this).text());
+    $('[name="outsideWindowsClean"]').val("Outside");
   } else {
     windowsPrice = 0;
     flsModules.rangeWindows?.noUiSlider.set(0);
@@ -730,8 +731,12 @@ $("#buyNowBtn").on("click", function () {
 $("#payment_method").on("change", function () {
   if (this.value == 2) {
     $("#calcForm").addClass("payment");
+    $("#clientId").val(
+      $('.stripe-form input[name="client_reference_id"]').val()
+    );
   } else {
     $("#calcForm").removeClass("payment");
+    $("#clientId").val('');
   }
 });
 

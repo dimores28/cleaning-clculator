@@ -621,7 +621,7 @@ Template Name: Home
                 <!-- window cleaning -->
                 <input type="hidden" name="cleaningWindow" />
                 <input type="hidden" name="insideWindowsClean" />
-                <input type="hidden" name="outsideWindowsClean" value="Outside" />
+                <input type="hidden" name="outsideWindowsClean" />
                 <input type="hidden" name="numberWindow" />
 
                 <!-- Lawn mowing -->
