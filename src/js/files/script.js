@@ -43,42 +43,68 @@ $(".living-quarters").on("click", function () {
 });
 
 $(".bedrooms__item").on("click", function () {
-  $(".bedrooms__item").removeClass("_select");
+  $(".bedrooms__item").not(this).removeClass("_select");
   $(this).toggleClass("_select");
 
-  //калькуляция цены
-  const price = parseInt($(this).attr("data-bedroom-price"));
-  bedroomsPrice = parseInt(price);
-  updeteHomeCleaningPrice();
-  updetePrice();
+  if($(this).hasClass("_select")){
+    //калькуляция цены
+    const price = parseInt($(this).attr("data-bedroom-price"));
+    bedroomsPrice = parseInt(price);
+    updeteHomeCleaningPrice();
+    updetePrice();
 
-  $('[name="numberBeadroom"]').val($(this).text());
+    $('[name="numberBeadroom"]').val($(this).text());
+  } else {
+    bedroomsPrice = 0;
+    updeteHomeCleaningPrice();
+    updetePrice();
+
+    $('[name="numberBeadroom"]').val('');
+  }
+
 });
 
 $(".bathrooms__item").on("click", function () {
-  $(".bathrooms__item").removeClass("_select");
+  $(".bathrooms__item").not(this).removeClass("_select");
   $(this).toggleClass("_select");
 
-  //калькуляция цены
-  const price = parseInt($(this).attr("data-bathrooms-price"));
-  bathroomsPrice = parseInt(price);
-  updeteHomeCleaningPrice();
-  updetePrice();
+  if($(this).hasClass("_select")) {
+    //калькуляция цены
+    const price = parseInt($(this).attr("data-bathrooms-price"));
+    bathroomsPrice = parseInt(price);
+    updeteHomeCleaningPrice();
+    updetePrice();
 
-  $('[name="numberBathrooms"]').val($(this).text());
+    $('[name="numberBathrooms"]').val($(this).text());
+  }
+  else {
+    bathroomsPrice = 0;
+    updeteHomeCleaningPrice();
+    updetePrice();
+    $('[name="numberBathrooms"]').val('');
+  }
 });
 
 $(".reception__item").on("click", function () {
-  $(".reception__item").removeClass("_select");
+  $(".reception__item").not(this).removeClass("_select");
   $(this).toggleClass("_select");
 
-  //калькуляция цены
-  const price = parseInt($(this).attr("data-reception-price"));
-  receptionPprice = parseInt(price);
-  updeteHomeCleaningPrice();
-  updetePrice();
+  if($(this).hasClass("_select")){
+    //калькуляция цены
+    const price = parseInt($(this).attr("data-reception-price"));
+    receptionPprice = parseInt(price);
+    updeteHomeCleaningPrice();
+    updetePrice();
 
-  $('[name="numberReception"]').val($(this).text());
+    $('[name="numberReception"]').val($(this).text());
+  } else {
+    receptionPprice = 0;
+    updeteHomeCleaningPrice();
+    updetePrice();
+
+    $('[name="numberReception"]').val('');
+  }
+
 });
 
 $(".living-extras").on("click", function () {
@@ -169,16 +195,25 @@ $(".after-repair").on("click", function () {
 });
 
 $(".bathrooms-ar__item").on("click", function () {
-  $(".bathrooms-ar__item").removeClass("_select");
+  $(".bathrooms-ar__item").not(this).removeClass("_select");
   $(this).toggleClass("_select");
 
-  //калькуляция цены
-  const price = parseInt($(this).attr("data-bathrooms-price"));
-  bathroomsARPrice = parseInt(price);
-  updateAllRepairCleanPrice();
-  updetePrice();
+  if($(this).hasClass("_select")){
+    //калькуляция цены
+    const price = parseInt($(this).attr("data-bathrooms-price"));
+    bathroomsARPrice = parseInt(price);
+    updateAllRepairCleanPrice();
+    updetePrice();
 
-  $('[name="renovationNumberBathrooms"]').val($(this).text());
+    $('[name="renovationNumberBathrooms"]').val($(this).text());
+  } else {
+    bathroomsARPrice = 0;
+    updateAllRepairCleanPrice();
+    updetePrice();
+
+    $('[name="renovationNumberBathrooms"]').val('');
+  }
+
 });
 
 $(".renovation-extras").on("click", function () {
