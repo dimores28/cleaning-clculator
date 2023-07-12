@@ -864,3 +864,7 @@ $('.menu__link').on('click', function(){
 });
 
 //client_reference_id
+
+$('.review__link').on('click', function(){
+  $(this).parent('.review').toggleClass('_more');
+});
