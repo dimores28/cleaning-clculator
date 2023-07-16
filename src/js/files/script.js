@@ -701,10 +701,10 @@ function updetePrice() {
     dopProcent = homeCleaningPrice * 1.2 - homeCleaningPrice;
   }
 
-  let isRepairExtras = $(".renovation-extras._setected");
+  // let isRepairExtras = $(".renovation-extras._setected");
   let dopRepairProcent = 0;
 
-  if (isRepairClinlevel && isRepairExtras.length) {
+  if (isRepairClinlevel) {
     dopRepairProcent = repairCleanPrice * 1.25 - repairCleanPrice;
   }
 
