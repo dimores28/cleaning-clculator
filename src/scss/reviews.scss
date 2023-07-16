@@ -1,0 +1,154 @@
+.reviews {
+    padding-bottom: 100px;
+
+    @media (max-width:$mobileSmall){
+        padding-bottom: 80px;
+    }
+
+    // .reviews__container
+    &__container {
+    }
+
+    // .reviews__heading
+    &__heading {
+        font-family: ArnoPro-SmbdDisplay, sans-serif;
+        color: #0e608c;
+        margin: 0 0 12px 0;
+        line-height: normal;
+        @include adaptiveValue("font-size", 55, 36);
+        text-align: center;
+    }
+
+    // .reviews__content
+    &__content {
+    }
+
+    // .reviews__slider
+    &__slider {
+        padding: 0 10px;
+    }
+
+    // .reviews__wrapper
+    &__wrapper {
+        padding: 30px 0px 30px;
+        min-width: 0;
+    }
+
+    // .reviews__slide
+    &__slide {
+    }
+}
+
+.review {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 32px 24px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: -1px 5.9px 10px 1.5px rgba(202, 202, 202, 0.63);
+
+    @media (max-width:$mobileSmall){
+         width: 98%; 
+         box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+         gap: 10px;
+         padding: 24px 16px 20px 16px;
+    }
+
+    &__head {
+        display: flex;
+        gap: 16px;
+    }
+
+    // .review__photo
+    &__photo {
+        width: 60px;
+        height: 60px;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+        }
+    }
+
+    // .review__fullname
+    &__fullname {
+        @include adaptiveValue("font-size", 18, 16);
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 8px;
+    }
+
+    &__date {
+        @include adaptiveValue("font-size", 14, 12);
+        font-weight: 400;
+        line-height: normal;
+        color: #0fa49b;
+    }
+
+    &__rating {
+        @include adaptiveValue("font-size", 40, 28);
+        .rating__value {
+            opacity: 0;
+        }
+    }
+
+    // .review__text
+    &__text {
+        @include adaptiveValue("font-size", 16, 14);
+        font-style: normal;
+        line-height: 1.2;
+        @include multiline-clamp(1.2em, 4, 4.8em);
+    }
+
+    &._more {
+        .review__text {
+            overflow: visible;
+            max-height: unset;
+            display: block;
+        }
+    }
+
+    // .review__link
+    &__link {
+        opacity: 0.8;
+        color: #0e608c;
+        position: relative;
+        font-family: GothamPro, sans-serif;
+        transition: all 0.3s ease-in;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 0%;
+            height: 1px;
+            background-color: #0e608c;
+            bottom: -2px;
+            transition: all 0.3s ease-in;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+              opacity: 1;
+
+              &::before {
+                width: 100%;
+              }
+            }
+          }
+    }
+}
+
+.section-heading {
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+
+

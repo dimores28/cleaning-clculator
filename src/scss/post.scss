@@ -19,7 +19,7 @@
     line-height: 1.33;
     text-align: center;
     color: #0c6185;
-    max-width: 800;
+    max-width: 800px;
     margin: 0 auto 40px auto;
   }
 
@@ -28,9 +28,10 @@
       font-family: ArnoPro-SmbdDisplay, sans-serif;
       @include adaptiveValue("font-size", 55, 36);
       color: #0e608c;
-      line-height: normal;
+      line-height: 0.9;
       text-align: center;
-      margin: 30px 0;
+      max-width: 800px;
+      margin: 30px auto;
     }
 
     h3 {
