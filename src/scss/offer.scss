@@ -7,6 +7,10 @@
     padding-top: 84px;
   }
 
+  @media (max-width:$mobileSmall){
+     padding-top: 34px; 
+  }
+
   // .offer__bg
   &__bg {
     position: absolute;

@@ -492,6 +492,16 @@ Template Name: Home
                         class="range"></div>
                       </div>
                     </div>
+
+                    <div class="number-windows__group-btn">
+                      <button class="switsh-btn exterior-window" id="inside-pr">
+                        <span>Inside</span>
+                      </button>
+
+                      <button class="switsh-btn exterior-window _select" id="outside-pr">
+                        <span>Outside</span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -639,6 +649,8 @@ Template Name: Home
                 <input type="hidden" name="renovationExtras" />
                 <input type="hidden" name="renovationCleaningLevel" />
                 <input type="hidden" name="renovationNumberWindows" />
+                <input type="hidden" name="renovationWindowsInside" />
+                <input type="hidden" name="renovationWindowsOutside" />
               </div>
               <div class="calculator__alert"></div>
 

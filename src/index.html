@@ -1029,8 +1029,18 @@
                             Number of windows
                           </h3>
                           <div class="number-windows__renge">
-                            <div id="numberWindows" data-from="0" data-to="30" data-price-window="12" class="range">
+                            <div id="numberWindows" data-from="0" data-to="30" data-price-window="7" data-price-exterior-window="10" class="range">
                             </div>
+                          </div>
+
+                          <div class="number-windows__group-btn">
+                            <button class="switsh-btn exterior-window" id="inside-pr">
+                              <span>Inside</span>
+                            </button>
+    
+                            <button class="switsh-btn exterior-window _select" id="outside-pr">
+                              <span>Outside</span>
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -1170,7 +1180,7 @@
                     <!-- window cleaning -->
                     <input type="hidden" name="cleaningWindow" />
                     <input type="hidden" name="insideWindowsClean" />
-                    <input type="hidden" name="outsideWindowsClean" value="Outside" />
+                    <input type="hidden" name="outsideWindowsClean"/>
                     <input type="hidden" name="numberWindow" />
 
                     <!-- Lawn mowing -->
@@ -1188,6 +1198,9 @@
                     <input type="hidden" name="renovationExtras" />
                     <input type="hidden" name="renovationCleaningLevel" />
                     <input type="hidden" name="renovationNumberWindows" />
+                    <input type="hidden" name="renovationWindowsInside" />
+                    <input type="hidden" name="renovationWindowsOutside" />
+
                   </div>
                   <div class="calculator__alert"></div>
 
@@ -2069,6 +2082,7 @@
     </main>
     @@include('html/_footer.htm',{}) @@include('html/_popup.htm',{})
   </div>
+  @@include('html/_preloader.htm',{})
   @@include('html/_js.htm',{})
 </body>
 

@@ -24,6 +24,7 @@ let bathroomsARPrice = 0;
 let repairExtras = 0;
 let repairWindowPrice = 0;
 let repairCleanPrice = 0;
+let exteriorWindowPR = false;
 
 $(".service").on("click", function () {
   $(this).toggleClass("_select");
@@ -269,6 +270,47 @@ flsModules.numberWindows?.noUiSlider.on("update", function (values, handle) {
   updetePrice();
 });
 
+
+
+$("#inside-pr").on("click", function () {
+  $(this).toggleClass("_select");
+
+  if ($(this).hasClass("_select") && $("#outside-pr").hasClass("_select")) {
+    exteriorWindowPR = true;
+  } else {
+    exteriorWindowPR = false;
+  }
+
+  if($(this).hasClass("_select")) {
+    $('[name="renovationWindowsInside"]').val("Inside");
+  } else {
+    $('[name="renovationWindowsInside"]').val("");
+  }
+
+  updateAllRepairCleanPrice();
+  updetePrice();
+});
+
+$("#outside-pr").on("click", function () {
+  $(this).toggleClass("_select");
+
+  if ($(this).hasClass("_select") && $("#inside-pr").hasClass("_select")) {
+    exteriorWindowPR = true;
+  } else {
+    exteriorWindowPR = false;
+  }
+
+  if($(this).hasClass("_select")) {
+    $('[name="renovationWindowsOutside"]').val("Outside");
+  } else {
+    $('[name="renovationWindowsOutside"]').val("");
+  }
+
+
+  updateAllRepairCleanPrice();
+  updetePrice();
+});
+
 $('[data-service="5"]').on("click", function () {
   $('[name="afterRenovationClean"').val($(this).text());
 
@@ -478,10 +520,18 @@ function updeteHomeCleaningPrice() {
 }
 
 function updateAllRepairCleanPrice() {
+  let windowsPrice = repairWindowPrice;
+  const price = $("#numberWindows").attr("data-price-exterior-window");
+  let numberWindows = flsModules.numberWindows?.noUiSlider.get()
+
+  if( exteriorWindowPR ) {
+    windowsPrice = price * numberWindows;
+  }
+
   repairCleanPrice =
     parseInt(squerePrice) +
     parseInt(repairExtras) +
-    parseInt(repairWindowPrice) +
+    parseInt(windowsPrice) +
     parseInt(bathroomsARPrice);
 }
 
