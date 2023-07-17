@@ -488,7 +488,8 @@ Template Name: Home
                         <div id="numberWindows" 
                           data-from="<?php echo $window["min_number__windows"]; ?>" 
                           data-to="<?php echo $window["max_number_windows"]; ?>" 
-                          data-price-window="<?php echo $window["price__both_sides"]; ?>" 
+                          data-price-window="<?php echo $window["one_side_price"]; ?>" 
+                          data-price-exterior-window="<?php echo $window["price__both_sides"]; ?>" 
                         class="range"></div>
                       </div>
                     </div>

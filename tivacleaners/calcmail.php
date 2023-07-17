@@ -123,6 +123,16 @@ if($renovationNumberWindows) {
    $body.='<p><strong>Number of windows: </strong>'.$_POST['renovationNumberWindows'].'</p>';
 }
 
+$renovationWindowsInside =  trim(!empty($_POST['renovationWindowsInside']));
+if($renovationWindowsInside) {
+   $body.='<p>'.$_POST['renovationWindowsInside'].'</p>';
+}
+
+$renovationWindowsOutside =  trim(!empty($_POST['renovationWindowsOutside']));
+if($renovationWindowsOutside) {
+   $body.='<p>'.$_POST['renovationWindowsOutside'].'</p>';
+}
+
 $renovationCleaningLevel =  trim(!empty($_POST['renovationCleaningLevel']));
 if($renovationCleaningLevel) {
    $body.='<p><strong>Cleaning level: </strong>'.$_POST['renovationCleaningLevel'].'</p>';

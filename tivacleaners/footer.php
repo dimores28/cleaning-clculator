@@ -123,6 +123,159 @@
 		</div>
 
 	</div>
+		<!-- Стилі для body -->
+		<style>
+		.lock body {
+			overflow: hidden;
+			touch-action: none;
+			overscroll-behavior: none;
+		}
+
+		.loading body {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		.loaded body {
+			transition: opacity 0.5s ease 0s;
+			opacity: 1;
+			visibility: visible;
+		}
+	</style>
+	<div id="fls-preloader">
+		<!-- Документація: https://template.fls.guru/template-docs/modul-preloader.html -->
+		<!-- Стилі для прелоадера -->
+		<style>
+			* {
+				padding: 0px;
+				margin: 0px;
+				border: 0px;
+			}
+
+			*,
+			*:before,
+			*:after {
+				box-sizing: border-box;
+			}
+
+			html.lock {
+				overflow: hidden;
+				touch-action: none;
+				overscroll-behavior: none;
+			}
+
+			/* Головний блок */
+			.fls-preloader {
+				pointer-events: none;
+				z-index: 3000;
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-image: linear-gradient(to top, rgb(95, 218, 171), rgb(67, 196, 166));
+			}
+
+			/* Блок з елементами */
+			.fls-preloader__body {
+				padding: 0.93rem;
+				max-width: 31.25rem;
+				display: flex;
+				flex-direction: column;
+				color: #fff;
+			}
+
+			/* Блок з лічильником */
+			.fls-preloader__counter {
+				font-size: 10rem;
+			}
+
+			@media (max-width: 567px){
+				.fls-preloader__counter {
+					font-size: 5rem;
+				} 
+			}
+
+			/* Прогресбар */
+			.fls-preloader__line {}
+
+			/* Лінія прогресбару */
+			.fls-preloader__line span {
+				display: inline-block;
+				transition: width 0.2s ease;
+				height: 0.8rem;
+				background-color: #0c6285;
+			}
+		</style>
+		<!-- Скріпт прелоадера -->
+		<script>
+			function preloader() {
+				const preloaderImages = document.querySelector('[data-preloader]') ? document.querySelectorAll('[data-preloader] img') : document.querySelectorAll('img');
+				const preloaderContainer = document.querySelector('#fls-preloader');
+				if (preloaderImages.length) {
+					const preloaderTemplate = `
+					<div class="fls-preloader">
+						<div class="fls-preloader__body">
+							<div class="fls-preloader__counter">0%</div>
+							<div class="fls-preloader__line"><span></span></div>
+						</div>
+					</div>`;
+					document.querySelector('html').insertAdjacentHTML("beforeend", preloaderTemplate);
+
+					const
+						preloader = document.querySelector('.fls-preloader'),
+						showPecentLoad = document.querySelector('.fls-preloader__counter'),
+						showLineLoad = document.querySelector('.fls-preloader__line span'),
+						htmlDocument = document.documentElement;
+
+					let imagesLoadedCount = counter = progress = 0;
+
+					htmlDocument.classList.add('loading');
+					htmlDocument.classList.add('lock');
+
+					preloaderImages.forEach(preloaderImage => {
+						const imgClone = document.createElement('img');
+						if (imgClone) {
+							imgClone.onload = imageLoaded;
+							imgClone.onerror = imageLoaded;
+							preloaderImage.dataset.src ? imgClone.src = preloaderImage.dataset.src : imgClone.src = preloaderImage.src;
+						}
+					});
+
+					function setValueProgress(progress) {
+						showPecentLoad ? showPecentLoad.innerText = `${progress}%` : null;
+						showLineLoad ? showLineLoad.style.width = `${progress}%` : null;
+					}
+					showPecentLoad ? setValueProgress(progress) : null;
+
+					function imageLoaded() {
+						imagesLoadedCount++;
+						progress = Math.round((100 / preloaderImages.length) * imagesLoadedCount);
+						const intervalId = setInterval(() => {
+							counter >= progress ? clearInterval(intervalId) : setValueProgress(++counter);
+							counter >= 100 ? addLoadedClass() : null;
+						}, 10);
+					}
+
+					function addLoadedClass() {
+						htmlDocument.classList.add('loaded');
+						htmlDocument.classList.remove('lock');
+						htmlDocument.classList.remove('loading');
+						setInterval(() => {
+							preloader.remove();
+							preloaderContainer.remove();
+						}, 500);
+					}
+				} else {
+					preloaderContainer.remove();
+				}
+			}
+			preloader();
+		</script>
+	</div>
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js?_v=20230612142449"></script> -->
 	<!-- <script src="js/app.min.js?_v=20230612142449"></script> -->
     <?php wp_footer();?>
