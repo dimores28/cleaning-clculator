@@ -74,14 +74,21 @@ if($numberWindow) {
 }
 //-------------------------------------------//
 
-$lawnMowing = trim(!empty($_POST['lawnMowing']));
-if($lawnMowing) {
-   $body.='<h2>'.$_POST['lawnMowing'].'</h2>';
-}
+// $lawnMowing = trim(!empty($_POST['lawnMowing']));
+// if($lawnMowing) {
+//    $body.='<h2>'.$_POST['lawnMowing'].'</h2>';
+// }
 
 $lawnArea =  trim(!empty($_POST['lawnArea']));
 if($lawnArea) {
+   $body.='<h2>Lawn mowing</h2>';
    $body.='<p><strong>Lawn area: </strong>'.$_POST['lawnArea'].'</p>';
+}
+
+$gardenArea =  trim(!empty($_POST['gardenArea']));
+if($lawnArea) {
+   $body.='<h2>Gardening</h2>';
+   $body.='<p><strong>Garden area: </strong>'.$_POST['gardenArea'].'</p>';
 }
 
 //-------------------------------------------//

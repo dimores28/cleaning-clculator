@@ -18,6 +18,7 @@ let homeCleaningPrice = 0;
 let pipePrice = 0;
 let windowsPrice = 0;
 let lawnPrice = 0;
+let gardenPrice = 0;
 //===============
 let squerePrice = 0;
 let bathroomsARPrice = 0;
@@ -362,10 +363,10 @@ $(".calculator__btn-next").on("click", function () {
   }
 
   const hasLawnSelect = $('[data-service="3"]').hasClass("_select");
-  if (hasLawnSelect && step === 2 && !checkSelectedLawnSize()) {
+  if (hasLawnSelect && step === 2 && !checkSelectedLawnSize() && !checkSelectedGardeningSize()) {
     $(".calculator__alerts").fadeIn("slow");
     $(".calculator__alerts").text(
-      "Please make a lawn area selection to continue."
+      "To continue, please select a lawn area or a garden area!"
     );
     //Please make a lawn area selection to continue.
     return;
@@ -499,6 +500,15 @@ function checkSelectedLawnSize() {
   }
 }
 
+function checkSelectedGardeningSize() {
+  const garden = document.querySelectorAll(".gardening-area__item._select");
+  if (garden.length) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 function showedSpollers() {
   //Скрываем все спойлеры
   $(".calculator__spollers .spollers__item").hide();
@@ -567,16 +577,38 @@ $(".lawn-area__item").on("click", function () {
   }
 });
 
+$('.gardening-area__item').on('click', function () {
+  $('.gardening-area__item').not(this).removeClass("_select");
+  $(this).toggleClass("_select");
+
+  if($(this).hasClass("_select")) {
+    //калькуляция цены
+    const price = $(this).attr('data-garden-area');
+    gardenPrice =  parseInt(price);
+    updetePrice();
+
+    $('[name="gardenArea"]').val($(this).text());
+  }
+  else {
+    gardenPrice = 0;
+    updetePrice();
+    $('[name="gardenArea"]').val('');
+  }
+});
+
 $('[data-service="3"]').on("click", function () {
   if (!$(this).hasClass("_select")) {
     lawnPrice = 0;
+    gardenPrice = 0;
     $(".lawn-area__item").removeClass("_select");
+    $(".gardening-area__item").removeClass("_select");
 
-    $('[name="lawnMowing"]').val("");
+    // $('[name="lawnMowing"]').val("");
     $('[name="lawnArea"]').val("");
+    $('[name="gardenArea"]').val("");
   }
 
-  $('[name="lawnMowing"]').val($(this).text());
+  // $('[name="lawnMowing"]').val($(this).text());
   updetePrice();
 });
 
@@ -798,6 +830,7 @@ function updetePrice() {
     parseInt(dopProcent) +
     parseInt(windowsPrice) +
     parseInt(lawnPrice) +
+    parseInt(gardenPrice) +
     parseInt(pipePrice) +
     (parseInt(repairCleanPrice) + parseInt(dopRepairProcent));
 

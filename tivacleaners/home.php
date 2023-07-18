@@ -92,7 +92,7 @@ Template Name: Home
                 </g>
               </svg>
             </div>
-            <p>Lawn mowing</p>
+            <p>Gardening / Lawn mowing</p>
             <div class="service__indicator">
               <img src="<?php bloginfo('template_url'); ?>/assets/img/icons/check.svg" class="service__indicator_chosen" alt="check icon" width="28" height="20" />
               <img src="<?php bloginfo('template_url'); ?>/assets/img/icons/arrow-small-right.svg" class="service__indicator_not-chosen" alt="arrow icon" width="17" height="15" />
@@ -337,11 +337,34 @@ Template Name: Home
             </div>
             <div class="spollers__item" data-service-filters="3">
               <button type="button" data-spoller class="spollers__title _spoller-active">
-                <span>Lawn mowing</span>
+                <span>Gardening / Lawn mowing</span>
               </button>
               <div class="spollers__body">
                 <h3 class="filter-title number-windows__title">
-                  Lawn area*
+                  Garden area
+                </h3>
+                <div class="gardening-area">
+                    <?php foreach(getGardenArea() as $garden) {?>
+                        <div class="gardening-area__item" data-garden-area="<?php echo $garden["garden_area"];?>">
+                            <div class="gardening-area__img">
+                              <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="48" height="48" style="
+                                    shape-rendering: geometricPrecision;
+                                    text-rendering: geometricPrecision;
+                                    image-rendering: optimizeQuality;
+                                    fill-rule: evenodd;
+                                    clip-rule: evenodd;
+                                  " viewBox="0 0 924.9 867.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+                                <g id="Layer_x0020_1">
+                                  <path class="fil0" d="M-0 415.48c0,21.8 10.72,32.51 32.52,32.51 15.06,0 28.85,-23.42 39.74,-30.71 0,87.91 0,175.83 0,263.74 0,31.43 -3.66,106.78 3.34,128.53 9.29,28.86 38.68,57.53 76.15,57.53l149.94 0c20.31,0 16.26,-23.32 16.26,-43.35l0 -184.26c0,-45.63 -3.99,-78.94 15.49,-107.35 16.91,-24.66 41.36,-40.78 82.06,-40.78l93.94 0c40.43,0 64.53,16.05 81.31,39.72 19.97,28.17 16.24,60.06 16.24,106.6l0 184.26c0,20.51 -4.4,45.16 16.26,45.16l149.94 0c37.81,0 65.7,-28.28 75.68,-56.19 7.81,-21.83 3.8,-96.65 3.8,-128.07 0,-88.52 0,-177.03 0,-265.55 18.71,12.53 18.62,30.71 46.97,30.71 13.1,0 25.29,-12.53 25.29,-32.51 0,-14.47 -36.25,-46.18 -49.23,-59.16l-298.06 -298.06c-39.42,-39.42 -61.15,-58.26 -124.19,-58.26 -56.52,0 -96.31,48.44 -132.32,84.45l-298.06 298.06c-7.02,7.02 -23.03,20.89 -23.03,32.97z"></path>
+                                </g>
+                              </svg>
+                            </div>
+                            <?php echo $garden["title"];?>
+                        </div>
+                    <?php }?>
+                </div>
+                <h3 class="filter-title number-windows__title">
+                  Lawn area
                 </h3>
                 <div class="lawn-area">
                   <?php foreach(getLawnArea() as $lawn) {?>
@@ -638,6 +661,7 @@ Template Name: Home
                 <!-- Lawn mowing -->
                 <input type="hidden" name="lawnMowing" />
                 <input type="hidden" name="lawnArea" />
+                <input type="hidden" name="gardenArea" />
 
                 <!-- Drain pipe cleaning -->
                 <input type="hidden" name="pipeCleaning" />
