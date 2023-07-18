@@ -141,7 +141,7 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 		] );
 
 		register_post_type( 'Lawn area', [
-			'label'  => 'Bathrooms',
+			'label'  => 'Lawn area',
 			'labels' => [
 				'name'               => 'Lawn area', // основное название для типа записи
 				'singular_name'      => 'Lawn area', // название для одной записи этого типа
@@ -159,6 +159,28 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 			'show_ui'             => true, // зависит от public
 			'menu_icon'           => 'dashicons-image-filter',
 			'supports'            => [ 'title', 'thumbnail'],  
+
+		] );
+
+		register_post_type( 'Gardening', [
+			'label'  => 'Gardening',
+			'labels' => [
+				'name'               => 'Gardening', // основное название для типа записи
+				'singular_name'      => 'Gardening', // название для одной записи этого типа
+				'add_new'            => 'Add garden area', // для добавления новой записи
+				'add_new_item'       => 'Adding a garden area', // заголовка у вновь создаваемой записи в админ-панели.
+				'edit_item'          => 'Garden area Editing', // для редактирования типа записи
+				'new_item'           => 'New garden area', // текст новой записи
+				'view_item'          => 'Watch the garden area', // для просмотра записи этого типа.
+				'search_items'       => 'Search for a garden area', // для поиска по этим типам записи
+				'not_found'          => 'Garden area not found', // если в результате поиска ничего не было найдено
+				'not_found_in_trash' => 'Not found in cart', // если не было найдено в корзине
+				'menu_name'          => 'Garden area', // название меню
+			],
+			'public'              => false,
+			'show_ui'             => true, // зависит от public
+			'menu_icon'           => 'dashicons-image-filter',
+			'supports'            => [ 'title'],
 
 		] );
 
@@ -255,7 +277,7 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 			'labels' => [
 				'name'               => 'Reviews', // основное название для типа записи
 				'singular_name'      => 'Review', // название для одной записи этого типа
-				'add_new'            => 'Adding an add-on', // для добавления новой записи
+				'add_new'            => 'Add a review', // для добавления новой записи
 				'add_new_item'       => 'Adding review', // заголовка у вновь создаваемой записи в админ-панели.
 				'edit_item'          => 'Add-on Editing', // для редактирования типа записи
 				'new_item'           => 'New addition', // текст новой записи
@@ -383,6 +405,26 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 		}
 
 		return $lawnAreas;
+	}
+
+	function getGardenArea() {
+		$args = array(
+			'post_type' => 'Gardening',
+			'orderby'   => 'date',
+			'order'     => 'ASC',
+			'numberposts' => -1,
+		);
+
+		$gardenAreas = [];
+
+		foreach(get_posts($args) as $post) {
+			$area = get_fields($post->ID);
+			$area['title'] = $post->post_title;
+
+			$gardenAreas[] = $area;
+		}
+
+		return $gardenAreas;
 	}
 
 	function getWindow() {
