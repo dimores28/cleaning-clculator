@@ -539,6 +539,7 @@
     font-weight: normal;
     line-height: normal;
     color: #040000;
+    position: relative;
     transition: all 0.3s ease-in;
 
     @media (max-width: $mobileSmall) {
@@ -556,10 +557,8 @@
         background: #0c6284;
         border: solid 2px #0c6284;
 
-        .select-extras__img {
-          svg {
-            fill: #ffffff;
-          }
+        svg {
+          fill: #ffffff;
         }
       }
     }
@@ -569,11 +568,35 @@
       background: #0c6284;
       border: solid 2px #0c6284;
 
-      .select-extras__img {
-        svg {
+      svg {
+        fill: #ffffff;
+      }
+    }
+  }
+
+  &__help {
+    // position: sticky;
+    // top: 10px;
+    // right: 10px;
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin-left: auto;
+
+
+    svg {
+      width: 100%;
+      height: 100%;
+      transition: all 0.3s ease-in;
+      fill: #0c6284;
+
+      @media (any-hover: hover) {
+        &:hover {
+          cursor: pointer;
           fill: #ffffff;
         }
       }
+
     }
   }
 

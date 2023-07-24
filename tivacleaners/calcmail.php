@@ -2,6 +2,7 @@
 // Кому отправляем
 // $to = ['dmytroivanovichn@gmail.com', 'maxkrasovskyi10@gmail.com', 'info@tivacleaners.com'];
 $to = 'info@tivacleaners.com';
+
    
 // Тема письма
 $subject = 'Tivacleaners website!';
@@ -201,6 +202,11 @@ $body.= '<hr>';
 
  //================================================================================================================//
  $body.= '<hr>';
+
+ $paymentMethod = trim(!empty($_POST['payment_method']));
+ if($paymentMethod) {
+   $body.='<h2><strong>Payment method: </strong> '.$_POST['payment_method'].'</h2>';
+ }
 
  $payment = trim(!empty($_POST['payment']));
  if($payment) {

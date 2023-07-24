@@ -361,6 +361,14 @@ $(".calculator__btn-next").on("click", function () {
     //Please select your home size to continue.
     return;
   }
+  
+  const hasSelectPR = $('[data-service="5"]').hasClass("_select");
+  if (hasSelectPR && step === 2 && !checkSelectedRoomSizePR()) {
+    $(".calculator__alerts").fadeIn("slow");
+    $(".calculator__alerts").text("Please select your home size to continue.");
+    //Please select your home size to continue.
+    return;
+  }
 
   const hasLawnSelect = $('[data-service="3"]').hasClass("_select");
   if (hasLawnSelect && step === 2 && !checkSelectedLawnSize() && !checkSelectedGardeningSize()) {
@@ -490,6 +498,16 @@ function checkSelectedRoomSize() {
     return false;
   }
 }
+
+function checkSelectedRoomSizePR() {
+  const room = document.querySelectorAll(".living-quarters._select");
+  if (room.length) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 
 function checkSelectedLawnSize() {
   const lawn = document.querySelectorAll(".lawn-area__item._select");
