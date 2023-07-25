@@ -569,12 +569,12 @@ function fix_svg_mime_type( $data, $file, $filename, $mimes, $real_mime = '' ){
 }
 
  //вимкнути перевірку оновлень плагінів та движка
- add_filter( 'auto_update_plugin', '__return_false');
- add_filter( 'pre_site_transient_update_core', '__return_null' );
- function disable_plugin_updates($value) {
-	  if(isset($value) && is_object($value)) {
-		  unset($value->response);
-	  }
-	  return $value;
- }
- add_filter('site_transient_update_plugins', 'disable_plugin_updates');
+//  add_filter( 'auto_update_plugin', '__return_false');
+//  add_filter( 'pre_site_transient_update_core', '__return_null' );
+//  function disable_plugin_updates($value) {
+// 	  if(isset($value) && is_object($value)) {
+// 		  unset($value->response);
+// 	  }
+// 	  return $value;
+//  }
+//  add_filter('site_transient_update_plugins', 'disable_plugin_updates');
