@@ -2,6 +2,7 @@
 // Кому отправляем
 // $to = ['dmytroivanovichn@gmail.com', 'maxkrasovskyi10@gmail.com', 'info@tivacleaners.com'];
 $to = 'info@tivacleaners.com';
+// $to = 'dmytroivanovichn@gmail.com';
 
    
 // Тема письма
@@ -18,6 +19,7 @@ require( 'wp-load.php' );
  //-------------------------------------------//
 $houseClean = trim(!empty($_POST['houseClean']));
 if($houseClean) {
+   $body.= '<hr>';
    $body.='<h2>'.$_POST['houseClean'].'</h2>';
 }
 
@@ -28,7 +30,7 @@ if($houseSize) {
 
 $numberBeadroom =  trim(!empty($_POST['numberBeadroom']));
 if($numberBeadroom) {
-   $body.='<p><strong>Number of Beadroom: </strong>'.$_POST['numberBeadroom'].'</p>';
+   $body.='<p><strong>Number of Bedroom: </strong>'.$_POST['numberBeadroom'].'</p>';
 }
 
 $numberBathrooms =  trim(!empty($_POST['numberBathrooms']));
@@ -105,9 +107,9 @@ if($pipeCleaningNumber) {
 }
 
 //-------------------------------------------//
-
 $afterRenovationClean = trim(!empty($_POST['afterRenovationClean']));
 if($afterRenovationClean) {
+   $body.= '<hr>';
    $body.='<h2>'.$_POST['afterRenovationClean'].'</h2>';
 }
 
@@ -115,6 +117,7 @@ $renovationHouseSize =  trim(!empty($_POST['renovationHouseSize']));
 if($renovationHouseSize) {
    $body.='<p><strong>House size: </strong>'.$_POST['renovationHouseSize'].'</p>';
 }
+
 
 $renovationNumberBathrooms =  trim(!empty($_POST['renovationNumberBathrooms']));
 if($renovationNumberBathrooms) {
@@ -132,12 +135,12 @@ if($renovationNumberWindows) {
 }
 
 $renovationWindowsInside =  trim(!empty($_POST['renovationWindowsInside']));
-if($renovationWindowsInside) {
+if($renovationWindowsInside && $renovationNumberWindows) {
    $body.='<p>'.$_POST['renovationWindowsInside'].'</p>';
 }
 
 $renovationWindowsOutside =  trim(!empty($_POST['renovationWindowsOutside']));
-if($renovationWindowsOutside) {
+if($renovationWindowsOutside && $renovationNumberWindows) {
    $body.='<p>'.$_POST['renovationWindowsOutside'].'</p>';
 }
 

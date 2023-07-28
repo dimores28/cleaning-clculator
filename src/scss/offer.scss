@@ -143,7 +143,7 @@
   }
 
   &__spollers {
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
 
     .spollers__title {
       font-family: $mainFont, sans-serif;
@@ -795,6 +795,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  margin-bottom: 20px;
 
   // .lawn-area__item
   &__item {
@@ -964,6 +965,7 @@
   // .number-pipe__renge
   &__renge {
     padding: 20px;
+    margin-bottom: 30px;
 
     @media (max-width: $mobileSmall) {
       padding: 20px 10px;
@@ -973,7 +975,6 @@
 
 //====================================================================================================
 .payment-options {
-  margin-top: 20px;
   margin-bottom: 20px;
   padding-top: 40px;
   border-top: 1px solid #d1d3d2;

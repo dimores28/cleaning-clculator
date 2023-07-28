@@ -41,7 +41,7 @@ $(".living-quarters").on("click", function () {
   updeteHomeCleaningPrice();
   updetePrice();
 
-  $('[name="houseSize"]').val($(this).children("p").text());
+  $('[name="houseSize"]').val($(this).text());
 });
 
 $(".bedrooms__item").on("click", function () {
@@ -135,7 +135,7 @@ $("#clStandart").on("click", function () {
   $("#clDeep").removeClass("_select");
 
   updetePrice();
-  $('[name="cleaningLevel"]').val("");
+  $('[name="cleaningLevel"]').val("Standard");
 });
 
 $("#clDeep").on("click", function () {
@@ -155,6 +155,7 @@ $('#isCleanWindow').on('click', function(){
 
 $('[data-service="1"]').on("click", function () {
   $('[name="houseClean"]').val($(this).text());
+  $('[name="cleaningLevel"]').val("Standard");
 
   if (!$(this).hasClass("_select")) {
     //обнуляем стоимость и очищаем ранее выбранные опции
@@ -244,7 +245,7 @@ $("#clRepairStandart").on("click", function () {
   $("#clRepairDeep").removeClass("_select");
 
   updetePrice();
-  $('[name="renovationCleaningLevel"]').val("");
+  $('[name="renovationCleaningLevel"]').val("Standard");
 });
 
 $("#clRepairDeep").on("click", function () {
@@ -314,6 +315,7 @@ $("#outside-pr").on("click", function () {
 
 $('[data-service="5"]').on("click", function () {
   $('[name="afterRenovationClean"').val($(this).text());
+  $('[name="renovationCleaningLevel"]').val("Standard");
 
   if (!$(this).hasClass("_select")) {
     //обнуляем стоимость и очищаем ранее выбранные опции
@@ -659,6 +661,13 @@ $(".payment-options__option").on("click", function () {
 $(".is-window").on("click", function () {
   $(this).toggleClass("_select");
   $(".window-wash__wrap").fadeToggle("slow");
+  
+  if(!$('[name="renovationWindowsOutside"]').val()){
+    $('[name="renovationWindowsOutside"]').val("Outside");
+  }
+  else {
+    $('[name="renovationWindowsOutside"]').val("");
+  }
 
   // updetePrice();
 });
