@@ -1,0 +1,132 @@
+.removal {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 20px;
+   margin-bottom: 20px;
+
+   // .removal__item
+   &__item {
+      width: calc(20% - 16px);
+      border: solid 2px #eaeaea;
+      padding: 10px;
+      cursor: pointer;
+      font-family: $mainFont, sans-serif;
+      text-align: center;
+      @include adaptiveValue("font-size", 18, 14);
+      color: #040000;
+      transition: all 0.3s ease-in;
+  
+      @media (max-width: $mobile) {
+        width: calc(25% - 15px);
+        padding: 5px;
+      }
+  
+      @media (max-width: $mobileSmall) {
+        width: calc(100% / 3 - 15px);
+      }
+  
+      &._select {
+        background: #0c6284;
+        border: solid 2px #0c6284;
+        color: #fff;
+  
+        .lawn-area__img {
+          svg {
+            fill: #fff;
+          }
+        }
+      }
+  
+      @media (any-hover: hover) {
+        &:hover {
+          background: #0c6284;
+          border: solid 2px #0c6284;
+          color: #fff;
+        }
+      }
+    }
+
+   // .removal__img
+   &__img {
+      margin: 0 auto 8px auto;
+      width: 48px;
+  
+      @media (max-width: $mobile) {
+        width: 32px;
+      }
+  
+      svg {
+        fill: #bfbebe;
+        width: 48px;
+        width: 100%;
+        transition: all 0.3s ease-in;
+      }
+   }
+}
+
+.carpet {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 20px;
+   margin-bottom: 20px;
+
+   // .carpet__item
+   &__item {
+      width: calc(20% - 16px);
+      border: solid 2px #eaeaea;
+      padding: 10px;
+      cursor: pointer;
+      font-family: $mainFont, sans-serif;
+      text-align: center;
+      @include adaptiveValue("font-size", 18, 14);
+      color: #040000;
+      transition: all 0.3s ease-in;
+  
+      @media (max-width: $mobile) {
+        width: calc(25% - 15px);
+        padding: 5px;
+      }
+  
+      @media (max-width: $mobileSmall) {
+        width: calc(100% / 3 - 15px);
+      }
+  
+      &._select {
+        background: #0c6284;
+        border: solid 2px #0c6284;
+        color: #fff;
+  
+        .lawn-area__img {
+          svg {
+            fill: #fff;
+          }
+        }
+      }
+  
+      @media (any-hover: hover) {
+        &:hover {
+          background: #0c6284;
+          border: solid 2px #0c6284;
+          color: #fff;
+        }
+      }
+   }
+
+   // .carpet__img
+   &__img {
+      margin: 0 auto 8px auto;
+      width: 48px;
+  
+      @media (max-width: $mobile) {
+        width: 32px;
+      }
+  
+      svg {
+        fill: #bfbebe;
+        width: 48px;
+        width: 100%;
+        transition: all 0.3s ease-in;
+      }
+   }
+}
+

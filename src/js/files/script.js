@@ -5,6 +5,7 @@ import { flsModules } from "./modules.js";
 // import '../jquery.min.js';
 
 
+
 let step = 1;
 //===============
 let roomPrice = 0;
@@ -884,6 +885,8 @@ $("#payment_method").on("change", function () {
     $("#clientId").val('');
   }
 });
+
+import './calculator.js';
 
 //Module calendar
 let datapiker = flatpickr("#cleaningDate", {
