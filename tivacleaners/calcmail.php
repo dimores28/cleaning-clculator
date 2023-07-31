@@ -150,6 +150,12 @@ if($renovationCleaningLevel) {
 }
 
 //-------------------------------------------//
+$snowRemovalArea =  trim(!empty($_POST['snowRemovalArea']));
+if($snowRemovalArea) {
+   $body.='<h2>Snow removal</h2>';
+   $body.='<p><strong>Snow removal area: </strong>'.$_POST['snowRemovalArea'].'</p>';
+}
+//-------------------------------------------//
 
 //================================================================================================================//
 $body.= '<hr>';

@@ -27,6 +27,9 @@ let repairExtras = 0;
 let repairWindowPrice = 0;
 let repairCleanPrice = 0;
 let exteriorWindowPR = false;
+//===============
+let snowPrice = 0;
+//===============
 
 $(".service").on("click", function () {
   $(this).toggleClass("_select");
@@ -382,6 +385,15 @@ $(".calculator__btn-next").on("click", function () {
     //Please make a lawn area selection to continue.
     return;
   }
+  const hasSnowRemova = $('[data-service="7"]').hasClass("_select");
+  if (hasSnowRemova && step === 2 && !checkSnowRemovalSize()) {
+    $(".calculator__alerts").fadeIn("slow");
+    $(".calculator__alerts").text(
+      "Please select a snow removal area to continue!"
+    );
+    //Please make a lawn area selection to continue.
+    return;
+  }
 
   $(".calculator__alerts").fadeOut();
 
@@ -515,6 +527,15 @@ function checkSelectedRoomSizePR() {
 function checkSelectedLawnSize() {
   const lawn = document.querySelectorAll(".lawn-area__item._select");
   if (lawn.length) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkSnowRemovalSize() {
+  const snow = document.querySelectorAll(".removal__item._select");
+  if (snow.length) {
     return true;
   } else {
     return false;
@@ -811,6 +832,42 @@ $('[data-service="6"]').on("click", function () {
   }
 });
 
+// Snow removal price ==============================================================================
+$(".removal__item").on("click", function () {
+  $(".removal__item").removeClass("_select");
+  $(this).toggleClass("_select");
+
+  snowPrice = $(this).attr("data-removal-price");
+  const text = $(this).text();
+
+
+  $('[name="snowRemovalArea"]').val($(this).text());
+
+  updetePrice();
+
+  if (text.indexOf("+") > 0) {
+    $(".calculator__total-price strong").text("+");
+    $(".calculator__total-price strong").show();
+    $(".calculator__total-price strong").addClass("_plus");
+  } else {
+    $(".calculator__total-price strong").removeClass("_plus");
+    $(".calculator__total-price strong").hide();
+  }
+});
+
+$('[data-service="7"]').on("click", function () {
+  if (!$(this).hasClass("_select")) {
+    snowPrice = 0;
+
+    $(".removal__item").removeClass("_select");
+    $('[name="snowRemovalArea"]').val("");
+  }
+
+  updetePrice();
+});
+
+// End Snow removal price ==============================================================================
+
 const header = document.querySelector(".header");
 window.addEventListener("scroll", function () {
   if (window.scrollY >= 80) {
@@ -860,6 +917,7 @@ function updetePrice() {
     parseInt(lawnPrice) +
     parseInt(gardenPrice) +
     parseInt(pipePrice) +
+    parseInt(snowPrice) +
     (parseInt(repairCleanPrice) + parseInt(dopRepairProcent));
 
   $(".calculator__total-price span").text(finalPrice);
@@ -886,7 +944,6 @@ $("#payment_method").on("change", function () {
   }
 });
 
-import './calculator.js';
 
 //Module calendar
 let datapiker = flatpickr("#cleaningDate", {
