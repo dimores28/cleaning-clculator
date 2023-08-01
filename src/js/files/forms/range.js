@@ -13,6 +13,8 @@ export function rangeInit() {
 	const rangeWindows = document.querySelector('#rangeWindows');
 	const rangePipe = document.querySelector('#rangePipe');
 	const numberWindows = document.querySelector('#numberWindows');
+	const rangeCarpet = document.querySelector('#rangeCarpet');
+	 
 	
 	if (rangeWindows) {
 		let textFrom = rangeWindows.getAttribute('data-from');
@@ -99,6 +101,34 @@ export function rangeInit() {
 	}
 
 	flsModules.numberWindows = numberWindows;
+
+	if(rangeCarpet) {
+		let textFrom = rangeCarpet.getAttribute('data-from');
+		let textTo = rangeCarpet.getAttribute('data-to');
+		const range = [];
+
+		range.push(parseInt(textFrom));
+		range.push(parseInt(textTo));
+
+		noUiSlider.create(rangeCarpet, {
+			start: 0, 
+			connect: [true, false],
+			step: 1,
+			tooltips: [wNumb({
+				decimals: 0})
+			],
+			range: {
+				'min': range[0],
+				'max': range[1]
+			},
+			pips: {
+				mode: 'values',
+				values: range,
+		  }
+		});
+	}
+
+	flsModules.rangeCarpet = rangeCarpet;
 
 }
 rangeInit();

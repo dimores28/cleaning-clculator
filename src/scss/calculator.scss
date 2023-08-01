@@ -128,5 +128,18 @@
         transition: all 0.3s ease-in;
       }
    }
+
+   &__pollution-level {
+    margin-bottom: 50px;
+
+    p {
+      text-align: center;
+      @include adaptiveValue("font-size", 22, 16);
+    }
+   }
+
+   &__renge {
+    margin-top: 46px;
+   }
 }
 

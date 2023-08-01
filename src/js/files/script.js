@@ -868,6 +868,27 @@ $('[data-service="7"]').on("click", function () {
 
 // End Snow removal price ==============================================================================
 
+// Carpet cleaning price ==============================================================================
+flsModules.rangeCarpet?.noUiSlider.on("update", function (values, handle) {
+  let levelText = ''
+  let val = parseInt(values[handle]);
+
+  switch(val){
+    case 1: levelText = 'Almost Clean (Easy Carpet Cleaning)'; break;
+    case 2: levelText = 'Dirty (Requires thorough cleaning)'; break;
+    case 3: levelText = 'Very dirty (Thorough cleaning with chemicals)'; break;
+    case 4: levelText = 'Complex specific pollution (thorough cleaning with special equipment and complex chemistry)'; break;
+    default: levelText = 'Almost Clean (Easy Carpet Cleaning)'; break;
+  }
+
+
+  $('#pollution-level').text(levelText);
+
+  updetePrice();
+});
+
+// End Carpet cleaning price ==============================================================================
+
 const header = document.querySelector(".header");
 window.addEventListener("scroll", function () {
   if (window.scrollY >= 80) {
