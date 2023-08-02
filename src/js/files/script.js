@@ -1116,3 +1116,7 @@ $('.menu__link').on('click', function(){
 $('.review__link').on('click', function(){
   $(this).parent('.review').toggleClass('_more');
 });
+
+$('.post__text').each(function(indx, element){
+  $(element).html($(element).find("p:first-child").text())
+});
