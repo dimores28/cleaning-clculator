@@ -30,6 +30,11 @@ let exteriorWindowPR = false;
 //===============
 let snowPrice = 0;
 //===============
+let carpetPrice = 0;
+let carpetAreaPrice = 0;
+let carpetLevelPrice = 0;
+//===============
+
 
 $(".service").on("click", function () {
   $(this).toggleClass("_select");
@@ -587,6 +592,10 @@ function updateAllRepairCleanPrice() {
     parseInt(bathroomsARPrice);
 }
 
+function updateCarpetPrice() {
+  carpetPrice = parseInt(carpetAreaPrice) + parseInt(carpetLevelPrice);
+}
+
 // End Common functions ==============================================================================
 
 $(".cleaning-level__item").on("click", function () {
@@ -869,9 +878,32 @@ $('[data-service="7"]').on("click", function () {
 // End Snow removal price ==============================================================================
 
 // Carpet cleaning price ==============================================================================
+$(".carpet__item").on("click", function () {
+  $(".carpet__item").removeClass("_select");
+  $(this).toggleClass("_select");
+
+  carpetAreaPrice = $(this).attr("data-carpet-price");
+  const text = $(this).text();
+
+  $('[name="snowCarpetArea"]').val($(this).text());
+
+  updateCarpetPrice();
+  updetePrice();
+
+  if (text.indexOf("+") > 0) {
+    $(".calculator__total-price strong").text("+");
+    $(".calculator__total-price strong").show();
+    $(".calculator__total-price strong").addClass("_plus");
+  } else {
+    $(".calculator__total-price strong").removeClass("_plus");
+    $(".calculator__total-price strong").hide();
+  }
+});
+
 flsModules.rangeCarpet?.noUiSlider.on("update", function (values, handle) {
   let levelText = ''
   let val = parseInt(values[handle]);
+  let price = parseInt($('#rangeCarpet').attr("data-carpet-range-price"));
 
   switch(val){
     case 1: levelText = 'Almost Clean (Easy Carpet Cleaning)'; break;
@@ -881,9 +913,25 @@ flsModules.rangeCarpet?.noUiSlider.on("update", function (values, handle) {
     default: levelText = 'Almost Clean (Easy Carpet Cleaning)'; break;
   }
 
-
   $('#pollution-level').text(levelText);
+  carpetLevelPrice = val * price;
+  $('[name="snowCarpetLevel"]').val(levelText);
 
+  updateCarpetPrice();
+  updetePrice();
+});
+
+$('[data-service="8"]').on("click", function () {
+  if (!$(this).hasClass("_select")) {
+      carpetAreaPrice = 0;
+      carpetLevelPrice = 0;
+
+      $(".carpet__item").removeClass("_select");
+      $('[name="snowCarpetArea"]').val("");
+      $('[name="snowCarpetLevel"]').val("");
+  }
+  
+  updateCarpetPrice();
   updetePrice();
 });
 
@@ -939,6 +987,7 @@ function updetePrice() {
     parseInt(gardenPrice) +
     parseInt(pipePrice) +
     parseInt(snowPrice) +
+    parseInt(carpetPrice) +
     (parseInt(repairCleanPrice) + parseInt(dopRepairProcent));
 
   $(".calculator__total-price span").text(finalPrice);
