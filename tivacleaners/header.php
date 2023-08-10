@@ -26,7 +26,7 @@
 	<meta name="theme-color" content="#ffffff" />
 
 	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-2QHGCGXS08&_v=20230612142449"></script>
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-2QHGCGXS08&_v=20230612142449"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 
@@ -36,6 +36,15 @@
 		gtag('js', new Date());
 
 		gtag('config', 'G-2QHGCGXS08');
+	</script> -->
+
+	<script>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-2QHGCGXS08"></script> 
+		<script> 
+			window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} 
+			gtag('js', new Date()); 
+			gtag('config', 'G-2QHGCGXS08'); 
+		</script>
 	</script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />

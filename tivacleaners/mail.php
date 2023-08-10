@@ -14,6 +14,7 @@ require( 'wp-load.php' );
 
  //Тело письма
  $body = '<h1>Tivacleaners website!</h1>';
+ $body = '<h2>The client wants to be called back!</h2>';
 
  //Пример name="popupUserName"
  $popupUserName = trim(!empty($_POST['popupUserName']));
