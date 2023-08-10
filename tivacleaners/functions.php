@@ -293,14 +293,52 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 			'supports'            => [ 'title', 'thumbnail'],  // 'title','editor','author','thumbnail','excerpt','trackbacks',
 		] );
 
+		register_post_type( 'Snow clearing area', [
+			'label'  => 'Snow clearing area',
+			'labels' => [
+				'name'               => 'Snow clearing area', // основное название для типа записи
+				'singular_name'      => 'Snow clearing area', // название для одной записи этого типа
+				'add_new'            => 'Add snow clearing area', // для добавления новой записи
+				'add_new_item'       => 'Adding a snow clearing area', // заголовка у вновь создаваемой записи в админ-панели.
+				'edit_item'          => 'Snow clearing area Editing', // для редактирования типа записи
+				'new_item'           => 'New snow clearing area', // текст новой записи
+				'view_item'          => 'Watch the snow clearing area', // для просмотра записи этого типа.
+				'search_items'       => 'Search for a snow clearing area', // для поиска по этим типам записи
+				'not_found'          => 'Snow clearing area not found', // если в результате поиска ничего не было найдено
+				'not_found_in_trash' => 'Not found in Snow clearing area', // если не было найдено в корзине
+				'menu_name'          => 'Snow clearing area', // название меню
+			],
+			'public'              => false,
+			'show_ui'             => true, // зависит от public
+			'menu_icon'           => 'dashicons-image-filter',
+			'supports'            => [ 'title'],  
+
+		] );
+
+		register_post_type( 'Carpet area', [
+			'label'  => 'SCarpet area',
+			'labels' => [
+				'name'               => 'Carpet area', // основное название для типа записи
+				'singular_name'      => 'Carpet area', // название для одной записи этого типа
+				'add_new'            => 'Add Carpet area', // для добавления новой записи
+				'add_new_item'       => 'Adding a carpet area', // заголовка у вновь создаваемой записи в админ-панели.
+				'edit_item'          => 'Carpet area Editing', // для редактирования типа записи
+				'new_item'           => 'New Carpet area', // текст новой записи
+				'view_item'          => 'Watch the Carpet area', // для просмотра записи этого типа.
+				'search_items'       => 'Search for a Carpet area', // для поиска по этим типам записи
+				'not_found'          => 'Carpet not found', // если в результате поиска ничего не было найдено
+				'not_found_in_trash' => 'Not found in Carpet area', // если не было найдено в корзине
+				'menu_name'          => 'Carpet area', // название меню
+			],
+			'public'              => false,
+			'show_ui'             => true, // зависит от public
+			'menu_icon'           => 'dashicons-image-filter',
+			'supports'            => [ 'title'],  
+
+		] );
+
 	});
 
-
-	// function getExtras() {
-	// 	return $psts  = get_posts( array(
-	// 		'post_type' => 'Extras',
-	// 	));
-	// }
 
 	function getExtras() {
 		$args = array(
@@ -522,6 +560,46 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 		}
 
 		return $reviews;
+	}
+
+	function getSnowClearingAreas() {
+		$args = array(
+			'post_type' => 'Snow clearing area',
+			'orderby'   => 'date',
+			'order'     => 'ASC',
+			'numberposts' => -1,
+		);
+
+		$snowClearingAreas = [];
+
+		foreach(get_posts($args) as $post) {
+			$area = get_fields($post->ID);
+			$area['title'] = $post->post_title;
+
+			$snowClearingAreas[] = $area;
+		}
+
+		return $snowClearingAreas;
+	}
+
+	function getCarpetAreas() {
+		$args = array(
+			'post_type' => 'Carpet area',
+			'orderby'   => 'date',
+			'order'     => 'ASC',
+			'numberposts' => -1,
+		);
+
+		$carpetAreas = [];
+
+		foreach(get_posts($args) as $post) {
+			$area = get_fields($post->ID);
+			$area['title'] = $post->post_title;
+
+			$carpetAreas[] = $area;
+		}
+
+		return $carpetAreas;
 	}
 
 //======================SVG===========================================//

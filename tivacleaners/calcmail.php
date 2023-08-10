@@ -152,8 +152,21 @@ if($renovationCleaningLevel) {
 //-------------------------------------------//
 $snowRemovalArea =  trim(!empty($_POST['snowRemovalArea']));
 if($snowRemovalArea) {
+   $body.= '<hr>';
    $body.='<h2>Snow removal</h2>';
    $body.='<p><strong>Snow removal area: </strong>'.$_POST['snowRemovalArea'].'</p>';
+}
+//-------------------------------------------//
+$snowCarpetArea =  trim(!empty($_POST['snowCarpetArea']));
+if($snowCarpetArea) {
+   $body.= '<hr>';
+   $body.='<h2>Carpet cleaning</h2>';
+   $body.='<p><strong>Carpet cleaning area: </strong>'.$_POST['snowCarpetArea'].'</p>';
+}
+
+$snowCarpetLevel =  trim(!empty($_POST['snowCarpetLevel']));
+if($snowCarpetLevel) {
+   $body.='<p><strong>Carpet soiling level: </strong>'.$_POST['snowCarpetLevel'].'</p>';
 }
 //-------------------------------------------//
 
