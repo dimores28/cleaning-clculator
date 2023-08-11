@@ -153,6 +153,45 @@
 
    &__renge {
     margin-top: 46px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+   }
+
+   &__level {
+      width: calc(25% - 15px);
+      height: 80px;
+      border: solid 2px #eaeaea;
+      padding: 10px;
+      cursor: pointer;
+      font-family: $mainFont, sans-serif;
+      text-align: center;
+      @include adaptiveValue("font-size", 26, 18);
+      font-weight: 500;
+      line-height: 50px;
+      color: #040000;
+      transition: all 0.3s ease-in;
+
+      @media (max-width: em(440)){
+        width: calc(50% - 15px);
+        height: 60px;
+        line-height: 35px;
+      }
+
+      &._select {
+        background: #0c6284;
+        border: solid 2px #0c6284;
+        color: #fff;
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          background: #0c6284;
+          border: solid 2px #0c6284;
+          color: #fff;
+        }
+      }
    }
 }
 

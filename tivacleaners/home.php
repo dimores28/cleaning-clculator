@@ -629,10 +629,20 @@ Template Name: Home
                   <p id="pollution-level">
                     Almost Clean (Easy Carpet Cleaning)
                   </p>
-                  <div class="carpet__renge">
-                    <div id="rangeCarpet" data-from="1" data-to="4" data-carpet-range-price="25" class="range">
-                    </div>
-                  </div>
+                  <div class="carpet__renge" data-carpet-range-price="25">
+                        <div class="carpet__level">
+                          1
+                        </div>
+                        <div class="carpet__level">
+                          2
+                        </div>
+                        <div class="carpet__level">
+                          3
+                        </div>
+                        <div class="carpet__level">
+                          4
+                        </div>
+                      </div>
                 </div>
               </div>
             </div>

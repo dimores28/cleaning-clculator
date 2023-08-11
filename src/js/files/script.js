@@ -400,6 +400,17 @@ $(".calculator__btn-next").on("click", function () {
     return;
   }
 
+  const hasCarpetClining = $('[data-service="8"]').hasClass("_select");
+  if(hasCarpetClining && step === 2 && !checkSelectedCarpedCLevel() && !checkSelectedCarpedArea()) {
+    $(".calculator__alerts").fadeIn("slow");
+    $(".calculator__alerts").text(
+      "Please select carpet size and degree of cleaning to continue!"
+    );
+    //Please make a lawn area selection to continue.
+    return;
+  }
+  
+
   $(".calculator__alerts").fadeOut();
 
   showedSpollers();
@@ -550,6 +561,24 @@ function checkSnowRemovalSize() {
 function checkSelectedGardeningSize() {
   const garden = document.querySelectorAll(".gardening-area__item._select");
   if (garden.length) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkSelectedCarpedCLevel() {
+  const carpetLevel = document.querySelectorAll('.carpet__level._select');
+  if(carpetLevel.length) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkSelectedCarpedArea() {
+  const carpetArea =  document.querySelectorAll('.carpet__item._select');
+  if(carpetArea.length) {
     return true;
   } else {
     return false;
@@ -900,10 +929,13 @@ $(".carpet__item").on("click", function () {
   }
 });
 
-flsModules.rangeCarpet?.noUiSlider.on("update", function (values, handle) {
+$('.carpet__level').on("click", function() {
+  $(".carpet__level").removeClass("_select");
+  $(this).toggleClass("_select");
+
   let levelText = ''
-  let val = parseInt(values[handle]);
-  let price = parseInt($('#rangeCarpet').attr("data-carpet-range-price"));
+  let val = parseInt($(this).text());
+  console.log(val)
 
   switch(val){
     case 1: levelText = 'Almost Clean (Easy Carpet Cleaning)'; break;
@@ -912,8 +944,10 @@ flsModules.rangeCarpet?.noUiSlider.on("update", function (values, handle) {
     case 4: levelText = 'Complex specific pollution (thorough cleaning with special equipment and complex chemistry)'; break;
     default: levelText = 'Almost Clean (Easy Carpet Cleaning)'; break;
   }
-
+ 
   $('#pollution-level').text(levelText);
+
+  let price = parseInt($('.carpet__renge').attr("data-carpet-range-price"));
   carpetLevelPrice = val * price;
   $('[name="snowCarpetLevel"]').val(levelText);
 
