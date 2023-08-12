@@ -32,7 +32,7 @@ Template Name: Home
     </div>
   </section>
 
-  <section class="offer" id="calculator">
+  <section class="offer" id="calculator" data-watch data-watch-threshold="0.4">
     <img src="<?php bloginfo('template_url'); ?>/assets/img/themes/calc_bg.webp" class="offer__bg" alt="background image" width="1500" height="700" />
     <div class="offer__container">
       <h3 class="offer__sub-title">
@@ -859,7 +859,10 @@ Template Name: Home
           <button type="button" class="btn calculator__btn-prev" style="display: none">
             PREVIOUS STEP
           </button>
-          <button type="button" class="btn calculator__btn-next">
+          <button type="button" class="btn calculator__btn-next btn-next" data-watch>
+            Next step
+          </button>
+          <button type="button" class="btn calculator__btn-next calculator__btn-next_fixed">
             Next step
           </button>
         </div>

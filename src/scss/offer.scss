@@ -204,6 +204,17 @@
     }
   }
 
+  &__btn-next_fixed {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    @media (max-width: em(396)){
+      padding: 18px 32px 16px 32px;
+    }
+  }
+
   &__total-price {
     font-family: $mainFont, sans-serif;
     @include adaptiveValue("font-size", 52, 36);
@@ -300,6 +311,24 @@
     @media (max-width: $mobileSmall) {
       justify-content: space-between;
     }
+  }
+}
+
+.offer._watcher-view {
+  & .calculator__btn-next_fixed {
+    @media (max-width:$mobile){
+      display: block; 
+    }
+  }
+}
+
+.btn-next._watcher-view + .calculator__btn-next_fixed{
+  display: none !important;
+}
+
+.offer._hide-btn {
+  & .calculator__btn-next_fixed {
+    display: none !important;
   }
 }
 

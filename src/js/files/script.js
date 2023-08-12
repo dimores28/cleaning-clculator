@@ -446,6 +446,7 @@ function stepControl() {
     $(".calculator__total-price").css({ opacity: "0", "max-height": "0" });
     $(".calculator__btn-prev").hide();
     $(".calculator__total-price span").text('');
+    $('.offer').removeClass('_hide-btn');
     scrollTopOffer();
   }
 
@@ -458,6 +459,7 @@ function stepControl() {
     $(".calculator__btn-next").show();
     $(".calculator__total-price").css({ opacity: "1", "max-height": "unset" });
     $(".calculator__total-price strong").hide();
+    $('.offer').addClass('_hide-btn');
 
 
     // $(".calculator__total-price span").text();
