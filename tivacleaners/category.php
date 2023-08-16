@@ -202,7 +202,9 @@ Template Name: category
         <?php }?>
     </div>
 
-
+    <?php echo do_shortcode( '[contact-form-7 id="920a954" title="ContactERP"]' ); ?>
 </div>
+
+
 
 <?php get_footer();?>

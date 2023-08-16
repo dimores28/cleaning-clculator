@@ -1385,4 +1385,17 @@ Template Name: Home
     </div>
   </section>
 
+  <div class="generate-contact"> 
+    <?php echo do_shortcode( '[contact-form-7 id="920a954" title="ContactERP"]' ); ?>
+  </div>
+
+  <style>
+    .generate-contact {
+      max-width: 600px;
+      overflow: hidden;
+      margin: 0 auto;
+      display: none;
+    }
+  </style>
+
 <?php get_footer();?>

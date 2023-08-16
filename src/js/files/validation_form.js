@@ -109,61 +109,82 @@ const calcZipCode = document.querySelector("#zipCode");
 const calcCityName = document.querySelector("#userCity");
 const calcAdress = document.querySelector("#userAddres");
 
+let PhoneCF7 = document.querySelector("#PhoneCF7");
 calcPhone?.addEventListener("input", function () {
   if (!isValidPhone(calcPhone.value)) {
     calcPhone.classList.add("_notvalid");
   } else {
     calcPhone.classList.remove("_notvalid");
   }
+  PhoneCF7.value = calcPhone.value;
 });
 
+let EmailCF7 = document.querySelector("#EmailCF7");
 calcEmail?.addEventListener("input", function () {
   if (!isValidEmail(calcEmail.value)) {
     calcEmail.classList.add("_notvalid");
   } else {
     calcEmail.classList.remove("_notvalid");
   }
+  EmailCF7.value = calcEmail.value;
 });
 
+const FirstNameCF7 = document.querySelector('#FirstNameCF7');
 calcFirstName?.addEventListener("input", function () {
   if (!isValidName(calcFirstName.value)) {
     calcFirstName.classList.add("_notvalid");
   } else {
     calcFirstName.classList.remove("_notvalid");
   }
+  FirstNameCF7.value = calcFirstName.value;
 });
 
+const LastNameCF7 = document.querySelector('#LastNameCF7');
 calcLasttName?.addEventListener("input", function () {
   if (!isValidLastName(calcLasttName.value)) {
     calcLasttName.classList.add("_notvalid");
   } else {
     calcLasttName.classList.remove("_notvalid");
   }
+  LastNameCF7.value = calcLasttName.value;
 });
 
+const ZipCodeCF7 = document.querySelector("#ZipCodeCF7");
 calcZipCode?.addEventListener("input", function () {
   if (!isValidZipCode(calcZipCode.value)) {
     calcZipCode.classList.add("_notvalid");
   } else {
     calcZipCode.classList.remove("_notvalid");
   }
+  ZipCodeCF7.value = calcZipCode.value;
 });
 
+const CityCF7 = document.querySelector("#CityCF7");
 calcCityName?.addEventListener("input", function () {
   if (!isValidCityName(calcCityName.value)) {
     calcCityName.classList.add("_notvalid");
   } else {
     calcCityName.classList.remove("_notvalid");
   }
+  CityCF7.value = calcCityName.value;
 });
 
+const AddressCF7 = document.querySelector("#AddressCF7");
 calcAdress?.addEventListener("input", function () {
   if (!isValidAdress(calcAdress.value)) {
     calcAdress.classList.add("_notvalid");
   } else {
     calcAdress.classList.remove("_notvalid");
   }
+  AddressCF7.value = calcAdress.value;
 });
+
+const AptSuiteCF7 = document.querySelector("#AptSuiteCF7");
+const aptSuite = document.querySelector("#aptSuite");
+aptSuite?.addEventListener("input", function () {
+  AptSuiteCF7.value = aptSuite.value;
+});
+
 
 const calcForm = document.querySelector("#calcForm");
 calcForm?.addEventListener("submit", async function (e) {
@@ -182,6 +203,7 @@ calcForm?.addEventListener("submit", async function (e) {
 
   if (error) {
     calcForm.classList.add("_sending");
+    $('#submitCF7').trigger("click");
 
     let response = await fetch("calcmail.php", {
       method: "POST",
