@@ -862,8 +862,8 @@ Template Name: Home
           <button type="button" class="btn calculator__btn-next btn-next" data-watch>
             Next step
           </button>
-          <button type="button" class="btn calculator__btn-next calculator__btn-next_fixed">
-            Next step
+          <button type="button" class="calculator__btn-next calculator__btn-next_fixed">
+            <span> Next step </span>
           </button>
         </div>
       </div>
