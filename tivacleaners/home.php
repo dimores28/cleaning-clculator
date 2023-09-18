@@ -254,7 +254,7 @@ Template Name: Home
                     <h4 class="sub-title">Number of bedrooms:</h4>
                     <div class="bedrooms__block">
                         <?php foreach(getBedrooms() as $bedroom) {?>
-                            <div class="bedrooms__item" data-bedroom-price="<?php echo $bedroom["bedroom_price"];?>">
+                            <div class="bedrooms__item st-bedrooms" data-bedroom-price="<?php echo $bedroom["bedroom_price"];?>">
                                 <?php echo $bedroom["title"];?>
                             </div>
                         <?php }?> 
@@ -264,19 +264,19 @@ Template Name: Home
                   <div class="reception">
                     <h4 class="sub-title">How many reception room(s) need cleaning?</h4>
                     <div class="reception__block">
-                      <div class="reception__item" data-reception-price="10">
+                      <div class="reception__item st-reception" data-reception-price="10">
                         1
                       </div>
-                      <div class="reception__item" data-reception-price="20">
+                      <div class="reception__item st-reception" data-reception-price="20">
                         2
                       </div>
-                      <div class="reception__item" data-reception-price="30">
+                      <div class="reception__item st-reception" data-reception-price="30">
                         3
                       </div>
-                      <div class="reception__item" data-reception-price="40">
+                      <div class="reception__item st-reception" data-reception-price="40">
                         4
                       </div>
-                      <div class="reception__item" data-reception-price="50">
+                      <div class="reception__item st-reception" data-reception-price="50">
                         5
                       </div>
                     </div>
@@ -489,6 +489,38 @@ Template Name: Home
                               <?php echo $bathroom["title"];?>
                           </div>
                       <?php }?>
+                    </div>
+                  </div>
+
+                  <div class="bedrooms">
+                    <h4 class="sub-title">Number of bedrooms:</h4>
+                    <div class="bedrooms__block">
+                        <?php foreach(getBedrooms() as $bedroom) {?>
+                            <div class="bedrooms__item ar-bedrooms" data-bedroom-price="<?php echo $bedroom["bedroom_price"];?>">
+                                <?php echo $bedroom["title"];?>
+                            </div>
+                        <?php }?> 
+                    </div>
+                  </div>
+
+                  <div class="reception">
+                    <h4 class="sub-title">How many reception room(s) need cleaning?</h4>
+                    <div class="reception__block">
+                      <div class="reception__item ar-reception" data-reception-price="10">
+                        1
+                      </div>
+                      <div class="reception__item ar-reception" data-reception-price="20">
+                        2
+                      </div>
+                      <div class="reception__item ar-reception" data-reception-price="30">
+                        3
+                      </div>
+                      <div class="reception__item ar-reception" data-reception-price="40">
+                        4
+                      </div>
+                      <div class="reception__item ar-reception" data-reception-price="50">
+                        5
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -787,6 +819,8 @@ Template Name: Home
                 <input type="hidden" name="afterRenovationClean" />
                 <input type="hidden" name="renovationHouseSize" />
                 <input type="hidden" name="renovationNumberBathrooms" />
+                <input type="hidden" name="renovationNumberBedrooms" />
+                <input type="hidden" name="renovationNumberReception" />
                 <input type="hidden" name="renovationExtras" />
                 <input type="hidden" name="renovationCleaningLevel" />
                 <input type="hidden" name="renovationNumberWindows" />
@@ -1375,10 +1409,10 @@ Template Name: Home
       <img src="<?php bloginfo('template_url'); ?>/assets/img/themes/poster_bg.webp" class="poster__bg" alt="background image" width="1173" height="256" />
       <div class="poster__content">
         <h2 class="poster__heading">
-          Save Time. Save Money. Save Yourself Too!
+          Save time! Life is too beautiful to waste it cleaning! Entrust it to us!
         </h2>
         <p class="poster__body">
-          Life’s Too Short to Clean Your Own Home
+           Entrust it to us!
         </p>
       </div>
       <button class="btn poster__btn">get a quote</button>

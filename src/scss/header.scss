@@ -6,6 +6,10 @@
   width: 100%;
   z-index: 100;
 
+  @media (max-width:$mobile){
+     background: #fff; 
+  }
+
   // .header__container
   &__container {
     display: flex;
@@ -152,9 +156,9 @@
       height: 100vh;
       top: 66px;
       left: 0;
-      background: #3bafa2;
+      background: #3bafa17d;
       z-index: 101;
-      padding: 40px 16px;
+      padding: 50px 0px 0px;
       transform: translateX(100%);
       transition: all 0.4s ease-in;
       overflow-x: auto;
@@ -179,6 +183,9 @@
        font-size: 26px;
        line-height: 1.5;
        gap: 36px;
+       background: #3bafa2;
+       padding: 10px 16px 20px 16px;
+       height: 100vh;
     }
   }
 

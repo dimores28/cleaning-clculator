@@ -124,6 +124,16 @@ if($renovationNumberBathrooms) {
    $body.='<p><strong>Number of Bathrooms: </strong>'.$_POST['renovationNumberBathrooms'].'</p>';
 }
 
+$renovationNumberBedrooms =  trim(!empty($_POST['renovationNumberBedrooms']));
+if($renovationNumberBedrooms) {
+   $body.='<p><strong>Number of Bedrooms: </strong>'.$_POST['renovationNumberBedrooms'].'</p>';
+}
+
+$renovationNumberReception =  trim(!empty($_POST['renovationNumberReception']));
+if($renovationNumberReception) {
+   $body.='<p><strong>Number of Reception: </strong>'.$_POST['renovationNumberReception'].'</p>';
+}
+
 $renovationExtras =  trim(!empty($_POST['renovationExtras']));
 if($renovationExtras) {
    $body.='<p><strong>Extras: </strong>'.$_POST['renovationExtras'].'</p>';

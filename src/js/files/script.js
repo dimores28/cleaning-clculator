@@ -23,6 +23,8 @@ let gardenPrice = 0;
 //===============
 let squerePrice = 0;
 let bathroomsARPrice = 0;
+let bedroomsARPrice = 0;
+let receptionARPprice = 0;
 let repairExtras = 0;
 let repairWindowPrice = 0;
 let repairCleanPrice = 0;
@@ -53,8 +55,9 @@ $(".living-quarters").on("click", function () {
   $('[name="houseSize"]').val($(this).text());
 });
 
-$(".bedrooms__item").on("click", function () {
-  $(".bedrooms__item").not(this).removeClass("_select");
+$(".st-bedrooms").on("click", function () {
+  console.log(this);
+  $(".st-bedrooms").not(this).removeClass("_select");
   $(this).toggleClass("_select");
 
   if($(this).hasClass("_select")){
@@ -96,8 +99,8 @@ $(".bathrooms__item").on("click", function () {
   }
 });
 
-$(".reception__item").on("click", function () {
-  $(".reception__item").not(this).removeClass("_select");
+$(".st-reception").on("click", function () {
+  $(".st-reception").not(this).removeClass("_select");
   $(this).toggleClass("_select");
 
   if($(this).hasClass("_select")){
@@ -175,7 +178,7 @@ $('[data-service="1"]').on("click", function () {
     updeteHomeCleaningPrice();
 
     $(".living-quarters").removeClass("_select");
-    $(".bedrooms__item").removeClass("_select");
+    $(".st-bedrooms").removeClass("_select");
     $(".living-extras").removeClass("_setected");
     $("#clStandart").trigger("click");
 
@@ -226,6 +229,48 @@ $(".bathrooms-ar__item").on("click", function () {
     $('[name="renovationNumberBathrooms"]').val('');
   }
 
+});
+
+$(".ar-bedrooms").on("click", function() {
+  $(".ar-bedrooms").not(this).removeClass("_select");
+  $(this).toggleClass("_select");
+
+  if($(this).hasClass("_select")){
+    //калькуляция цены
+    let price = $(this).attr("data-bedroom-price");
+    bedroomsARPrice = parseInt(price);
+    updateAllRepairCleanPrice();
+    updetePrice();
+
+    $('[name="renovationNumberBedrooms"]').val($(this).text());
+  } else {
+    bedroomsARPrice = 0;
+    updateAllRepairCleanPrice();
+    updetePrice();
+
+    $('[name="renovationNumberBedrooms"]').val('');
+  }
+});
+
+$(".ar-reception").on("click", function() {
+  $(".ar-reception").not(this).removeClass("_select");
+  $(this).toggleClass("_select");
+
+  if($(this).hasClass("_select")){
+    //калькуляция цены
+    let price = $(this).attr("data-reception-price");
+    receptionARPprice = parseInt(price);
+    updateAllRepairCleanPrice();
+    updetePrice();
+
+    $('[name="renovationNumberReception"]').val($(this).text());
+  } else {
+    receptionARPprice = 0;
+    updateAllRepairCleanPrice();
+    updetePrice();
+
+    $('[name="renovationNumberReception"]').val('');
+  }
 });
 
 $(".renovation-extras").on("click", function () {
@@ -332,6 +377,8 @@ $('[data-service="5"]').on("click", function () {
     repairExtras = 0;
     repairWindowPrice = 0;
     repairCleanPrice = 0;
+    bedroomsARPrice = 0;
+    receptionARPprice = 0;
     flsModules.numberWindows?.noUiSlider.set(0);
     updateAllRepairCleanPrice();
 
@@ -341,13 +388,16 @@ $('[data-service="5"]').on("click", function () {
     $(".is-furniture").removeClass("_select");
     $(".renovation-extras__wrap").css("display", "none");
     $(".renovation-extras").removeClass("_setected");
-
+    $(".ar-bedrooms").removeClass("_setected");
+    $(".ar-reception").removeClass("_setected");
     $(".is-window").removeClass("_select");
     $(".window-wash__wrap").css("display", "none");
 
     $('[name="afterRenovationClean"').val("");
     $('[name="renovationHouseSize"]').val("");
     $('[name="renovationNumberBathrooms"]').val("");
+    $('[name="renovationNumberBedrooms"]').val("");
+    $('[name="renovationNumberReception"]').val("");
     $('[name="renovationExtras"]').val("");
     $('[name="renovationCleaningLevel"]').val("");
     $('[name="renovationNumberWindows"]').val("");
@@ -620,6 +670,8 @@ function updateAllRepairCleanPrice() {
     parseInt(squerePrice) +
     parseInt(repairExtras) +
     parseInt(windowsPrice) +
+    parseInt(bedroomsARPrice) +
+    parseInt(receptionARPprice) +
     parseInt(bathroomsARPrice);
 }
 
