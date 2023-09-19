@@ -97,7 +97,7 @@ Template Name: category
 
                         <div class="review__head">
                         <div class="review__photo">
-                            <img src="<?php echo $review["img"];?>" alt="photo" width="40" height="40">
+                            <img src="<?php echo $review["img"];?>" alt="photo" width="60" height="60" data-pagespeed-no-transform>
                         </div>
                         <div>
                             <h3 class="review__fullname"><?php echo $review["title"];?></h3>
@@ -134,7 +134,7 @@ Template Name: category
     </section>
 
     <pre>
-        <!-- <?php print_r(getCarpetAreas()); ?>  -->
+        <?php print_r(getReviews()); ?> 
     </pre>
 
 

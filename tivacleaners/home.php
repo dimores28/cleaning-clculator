@@ -264,21 +264,12 @@ Template Name: Home
                   <div class="reception">
                     <h4 class="sub-title">How many reception room(s) need cleaning?</h4>
                     <div class="reception__block">
-                      <div class="reception__item st-reception" data-reception-price="10">
-                        1
-                      </div>
-                      <div class="reception__item st-reception" data-reception-price="20">
-                        2
-                      </div>
-                      <div class="reception__item st-reception" data-reception-price="30">
-                        3
-                      </div>
-                      <div class="reception__item st-reception" data-reception-price="40">
-                        4
-                      </div>
-                      <div class="reception__item st-reception" data-reception-price="50">
-                        5
-                      </div>
+                      <?php foreach(getReception() as $reception) {?>
+                        <div class="reception__item st-reception" 
+                            data-reception-price="<?php echo $reception["reception_price"];?>">
+                          <?php echo $reception["title"];?>
+                        </div>
+                      <?php }?> 
                     </div>
                   </div>
                 </div>
@@ -506,21 +497,12 @@ Template Name: Home
                   <div class="reception">
                     <h4 class="sub-title">How many reception room(s) need cleaning?</h4>
                     <div class="reception__block">
-                      <div class="reception__item ar-reception" data-reception-price="10">
-                        1
-                      </div>
-                      <div class="reception__item ar-reception" data-reception-price="20">
-                        2
-                      </div>
-                      <div class="reception__item ar-reception" data-reception-price="30">
-                        3
-                      </div>
-                      <div class="reception__item ar-reception" data-reception-price="40">
-                        4
-                      </div>
-                      <div class="reception__item ar-reception" data-reception-price="50">
-                        5
-                      </div>
+                      <?php foreach(getReception() as $reception) {?>
+                        <div class="reception__item ar-reception" 
+                            data-reception-price="<?php echo $reception["reception_price"];?>">
+                          <?php echo $reception["title"];?>
+                        </div>
+                      <?php }?> 
                     </div>
                   </div>
                 </div>
@@ -1368,7 +1350,7 @@ Template Name: Home
 
                   <div class="review__head">
                   <div class="review__photo">
-                      <img src="<?php echo $review["img"];?>" alt="photo" width="40" height="40">
+                      <img src="<?php echo $review["img"];?>" alt="photo" width="60" height="60" data-pagespeed-no-transform>
                   </div>
                   <div>
                       <h3 class="review__fullname"><?php echo $review["title"];?></h3>
@@ -1409,7 +1391,7 @@ Template Name: Home
       <img src="<?php bloginfo('template_url'); ?>/assets/img/themes/poster_bg.webp" class="poster__bg" alt="background image" width="1173" height="256" />
       <div class="poster__content">
         <h2 class="poster__heading">
-          Save time! Life is too beautiful to waste it cleaning! Entrust it to us!
+          Save time! Life is too beautiful to waste it cleaning!
         </h2>
         <p class="poster__body">
            Entrust it to us!

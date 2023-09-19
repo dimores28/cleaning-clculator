@@ -316,7 +316,7 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 		] );
 
 		register_post_type( 'Carpet area', [
-			'label'  => 'SCarpet area',
+			'label'  => 'Carpet area',
 			'labels' => [
 				'name'               => 'Carpet area', // основное название для типа записи
 				'singular_name'      => 'Carpet area', // название для одной записи этого типа
@@ -329,6 +329,28 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 				'not_found'          => 'Carpet not found', // если в результате поиска ничего не было найдено
 				'not_found_in_trash' => 'Not found in Carpet area', // если не было найдено в корзине
 				'menu_name'          => 'Carpet area', // название меню
+			],
+			'public'              => false,
+			'show_ui'             => true, // зависит от public
+			'menu_icon'           => 'dashicons-image-filter',
+			'supports'            => [ 'title'],  
+
+		] );
+
+		register_post_type( 'Reception', [
+			'label'  => 'Reception',
+			'labels' => [
+				'name'               => 'Reception', // основное название для типа записи
+				'singular_name'      => 'Reception', // название для одной записи этого типа
+				'add_new'            => 'Add Reception', // для добавления новой записи
+				'add_new_item'       => 'Adding a Reception', // заголовка у вновь создаваемой записи в админ-панели.
+				'edit_item'          => 'Reception Editing', // для редактирования типа записи
+				'new_item'           => 'New Reception', // текст новой записи
+				'view_item'          => 'Watch the Reception', // для просмотра записи этого типа.
+				'search_items'       => 'Search for a Reception', // для поиска по этим типам записи
+				'not_found'          => 'Reception not found', // если в результате поиска ничего не было найдено
+				'not_found_in_trash' => 'Not found in Reception', // если не было найдено в корзине
+				'menu_name'          => 'Reception', // название меню
 			],
 			'public'              => false,
 			'show_ui'             => true, // зависит от public
@@ -602,6 +624,26 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 		return $carpetAreas;
 	}
 
+	function getReception() {
+		$args = array(
+			'post_type' => 'Reception',
+			'orderby'   => 'date',
+			'order'     => 'ASC',
+			'numberposts' => -1,
+		);
+
+		$receptions = [];
+
+		foreach(get_posts($args) as $post) {
+			$reception = get_fields($post->ID);
+			$reception['title'] = $post->post_title;
+
+			$receptions[] = $reception;
+		}
+
+		return $receptions;
+	}
+
 //======================SVG===========================================//
 add_filter( 'upload_mimes', 'svg_upload_allow' );
 
@@ -645,6 +687,12 @@ function fix_svg_mime_type( $data, $file, $filename, $mimes, $real_mime = '' ){
 
 	return $data;
 }
+
+add_filter( "jpeg_quality", function( $quality ){
+	return 100;
+} );
+
+add_filter( 'big_image_size_threshold', '__return_false' );
 
  //вимкнути перевірку оновлень плагінів та движка
 //  add_filter( 'auto_update_plugin', '__return_false');

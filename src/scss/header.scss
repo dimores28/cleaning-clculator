@@ -191,6 +191,17 @@
 
   // .menu__item
   &__item {
+    &_checklist {
+      display: none;
+
+      @media (max-width:$mobile){
+         display: inline-block; 
+
+         &:first-child {
+          background: #000;
+         }
+      }
+    }
   }
 
   // .menu__link
@@ -296,3 +307,5 @@
       margin-top: -10px;
   }
 }
+
+
