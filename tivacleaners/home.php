@@ -323,9 +323,9 @@ Template Name: Home
                   </div>
                 </div>
 
-                <div class="block-row">
+                <div class="block-row" style="margin-bottom: 8px;">
                   <h3 class="block-row__title">4. Wash windows?</h3>
-                  <button class="switsh-btn" id="isCleanWindow">YES</button>
+                  <button class="switsh-btn" id="isCleanWindow" style="margin-bottom: 0;">YES</button>
                 </div>
               </div>
             </div>
@@ -333,7 +333,7 @@ Template Name: Home
               <button type="button" data-spoller class="spollers__title _spoller-active">
                 <span>Window cleaning</span>
               </button>
-              <div class="spollers__body">
+              <div class="spollers__body" style="padding-top: 0px;">
                 <div class="number-windows">
                   <h3 class="filter-title number-windows__title">
                     Enter quantity
@@ -362,6 +362,13 @@ Template Name: Home
                     </button>
 
                     <button class="switsh-btn exterior-window _select" id="outside">
+                      <span class="switsh-btn__help" data-tippy-content="It could be a 3rd floor at most.">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                          <path
+                            d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                        </svg>
+                      </span>
                       <span>Outside</span>
                     </button>
                   </div>
@@ -550,10 +557,10 @@ Template Name: Home
                   </div>
                 </div>
 
-                <div class="block-row">
+                <div class="block-row" style="margin-bottom: 8px;">>
                   <h3 class="block-row__title">4. Wash windows?</h3>
 
-                  <button class="switsh-btn is-window">YES</button>
+                  <button class="switsh-btn is-window" style="margin-bottom: 0;">YES</button>
 
                   <div class="window-wash__wrap" style="display: none">
                     <div class="number-windows">
@@ -1209,8 +1216,8 @@ Template Name: Home
         TIVA Cleaners.
       </p>
 
-      <div data-spollers class="cleaning-checklist__spollers spollers">
-        <div class="spollers__item">
+      <div data-spollers data-one-spoller class="cleaning-checklist__spollers spollers">
+        <div class="spollers__item" id="kitchen">
           <button type="button" data-spoller class="spollers__title">
             <svg data-name="Group 211" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32.559 32.55">
               <defs>
@@ -1254,7 +1261,7 @@ Template Name: Home
           </div>
         </div>
 
-        <div class="spollers__item">
+        <div class="spollers__item" id="bathroom">
           <button type="button" data-spoller class="spollers__title">
             <svg id="Group_199" data-name="Group 199" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32.553 32.55">
               <defs>
@@ -1296,7 +1303,7 @@ Template Name: Home
           </div>
         </div>
 
-        <div class="spollers__item">
+        <div class="spollers__item" id="other-rooms">
           <button type="button" data-spoller class="spollers__title">
             <svg id="Group_202" data-name="Group 202" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30.45" height="28.347" viewBox="0 0 30.45 28.347">
               <defs>

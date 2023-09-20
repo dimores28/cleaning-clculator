@@ -182,7 +182,7 @@
        flex-direction: column; 
        font-size: 26px;
        line-height: 1.5;
-       gap: 36px;
+       gap: 26px;
        background: #3bafa2;
        padding: 10px 16px 20px 16px;
        height: 100vh;
@@ -240,6 +240,15 @@
     @media (max-width:$mobile){
        display: block;
        text-align: right; 
+    }
+  }
+
+
+  .menu__item_checklist {
+    display: none;
+
+    @media (max-width:$mobile){
+       display: inline-block; 
     }
   }
 }

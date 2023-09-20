@@ -1194,21 +1194,38 @@
   font-size: 16px;
   display: inline-block;
   transition: all 0.3s ease-in;
+  position: relative;
   margin-bottom: 30px;
 
   &._select {
     border: solid 2px #0c6284;
     background: #0c6284;
     color: #fff;
+
+    .switsh-btn__help{
+      fill: #fff;
+    }
+  }
+
+  &__help {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    transition: all 0.2s ease-in;
   }
 
   @media (any-hover: hover) {
     &:hover {
       border: solid 2px #0c6284;
       background: $blue;
-      color: #fff;
+      color: #fff; 
+
+      .switsh-btn__help{
+        fill: #fff;
+      }
     }
   }
+
 }
 
 //====================================================================================================

@@ -4,7 +4,7 @@ import { isMobile, menuClose } from "./functions.js";
 import { flsModules } from "./modules.js";
 // import '../jquery.min.js';
 
-
+import './other.js';
 
 let step = 1;
 //===============
@@ -1208,3 +1208,5 @@ $('.review__link').on('click', function(){
 $('.post__text').each(function(indx, element){
   $(element).html($(element).find("p:first-child").text())
 });
+
+
