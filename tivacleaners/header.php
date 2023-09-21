@@ -105,22 +105,9 @@
 										<a href="#" class="menu__link" data-goto-header data-goto="#contacts">Contacts</a>
 									</li>
 
-									<li class="menu__item menu__item_checklist" style="margin-top: 40px;
-										border-top: 1px solid white;
-										padding-top: 10px;"
-									>
+									<li class="menu__item menu__item_checklist">
 										<a href="#" class="menu__link" data-goto-header data-goto="#kitchen" id="kitchen-link" >
-											<span>Kitchen</span>
-										</a>
-									</li>
-									<li class="menu__item menu__item_checklist">
-										<a href="#" class="menu__link" data-goto-header data-goto="#bathroom" id="bathroom-link">
-											<span>Bathroom</span>
-										</a>
-									</li>
-									<li class="menu__item menu__item_checklist">
-										<a href="#" class="menu__link" data-goto-header data-goto="#other-rooms" id="other-rooms-link">
-											<span>Other Rooms</span>
+											<span>Our check list</span>
 										</a>
 									</li>
 								</ul>

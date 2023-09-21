@@ -617,6 +617,14 @@ Template Name: Home
                     </div>
                   <?php }?>
                 </div>
+
+                <div class="removal-poster">
+                  <h3 class="removal-poster__text">
+                    Snow is no longer your concern! <br> 
+                    <small>With a monthly subscription, we remove snow regardless of the schedule, and as soon as it appears in your yard!</small>
+                  </h3>
+                  <a href="#" class="removal-poster__link btn" data-goto-header data-goto="#payment-options">Subscribe</a>
+                </div>
               </div>
             </div>
             <div class="spollers__item" data-service-filters="8">
@@ -668,7 +676,7 @@ Template Name: Home
               </div>
             </div>
           </div>
-          <div class="payment-options">
+          <div class="payment-options" id="payment-options">
             <h3 class="payment-options__title">CHOOSE YOUR FREQUENCY</h3>
 
             <div class="payment-options__variants">
@@ -1021,8 +1029,8 @@ Template Name: Home
 
           <h4 class="item__title">Book In 60 Seconds</h4>
           <p class="item__body">
-            Our cleaning team consists of highly trained professionals who
-            have undergone rigorous background checks.
+            Online booking a cleaning service takes no more than 1 minute and you`ll 
+            know the price right away.
           </p>
         </div>
         <div class="work-scheme__item item">
@@ -1078,14 +1086,14 @@ Template Name: Home
   <section class="trust-triggers" id="trust-triggers">
     <div class="trust-triggers__container">
       <div class="trust-triggers__img">
-        <img  width="579" height="528" src="<?php bloginfo('template_url'); ?>/assets/img/pipe.webp" alt="trust-triggers__img" />
+        <img  width="579" height="528" src="<?php bloginfo('template_url'); ?>/assets/img/themes/IMG_7781.JPG" alt="trust-triggers__img" />
       </div>
 
       <div class="trust-triggers__content">
         <p class="trust-triggers__subheading">
           tiva cleaners is your trusted partner
         </p>
-        <h2 class="trust-triggers__heading">Professional lawn mowing</h2>
+        <h2 class="trust-triggers__heading">Professional cleaning services</h2>
         <p class="trust-triggers__body">
           We take pride in our attention to detail and commitment to
           customer satisfaction. Our team of professional cleaners is

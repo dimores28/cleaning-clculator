@@ -449,6 +449,15 @@ $(".calculator__btn-next").on("click", function () {
     //Please make a lawn area selection to continue.
     return;
   }
+  const hasCarpetСleaning = $('[data-service="8"]').hasClass("_select");
+  if (hasCarpetСleaning && step === 2 && !checkCarpetСleaning()) {
+    $(".calculator__alerts").fadeIn("slow");
+    $(".calculator__alerts").text(
+      "Please select the level of carpet contamination to continue !"
+    );
+    //Please make a lawn area selection to continue.
+    return;
+  }
 
   const hasCarpetClining = $('[data-service="8"]').hasClass("_select");
   if(hasCarpetClining && step === 2 && !checkSelectedCarpedCLevel() && !checkSelectedCarpedArea()) {
@@ -604,6 +613,15 @@ function checkSelectedLawnSize() {
 function checkSnowRemovalSize() {
   const snow = document.querySelectorAll(".removal__item._select");
   if (snow.length) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkCarpetСleaning() {
+  const carpet = document.querySelectorAll(".carpet__level._select");
+  if (carpet.length) {
     return true;
   } else {
     return false;

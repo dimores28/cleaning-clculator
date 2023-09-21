@@ -350,3 +350,21 @@
   margin: 0 auto;
   display: none;
 }
+
+.calculator__square {
+  ._select,
+  ._setected {
+    position: relative;
+
+    &::after{
+      content: '';
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      width: 16px;
+      height: 16px;
+      background: url(../img/icons/check_circle.svg) center no-repeat;
+      background-size: contain;
+    }
+  }
+}
