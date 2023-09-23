@@ -336,7 +336,7 @@ Template Name: Home
               <div class="spollers__body" style="padding-top: 0px;">
                 <div class="number-windows">
                   <h3 class="filter-title number-windows__title">
-                    Enter quantity
+                    Enter quantity windows
                   </h3>
                   <div class="block-row__desc">
                     <p>
@@ -358,7 +358,7 @@ Template Name: Home
 
                   <div class="number-windows__group-btn">
                     <button class="switsh-btn exterior-window" id="inside">
-                      <span>Inside</span>
+                      <span>Interior</span>
                     </button>
 
                     <button class="switsh-btn exterior-window _select" id="outside">
@@ -369,7 +369,7 @@ Template Name: Home
                             d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
                         </svg>
                       </span>
-                      <span>Outside</span>
+                      <span>Exterior</span>
                     </button>
                   </div>
                 </div>
@@ -557,7 +557,7 @@ Template Name: Home
                   </div>
                 </div>
 
-                <div class="block-row" style="margin-bottom: 8px;">>
+                <div class="block-row" style="margin-bottom: 8px;">
                   <h3 class="block-row__title">4. Wash windows?</h3>
 
                   <button class="switsh-btn is-window" style="margin-bottom: 0;">YES</button>
@@ -851,8 +851,8 @@ Template Name: Home
                 Select a Payment Method
               </h2>
               <select name="payment_method" class="form-control form-select" id="payment_method">
-                <option value="Payment on site">Payment on site</option>
-                <option value="Payment upon receipt">Payment upon receipt</option>
+                  <option value="2">Payment on site</option>
+                  <option value="1">Payment upon receipt</option>
               </select>
             </div>
 

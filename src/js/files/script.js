@@ -166,7 +166,7 @@ $('#isCleanWindow').on('click', function(){
 })
 
 $('[data-service="1"]').on("click", function () {
-  $('[name="houseClean"]').val($(this).text());
+  $('[name="houseClean"]').val('Cleaning of apartments / houses');
   $('[name="cleaningLevel"]').val("Standard");
 
   if (!$(this).hasClass("_select")) {
@@ -368,7 +368,7 @@ $("#outside-pr").on("click", function () {
 });
 
 $('[data-service="5"]').on("click", function () {
-  $('[name="afterRenovationClean"').val($(this).text());
+  $('[name="afterRenovationClean"').val(`Post Renovations`);
   $('[name="renovationCleaningLevel"]').val("Standard");
 
   if (!$(this).hasClass("_select")) {
@@ -864,7 +864,7 @@ $('[data-service="2"]').on("click", function () {
     const price = $("#rangeWindows").attr("data-price-one-window");
     windowsPrice = parseInt(price);
 
-    $('[name="cleaningWindow"]').val($(this).text());
+    $('[name="cleaningWindow"]').val(`Window cleaning`);
     $('[name="outsideWindowsClean"]').val("Outside");
   } else {
     windowsPrice = 0;
@@ -907,7 +907,7 @@ $('[data-service="4"]').on("click", function () {
     const price = $("#rangePipe").attr("data-price-one-pipe");
     pipePrice = parseInt(price);
 
-    $('[name="pipeCleaning"]').val($(this).text());
+    $('[name="pipeCleaning"]').val(`Drain pipe cleaning`);
   } else {
     pipePrice = 0;
     flsModules.rangePipe?.noUiSlider.set(0);
@@ -1109,6 +1109,7 @@ $("#buyNowBtn").on("click", function () {
 });
 
 $("#payment_method").on("change", function () {
+  // console.log('value: ', this.value);
   if (this.value == 2) {
     $("#calcForm").addClass("payment");
     $("#clientId").val(
