@@ -1,8 +1,8 @@
 <?php
 // Кому отправляем
 // $to = ['dmytroivanovichn@gmail.com', 'maxkrasovskyi10@gmail.com', 'info@tivacleaners.com'];
-//$to = 'info@tivacleaners.com';
-$to = 'dmytroivanovichn@gmail.com';
+$to = 'info@tivacleaners.com';
+//$to = 'dmytroivanovichn@gmail.com';
 
    
 // Тема письма
@@ -55,26 +55,29 @@ if($cleaningLevel) {
 
 //-------------------------------------------//
 
-$cleaningWindow = trim(!empty($_POST['cleaningWindow']));
-if($cleaningWindow) {
-   $body.='<h2>'.$_POST['cleaningWindow'].'</h2>';
-   $body.= '<p><strong>Options: </strong></p>';
-}
-
-$outsideWindowsClean =  trim(!empty($_POST['outsideWindowsClean']));
-if($outsideWindowsClean) {
-   $body.='<p>'.$_POST['outsideWindowsClean'].'</p>';
-}
-
-$insideWindowsClean =  trim(!empty($_POST['insideWindowsClean']));
-if($insideWindowsClean) {
-   $body.='<p>'.$_POST['insideWindowsClean'].'</p>';
-}
-
 $numberWindow =  trim(!empty($_POST['numberWindow']));
 if($numberWindow) {
+
+   $cleaningWindow = trim(!empty($_POST['cleaningWindow']));
+   if($cleaningWindow) {
+      $body.='<h2>'.$_POST['cleaningWindow'].'</h2>';
+      $body.= '<p><strong>Options: </strong></p>';
+   }
+   
+   $outsideWindowsClean =  trim(!empty($_POST['outsideWindowsClean']));
+   if($outsideWindowsClean) {
+      $body.='<p>'.$_POST['outsideWindowsClean'].'</p>';
+   }
+   
+   $insideWindowsClean =  trim(!empty($_POST['insideWindowsClean']));
+   if($insideWindowsClean) {
+      $body.='<p>'.$_POST['insideWindowsClean'].'</p>';
+   }
+
+
    $body.='<p><strong>Number of windows: </strong>'.$_POST['numberWindow'].'</p>';
 }
+
 //-------------------------------------------//
 
 // $lawnMowing = trim(!empty($_POST['lawnMowing']));

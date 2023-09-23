@@ -422,6 +422,14 @@ $(".calculator__btn-next").on("click", function () {
     //Please select your home size to continue.
     return;
   }
+
+  const hasSelectWindow = $('[data-service="2"]').hasClass("_select");
+  if (hasSelectWindow && step === 2 && !parseInt(flsModules.rangeWindows?.noUiSlider.get())) {
+    $(".calculator__alerts").fadeIn("slow");
+    $(".calculator__alerts").text("To continue, please select the number of windows.");
+    //Please select your home size to continue.
+    return;
+  }
   
   const hasSelectPR = $('[data-service="5"]').hasClass("_select");
   if (hasSelectPR && step === 2 && !checkSelectedRoomSizePR()) {
