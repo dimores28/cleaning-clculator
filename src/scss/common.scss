@@ -3,6 +3,7 @@
 
 .btn-primary {
   background: #0d6efd;
+  border: 1px solid transparent;
 
   @media (any-hover: hover) {
     &:hover {
@@ -15,6 +16,13 @@
     box-shadow: rgba(255, 255, 255, 0.16) 0px 1px 4px,
       rgb(255, 255, 255) 0px 0px 0px 3px;
   }
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background: #cccccc;
+  color: #666666;
 }
 
 //====================================================================================================

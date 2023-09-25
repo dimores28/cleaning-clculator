@@ -856,8 +856,20 @@ Template Name: Home
               </select>
             </div>
 
+            <div class="form-check">
+              <p class="form-check__text">
+                  By checking this box and providing us with your contact information, including phone and email, you consent to receive marketing, sales and administrative autodialed calls, voicemails and text message from MaidPro and its affiliates and franchisees. Your consent is not required or a condition of any purchase. Standard carrier text and data rates may apply.
+              </p>
+              <div class="form-check__check-wrap">
+                <input class="form-check__input" type="checkbox" value="" id="consentDataTransfer">
+                <label class="form-check__label" for="consentDataTransfer">
+                  I Agree
+                </label>
+              </div>
+            </div>
+
             <div class="calculator__buttons-wrap">
-              <button type="submit" class="btn btn-primary" id="bookNowBtn">
+              <button type="submit" class="btn btn-primary" id="bookNowBtn" disabled>
                 Book my cleaning
               </button>
               <!-- <button type="button" class="btn btn-primary" id="buyNowBtn">
