@@ -601,7 +601,10 @@ Template Name: Home
                 </h3>
                 <div class="removal">
                   <?php foreach(getSnowClearingAreas() as $snow) {?>
-                    <div class="removal__item" data-removal-price="<?php echo $snow["snow_area_price"];?>">
+                    <div class="removal__item" 
+                      data-removal-price="<?php echo $snow["snow_area_price"];?>" 
+                      data-subscription-removal-price="<?php echo $snow["cost_of_subscription"];?>" 
+                    >
                         <div class="removal__img">
                             <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="48" height="48" version="1.1"
                                 viewBox="0 0 1553.54 1572.86" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -621,7 +624,7 @@ Template Name: Home
                 <div class="removal-poster">
                   <h3 class="removal-poster__text">
                     Snow is no longer your concern! <br> 
-                    <small>With a monthly subscription, we remove snow regardless of the schedule, and as soon as it appears in your yard!</small>
+                    <small>With a monthly subscription, we remove snow regardless of the schedule, and As soon as it appears on your yard!</small>
                   </h3>
                   <a href="#" class="removal-poster__link btn" data-goto-header data-goto="#payment-options">Subscribe</a>
                 </div>
@@ -685,7 +688,7 @@ Template Name: Home
                 One time
                 <span>100</span>
               </label>
-              <label class="payment-options__option" for="monthly" data-discont-procent="<?php echo $payment["monthly"]; ?>">
+              <label class="payment-options__option" for="monthly" id="monthlySubscription" data-discont-procent="<?php echo $payment["monthly"]; ?>">
                 Monthly (<?php echo $payment["monthly"]; ?>%off)
                 <span></span>
               </label>

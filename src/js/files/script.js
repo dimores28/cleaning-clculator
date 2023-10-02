@@ -36,6 +36,7 @@ let carpetPrice = 0;
 let carpetAreaPrice = 0;
 let carpetLevelPrice = 0;
 //===============
+let monthlySubscription = false;
 
 
 $(".service").on("click", function () {
@@ -705,6 +706,16 @@ function updateCarpetPrice() {
   carpetPrice = parseInt(carpetAreaPrice) + parseInt(carpetLevelPrice);
 }
 
+function updeateSnowPrice() {
+  const item = $(".removal__item._select");
+ 
+  if(!monthlySubscription) {
+    snowPrice = $(item).attr("data-removal-price");
+  } else {
+    snowPrice = parseInt($(item).attr("data-subscription-removal-price")) + 199;
+  }
+}
+
 // End Common functions ==============================================================================
 
 $(".cleaning-level__item").on("click", function () {
@@ -955,7 +966,8 @@ $(".removal__item").on("click", function () {
   $(".removal__item").removeClass("_select");
   $(this).toggleClass("_select");
 
-  snowPrice = $(this).attr("data-removal-price");
+  // snowPrice = $(this).attr("data-removal-price");
+  updeateSnowPrice();
   const text = $(this).text();
 
 
@@ -972,6 +984,20 @@ $(".removal__item").on("click", function () {
     $(".calculator__total-price strong").hide();
   }
 });
+
+$('#monthlySubscription').on('click', function() {
+  monthlySubscription = $(this).hasClass('_setected');
+  updeateSnowPrice();
+  updetePrice();
+});
+
+$('.payment-options__option').on('click', function() {
+  if( this.id !== 'monthlySubscription'){
+    monthlySubscription = false;
+    updeateSnowPrice();
+    updetePrice();
+  }
+})
 
 $('[data-service="7"]').on("click", function () {
   if (!$(this).hasClass("_select")) {
