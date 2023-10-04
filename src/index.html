@@ -1194,7 +1194,14 @@
                         Snow is no longer your concern! <br> 
                         <small>With a monthly subscription, we remove snow regardless of the schedule, and as soon as it appears in your yard!</small>
                       </h3>
-                      <a href="#" class="removal-poster__link btn" data-goto-header data-goto="#payment-options">Subscribe</a>
+                      <button class="removal-poster__link btn" >Subscribe</button>
+                    </div>
+
+                    <div class="removal__subsc">
+                      <input type="checkbox" id="monthlySubscription"  name="monthlySubscription" value="Monthly subscription for snow removal" />
+                      <label class="switsh-btn  removal__subsc-btn" for="monthlySubscription" id="monthlySubscriptionBtn">
+                        Monthly subscription
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -1434,6 +1441,7 @@
                         <input type="radio" id="oneTime" name="payment" value="One time" checked />
                         <input type="radio" id="monthly" name="payment" value="Monthly" />
                         <input type="radio" id="biweekly" name="payment" value="Biweekly" />
+                        <input type="radio" id="weekly" name="payment" value="Weekly" />
                         <input type="radio" id="weekly" name="payment" value="Weekly" />
                       </div>
                     </fieldset>

@@ -69,6 +69,30 @@
         transition: all 0.3s ease-in;
       }
    }
+
+   &__subsc {
+    margin-top: 20px;
+   }
+
+   &__subsc-btn {
+    padding: 26px 32px;
+    font-size: 20px;
+    text-transform: uppercase;
+   }
+}
+
+#monthlySubscription {
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  visibility: hidden;
+ }
+
+ #monthlySubscription:checked + 
+ .removal__subsc-btn {
+  border: solid 2px #0c6284;
+  background: #0c6284;
+  color: #fff;
 }
 
 .carpet {

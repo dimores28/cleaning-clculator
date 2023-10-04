@@ -9185,6 +9185,12 @@
                 return new Date(this.getFullYear(), this.getMonth(), this.getDate() + ("string" == typeof e ? parseInt(e, 10) : e));
             }, "undefined" != typeof window && (window.flatpickr = I), I;
         }));
+        $("#kitchen-link").on("click", (function() {
+            $("#kitchen .spollers__title").trigger("click");
+        }));
+        $("#consentDataTransfer").on("change", (function() {
+            if (this.checked) $("#bookNowBtn").prop("disabled", false); else $("#bookNowBtn").prop("disabled", true);
+        }));
         let step = 1;
         let roomPrice = 0;
         let bedroomsPrice = 0;
@@ -9198,6 +9204,8 @@
         let gardenPrice = 0;
         let squerePrice = 0;
         let bathroomsARPrice = 0;
+        let bedroomsARPrice = 0;
+        let receptionARPprice = 0;
         let repairExtras = 0;
         let repairWindowPrice = 0;
         let repairCleanPrice = 0;
@@ -9206,6 +9214,7 @@
         let carpetPrice = 0;
         let carpetAreaPrice = 0;
         let carpetLevelPrice = 0;
+        let monthlySubscription = false;
         $(".service").on("click", (function() {
             $(this).toggleClass("_select");
         }));
@@ -9218,8 +9227,9 @@
             updetePrice();
             $('[name="houseSize"]').val($(this).text());
         }));
-        $(".bedrooms__item").on("click", (function() {
-            $(".bedrooms__item").not(this).removeClass("_select");
+        $(".st-bedrooms").on("click", (function() {
+            console.log(this);
+            $(".st-bedrooms").not(this).removeClass("_select");
             $(this).toggleClass("_select");
             if ($(this).hasClass("_select")) {
                 const price = parseInt($(this).attr("data-bedroom-price"));
@@ -9250,8 +9260,8 @@
                 $('[name="numberBathrooms"]').val("");
             }
         }));
-        $(".reception__item").on("click", (function() {
-            $(".reception__item").not(this).removeClass("_select");
+        $(".st-reception").on("click", (function() {
+            $(".st-reception").not(this).removeClass("_select");
             $(this).toggleClass("_select");
             if ($(this).hasClass("_select")) {
                 const price = parseInt($(this).attr("data-reception-price"));
@@ -9301,7 +9311,7 @@
             $('[data-service-filters="2"]').slideToggle("slow");
         }));
         $('[data-service="1"]').on("click", (function() {
-            $('[name="houseClean"]').val($(this).text());
+            $('[name="houseClean"]').val("Cleaning of apartments / houses");
             $('[name="cleaningLevel"]').val("Standard");
             if (!$(this).hasClass("_select")) {
                 roomPrice = 0;
@@ -9309,7 +9319,7 @@
                 extrasPrice = 0;
                 updeteHomeCleaningPrice();
                 $(".living-quarters").removeClass("_select");
-                $(".bedrooms__item").removeClass("_select");
+                $(".st-bedrooms").removeClass("_select");
                 $(".living-extras").removeClass("_setected");
                 $("#clStandart").trigger("click");
                 $('[name="houseSize"]').val("");
@@ -9344,6 +9354,38 @@
                 updateAllRepairCleanPrice();
                 updetePrice();
                 $('[name="renovationNumberBathrooms"]').val("");
+            }
+        }));
+        $(".ar-bedrooms").on("click", (function() {
+            $(".ar-bedrooms").not(this).removeClass("_select");
+            $(this).toggleClass("_select");
+            if ($(this).hasClass("_select")) {
+                let price = $(this).attr("data-bedroom-price");
+                bedroomsARPrice = parseInt(price);
+                updateAllRepairCleanPrice();
+                updetePrice();
+                $('[name="renovationNumberBedrooms"]').val($(this).text());
+            } else {
+                bedroomsARPrice = 0;
+                updateAllRepairCleanPrice();
+                updetePrice();
+                $('[name="renovationNumberBedrooms"]').val("");
+            }
+        }));
+        $(".ar-reception").on("click", (function() {
+            $(".ar-reception").not(this).removeClass("_select");
+            $(this).toggleClass("_select");
+            if ($(this).hasClass("_select")) {
+                let price = $(this).attr("data-reception-price");
+                receptionARPprice = parseInt(price);
+                updateAllRepairCleanPrice();
+                updetePrice();
+                $('[name="renovationNumberReception"]').val($(this).text());
+            } else {
+                receptionARPprice = 0;
+                updateAllRepairCleanPrice();
+                updetePrice();
+                $('[name="renovationNumberReception"]').val("");
             }
         }));
         $(".renovation-extras").on("click", (function() {
@@ -9402,13 +9444,15 @@
             updetePrice();
         }));
         $('[data-service="5"]').on("click", (function() {
-            $('[name="afterRenovationClean"').val($(this).text());
+            $('[name="afterRenovationClean"').val(`Post Renovations`);
             $('[name="renovationCleaningLevel"]').val("Standard");
             if (!$(this).hasClass("_select")) {
                 squerePrice = 0;
                 repairExtras = 0;
                 repairWindowPrice = 0;
                 repairCleanPrice = 0;
+                bedroomsARPrice = 0;
+                receptionARPprice = 0;
                 modules_flsModules.numberWindows?.noUiSlider.set(0);
                 updateAllRepairCleanPrice();
                 $(".after-repair").removeClass("_select");
@@ -9416,11 +9460,15 @@
                 $(".is-furniture").removeClass("_select");
                 $(".renovation-extras__wrap").css("display", "none");
                 $(".renovation-extras").removeClass("_setected");
+                $(".ar-bedrooms").removeClass("_setected");
+                $(".ar-reception").removeClass("_setected");
                 $(".is-window").removeClass("_select");
                 $(".window-wash__wrap").css("display", "none");
                 $('[name="afterRenovationClean"').val("");
                 $('[name="renovationHouseSize"]').val("");
                 $('[name="renovationNumberBathrooms"]').val("");
+                $('[name="renovationNumberBedrooms"]').val("");
+                $('[name="renovationNumberReception"]').val("");
                 $('[name="renovationExtras"]').val("");
                 $('[name="renovationCleaningLevel"]').val("");
                 $('[name="renovationNumberWindows"]').val("");
@@ -9439,6 +9487,12 @@
                 $(".calculator__alerts").text("Please select your home size to continue.");
                 return;
             }
+            const hasSelectWindow = $('[data-service="2"]').hasClass("_select");
+            if (hasSelectWindow && step === 2 && !parseInt(modules_flsModules.rangeWindows?.noUiSlider.get())) {
+                $(".calculator__alerts").fadeIn("slow");
+                $(".calculator__alerts").text("To continue, please select the number of windows.");
+                return;
+            }
             const hasSelectPR = $('[data-service="5"]').hasClass("_select");
             if (hasSelectPR && step === 2 && !checkSelectedRoomSizePR()) {
                 $(".calculator__alerts").fadeIn("slow");
@@ -9455,6 +9509,12 @@
             if (hasSnowRemova && step === 2 && !checkSnowRemovalSize()) {
                 $(".calculator__alerts").fadeIn("slow");
                 $(".calculator__alerts").text("Please select a snow removal area to continue!");
+                return;
+            }
+            const hasCarpetСleaning = $('[data-service="8"]').hasClass("_select");
+            if (hasCarpetСleaning && step === 2 && !checkCarpetСleaning()) {
+                $(".calculator__alerts").fadeIn("slow");
+                $(".calculator__alerts").text("Please select the level of carpet contamination to continue !");
                 return;
             }
             const hasCarpetClining = $('[data-service="8"]').hasClass("_select");
@@ -9551,6 +9611,10 @@
             const snow = document.querySelectorAll(".removal__item._select");
             if (snow.length) return true; else return false;
         }
+        function checkCarpetСleaning() {
+            const carpet = document.querySelectorAll(".carpet__level._select");
+            if (carpet.length) return true; else return false;
+        }
         function checkSelectedGardeningSize() {
             const garden = document.querySelectorAll(".gardening-area__item._select");
             if (garden.length) return true; else return false;
@@ -9578,10 +9642,14 @@
             const price = $("#numberWindows").attr("data-price-exterior-window");
             let numberWindows = modules_flsModules.numberWindows?.noUiSlider.get();
             if (exteriorWindowPR) windowsPrice = price * numberWindows;
-            repairCleanPrice = parseInt(squerePrice) + parseInt(repairExtras) + parseInt(windowsPrice) + parseInt(bathroomsARPrice);
+            repairCleanPrice = parseInt(squerePrice) + parseInt(repairExtras) + parseInt(windowsPrice) + parseInt(bedroomsARPrice) + parseInt(receptionARPprice) + parseInt(bathroomsARPrice);
         }
         function updateCarpetPrice() {
             carpetPrice = parseInt(carpetAreaPrice) + parseInt(carpetLevelPrice);
+        }
+        function updeateSnowPrice() {
+            const item = $(".removal__item._select");
+            if (!monthlySubscription) snowPrice = $(item).attr("data-removal-price"); else snowPrice = parseInt($(item).attr("data-subscription-removal-price")) + 199;
         }
         $(".cleaning-level__item").on("click", (function() {
             $(".cleaning-level__item").removeClass("_select");
@@ -9676,7 +9744,7 @@
             if ($(this).hasClass("_select")) {
                 const price = $("#rangeWindows").attr("data-price-one-window");
                 windowsPrice = parseInt(price);
-                $('[name="cleaningWindow"]').val($(this).text());
+                $('[name="cleaningWindow"]').val(`Window cleaning`);
                 $('[name="outsideWindowsClean"]').val("Outside");
             } else {
                 windowsPrice = 0;
@@ -9704,7 +9772,7 @@
             if ($(this).hasClass("_select")) {
                 const price = $("#rangePipe").attr("data-price-one-pipe");
                 pipePrice = parseInt(price);
-                $('[name="pipeCleaning"]').val($(this).text());
+                $('[name="pipeCleaning"]').val(`Drain pipe cleaning`);
             } else {
                 pipePrice = 0;
                 modules_flsModules.rangePipe?.noUiSlider.set(0);
@@ -9731,7 +9799,7 @@
         $(".removal__item").on("click", (function() {
             $(".removal__item").removeClass("_select");
             $(this).toggleClass("_select");
-            snowPrice = $(this).attr("data-removal-price");
+            updeateSnowPrice();
             const text = $(this).text();
             $('[name="snowRemovalArea"]').val($(this).text());
             updetePrice();
@@ -9742,6 +9810,18 @@
             } else {
                 $(".calculator__total-price strong").removeClass("_plus");
                 $(".calculator__total-price strong").hide();
+            }
+        }));
+        $("#monthlySubscription").on("click", (function() {
+            monthlySubscription = $(this).hasClass("_setected");
+            updeateSnowPrice();
+            updetePrice();
+        }));
+        $(".payment-options__option").on("click", (function() {
+            if (this.id !== "monthlySubscription") {
+                monthlySubscription = false;
+                updeateSnowPrice();
+                updetePrice();
             }
         }));
         $('[data-service="7"]').on("click", (function() {
@@ -9992,26 +10072,45 @@
         const calcZipCode = document.querySelector("#zipCode");
         const calcCityName = document.querySelector("#userCity");
         const calcAdress = document.querySelector("#userAddres");
+        let PhoneCF7 = document.querySelector("#PhoneCF7");
         calcPhone?.addEventListener("input", (function() {
             if (!isValidPhone(calcPhone.value)) calcPhone.classList.add("_notvalid"); else calcPhone.classList.remove("_notvalid");
+            PhoneCF7.value = calcPhone.value;
         }));
+        let EmailCF7 = document.querySelector("#EmailCF7");
         calcEmail?.addEventListener("input", (function() {
             if (!isValidEmail(calcEmail.value)) calcEmail.classList.add("_notvalid"); else calcEmail.classList.remove("_notvalid");
+            EmailCF7.value = calcEmail.value;
         }));
+        const FirstNameCF7 = document.querySelector("#FirstNameCF7");
         calcFirstName?.addEventListener("input", (function() {
             if (!isValidName(calcFirstName.value)) calcFirstName.classList.add("_notvalid"); else calcFirstName.classList.remove("_notvalid");
+            FirstNameCF7.value = calcFirstName.value;
         }));
+        const LastNameCF7 = document.querySelector("#LastNameCF7");
         calcLasttName?.addEventListener("input", (function() {
             if (!isValidLastName(calcLasttName.value)) calcLasttName.classList.add("_notvalid"); else calcLasttName.classList.remove("_notvalid");
+            LastNameCF7.value = calcLasttName.value;
         }));
+        const ZipCodeCF7 = document.querySelector("#ZipCodeCF7");
         calcZipCode?.addEventListener("input", (function() {
             if (!isValidZipCode(calcZipCode.value)) calcZipCode.classList.add("_notvalid"); else calcZipCode.classList.remove("_notvalid");
+            ZipCodeCF7.value = calcZipCode.value;
         }));
+        const CityCF7 = document.querySelector("#CityCF7");
         calcCityName?.addEventListener("input", (function() {
             if (!isValidCityName(calcCityName.value)) calcCityName.classList.add("_notvalid"); else calcCityName.classList.remove("_notvalid");
+            CityCF7.value = calcCityName.value;
         }));
+        const AddressCF7 = document.querySelector("#AddressCF7");
         calcAdress?.addEventListener("input", (function() {
             if (!isValidAdress(calcAdress.value)) calcAdress.classList.add("_notvalid"); else calcAdress.classList.remove("_notvalid");
+            AddressCF7.value = calcAdress.value;
+        }));
+        const AptSuiteCF7 = document.querySelector("#AptSuiteCF7");
+        const aptSuite = document.querySelector("#aptSuite");
+        aptSuite?.addEventListener("input", (function() {
+            AptSuiteCF7.value = aptSuite.value;
         }));
         const calcForm = document.querySelector("#calcForm");
         calcForm?.addEventListener("submit", (async function(e) {
@@ -10020,6 +10119,7 @@
             let formData = new FormData(calcForm);
             if (error) {
                 calcForm.classList.add("_sending");
+                $("#submitCF7").trigger("click");
                 let response = await fetch("calcmail.php", {
                     method: "POST",
                     body: formData

@@ -450,10 +450,10 @@ $(".calculator__btn-next").on("click", function () {
     return;
   }
   const hasSnowRemova = $('[data-service="7"]').hasClass("_select");
-  if (hasSnowRemova && step === 2 && !checkSnowRemovalSize()) {
+  if (hasSnowRemova && step === 2 && !checkSnowRemovalSize() && !monthlySubscription) {
     $(".calculator__alerts").fadeIn("slow");
     $(".calculator__alerts").text(
-      "Please select a snow removal area to continue!"
+      "Please select a snow removal area and subscribe to continue!"
     );
     //Please make a lawn area selection to continue.
     return;
@@ -709,10 +709,11 @@ function updateCarpetPrice() {
 function updeateSnowPrice() {
   const item = $(".removal__item._select");
  
-  if(!monthlySubscription) {
-    snowPrice = $(item).attr("data-removal-price");
-  } else {
+  if(monthlySubscription) {
     snowPrice = parseInt($(item).attr("data-subscription-removal-price")) + 199;
+  }
+  else {
+    snowPrice = 0;
   }
 }
 
@@ -985,19 +986,33 @@ $(".removal__item").on("click", function () {
   }
 });
 
-$('#monthlySubscription').on('click', function() {
-  monthlySubscription = $(this).hasClass('_setected');
+$('#monthlySubscriptionBtn').on('click', function() {
+  monthlySubscription = !$('#monthlySubscription').prop("checked");
+
   updeateSnowPrice();
   updetePrice();
 });
 
-$('.payment-options__option').on('click', function() {
-  if( this.id !== 'monthlySubscription'){
-    monthlySubscription = false;
-    updeateSnowPrice();
-    updetePrice();
-  }
+$('.removal-poster__link').on('click', function() {
+  $("#monthlySubscription").prop("checked", true);
+  monthlySubscription = $('#monthlySubscription').prop("checked");
+
+  updeateSnowPrice();
+  updetePrice();
 })
+
+$('#monthlySubscription').on("change", function() {
+  updeateSnowPrice();
+  updetePrice();
+})
+
+// $('.payment-options__option').on('click', function() {
+//   if( this.id !== 'monthlySubscription'){
+//     monthlySubscription = false;
+//     updeateSnowPrice();
+//     updetePrice();
+//   }
+// })
 
 $('[data-service="7"]').on("click", function () {
   if (!$(this).hasClass("_select")) {

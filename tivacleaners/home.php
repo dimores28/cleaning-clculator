@@ -626,7 +626,14 @@ Template Name: Home
                     Snow is no longer your concern! <br> 
                     <small>With a monthly subscription, we remove snow regardless of the schedule, and As soon as it appears on your yard!</small>
                   </h3>
-                  <a href="#" class="removal-poster__link btn" data-goto-header data-goto="#payment-options">Subscribe</a>
+                  <button class="removal-poster__link btn" >Subscribe</button>
+                </div>
+
+                <div class="removal__subsc">
+                  <input type="checkbox" id="monthlySubscription"  name="monthlySubscription" value="Monthly subscription for snow removal" />
+                  <label class="switsh-btn  removal__subsc-btn" for="monthlySubscription" id="monthlySubscriptionBtn">
+                    Monthly subscription
+                  </label>
                 </div>
               </div>
             </div>
@@ -688,7 +695,7 @@ Template Name: Home
                 One time
                 <span>100</span>
               </label>
-              <label class="payment-options__option" for="monthly" id="monthlySubscription" data-discont-procent="<?php echo $payment["monthly"]; ?>">
+              <label class="payment-options__option" for="monthly" data-discont-procent="<?php echo $payment["monthly"]; ?>">
                 Monthly (<?php echo $payment["monthly"]; ?>%off)
                 <span></span>
               </label>
