@@ -38,14 +38,16 @@
 		gtag('config', 'G-2QHGCGXS08');
 	</script> -->
 
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-2QHGCGXS08"></script>
 	<script>
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-2QHGCGXS08"></script> 
-		<script> 
-			window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} 
-			gtag('js', new Date()); 
-			gtag('config', 'G-2QHGCGXS08'); 
-		</script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-2QHGCGXS08');
 	</script>
+
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -100,6 +102,9 @@
 									</li>
 									<li class="menu__item">
 										<a href="https://www.tivacleaners.com/blog" class="menu__link">Blog</a>
+									</li>
+									<li class="menu__item">
+										<a href="https://www.tivacleaners.com/faqs" class="menu__link">FAQs</a>
 									</li>
 									<li class="menu__item">
 										<a href="#" class="menu__link" data-goto-header data-goto="#contacts">Contacts</a>

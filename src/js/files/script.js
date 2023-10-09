@@ -1170,6 +1170,15 @@ $("#payment_method").on("change", function () {
   }
 });
 
+$('.service').on('click', function() {
+ 
+  if($(this).attr('data-service') != 7) {
+    $('.payment-options').show();
+  } else {
+    $('.payment-options').hide();
+  }
+})
+
 
 //Module calendar
 let datapiker = flatpickr("#cleaningDate", {

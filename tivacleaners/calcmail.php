@@ -1,8 +1,8 @@
 <?php
 // Кому отправляем
 // $to = ['dmytroivanovichn@gmail.com', 'maxkrasovskyi10@gmail.com', 'info@tivacleaners.com'];
-$to = 'info@tivacleaners.com';
-//$to = 'dmytroivanovichn@gmail.com';
+// $to = 'info@tivacleaners.com';
+$to = 'dmytroivanovichn@gmail.com';
 
    
 // Тема письма
@@ -238,10 +238,15 @@ $body.= '<hr>';
  //================================================================================================================//
  $body.= '<hr>';
 
-//  $paymentMethod = trim(!empty($_POST['payment_method']));
-//  if($paymentMethod) {
-//    $body.='<h2><strong>Payment method: </strong> '.$_POST['payment_method'].'</h2>';
-//  }
+ $paymentMethod = trim(!empty($_POST['payment_method']));
+ if($paymentMethod) {
+   if((int) $paymentMethod == 1) {
+      $body.='<h2><strong>Payment method: </strong> Payment upon receipt </h2>';
+   } else if((int) $paymentMethod == 2) {
+      $body.='<h2><strong>Payment method: </strong> Payment on site </h2>';
+   }
+   
+ }
 
  $payment = trim(!empty($_POST['payment']));
  if($payment) {

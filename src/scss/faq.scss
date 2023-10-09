@@ -1,0 +1,56 @@
+.faqs {
+   position: relative;
+   padding-top: 160px;
+   padding-bottom: 120px;
+
+   // .faqs__container
+   &__container {
+   }
+
+   // .faqs__heading
+
+   &__heading {
+      font-family: ArnoPro-SmbdDisplay, sans-serif;
+      color: #0e608c;
+      margin: 0 0 12px 0;
+      line-height: normal;
+      @include adaptiveValue("font-size", 55, 36);
+      text-align: center;
+   }
+
+   .spollers {
+      max-width: 960px;
+      margin: 0 auto;
+      // .spollers__item
+      &__item {
+      }
+   
+      // .spollers__title
+      &__title {
+         padding: 1rem 0.9375rem;
+         font-family: $mainFont, sans-serif;
+         @include adaptiveValue("font-size", 20, 16);
+         font-weight: 500;
+         background-color: rgba(247,245,245,.59);
+         
+         display: flex;
+         align-items: center;
+
+         &._spoller-active  {
+            background-image: linear-gradient( to top,rgb(95, 218, 171), rgb(67, 196, 166));
+            color: #FFF;
+            transition: all 0.3s ease-in;
+
+            &::before,
+            &::after {
+                background-color: #FFF;
+            }
+         }
+      }
+   
+      // .spollers__body
+      &__body {
+      }
+   }
+   
+}
