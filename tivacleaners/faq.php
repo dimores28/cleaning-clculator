@@ -53,7 +53,7 @@ Template Name: FAQ
          </button>
          <div class="spollers__body">
             When determining your home cleaning cost we recognize that every home is as unique as the homeowner. We base your exact price on many factors including pets, clutter, floor types, as well as, the number of people who live there. 
-            Call +18252887200 for a free phone estimate and schedule an appointment to meet with the local owner or manager for more details about our service and an exact price to clean your home.
+            Call <a href="tel:+18252887200" style="text-decoration: underline;"> +18252887200</a> for a free phone estimate and schedule an appointment to meet with the local owner or manager for more details about our service and an exact price to clean your home.
          </div>
       </div>
 
@@ -104,10 +104,56 @@ Template Name: FAQ
 
       <div class="spollers__item">
          <button class="spollers__title _spoller-active" data-spoller>
-            How do I pay for my home cleaning?
+            Are we bonded and insured?
          </button>
          <div class="spollers__body">
-            Payment is due the day of each scheduled clean. Most of our customers simply leave a check on the kitchen counter or pay by major credit card (credit cards accepted at participating locations only). Please contact your local office for details.
+            Yes. We are fully bonded and insured and we also have WSIB and workers’ compensation for our staff.
+         </div>
+      </div>
+
+      <div class="spollers__item">
+         <button class="spollers__title _spoller-active" data-spoller>
+            How do I give you instructions if I’m not home?
+         </button>
+         <div class="spollers__body">
+         Please let us know over the phone if you have any specific instructions for us before we enter your home for the first time and you are not there. We most often clean homes and businesses when their owners are not home and find that if our customers have a specific need, they will often leave us a note detailing a change they’d like to be made or an area that they’d like us to give special focus to.
+         </div>
+      </div>
+
+      <div class="spollers__item">
+         <button class="spollers__title _spoller-active" data-spoller>
+            How will you get in my home or business if I am not there?
+         </button>
+         <div class="spollers__body">
+         The most convenient and secure way for us to get inside is with a key that you have provided to us. Please rest assured that your key is secure and kept safe by our staff. To ensure security, we colour code the keys without using any address labels so that if a key is lost by accident, there will be no identifying information about you or your address on it. Each morning the keys are signed out and then signed back in at night and locked in our safe for safekeeping. Giving us a key is also a great idea because we’ll be able to get into your space even if you forget that it is your cleaning day!
+         </div>
+      </div>
+
+
+      <div class="spollers__item">
+         <button class="spollers__title _spoller-active" data-spoller>
+            Will my home or business be cleaned by the same cleaning crew each time?
+         </button>
+         <div class="spollers__body">
+         Generally, yes. If you have your cleanings scheduled for the same time and day each week, you will have the same cleaners at your location. If you need to change your time and day, we will do our best to keep the same cleaners on your location but cannot guarantee it.
+         </div>
+      </div>
+
+      <div class="spollers__item">
+         <button class="spollers__title _spoller-active" data-spoller>
+            Do you guarantee your work?
+         </button>
+         <div class="spollers__body">
+         Yes, we guarantee all of our work and we will not leave a job site until you are completely satisfied. Most of our customers are repeat customers and referrals are our best sources of new business.
+         </div>
+      </div>
+
+      <div class="spollers__item">
+         <button class="spollers__title _spoller-active" data-spoller>
+            What if I am sensitive to cleaning products?
+         </button>
+         <div class="spollers__body">
+         No problem! If you have sensitivities to certain chemicals, scents or cleaning products, we’re happy to use cleaning products that you provide instead of the products that we normally use.
          </div>
       </div>
 
@@ -116,7 +162,7 @@ Template Name: FAQ
             Did you not see your question?
          </button>
          <div class="spollers__body">
-            A representative from The Cleaning Authority will be happy to answer any questions you may have about green home cleaning. Feel free to call us now at <a href="tel:+18252887200">+18252887200</a>.
+            A representative from The Cleaning Authority will be happy to answer any questions you may have about green home cleaning. Feel free to call us now at <a href="tel:+18252887200" style="text-decoration: underline;">+18252887200</a>.
          </div>
       </div>
 

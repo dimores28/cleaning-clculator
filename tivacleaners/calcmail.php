@@ -1,8 +1,8 @@
 <?php
 // Кому отправляем
 // $to = ['dmytroivanovichn@gmail.com', 'maxkrasovskyi10@gmail.com', 'info@tivacleaners.com'];
-// $to = 'info@tivacleaners.com';
-$to = 'dmytroivanovichn@gmail.com';
+$to = 'info@tivacleaners.com';
+//$to = 'dmytroivanovichn@gmail.com';
 
    
 // Тема письма
@@ -297,12 +297,15 @@ echo json_encode($response);
 
 if ( $sent_message ) {
 
+   $newEmail = $_POST['userEmail'];
+   $subject = 'Tivacleaners website!';
+
    $newBody = '<h1>Tivacleaners website!</h1>';
-   $newBody.= '<p>Hi, '.$firstName.'!</p>';
+   $newBody.= '<p>Hi, '.$_POST['firstName'].'!</p>';
    $newBody.= '<p>We have received your application and are already assembling a team for you.</p>';
    $newBody.= '<p>You will be happy you chose us!</p>';
 
-   wp_mail( $userEmail, $subject, $newBody );
+   $send_thankyou = wp_mail( $newEmail, $subject, $newBody );
 } 
 
 ?>

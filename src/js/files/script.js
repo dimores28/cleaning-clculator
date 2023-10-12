@@ -450,7 +450,7 @@ $(".calculator__btn-next").on("click", function () {
     return;
   }
   const hasSnowRemova = $('[data-service="7"]').hasClass("_select");
-  if (hasSnowRemova && step === 2 && !checkSnowRemovalSize() && !monthlySubscription) {
+  if (hasSnowRemova && step === 2 && !checkSnowRemovalSize() || hasSnowRemova && step === 2 && !monthlySubscription) {
     $(".calculator__alerts").fadeIn("slow");
     $(".calculator__alerts").text(
       "Please select a snow removal area and subscribe to continue!"
@@ -710,10 +710,10 @@ function updeateSnowPrice() {
   const item = $(".removal__item._select");
  
   if(monthlySubscription) {
-    snowPrice = parseInt($(item).attr("data-subscription-removal-price")) + 199;
+    snowPrice = parseInt($(item).attr("data-subscription-removal-price"));
   }
   else {
-    snowPrice = 0;
+    snowPrice = parseInt($(item).attr("data-removal-price"));
   }
 }
 

@@ -46,6 +46,10 @@
                 background-color: #FFF;
             }
          }
+
+         @media (max-width:$mobile){
+            padding: 1rem 2.3rem 1rem 0.9375rem;
+         }
       }
    
       // .spollers__body
