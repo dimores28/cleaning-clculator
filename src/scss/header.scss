@@ -14,6 +14,7 @@
   &__container {
     display: flex;
     justify-content: space-between;
+    gap: 14px;
   }
 
 
@@ -174,15 +175,21 @@
     display: flex;
     gap: 30px;
 
+    @media (max-width: em(1080)){
+      gap: 24px; 
+      flex-wrap: wrap;
+    }
+
     @media (max-width: em(860)){
       gap: 20px;
     }
 
     @media (max-width:$mobile){
        flex-direction: column; 
+       flex-wrap: nowrap;
        font-size: 26px;
        line-height: 1.5;
-       gap: 26px;
+       gap: 14px;
        background: #3bafa2;
        padding: 10px 16px 20px 16px;
        height: 100vh;
@@ -200,6 +207,28 @@
          &:first-child {
           background: #000;
          }
+      }
+    }
+
+    &_sub {
+      position: relative;
+
+      svg {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: -20px;
+        top: 60%;
+        margin-top: -10px;
+
+        fill: #225c73;
+
+        @media (max-width:$mobile){
+           fill: #fff; 
+           right: -6px;
+           top: 22px;
+        }
       }
     }
   }
@@ -317,4 +346,97 @@
   }
 }
 
+//====================================================================================================
+.submenu {
+  position: absolute;
+  background: #fff;
+  width: 250px;
+  padding-top: 16px;
+  left: -12px;
+  overflow: hidden;
+  max-height: 1px;
+  opacity: 0;
+  transition: all 0.3s ease-in;
+
+  @media (max-width:$mobile){
+     position: relative; 
+     display: none;
+     background: transparent;
+     width: 100%;
+     text-align: right;
+  }
+
+  // .submenu__body
+  &__body {
+    padding: 10px 12px;
+  }
+
+  // .submenu__link
+  &__link {
+    position: relative;
+    outline: none;
+    transition: all 0.3s ease-in;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background: #4aa792;
+      width: 0%;
+      height: 2px;
+      bottom: -3px;
+      transition: all 0.3s ease-in;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #4aa792;
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+
+    &:focus,
+    &:focus-visible {
+      color: #4aa792;
+      &::before {
+        width: 100%;
+      }
+    }
+
+    @media (max-width:$mobile){
+       display: block;
+       text-align: right; 
+    }
+  }
+
+}
+
+
+.menu__item_sub {
+
+  @media (max-width:$mobile){
+     text-align: right; 
+     padding-right: 15px;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      .submenu {
+        max-height: unset;
+        opacity: 1;
+      }
+    }
+  }
+
+  &._show-submenu {
+    @media (max-width:$mobile){
+      .submenu {
+        display: block;
+        max-height: unset;
+        opacity: 1;
+      } 
+    }
+  }
+}
 

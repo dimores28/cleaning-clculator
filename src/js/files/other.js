@@ -1,3 +1,5 @@
+import { flsModules } from "../files/modules.js";
+
 $("#kitchen-link").on('click', function() {
    $("#kitchen .spollers__title").trigger('click');
 });
@@ -17,4 +19,12 @@ $('#consentDataTransfer').on('change',function() {
    } else {
       $('#bookNowBtn').prop('disabled', true);
    }
+});
+
+$('.menu__item_sub').on('click', function() {
+   $(this).toggleClass('_show-submenu');
+});
+
+$('.services-content__container .wp-block-button__link').on('click', function() {
+   flsModules.popup.open("#popup");
 });

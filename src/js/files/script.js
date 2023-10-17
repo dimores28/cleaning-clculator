@@ -1145,7 +1145,7 @@ function updetePrice() {
     parseInt(carpetPrice) +
     (parseInt(repairCleanPrice) + parseInt(dopRepairProcent));
 
-  $(".calculator__total-price span").text(finalPrice);
+  $(".calculator__total-price span").text(finalPrice.toFixed(1));
 
   updateDiscountPrice();
 }

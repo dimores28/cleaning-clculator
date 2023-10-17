@@ -26,17 +26,6 @@
 	<meta name="theme-color" content="#ffffff" />
 
 
-
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4Q9ESWG5ES"></script>
-	<script>
-	window.dataLayer = window.dataLayer || [];
-	function gtag(){dataLayer.push(arguments);}
-	gtag('js', new Date());
-
-	gtag('config', 'G-4Q9ESWG5ES');
-	</script>
-
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-T4MCE33VBP"></script>
 	<script>
@@ -46,7 +35,6 @@
 
 	gtag('config', 'G-T4MCE33VBP');
 	</script>
-
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -95,6 +83,29 @@
 									</li>
 									<li class="menu__item">
 										<a href="<?php echo get_home_url(); ?>#calculator" class="menu__link">Calculator</a>
+									</li>
+									<li class="menu__item menu__item_sub">
+										<a href="#" class="">Services</a>
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+											<path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+										</svg>
+										<ul class="submenu">
+											<li class="submenu__body">
+												<a href="https://www.tivacleaners.com/cleaning-of-apartments-houses/" class="submenu__link">
+													Apartments / houses
+												</a>
+											</li>
+											<li class="submenu__body">
+												<a href="https://www.tivacleaners.com/carpet-cleaning/" class="submenu__link">
+													Carpet cleaning
+												</a>
+											</li>
+											<li class="submenu__body">
+												<a href="https://www.tivacleaners.com/post-renovations/" class="submenu__link">
+													Post renovations
+												</a>
+											</li>
+										</ul>
 									</li>
 									<li class="menu__item">
 										<a href="<?php echo get_home_url(); ?>#why-us" class="menu__link">Why us</a>
