@@ -297,15 +297,114 @@ echo json_encode($response);
 
 if ( $sent_message ) {
 
-   $newEmail = $_POST['userEmail'];
-   $subject = 'Tivacleaners website!';
+   $accessToken = getAuthToken();
 
-   $newBody = '<h1>Tivacleaners website!</h1>';
-   $newBody.= '<p>Hi, '.$_POST['firstName'].'!</p>';
-   $newBody.= '<p>We have received your application and are already assembling a team for you.</p>';
-   $newBody.= '<p>You will be happy you chose us!</p>';
+   if($accessToken) {
 
-   $send_thankyou = wp_mail( $newEmail, $subject, $newBody );
+   $accessTokenEncode = json_decode($accessToken);
+   // var_dump($accessTokenEncode);
+
+   // Ініціалізуємо новий запит
+   $ch = curl_init();
+
+   // Встановлюємо URL, до якого ви хочете зробити POST-запит
+   $url = "https://api.sendpulse.com/smtp/emails";
+
+   // Налаштовуємо параметри запиту
+   curl_setopt($ch, CURLOPT_URL, $url);
+   curl_setopt($ch, CURLOPT_POST, 1);
+
+   // Додаємо параметр авторизації до заголовку
+   $authorization_header = 'Authorization: Bearer ';
+   $authorization_header .= $accessTokenEncode->access_token;
+
+
+   // Встановлюємо параметр для отримання відповіді від сервера
+   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+   curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json', $authorization_header));
+
+   $name = "Max";
+
+   curl_setopt($ch, CURLOPT_POSTFIELDS, '{
+      "email": {
+         "subject": "Tivacleaners inc",
+         "template": {
+         "id": 58922,
+         "variables": {
+            "name": "'.$_POST['firstName'].'",
+            "code": "58922",
+            "current_year": "2023",
+            "ec_es_email_sender_company": "Tivacleaners inc",
+            "ec_es_email_sender_address": "",
+            "total_price": "'.$_POST['totalPrice'].'"
+         }
+         },
+         "from": {
+         "name": "Tivacleaners",
+         "email": "info@tivacleaners.com"
+         },
+         "to": [
+         {
+            "email": "'.$_POST['userEmail'].'",
+            "name": "'.$_POST['firstName'].'"
+         }
+         ]
+      }
+   }');
+
+   // Виконуємо запит
+   $response = curl_exec($ch);
+
+   // Перевіряємо наявність помилок
+   if(curl_errno($ch)){
+         echo 'Помилка curl: ' . curl_error($ch);
+   }
+
+   // Закриваємо з'єднання
+   curl_close($ch);
+   return;
+
+   // Обробляємо отриману відповідь
+   // echo $response;
+
+   }
 } 
 
+
+function getAuthToken() {
+   // Ініціалізуємо новий запит
+   $ch = curl_init();
+
+   // Встановлюємо URL, до якого ви хочете зробити POST-запит
+   $url = "https://api.sendpulse.com/oauth/access_token";
+
+   // Налаштовуємо параметри запиту
+   curl_setopt($ch, CURLOPT_URL, $url);
+   curl_setopt($ch, CURLOPT_POST, 1);
+
+   // Встановлюємо параметр для отримання відповіді від сервера
+   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+   curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+
+   curl_setopt($ch, CURLOPT_POSTFIELDS, '{
+     "grant_type":"client_credentials",
+     "client_id":"fb59c3b9647bf2ac5c935d9a032de936",
+     "client_secret":"ac1ddb5f2089a8f73b69af835e7e2dc4"
+  }');
+
+  // Виконуємо запит
+ $response = curl_exec($ch);
+
+ // Перевіряємо наявність помилок
+ if(curl_errno($ch)){
+     echo 'Помилка curl: ' . curl_error($ch);
+     return null;
+ }
+
+ // Закриваємо з'єднання
+ curl_close($ch);
+
+ // Обробляємо отриману відповідь
+ return $response;
+}
 ?>

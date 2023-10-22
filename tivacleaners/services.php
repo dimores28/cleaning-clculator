@@ -22,6 +22,12 @@ Template Name: Services
    .services-hero {
       margin-top: 126px;
    }
+
+   @media (max-width: 560px){
+      .services-hero {
+         margin-top: 70px;
+      }   
+   }
 </style>
 
       <section class="services-hero">

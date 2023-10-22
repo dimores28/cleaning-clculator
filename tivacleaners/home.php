@@ -9,6 +9,9 @@ Template Name: Home
 <?php get_header();?>
 
   <section class="banner">
+    <p class="banner__uk-team">
+      Ukrainian company - <span class="banner__uk-team_span">Ukrainian team</span> <span class="flag ukraine"></і>
+    </p>
     <div class="banner__container">
       <div class="banner__content">
         <h1 class="banner__heading">

@@ -3,6 +3,43 @@
   @media (max-width: $mobile) {
     height: 100%;
   }
+
+  &__uk-team {
+    text-align: center;
+    font-size: 26px;
+    color: #0c6185;
+    transform: translateY(160px);
+
+    &_span {
+      color: #30b7a7;
+    }
+
+    @media (max-width: em(1020)){
+        margin-bottom: 10px;
+    }
+
+    @media (max-width: em(990)){
+      margin-bottom: 32px;
+    }
+
+    @media (max-width:$mobile){
+       margin-bottom: 20px; 
+       transform: translateY(100px);
+    }
+
+    @media (max-width: em(576)){
+      font-size: 20px;
+    }
+
+    @media (max-width:$mobileSmall){
+      transform: translateY(80px);
+    }
+
+    @media (max-width: em(394)){
+      font-size: 18px;
+    }
+  }
+
   &__container {
     display: flex;
     width: 100%;
@@ -122,4 +159,27 @@
       }
     }
   }
+}
+
+
+.flag {
+  position: relative;
+  width: 30px;
+  height: 20px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: inline-block;
+
+  @media (max-width: em(576)) {
+    height: 18px;
+  }
+
+  @media (max-width: em(394)) {
+    width: 26px;
+    height: 16px;
+  }
+}
+
+.ukraine {
+  background: linear-gradient(#105bbc 50%, #ffd600 0);
 }
