@@ -336,7 +336,9 @@ if ( $sent_message ) {
             "current_year": "2023",
             "ec_es_email_sender_company": "Tivacleaners inc",
             "ec_es_email_sender_address": "",
-            "total_price": "'.$_POST['totalPrice'].'"
+            "total_price": "'.$_POST['totalPrice'].'",
+            "cleaning_date": "'.$_POST['cleaningDate'].'",
+            "cleaning_time": "'.$_POST['timeInput'].'"
          }
          },
          "from": {

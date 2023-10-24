@@ -72,7 +72,7 @@ popupForm?.addEventListener("submit", async function (e) {
   if (error) {
     popupForm.classList.add("_sending");
 
-    let response = await fetch("mail.php", {
+    let response = await fetch("https://www.tivacleaners.com/mail.php", {
       method: "POST",
       body: formData,
     });
