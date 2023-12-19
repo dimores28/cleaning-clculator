@@ -709,12 +709,16 @@ function updateCarpetPrice() {
 function updeateSnowPrice() {
   const item = $(".removal__item._select");
  
+
   if(monthlySubscription) {
-    snowPrice = parseInt($(item).attr("data-subscription-removal-price"));
+    let pr = parseInt($(item).attr("data-subscription-removal-price"));
+    snowPrice = pr ? pr : 0
   }
-  else {
-    snowPrice = parseInt($(item).attr("data-removal-price"));
-  }
+  // else {
+  //   snowPrice = parseInt($(item).attr("data-removal-price"));
+  // }
+
+
 }
 
 // End Common functions ==============================================================================
@@ -1286,4 +1290,6 @@ $('.post__text').each(function(indx, element){
   $(element).html($(element).find("p:first-child").text())
 });
 
-
+window.onload = () => {
+  flsModules.popup.open('#popupPromotion');
+}

@@ -327,14 +327,14 @@ if ( $sent_message ) {
 
    curl_setopt($ch, CURLOPT_POSTFIELDS, '{
       "email": {
-         "subject": "Tivacleaners inc",
+         "subject": "TIVA cleaners inc",
          "template": {
          "id": 58922,
          "variables": {
             "name": "'.$_POST['firstName'].'",
             "code": "58922",
             "current_year": "2023",
-            "ec_es_email_sender_company": "Tivacleaners inc",
+            "ec_es_email_sender_company": "TIVA cleaners inc",
             "ec_es_email_sender_address": "",
             "total_price": "'.$_POST['totalPrice'].'",
             "cleaning_date": "'.$_POST['cleaningDate'].'",

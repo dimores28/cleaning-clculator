@@ -140,6 +140,26 @@
 			</div>
 		</div>
 
+		<div id="popupPromotion" aria-hidden="true" class="popup">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+					<path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" fill="#30b7a7"/>
+					</svg>
+				</button>
+
+				<div class="promotion">
+					<h2 class="promotion__heading offer__heading">
+						<span>10% Discount </span>on the first cleaning
+						the promotion is valid until the end of the month
+					</h2>
+				</div>
+
+				</div>
+			</div>
+		</div>
+
 	</div>
 		<!-- Стилі для body -->
 	<style>

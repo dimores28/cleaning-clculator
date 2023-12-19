@@ -23,7 +23,7 @@ use PHPMailer\PHPMailer\SMTP;
    add_theme_support( 'title-tag' );
    add_theme_support('custom-logo');
 
-   /**
+/**
  * Настройка SMTP
  *
  * @param PHPMailer $phpmailer объект мэилера

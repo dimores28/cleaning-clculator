@@ -426,3 +426,17 @@ button[disabled]{
     transform: rotate(0);
   }
 }
+
+#popupPromotion {
+  button:focus,
+  button:focus-visible {
+    outline: none;
+  }
+}
+
+.promotion__heading {
+
+  span {
+    color: #dc3545;
+  }
+}
