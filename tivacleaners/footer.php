@@ -152,7 +152,8 @@
 				<div class="promotion">
 					<h2 class="promotion__heading offer__heading">
 						<span>10% Discount </span>on the first cleaning
-						the promotion is valid until the end of the month
+						the promotion is valid until the end of the month <br>
+						<small>(when booking from the site)</small>
 					</h2>
 				</div>
 
