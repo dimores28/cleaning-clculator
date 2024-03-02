@@ -204,6 +204,12 @@
     }
   }
 
+  &__btn-prev {
+    color: #000000;
+    background: #fff;
+    border: 1px solid #45c5a6;
+  }
+
   &__btn-next_fixed {
     position: fixed;
     bottom: 30px;

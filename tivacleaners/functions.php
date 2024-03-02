@@ -31,13 +31,10 @@ use PHPMailer\PHPMailer\SMTP;
 
 function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 	$phpmailer->isSMTP();
-	// $phpmailer->Host       = 'mail.adm.tools';
 	$phpmailer->Host       = 'smtp-pulse.com';
 	$phpmailer->SMTPAuth   = true;
 	$phpmailer->Port       = 465;
-	// $phpmailer->Username   = 'info@tivacleaners.com';
 	$phpmailer->Username   = 'dmitryichumak@gmail.com';
-	// $phpmailer->Password   = 'Tivacleaners2023!';
 	$phpmailer->Password   = 'MGTaTDBZMDe';
 	$phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 	$phpmailer->From       = 'info@tivacleaners.com';

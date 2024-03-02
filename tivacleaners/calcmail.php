@@ -1,10 +1,10 @@
 <?php
 // Кому отправляем
-// $to = ['dmytroivanovichn@gmail.com', 'maxkrasovskyi10@gmail.com', 'info@tivacleaners.com'];
-$to = 'info@tivacleaners.com';
+$to = ['dmytroivanovichn@gmail.com', 'dmitryichumak@gmail.com'];
+// $to = 'orders@tivacleaners.com'; 'dmitryichumak@gmail.com',
 // $to = 'dmytroivanovichn@gmail.com';
 
-   
+  echo "order";
 // Тема письма
 $subject = 'Tivacleaners website!';
    

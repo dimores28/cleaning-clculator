@@ -3,8 +3,8 @@ import { isMobile, menuClose } from "./functions.js";
 // Підключення списку активних модулів
 import { flsModules } from "./modules.js";
 // import '../jquery.min.js';
-
 import './other.js';
+
 
 let step = 1;
 //===============
@@ -529,6 +529,8 @@ function stepControl() {
     $(".calculator__total-price strong").hide();
     $('.offer').addClass('_hide-btn');
 
+    $(".order-table").html('');
+    $(".order-table").hide();
 
     // $(".calculator__total-price span").text();
     $('.calculator__full-price').hide();
@@ -549,7 +551,7 @@ function stepControl() {
 
     if(procent) {
       $('.calculator__full-price').show();
-      $('.calculator__full-price span').text(price);
+      $('.calculator__full-price span').text(price.toFixed(2));
 
       price = price * ((100 - procent) / 100);
       $(".calculator__total-price span").text(price);
@@ -567,6 +569,9 @@ function stepControl() {
     $(".calculator__total-price strong").text("(+GST 5%)");
     $(".calculator__total-price strong").show();
     $(".calculator__total-price strong").removeClass("_plus");
+
+    $(".order-table").html(flsModules.printOrderTable());
+    $(".order-table").show();
 
     scrollTopOffer();
   }

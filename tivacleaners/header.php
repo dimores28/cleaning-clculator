@@ -82,7 +82,7 @@
 										<a href="<?php echo get_home_url(); ?>" class="menu__link">Home</a>
 									</li>
 									<li class="menu__item">
-										<a href="<?php echo get_home_url(); ?>#calculator" class="menu__link">Find out the cost</a>
+										<a href="<?php echo get_home_url(); ?>#calculator" class="menu__link">Get your free estimate</a>
 									</li>
 									<li class="menu__item menu__item_sub">
 										<a href="#" class="">Services</a>

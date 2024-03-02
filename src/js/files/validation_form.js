@@ -78,7 +78,7 @@ popupForm?.addEventListener("submit", async function (e) {
     });
 
     if (response.ok) {
-      let result = await response.json();
+      // let result = await response.json();
       let alertMsg = document.querySelector(".popup__alert");
       alertMsg.innerHTML =
         '<p class="alert__msg" >Your message has been sent!!!<p/>';
@@ -211,7 +211,7 @@ calcForm?.addEventListener("submit", async function (e) {
     });
 
     if (response.ok) {
-      let result = await response.json();
+      // let result = await response.json();
       let alertMsg = document.querySelector(".calculator__alert");
       alertMsg.innerHTML =
         '<p class="alert__msg" >Your message has been sent!!!<p/>';
