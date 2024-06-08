@@ -865,7 +865,7 @@ Template Name: Home
               </h2>
               <select name="payment_method" class="form-control form-select" id="payment_method">
                   <option value="2">Payment on site</option>
-                  <option value="1">Payment upon receipt</option>
+                  <option value="1">Postpayment</option>
               </select>
             </div>
 

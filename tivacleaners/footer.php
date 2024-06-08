@@ -65,6 +65,11 @@
 									<span>Privacy policy</span>
 								</a>
 							</li>
+							<li class="more-info__item">
+								<a href="https://calgarybestrated.com/best-move-in-move-out-cleaning-in-calgary/">
+									<img src="https://www.tivacleaners.com/wp-content/uploads/CalgaryBestRatedLogo_Red.png" width="120" alt="calgarybestrated">
+								</a>
+							</li>
 						</ul>
 					</div>
 					<div class="footer__fol-us">

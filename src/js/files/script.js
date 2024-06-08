@@ -424,6 +424,12 @@ $(".calculator__btn-next").on("click", function () {
     return;
   }
 
+  if (hasSelect && step === 2 && (!checkSelectedBathrooms() || !checkSelectedBedrooms() || !checkSelectedReception())) {
+    $(".calculator__alerts").fadeIn("slow");
+    $(".calculator__alerts").text("Please select the number of bathrooms, number of bedrooms and reception rooms.");
+    return;
+  }
+
   const hasSelectWindow = $('[data-service="2"]').hasClass("_select");
   if (hasSelectWindow && step === 2 && !parseInt(flsModules.rangeWindows?.noUiSlider.get())) {
     $(".calculator__alerts").fadeIn("slow");
@@ -437,6 +443,12 @@ $(".calculator__btn-next").on("click", function () {
     $(".calculator__alerts").fadeIn("slow");
     $(".calculator__alerts").text("Please select your home size to continue.");
     //Please select your home size to continue.
+    return;
+  }
+
+  if (hasSelectPR && step === 2 && (!checkSelectedBathroomsPR || !checkSelectedBedroomsPR() || !checkSelectedReceptionPR())) {
+    $(".calculator__alerts").fadeIn("slow");
+    $(".calculator__alerts").text("Please select the number of bathrooms, number of bedrooms and reception rooms.");
     return;
   }
 
@@ -546,7 +558,7 @@ function stepControl() {
     $(".calculator__btn-next").hide();
 
     //цена без скидки
-    let price = $(".calculator__total-price span").text();
+    let price = parseFloat($(".calculator__total-price span").text());
     let procent = parseInt($('.payment-options__option._setected').attr("data-discont-procent"));
 
     if(procent) {
@@ -590,6 +602,66 @@ function checkSelectedService() {
   let service = document.querySelectorAll(".service._select");
 
   if (service.length) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkSelectedBathrooms() {
+  let bathrooms = document.querySelectorAll(".bathrooms__item._select");
+
+  if (bathrooms.length) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkSelectedBathroomsPR() {
+  let bathrooms = document.querySelectorAll(".bathrooms-ar__item._select");
+
+  if (bathrooms.length) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkSelectedBedrooms() {  
+  let bedrooms = document.querySelectorAll(".st-bedrooms._select");
+
+  if (bedrooms.length) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkSelectedBedroomsPR() {  
+  let bedrooms = document.querySelectorAll(".ar-bedrooms._select");
+
+  if (bedrooms.length) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkSelectedReception() {
+  let reception = document.querySelectorAll(".st-reception._select");
+
+  if (reception.length) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function checkSelectedReceptionPR() {
+  let reception = document.querySelectorAll(".ar-reception._select");
+
+  if (reception.length) {
     return true;
   } else {
     return false;

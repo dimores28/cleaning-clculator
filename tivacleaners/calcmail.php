@@ -333,7 +333,7 @@ if ( $sent_message ) {
          "variables": {
             "name": "'.$_POST['firstName'].'",
             "code": "58922",
-            "current_year": "2023",
+            "current_year": "2024",
             "ec_es_email_sender_company": "TIVA cleaners inc",
             "ec_es_email_sender_address": "",
             "total_price": "'.$_POST['totalPrice'].'",
