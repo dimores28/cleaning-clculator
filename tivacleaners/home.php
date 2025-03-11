@@ -95,7 +95,7 @@ Template Name: Home
               <img src="<?php bloginfo('template_url'); ?>/assets/img/icons/arrow-small-right.svg" class="service__indicator_not-chosen" alt="arrow icon" width="17" height="15" />
             </div>
           </div>
-          <div class="service" data-service-price="30" data-service="1">
+          <div class="service service_move-in" data-service-price="30" data-service="1">
             <div class="service__img">
               <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="70" height="75" version="1.1"
                 viewBox="0 0 557.47 577.47" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">

@@ -72,7 +72,7 @@ popupForm?.addEventListener("submit", async function (e) {
   if (error) {
     popupForm.classList.add("_sending");
 
-    let response = await fetch("https://www.tivacleaners.com/mail.php", {
+    let response = await fetch("/api/contact-form.php", {
       method: "POST",
       body: formData,
     });
@@ -205,7 +205,7 @@ calcForm?.addEventListener("submit", async function (e) {
     calcForm.classList.add("_sending");
     $('#submitCF7').trigger("click");
 
-    let response = await fetch("calcmail.php", {
+    let response = await fetch("/api/calculator-form.php", {
       method: "POST",
       body: formData,
     });

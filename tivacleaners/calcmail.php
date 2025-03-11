@@ -1,7 +1,6 @@
 <?php
 // Кому отправляем
-$to = ['dmytroivanovichn@gmail.com', 'dmitryichumak@gmail.com'];
-// $to = 'orders@tivacleaners.com'; 'dmitryichumak@gmail.com',
+$to = ['dmytroivanovichn@gmail.com', 'sales@tivacleaners.com'];
 // $to = 'dmytroivanovichn@gmail.com';
 
   echo "order";

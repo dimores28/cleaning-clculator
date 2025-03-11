@@ -71,19 +71,6 @@ function orderCleaningApartments() {
          `;
       }
 
-      if($('input[name="numberBeadroom"]').val()) {
-         row += `
-         <div class="product__row">
-            <div class="product__name">
-              Number of Beadroom:
-            </div>
-            <div class="product__total-options">
-              ${$('input[name="numberBeadroom"]').val()}
-            </div>
-          </div>
-         `;
-      }
-
       if($('input[name="numberBathrooms"]').val()) {
          row += `
          <div class="product__row">
@@ -92,6 +79,19 @@ function orderCleaningApartments() {
             </div>
             <div class="product__total-options">
               ${$('input[name="numberBathrooms"]').val()}
+            </div>
+          </div>
+         `;
+      }
+
+      if($('input[name="numberBeadroom"]').val()) {
+         row += `
+         <div class="product__row">
+            <div class="product__name">
+              Number of Bedrooms:
+            </div>
+            <div class="product__total-options">
+              ${$('input[name="numberBeadroom"]').val()}
             </div>
           </div>
          `;

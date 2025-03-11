@@ -759,6 +759,11 @@ function updeteHomeCleaningPrice() {
     parseInt(extrasPrice) +
     parseInt(bathroomsPrice) +
     parseInt(receptionPprice);
+
+    if(document.querySelector('.service_move-in._select')) {
+      homeCleaningPrice = homeCleaningPrice * 1.15;
+    }
+
 }
 
 function updateAllRepairCleanPrice() {
@@ -1214,6 +1219,8 @@ function updetePrice() {
   if (isRepairClinlevel) {
     dopRepairProcent = repairCleanPrice * 1.25 - repairCleanPrice;
   }
+
+
 
   let finalPrice =
     parseInt(homeCleaningPrice) +
