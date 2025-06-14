@@ -17,6 +17,12 @@ use PHPMailer\PHPMailer\SMTP;
 		wp_enqueue_script( 'jquery' );
 
 		wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/app.min.js', array('jquery'), 'null', true );
+
+		// Додаємо локалізацію для AJAX
+		wp_localize_script('script', 'tivaAjax', array(
+			'url' => admin_url('admin-ajax.php'),
+			'nonce' => wp_create_nonce('tiva-nonce')
+		));
 	});
 
    add_theme_support('post-thumbnails');
@@ -39,9 +45,12 @@ function mihdan_send_smtp_email( PHPMailer $phpmailer ) {
 	$phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 	$phpmailer->From       = 'info@tivacleaners.com';
 	$phpmailer->FromName   = 'Tivacleaners site';
-
+	
+	// Додайте ці рядки:
+	$phpmailer->XMailer = ''; // Вимикаємо X-Mailer заголовок
+	$phpmailer->addReplyTo('info@tivacleaners.com', 'Tivacleaners site'); // Додаємо Reply-To
 }
-  add_action( 'phpmailer_init', 'mihdan_send_smtp_email' );
+//   add_action( 'phpmailer_init', 'mihdan_send_smtp_email' );
 
   add_filter( 'wp_mail_content_type', 'true_content_type' );
  
@@ -704,3 +713,71 @@ add_filter( 'big_image_size_threshold', '__return_false' );
 // 	  return $value;
 //  }
 //  add_filter('site_transient_update_plugins', 'disable_plugin_updates');
+
+// Реєструємо AJAX обробники
+add_action('wp_ajax_send_calc_form', 'handle_calc_form');
+add_action('wp_ajax_nopriv_send_calc_form', 'handle_calc_form');
+add_action('wp_ajax_send_popup_form', 'handle_popup_form');
+add_action('wp_ajax_nopriv_send_popup_form', 'handle_popup_form');
+
+function handle_calc_form() {
+	check_ajax_referer('tiva-nonce', 'nonce');
+	require_once get_template_directory() . '/inc/ajax/calcmail.php';
+	wp_die();
+}
+
+function handle_popup_form() {
+	check_ajax_referer('tiva-nonce', 'nonce');
+	require_once get_template_directory() . '/inc/ajax/mail.php';
+	wp_die();
+}
+
+
+function email_settings_page_callback() {
+    ?>
+    <div class="wrap">
+        <h1>Email Settings</h1>
+        <form method="post" action="options.php">
+            <?php
+            settings_fields('email_settings_group');
+            do_settings_sections('email_settings_group');
+            ?>
+            <table class="form-table">
+                <tr>
+                    <th scope="row">Notification Email 1</th>
+                    <td><input type="email" name="notification_email_1" value="<?php echo esc_attr(get_option('notification_email_1')); ?>" class="regular-text" required /></td>
+                </tr>
+                <tr>
+                    <th scope="row">Notification Email 2</th>
+                    <td><input type="email" name="notification_email_2" value="<?php echo esc_attr(get_option('notification_email_2')); ?>" class="regular-text" /></td>
+                </tr>
+                <tr>
+                    <th scope="row">Notification Email 3</th>
+                    <td><input type="email" name="notification_email_3" value="<?php echo esc_attr(get_option('notification_email_3')); ?>" class="regular-text" /></td>
+                </tr>
+            </table>
+            <?php submit_button(); ?>
+        </form>
+    </div>
+    <?php
+}
+
+// Реєструємо налаштування
+add_action('admin_init', 'register_email_settings');
+function register_email_settings() {
+    register_setting('email_settings_group', 'notification_email_1');
+    register_setting('email_settings_group', 'notification_email_2');
+    register_setting('email_settings_group', 'notification_email_3');
+}
+
+// Створюємо власну сторінку налаштувань email
+add_action('admin_menu', 'add_email_settings_page');
+function add_email_settings_page() {
+    add_options_page(
+        'Email Settings',
+        'Email Settings', 
+        'manage_options',
+        'email-settings',
+        'email_settings_page_callback'
+    );
+}

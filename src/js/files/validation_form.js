@@ -72,9 +72,13 @@ popupForm?.addEventListener("submit", async function (e) {
   if (error) {
     popupForm.classList.add("_sending");
 
-    let response = await fetch("/api/contact-form.php", {
+    let response = await fetch(tivaAjax.url, {
       method: "POST",
-      body: formData,
+      body: new URLSearchParams({
+        action: 'send_popup_form',
+        nonce: tivaAjax.nonce,
+        ...Object.fromEntries(formData)
+      })
     });
 
     if (response.ok) {
@@ -205,9 +209,13 @@ calcForm?.addEventListener("submit", async function (e) {
     calcForm.classList.add("_sending");
     $('#submitCF7').trigger("click");
 
-    let response = await fetch("/api/calculator-form.php", {
+    let response = await fetch(tivaAjax.url, {
       method: "POST",
-      body: formData,
+      body: new URLSearchParams({
+        action: 'send_calc_form',
+        nonce: tivaAjax.nonce,
+        ...Object.fromEntries(formData)
+      })
     });
 
     if (response.ok) {
