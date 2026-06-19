@@ -16,7 +16,10 @@ use PHPMailer\PHPMailer\SMTP;
 		// подключаем
 		wp_enqueue_script( 'jquery' );
 
-		wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/app.min.js', array('jquery'), 'null', true );
+		$script_path = get_template_directory() . '/assets/js/app.min.js';
+		$script_version = file_exists($script_path) ? filemtime($script_path) : null;
+
+		wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/app.min.js', array('jquery'), $script_version, true );
 
 		// Додаємо локалізацію для AJAX
 		wp_localize_script('script', 'tivaAjax', array(
@@ -715,10 +718,19 @@ add_filter( 'big_image_size_threshold', '__return_false' );
 //  add_filter('site_transient_update_plugins', 'disable_plugin_updates');
 
 // Реєструємо AJAX обробники
+add_action('wp_ajax_get_tiva_nonce', 'tiva_ajax_get_nonce');
+add_action('wp_ajax_nopriv_get_tiva_nonce', 'tiva_ajax_get_nonce');
 add_action('wp_ajax_send_calc_form', 'handle_calc_form');
 add_action('wp_ajax_nopriv_send_calc_form', 'handle_calc_form');
 add_action('wp_ajax_send_popup_form', 'handle_popup_form');
 add_action('wp_ajax_nopriv_send_popup_form', 'handle_popup_form');
+
+function tiva_ajax_get_nonce() {
+	nocache_headers();
+	wp_send_json_success(array(
+		'nonce' => wp_create_nonce('tiva-nonce'),
+	));
+}
 
 function handle_calc_form() {
 	check_ajax_referer('tiva-nonce', 'nonce');

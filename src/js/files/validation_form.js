@@ -30,6 +30,69 @@ function isValidCityName(value) {
   return /^\s*[a-zA-Z]{1}[0-9a-zA-Z][0-9a-zA-Z '-.=#/]*$/.test(value);
 }
 
+async function fetchTivaNonce() {
+  const response = await fetch(tivaAjax.url, {
+    method: "POST",
+    credentials: "same-origin",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+    },
+    body: new URLSearchParams({ action: "get_tiva_nonce" }),
+  });
+
+  if (!response.ok) {
+    return tivaAjax.nonce;
+  }
+
+  const result = await response.json();
+  return result.success && result.data?.nonce ? result.data.nonce : tivaAjax.nonce;
+}
+
+async function submitTivaForm(action, formData) {
+  const nonce = await fetchTivaNonce();
+
+  return fetch(tivaAjax.url, {
+    method: "POST",
+    credentials: "same-origin",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+    },
+    body: new URLSearchParams({
+      action,
+      ...Object.fromEntries(formData),
+      nonce,
+    }),
+  });
+}
+
+// Функція для обробки автозаповнення браузера
+function handleAutofillValidation(element, validationFunction) {
+  if (element && element.value && element.value.trim() !== '') {
+    if (validationFunction(element.value)) {
+      element.classList.remove("_notvalid");
+    } else {
+      element.classList.add("_notvalid");
+    }
+  }
+}
+
+// Функція для перевірки всіх полів на автозаповнення
+function checkAutofillFields() {
+  // Перевірка popup полів
+  if (popupEmail) handleAutofillValidation(popupEmail, isValidEmail);
+  if (popupPhone) handleAutofillValidation(popupPhone, isValidPhone);
+  if (popupUserName) handleAutofillValidation(popupUserName, isValidName);
+  
+  // Перевірка калькулятор полів
+  if (calcEmail) handleAutofillValidation(calcEmail, isValidEmail);
+  if (calcPhone) handleAutofillValidation(calcPhone, isValidPhone);
+  if (calcFirstName) handleAutofillValidation(calcFirstName, isValidName);
+  if (calcLasttName) handleAutofillValidation(calcLasttName, isValidLastName);
+  if (calcZipCode) handleAutofillValidation(calcZipCode, isValidZipCode);
+  if (calcCityName) handleAutofillValidation(calcCityName, isValidCityName);
+  if (calcAdress) handleAutofillValidation(calcAdress, isValidAdress);
+}
+
 const popupEmail = document.querySelector("#popupEmail");
 const popupPhone = document.querySelector("#popupPhone");
 const popupUserName = document.querySelector("#popupUserName");
@@ -62,6 +125,9 @@ const popupForm = document.querySelector("#popupForm");
 popupForm?.addEventListener("submit", async function (e) {
   e.preventDefault();
 
+  // Перевірка автозаповнення перед валідацією
+  checkAutofillFields();
+
   let error =
     isValidEmail(popupEmail.value) &&
     isValidPhone(popupPhone.value) &&
@@ -72,14 +138,7 @@ popupForm?.addEventListener("submit", async function (e) {
   if (error) {
     popupForm.classList.add("_sending");
 
-    let response = await fetch(tivaAjax.url, {
-      method: "POST",
-      body: new URLSearchParams({
-        action: 'send_popup_form',
-        nonce: tivaAjax.nonce,
-        ...Object.fromEntries(formData)
-      })
-    });
+    let response = await submitTivaForm("send_popup_form", formData);
 
     if (response.ok) {
       // let result = await response.json();
@@ -189,10 +248,45 @@ aptSuite?.addEventListener("input", function () {
   AptSuiteCF7.value = aptSuite.value;
 });
 
+// Додаємо обробники для синхронізації з CF7 полями при автозаповненні
+calcPhone?.addEventListener("change", function () {
+  PhoneCF7.value = calcPhone.value;
+});
+
+calcEmail?.addEventListener("change", function () {
+  EmailCF7.value = calcEmail.value;
+});
+
+calcFirstName?.addEventListener("change", function () {
+  FirstNameCF7.value = calcFirstName.value;
+});
+
+calcLasttName?.addEventListener("change", function () {
+  LastNameCF7.value = calcLasttName.value;
+});
+
+calcZipCode?.addEventListener("change", function () {
+  ZipCodeCF7.value = calcZipCode.value;
+});
+
+calcCityName?.addEventListener("change", function () {
+  CityCF7.value = calcCityName.value;
+});
+
+calcAdress?.addEventListener("change", function () {
+  AddressCF7.value = calcAdress.value;
+});
+
+aptSuite?.addEventListener("change", function () {
+  AptSuiteCF7.value = aptSuite.value;
+});
 
 const calcForm = document.querySelector("#calcForm");
 calcForm?.addEventListener("submit", async function (e) {
   e.preventDefault();
+
+  // Перевірка автозаповнення перед валідацією
+  checkAutofillFields();
 
   let error =
     isValidEmail(calcEmail.value) &&
@@ -209,14 +303,7 @@ calcForm?.addEventListener("submit", async function (e) {
     calcForm.classList.add("_sending");
     $('#submitCF7').trigger("click");
 
-    let response = await fetch(tivaAjax.url, {
-      method: "POST",
-      body: new URLSearchParams({
-        action: 'send_calc_form',
-        nonce: tivaAjax.nonce,
-        ...Object.fromEntries(formData)
-      })
-    });
+    let response = await submitTivaForm("send_calc_form", formData);
 
     if (response.ok) {
       // let result = await response.json();
@@ -246,4 +333,19 @@ calcForm?.addEventListener("submit", async function (e) {
       '<p class="alert__msg" >Fill in required fields!!!<p/>';
     alertMsg.classList.add("_show");
   }
+});
+
+// Додаткова перевірка для автозаповнення при завантаженні сторінки
+document.addEventListener('DOMContentLoaded', function() {
+  // Затримка для автозаповнення браузера
+  setTimeout(checkAutofillFields, 500);
+});
+
+// Перевірка при фокусі на формі (додаткова безпека)
+calcForm?.addEventListener('focusin', function() {
+  setTimeout(checkAutofillFields, 100);
+});
+
+popupForm?.addEventListener('focusin', function() {
+  setTimeout(checkAutofillFields, 100);
 });
